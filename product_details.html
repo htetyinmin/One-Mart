@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POS</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Fontawsome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+  <!-- Style CSS -->
+  <link rel="stylesheet" href="./assets/css/customize.css">
+
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light nav-color">
+    <div class="container">
+      <a class="navbar-brand" href="index.html" title="home">
+          <i class="fa fa-home"></i>
+      </a>
+      <form class="d-flex">
+          <input class="form-control me-2 input" type="search" placeholder="search">
+      </form>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <li class="nav-item">
+              <a class="nav-link" href="./product_cart.html" title="cart">
+              <i class="fa fa-cart-plus position-relative">
+                  <span class="position-absolute top-0 start-100 translate-middle p-1 rounded-circle">
+                    <span class="visually-hidden">New alerts</span>
+                  </span>
+              </i>
+              <span>Cart</span>
+              </a>
+          </li>
+
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" title="sale">
+              <i class="fa fa-tags"></i>
+              <span>Sale</span>
+              </a>
+              <ul class="dropdown-menu">
+              <li>
+                  <a class="dropdown-item" href="#">
+                  <i class="fa fa-money-check-alt i_color"></i>
+                  <span>Payment</span>
+              </a>
+              </li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" title="category">
+              <i class="fa fa-list-ul"></i>
+              <span>Category</span>
+              </a>
+              <ul class="dropdown-menu">
+              <li>
+                  <a class="dropdown-item" href="./product_details.html">
+                  <i class="fa fa-box-open i_color"></i>
+                  <span>Product</span>
+                  </a>
+              </li>
+              <li>
+                  <a class="dropdown-item" href="#">
+                  <i class="fa fa-pizza-slice i_color"></i>
+                  <span>Food</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="#" class="dropdown-item">
+                  <i class="fa fa-tshirt i_color"></i>
+                  <span>Fashion</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="#" class="dropdown-item">
+                  <i class="fa fa-capsules i_color"></i>
+                  <span>Health & Beauty</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="#" class="dropdown-item">
+                  <i class="fa fa-laptop i_color"></i>
+                  <span>Electronic Devices</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="#" class="dropdown-item">
+                  <i class="fa fa-fan i_color"></i>
+                  <span>Home Accessories</span>
+                  </a>
+              </li>
+              </ul>
+          </li>
+
+          </ul>
+
+          <ul class="navbar-nav my-nav">
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" title="manage account">
+                <i class="fa fa-users-cog"></i>
+                <span class="f_color">Kyaw Min Tun</span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                    <a class="dropdown-item" href="./profile.html">
+                    <i class="fa fa-user i_color"></i>
+                    <span>Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="./register.html">
+                      <i class="fa fa-sign-in-alt i_color"></i>
+                      <span>SignUp</span>
+                    </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./login.html">
+                  <i class="fa fa-sign-in-alt i_color"></i>
+                  <span>Login</span>
+                  </a>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                    <a class="dropdown-item" href="#">
+                    <i class="fa fa-sign-out-alt i_color"></i>
+                    <span>Logout</span>
+                    </a>
+                </li>
+              </ul>
+          </li>
+          </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Breadcrumb -->
+  <div class="bd_crumb">
+      <div class="container">
+        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+          <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Profile</li>
+          </ol>
+        </nav>
+      </div>
+  </div>
+
+
+  <!-- product details -->
+  <div class="container my-5">
+      <div class="panel">
+          <div class="container-fliud">
+              <div class="wrapper row">
+                  <div class="preview col-lg-6">
+                      
+                      <div class="preview-pic tab-content">
+                        <div class="tab-pane active" id="pic-1"><img src="./assets/img/product/device.jpg" /></div>
+                        <div class="tab-pane" id="pic-2"><img src="./assets/img/product/laptop-11.jpg" /></div>
+                        <div class="tab-pane" id="pic-3"><img src="./assets/img/product/device.jpg" /></div>
+                        <div class="tab-pane" id="pic-4"><img src="./assets/img/product/laptopfordesign.jpg" /></div>
+                        <div class="tab-pane" id="pic-5"><img src="./assets/img/product/device.jpg" /></div>
+                      </div>
+                      <ul class="preview-thumbnail nav nav-tabs">
+                        <li class="active"><a data-bs-target="#pic-1" data-bs-toggle="tab"><img src="./assets/img/product/device.jpg" /></a></li>
+                        <li><a data-bs-target="#pic-2" data-bs-toggle="tab"><img src="./assets/img/product/laptop-11.jpg" /></a></li>
+                        <li><a data-bs-target="#pic-3" data-bs-toggle="tab"><img src="./assets/img/product/device.jpg" /></a></li>
+                        <li><a data-bs-target="#pic-4" data-bs-toggle="tab"><img src="./assets/img/product/laptopfordesign.jpg" /></a></li>
+                        <li><a data-bs-target="#pic-5" data-bs-toggle="tab"><img src="./assets/img/product/device.jpg" /></a></li>
+                      </ul>
+                      
+                  </div>
+                  <div class="details col-lg-6">
+                      <h3 class="product-title">Dell XPS Laptop</h3>
+                      <div class="rating">
+                          <div class="stars">
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star"></span>
+                              <span class="fa fa-star"></span>
+                          </div>
+                          <span class="review-no">41 reviews</span>
+                      </div>
+                      <p class="product-description">Suspendisse quos? Tempus cras iure temporibus? Eu laudantium cubilia sem sem! Repudiandae et! Massa senectus enim minim sociosqu delectus posuere.</p>
+                      <h4 class="price">current price: <span>1,600,000Ks</span></h4>
+                      <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
+                      <h5 class="sizes">sizes:
+                          <span class="size" data-toggle="tooltip" title="small">s</span>
+                          <span class="size" data-toggle="tooltip" title="medium">m</span>
+                          <span class="size" data-toggle="tooltip" title="large">l</span>
+                          <span class="size" data-toggle="tooltip" title="xtra large">xl</span>
+                      </h5>
+                      <h5 class="colors">colors:
+                          <span class="color orange" data-toggle="tooltip" title="Not In store"></span>
+                          <span class="color green"></span>
+                          <span class="color blue"></span>
+                      </h5>
+                      <div class="action">
+                          <button type="button" class="btn btn-primary add-to-cart"><i class="fas fa-cart-arrow-down"></i>&nbsp;&nbsp;add to cart</button>
+                          <button type="button" class="btn btn-light like"><i class="far fa-heart"></i></button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+  <!-- footer -->
+  <footer class="pt-5 pb-2">
+    <div class="footer_int">
+      <div class="item">
+        <div class="title">CONTACTING</div>
+        <p><a href="#">About Us</a></p>
+        <p><a href="#">Core Values</a></p>
+        <p><a href="#">Careers</a></p>
+        <p><a href="#">Blog</a></p>
+        <p><a href="#">Sitemap</a></p>
+      </div>
+      <div class="item">
+        <div class="title">POLICY INFO</div>
+        <p><a href="#">Privacy Policy</a></p>
+        <p><a href="#">Terms of Sale</a></p>
+        <p><a href="#">Terms of Use</a></p>
+        <p><a href="#">Report Issue</a></p>
+      </div>
+      <div class="item">
+        <div class="title">COMPANY</div>
+        <p><a href="#">About Us</a></p>
+        <p><a href="#">Careers</a></p>
+        <p><a href="#">Contact</a></p>
+        <p><a href="#">Blog</a></p>
+        <p><a href="#">Sitemap</a></p>
+      </div>
+      <div class="item">
+        <div class="title">NEED HELP ?</div>
+        <p><a href="#">FAQ</a></p>
+        <p><a href="#">Contact</a></p>
+        <p><a href="#">Online Shoping</a></p>
+        <p><a href="#">Report Issue</a></p>
+      </div>
+      <div class="item">
+        <div class="title">SUBSCRIBE</div>
+          <form>
+            <input type="email" name="email" id="" placeholder="your email address" required autocomplete="off">
+            <input type="submit" value="Subscribe">
+          </form>
+          <span>Register now to get updates on promotions and coupons.</span>
+      </div>
+    </div>
+    <div class="social_media">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+      <a href="#"><i class="fab fa-viber"></i></a>
+    </div>
+    <hr>
+
+    <!-- copyright -->
+    <div class="copyright">
+      &copy;&nbsp;2021-<script>var d = new Date();document.write(d.getFullYear());</script>. All right reserved.
+    </div>
+
+  </footer>
+
+
+  <!-- javascript code -->
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+
+</body>
+</html>

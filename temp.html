@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POS</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Fontawsome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+  <!-- Style CSS -->
+  <link rel="stylesheet" href="./assets/css/customize.css">
+
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light nav-color">
+    <div class="container">
+      <a class="navbar-brand" href="index.html" title="home">
+          <i class="fa fa-home"></i>
+      </a>
+      <form class="d-flex">
+          <input class="form-control me-2 input" type="search" placeholder="search">
+      </form>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <li class="nav-item">
+              <a class="nav-link my-cart-icon" href="./product_cart.html" title="cart">
+              <i class="fa fa-cart-plus position-relative">
+                  <span class="position-absolute top-0 start-100 translate-middle p-1 rounded-circle my-cart-badge">
+                    <!-- <span class="visually-hidden">New alerts</span> -->
+                  </span>
+              </i><span>Cart</span>
+              </a>
+          </li>
+
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" title="sale">
+              <i class="fa fa-tags"></i>
+              <span>Sale</span>
+              </a>
+              <ul class="dropdown-menu">
+              <li>
+                  <a class="dropdown-item" href="#">
+                  <i class="fa fa-money-check-alt i_color"></i>
+                  <span>Payment</span>
+              </a>
+              </li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" title="category">
+              <i class="fa fa-list-ul"></i>
+              <span>Category</span>
+              </a>
+              <ul class="dropdown-menu">
+              <li>
+                  <a class="dropdown-item" href="./product_details.html">
+                  <i class="fa fa-box-open i_color"></i>
+                  <span>Product</span>
+                  </a>
+              </li>
+              <li>
+                  <a class="dropdown-item" href="#">
+                  <i class="fa fa-pizza-slice i_color"></i>
+                  <span>Food</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="#" class="dropdown-item">
+                  <i class="fa fa-tshirt i_color"></i>
+                  <span>Fashion</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="#" class="dropdown-item">
+                  <i class="fa fa-capsules i_color"></i>
+                  <span>Health & Beauty</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="#" class="dropdown-item">
+                  <i class="fa fa-laptop i_color"></i>
+                  <span>Electronic Devices</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="#" class="dropdown-item">
+                  <i class="fa fa-fan i_color"></i>
+                  <span>Home Accessories</span>
+                  </a>
+              </li>
+              </ul>
+          </li>
+
+          </ul>
+
+          <ul class="navbar-nav my-nav">
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" title="manage account">
+                <i class="fa fa-users-cog"></i>
+                <span class="f_color">Kyaw Min Tun</span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                    <a class="dropdown-item" href="./profile.html">
+                    <i class="fa fa-user i_color"></i>
+                    <span>Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="./register.html">
+                      <i class="fa fa-sign-in-alt i_color"></i>
+                      <span>SignUp</span>
+                    </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./login.html">
+                  <i class="fa fa-sign-in-alt i_color"></i>
+                  <span>Login</span>
+                  </a>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                    <a class="dropdown-item" href="#">
+                    <i class="fa fa-sign-out-alt i_color"></i>
+                    <span>Logout</span>
+                    </a>
+                </li>
+              </ul>
+          </li>
+          </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Product -->
+  <div class="product pt-5 pb-5">
+    <div class="container-sm">
+      <div class="row mb-4" style="background-color: rgb(242 236 236 / 47%);; padding: 30px 0 0">
+        <div class="col-md-4 col-lg-2 my-3">
+        <div class="card">
+            <div class="buy">
+              <button type="button" data-title="Cart title" data-content="This is a wider card with supporting text" data-price="1000000" data-img="./assets/img/product/device.jpg" data-bs-toggle="modal" data-bs-target="#cartModal" title="Add to cart" class="click-cart">
+                <i class="fa fa-cart-arrow-down"></i>
+              </button>
+            </div>
+            <img src="./assets/img/product/device.jpg" class="card-img-top" alt="..." height="120">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text <a href="#">more...</a></p>
+              <div class="price">
+                <span class="current_price">1,000,000&nbsp;MMK</span><br>
+                <span class="old_price"><del>1,300,000&nbsp;MMK</del></span>
+              </div>
+            </div>
+        </div>
+        </div>
+    
+        <div class="col-md-4 col-lg-2 my-3">
+        <div class="card">
+            <div class="buy">
+              <button type="button" data-title="Lenovo AI Computer" data-content="This is a wider card with supporting text." data-price="1500000" data-img="./assets/img/product/dell.jpg" data-bs-toggle="modal" data-bs-target="#cartModal" title="Add to cart" class="click-cart">
+                <i class="fa fa-cart-arrow-down"></i>
+              </button>
+            </div>
+            <img src="./assets/img/product/dell.jpg" class="card-img-top" alt="..." height="120">
+            <div class="card-body">
+              <h5 class="card-title">Lenovo AI Computer</h5>
+              <p class="card-text">This is a wider card with supporting text. <a href="#">more...</a></p>
+                <div class="price">
+                <span class="current_price">1,500,000&nbsp;MMK</span><br>
+                <span class="old_price"><del>1,300,000&nbsp;MMK</del></span>
+              </div>
+            </div>
+        </div>
+        </div>
+    
+        <div class="col-md-4 col-lg-2 my-3">
+        <div class="card">
+            <div class="buy">
+              <button type="button" data-bs-toggle="modal" data-bs-target="#cartModal" title="Add to cart">
+                <i class="fa fa-cart-arrow-down"></i>
+              </button>
+            </div>
+            <img src="./assets/img/product/laptop-11.jpg" class="card-img-top" alt="..." height="120">
+            <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text. <a href="#">more...</a></p>
+              <div class="price">
+                <span class="current_price">1,000,000&nbsp;MMK</span><br>
+                <span class="old_price"><del>1,300,000&nbsp;MMK</del></span>
+              </div>
+            </div>
+        </div>
+        </div>
+    
+        <div class="col-md-4 col-lg-2 my-3">
+        <div class="card">
+            <div class="buy">
+              <button type="button" data-bs-toggle="modal" data-bs-target="#cartModal" title="Add to cart">
+                <i class="fa fa-cart-arrow-down"></i>
+              </button>
+            </div>
+            <img src="./assets/img/product/laptopfordesign.jpg" class="card-img-top" alt="..." height="120">
+            <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text. <a href="#">more...</a></p>
+              <div class="price">
+                <span class="current_price">1,000,000&nbsp;MMK</span><br>
+                <span class="old_price"><del>1,300,000&nbsp;MMK</del></span>
+              </div>
+            </div>
+        </div>
+        </div>
+    
+        <div class="col-md-4 col-lg-2 my-3">
+        <div class="card">
+            <div class="buy">
+              <button type="button" data-bs-toggle="modal" data-bs-target="#cartModal" title="Add to cart">
+                <i class="fa fa-cart-arrow-down"></i>
+              </button>
+            </div>
+            <img src="./assets/img/product/device.jpg" class="card-img-top" alt="..." height="120">
+            <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text. <a href="#">more...</a></p>
+              <div class="price">
+                <span class="current_price">1,000,000&nbsp;MMK</span><br>
+                <span class="old_price"><del>1,300,000&nbsp;MMK</del></span>
+              </div>
+            </div>
+        </div>
+        </div>
+    
+        <div class="col-md-4 col-lg-2 my-3">
+        <div class="card">
+            <div class="buy">
+              <button type="button" data-bs-toggle="modal" data-bs-target="#cartModal" title="Add to cart">
+                <i class="fa fa-cart-arrow-down"></i>
+              </button>
+            </div>
+            <img src="./assets/img/product/dell.jpg" class="card-img-top" alt="..." height="120">
+            <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text. <a href="#">more...</a></p>
+              <div class="price">
+                <span class="current_price">1,000,000&nbsp;MMK</span><br>
+                <span class="old_price"><del>1,300,000&nbsp;MMK</del></span>
+              </div>
+            </div>
+        </div>
+        </div>
+    
+        <div class="col-md-4 col-lg-2 my-3">
+        <div class="card">
+            <div class="buy">
+              <button type="button" data-bs-toggle="modal" data-bs-target="#cartModal" title="Add to cart">
+                <i class="fa fa-cart-arrow-down"></i>
+              </button>
+            </div>
+            <img src="./assets/img/product/laptop-11.jpg" class="card-img-top" alt="..." height="120">
+            <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text. <a href="#">more...</a></p>
+              <div class="price">
+                <span class="current_price">1,000,000&nbsp;MMK</span><br>
+                <span class="old_price"><del>1,300,000&nbsp;MMK</del></span>
+              </div>
+            </div>
+        </div>
+        </div>
+    
+        <div class="col-md-4 col-lg-2 my-3">
+        <div class="card">
+            <div class="buy">
+              <button type="button" data-bs-toggle="modal" data-bs-target="#cartModal" title="Add to cart">
+                <i class="fa fa-cart-arrow-down"></i>
+              </button>
+            </div>
+            <img src="./assets/img/product/laptopfordesign.jpg" class="card-img-top" alt="..." height="120">
+            <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text. <a href="#">more...</a></p>
+              <div class="price">
+                <span class="current_price">1,000,000&nbsp;MMK</span><br>
+                <span class="old_price"><del>1,300,000&nbsp;MMK</del></span>
+              </div>
+            </div>
+        </div>
+        </div>
+    
+        <div class="col-md-4 col-lg-2 my-3">
+        <div class="card">
+            <div class="buy">
+              <button type="button" data-bs-toggle="modal" data-bs-target="#cartModal" title="Add to cart">
+                <i class="fa fa-cart-arrow-down"></i>
+              </button>
+            </div>
+            <img src="./assets/img/product/device.jpg" class="card-img-top" alt="..." height="120">
+            <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text. <a href="#">more...</a></p>
+              <div class="price">
+                <span class="current_price">1,000,000&nbsp;MMK</span><br>
+                <span class="old_price"><del>1,300,000&nbsp;MMK</del></span>
+              </div>
+            </div>
+        </div>
+        </div>
+    
+        <div class="col-md-4 col-lg-2 my-3">
+        <div class="card">
+            <div class="buy">
+              <button type="button" data-bs-toggle="modal" data-bs-target="#cartModal" title="Add to cart">
+                <i class="fa fa-cart-arrow-down"></i>
+              </button>
+            </div>
+            <img src="./assets/img/product/dell.jpg" class="card-img-top" alt="..." height="120">
+            <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text. <a href="#">more...</a></p>
+              <div class="price">
+                <span class="current_price">1,000,000&nbsp;MMK</span><br>
+                <span class="old_price"><del>1,300,000&nbsp;MMK</del></span>
+              </div>
+            </div>
+        </div>
+        </div>
+    
+        <div class="col-md-4 col-lg-2 my-3">
+        <div class="card">
+            <div class="buy">
+              <button type="button" data-bs-toggle="modal" data-bs-target="#cartModal" title="Add to cart">
+                <i class="fa fa-cart-arrow-down"></i>
+              </button>
+            </div>
+            <img src="./assets/img/product/laptop-11.jpg" class="card-img-top" alt="..." height="120">
+            <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text. <a href="#">more...</a></p>
+              <div class="price">
+                <span class="current_price">1,000,000&nbsp;MMK</span><br>
+                <span class="old_price"><del>1,300,000&nbsp;MMK</del></span>
+              </div>
+            </div>
+        </div>
+        </div>
+    
+        <div class="col-md-4 col-lg-2 my-3">
+        <div class="card">
+            <div class="buy">
+              <button type="button" data-bs-toggle="modal" data-bs-target="#cartModal" title="Add to cart">
+                <i class="fa fa-cart-arrow-down"></i>
+              </button>
+            </div>
+            <img src="./assets/img/product/laptopfordesign.jpg" class="card-img-top" alt="..." height="120">
+            <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text. <a href="#">more...</a></p>
+              <div class="price">
+                <span class="current_price">1,000,000&nbsp;MMK</span><br>
+                <span class="old_price"><del>1,300,000&nbsp;MMK</del></span>
+              </div>
+            </div>
+        </div>
+        </div>
+    
+      </div>
+    
+      <!-- Pagination -->
+      <div class="loading">
+        <span>Loading</span>
+        <span class="spinner-grow spinner-grow-sm" role="status"></span>
+        <span class="spinner-grow spinner-grow-sm" role="status"></span>
+        <span class="spinner-grow spinner-grow-sm" role="status"></span>
+      </div>
+    
+    </div>
+  </div>
+
+
+  <!-- View Cart Modal -->
+  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Your Shopping Cart</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fliud">
+              <div class="wrapper row">
+
+              </div>
+          </div>
+        </div>
+        <div class="modal-footer d-flex">
+          <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal" title="Box close?">Close</button>
+          <button type="button" class="btn btn-light btn_wishlist" title="Add to Wishlist"><i class="far fa-heart"></i></button>
+          <button type="button" class="btn btn-primary btn_cart" title="Add to Cart"><i class="fas fa-cart-arrow-down"></i>&nbsp;Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+ 
+
+  <!-- javascript code -->
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="./assets/js/temp.js"></script>
+</body>
+</html>

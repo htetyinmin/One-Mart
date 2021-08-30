@@ -1,0 +1,363 @@
+[
+    {
+        "id" : 1,
+        "productName" : "Lenovo Laptop",
+        "productDec" : 
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat sapiente, eveniet culpa amet perferendis numquam officiis, aliquid odio autem esse aliquam magnam doloremque illo ullam temporibus exercitationem sint quasi quod.",
+        "currentPrice" :600000,
+        "oldPrice" : 900000,
+        "productImg" : "laptop-11.jpg",
+        "image" : [
+            "dell.jpg",
+            "device.jpg",
+            "laptop-11.jpg",
+            "laptopfordesign.jpg"
+        ]
+    },
+    {
+        "id" : 2,
+        "productName" : "Dell Laptop",
+        "productDec" : 
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat sapiente, eveniet culpa amet perferendis numquam officiis, aliquid odio autem esse aliquam magnam doloremque illo ullam temporibus exercitationem sint quasi quod.",
+        "currentPrice" : 500000,
+        "oldPrice" : 900000,
+        "productImg" : "dell.jpg",
+        "image" : [
+            "dell.jpg",
+            "device.jpg",
+            "laptop-11.jpg",
+            "laptopfordesign.jpg"
+        ]
+    },
+    {
+        "id" : 3,
+        "productName" : "Acear Laptop",
+        "productDec" : 
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat sapiente, eveniet culpa amet perferendis numquam officiis, aliquid odio autem esse aliquam magnam doloremque illo ullam temporibus exercitationem sint quasi quod.",
+        "currentPrice" : 500000,
+        "oldPrice" : 900000,
+        "productImg" : "device.jpg",
+        "image" : [
+            "dell.jpg",
+            "device.jpg",
+            "laptop-11.jpg",
+            "laptopfordesign.jpg"
+        ]
+    },
+    {
+        "id" : 4,
+        "productName" : "Apple Laptop",
+        "productDec" : 
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat sapiente, eveniet culpa amet perferendis numquam officiis, aliquid odio autem esse aliquam magnam doloremque illo ullam temporibus exercitationem sint quasi quod.",
+        "currentPrice" : 500000,
+        "oldPrice" : 900000,
+        "productImg" : "dell.jpg",
+        "image" : [
+            "dell.jpg",
+            "device.jpg",
+            "laptop-11.jpg",
+            "laptopfordesign.jpg"
+        ]
+    },
+    {
+        "id" : 5,
+        "productName" : "Vivo Laptop",
+        "productDec" : 
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat sapiente, eveniet culpa amet perferendis numquam officiis, aliquid odio autem esse aliquam magnam doloremque illo ullam temporibus exercitationem sint quasi quod.",
+        "currentPrice" : 700000,
+        "oldPrice" : 800000,
+        "productImg" : "laptopfordesign.jpg",
+        "image" : [
+            "dell.jpg",
+            "device.jpg",
+            "laptop-11.jpg",
+            "laptopfordesign.jpg"
+        ]
+    },
+    {
+        "id" : 6,
+        "productName" : "Lenovo Laptop",
+        "productDec" : 
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat sapiente, eveniet culpa amet perferendis numquam officiis, aliquid odio autem esse aliquam magnam doloremque illo ullam temporibus exercitationem sint quasi quod.",
+        "currentPrice" : 500000,
+        "oldPrice" : 900000,
+        "productImg" : "dell.jpg",
+        "image" : [
+            "dell.jpg",
+            "device.jpg",
+            "laptop-11.jpg",
+            "laptopfordesign.jpg"
+        ]
+    },
+    {
+        "id" : 7,
+        "productName" : "Dell Laptop",
+        "productDec" : 
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat sapiente, eveniet culpa amet perferendis numquam officiis, aliquid odio autem esse aliquam magnam doloremque illo ullam temporibus exercitationem sint quasi quod.",
+        "currentPrice" : 500000,
+        "oldPrice" : 900000,
+        "productImg" : "dell.jpg",
+        "image" : [
+            "dell.jpg",
+            "device.jpg",
+            "laptop-11.jpg",
+            "laptopfordesign.jpg"
+        ]
+    },
+    {
+        "id" : 8,
+        "productName" : "Acear Laptop",
+        "productDec" : 
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat sapiente, eveniet culpa amet perferendis numquam officiis, aliquid odio autem esse aliquam magnam doloremque illo ullam temporibus exercitationem sint quasi quod.",
+        "currentPrice" : 500000,
+        "oldPrice" : 900000,
+        "productImg" : "device.jpg",
+        "image" : [
+            "dell.jpg",
+            "device.jpg",
+            "laptop-11.jpg",
+            "laptopfordesign.jpg"
+        ]
+    },
+    {
+        "id" : 9,
+        "productName" : "Apple Laptop",
+        "productDec" : 
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat sapiente, eveniet culpa amet perferendis numquam officiis, aliquid odio autem esse aliquam magnam doloremque illo ullam temporibus exercitationem sint quasi quod.",
+        "currentPrice" : 500000,
+        "oldPrice" : 900000,
+        "productImg" : "laptop-11.jpg",
+        "image" : [
+            "dell.jpg",
+            "device.jpg",
+            "laptop-11.jpg",
+            "laptopfordesign.jpg"
+        ]
+    },
+    {
+        "id" : 10,
+        "productName" : "Mi Laptop",
+        "productDec" : 
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat sapiente, eveniet culpa amet perferendis numquam officiis, aliquid odio autem esse aliquam magnam doloremque illo ullam temporibus exercitationem sint quasi quod.",
+        "currentPrice" : 500000,
+        "oldPrice" : 900000,
+        "productImg" : "device.jpg",
+        "image" : [
+            "dell.jpg",
+            "device.jpg",
+            "laptop-11.jpg",
+            "laptopfordesign.jpg"
+        ]
+    },
+    {
+        "id" : 11,
+        "productName" : "Apple Laptop",
+        "productDec" : 
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat sapiente, eveniet culpa amet perferendis numquam officiis, aliquid odio autem esse aliquam magnam doloremque illo ullam temporibus exercitationem sint quasi quod.",
+        "currentPrice" : 500000,
+        "oldPrice" : 900000,
+        "productImg" : "laptop-11.jpg",
+        "image" : [
+            "dell.jpg",
+            "device.jpg",
+            "laptop-11.jpg",
+            "laptopfordesign.jpg"
+        ]
+    },
+    {
+        "id" : 12,
+        "productName" : "Vivo Laptop",
+        "productDec" : 
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat sapiente, eveniet culpa amet perferendis numquam officiis, aliquid odio autem esse aliquam magnam doloremque illo ullam temporibus exercitationem sint quasi quod.",
+        "currentPrice" : 500000,
+        "oldPrice" : 900000,
+        "productImg" : "device.jpg",
+        "image" : [
+            "dell.jpg",
+            "device.jpg",
+            "laptop-11.jpg",
+            "laptopfordesign.jpg"
+        ]
+    },
+    {
+        "id" : 13,
+        "productName" : "Lenovo Laptop",
+        "productDec" : 
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat sapiente, eveniet culpa amet perferendis numquam officiis, aliquid odio autem esse aliquam magnam doloremque illo ullam temporibus exercitationem sint quasi quod.",
+        "currentPrice" : 5000000,
+        "oldPrice" : 900000,
+        "productImg" : "laptop-11.jpg",
+        "image" : [
+            "dell.jpg",
+            "device.jpg",
+            "laptop-11.jpg",
+            "laptopfordesign.jpg"
+        ]
+    },
+    {
+        "id" : 14,
+        "productName" : "Dell Laptop",
+        "productDec" : 
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat sapiente, eveniet culpa amet perferendis numquam officiis, aliquid odio autem esse aliquam magnam doloremque illo ullam temporibus exercitationem sint quasi quod.",
+        "currentPrice" : 500000,
+        "oldPrice" : 900000,
+        "productImg" : "dell.jpg",
+        "image" : [
+            "dell.jpg",
+            "device.jpg",
+            "laptop-11.jpg",
+            "laptopfordesign.jpg"
+        ]
+    },
+    {
+        "id" : 15,
+        "productName" : "Acear Laptop",
+        "productDec" : 
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat sapiente, eveniet culpa amet perferendis numquam officiis, aliquid odio autem esse aliquam magnam doloremque illo ullam temporibus exercitationem sint quasi quod.",
+        "currentPrice" : 500000,
+        "oldPrice" : 900000,
+        "productImg" : "device.jpg",
+        "image" : [
+            "dell.jpg",
+            "device.jpg",
+            "laptop-11.jpg",
+            "laptopfordesign.jpg"
+        ]
+    },
+    {
+        "id" : 16,
+        "productName" : "Apple Laptop",
+        "productDec" : 
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat sapiente, eveniet culpa amet perferendis numquam officiis, aliquid odio autem esse aliquam magnam doloremque illo ullam temporibus exercitationem sint quasi quod.",
+        "currentPrice" : 500000,
+        "oldPrice" : 900000,
+        "productImg" : "dell.jpg",
+        "image" : [
+            "dell.jpg",
+            "device.jpg",
+            "laptop-11.jpg",
+            "laptopfordesign.jpg"
+        ]
+    },
+    {
+        "id" : 17,
+        "productName" : "Vivo Laptop",
+        "productDec" : 
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat sapiente, eveniet culpa amet perferendis numquam officiis, aliquid odio autem esse aliquam magnam doloremque illo ullam temporibus exercitationem sint quasi quod.",
+        "currentPrice" : 700000,
+        "oldPrice" : 800000,
+        "productImg" : "laptopfordesign.jpg",
+        "image" : [
+            "dell.jpg",
+            "device.jpg",
+            "laptop-11.jpg",
+            "laptopfordesign.jpg"
+        ]
+    },
+    {
+        "id" : 18,
+        "productName" : "Lenovo Laptop",
+        "productDec" : 
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat sapiente, eveniet culpa amet perferendis numquam officiis, aliquid odio autem esse aliquam magnam doloremque illo ullam temporibus exercitationem sint quasi quod.",
+        "currentPrice" : 500000,
+        "oldPrice" : 900000,
+        "productImg" : "dell.jpg",
+        "image" : [
+            "dell.jpg",
+            "device.jpg",
+            "laptop-11.jpg",
+            "laptopfordesign.jpg"
+        ]
+    },
+    {
+        "id" : 19,
+        "productName" : "Dell Laptop",
+        "productDec" : 
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat sapiente, eveniet culpa amet perferendis numquam officiis, aliquid odio autem esse aliquam magnam doloremque illo ullam temporibus exercitationem sint quasi quod.",
+        "currentPrice" : 500000,
+        "oldPrice" : 900000,
+        "productImg" : "dell.jpg",
+        "image" : [
+            "dell.jpg",
+            "device.jpg",
+            "laptop-11.jpg",
+            "laptopfordesign.jpg"
+        ]
+    },
+    {
+        "id" : 20,
+        "productName" : "Acear Laptop",
+        "productDec" : 
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat sapiente, eveniet culpa amet perferendis numquam officiis, aliquid odio autem esse aliquam magnam doloremque illo ullam temporibus exercitationem sint quasi quod.",
+        "currentPrice" : 500000,
+        "oldPrice" : 900000,
+        "productImg" : "device.jpg",
+        "image" : [
+            "dell.jpg",
+            "device.jpg",
+            "laptop-11.jpg",
+            "laptopfordesign.jpg"
+        ]
+    },
+    {
+        "id" : 21,
+        "productName" : "Apple Laptop",
+        "productDec" : 
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat sapiente, eveniet culpa amet perferendis numquam officiis, aliquid odio autem esse aliquam magnam doloremque illo ullam temporibus exercitationem sint quasi quod.",
+        "currentPrice" : 500000,
+        "oldPrice" : 900000,
+        "productImg" : "laptop-11.jpg",
+        "image" : [
+            "dell.jpg",
+            "device.jpg",
+            "laptop-11.jpg",
+            "laptopfordesign.jpg"
+        ]
+    },
+    {
+        "id" : 22,
+        "productName" : "Mi Laptop",
+        "productDec" : 
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat sapiente, eveniet culpa amet perferendis numquam officiis, aliquid odio autem esse aliquam magnam doloremque illo ullam temporibus exercitationem sint quasi quod.",
+        "currentPrice" : 500000,
+        "oldPrice" : 900000,
+        "productImg" : "device.jpg",
+        "image" : [
+            "dell.jpg",
+            "device.jpg",
+            "laptop-11.jpg",
+            "laptopfordesign.jpg"
+        ]
+    },
+    {
+        "id" : 23,
+        "productName" : "Apple Laptop",
+        "productDec" : 
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat sapiente, eveniet culpa amet perferendis numquam officiis, aliquid odio autem esse aliquam magnam doloremque illo ullam temporibus exercitationem sint quasi quod.",
+        "currentPrice" : 500000,
+        "oldPrice" : 900000,
+        "productImg" : "laptop-11.jpg",
+        "image" : [
+            "dell.jpg",
+            "device.jpg",
+            "laptop-11.jpg",
+            "laptopfordesign.jpg"
+        ]
+    },
+    {
+        "id" : 24,
+        "productName" : "Vivo Laptop",
+        "productDec" : 
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat sapiente, eveniet culpa amet perferendis numquam officiis, aliquid odio autem esse aliquam magnam doloremque illo ullam temporibus exercitationem sint quasi quod.",
+        "currentPrice" : 500000,
+        "oldPrice" : 900000,
+        "productImg" : "device.jpg",
+        "image" : [
+            "dell.jpg",
+            "device.jpg",
+            "laptop-11.jpg",
+            "laptopfordesign.jpg"
+        ]
+    }
+]
+
