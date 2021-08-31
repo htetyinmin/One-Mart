@@ -1,11 +1,13 @@
-
-  <!-- Navbar -->
  <?php 
+
+    include_once "./ini.php";
     include_once "./template/header.php";
+
+
  ?>
  
  
- 
+   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light nav-color">
     <div class="container">
       <a class="navbar-brand" href="index.html" title="home">
@@ -27,7 +29,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="dropdown-item" href="./product_details.html">
+                <a class="dropdown-item" href="./view/product_details.php">
                 <i class="fa fa-box-open i_color"></i>
                 <span>Product</span>
                 </a>
@@ -84,7 +86,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link cart_icon" href="./product_cart.html" title="cart">
+            <a class="nav-link cart_icon" href="<?php echo $root; ?>"roduct_cart.php" title="cart">
             <i class="fa fa-cart-plus position-relative">
                 <!-- <span class="position-absolute top-0 start-100 translate-middle p-1 rounded-circle my-cart-badge">
                 </span> -->
@@ -242,5 +244,7 @@
 
 
 <?php 
+
   include_once "./template/footer.php";
+
 ?>

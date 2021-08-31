@@ -1,17 +1,17 @@
 
 /*-----------------Frontend --------------------*/
--template
+-template folder
     header.php
     footer.php
 
--view
+-view folder
     cart.php
 
 
--user
+-user folder
 
 
--system
+-system folder
 db.php
 function.php
 
@@ -20,18 +20,18 @@ function.php
 
 
 /*-----------------Backend --------------------*/
--template
+-template folder
     header.php
     footer.php
 
--view
+-view folder
     cart.php
 
 
--user
+-user folder
 
 
--system
+-system folder
 db.php
 function.php
 
