@@ -5,7 +5,7 @@
 
 body{
     font-family: sans-serif;
-    /* background-color: rgb(255, 253, 253); */
+    background-color: rgb(255, 255, 255);
 }
 
 i{
@@ -129,6 +129,17 @@ input[type="search"]::-webkit-search-cancel-button {
     width: 30px;
     opacity: 1;
 
+}
+
+
+
+
+
+/*----------background image---------*/
+.bg_image {
+    background-color: green;
+    width: 100%;
+    height: 200px;
 }
 
 
