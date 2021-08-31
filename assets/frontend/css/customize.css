@@ -42,9 +42,16 @@ a {
 }
 
 .my-nav {
-    /* float: right; */
     margin-left: auto;
-    margin-right: 5px;
+    margin-right: 3px;
+}
+
+.navbar-nav .nav-item {
+    margin-left: 15px;
+}
+
+.navbar-nav .nav-item:first-of-type {
+    margin-left: 0;
 }
 
 .nav-item .rounded-circle {
@@ -54,6 +61,7 @@ a {
 
 .nav-item .nav-link >span {
     color: #fff;
+    margin-left:2px;
 }
 
 
@@ -1381,6 +1389,33 @@ footer > .social_media a:hover > i {
 
 @media screen and (max-width: 992px) {
 
+    /*---------index----------*/
+    .navbar-nav .nav-item {
+        margin-left: 0;
+    }
+
+    /* .navbar .navbar-collapse {
+        padding: 30px 0;
+    } */
+
+    .navbar-nav.mb-2 {
+        margin-bottom: 0 !important;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        padding: 1rem 1rem !important;
+    }
+
+
+
+
+
+
+
+
+
+
+
     /*---------product details----------*/
     .panel .preview {
         margin-bottom: 50px; 
@@ -1405,6 +1440,10 @@ footer > .social_media a:hover > i {
 @media screen and (max-width: 767px) {
 
     /*-----------index--------------*/
+    .navbar-nav .nav-item {
+        margin-left: 0;
+    }
+
     .footer_int {
         margin: 0 5%;
         flex-direction: column;
