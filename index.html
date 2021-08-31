@@ -28,7 +28,7 @@
           <input class="form-control me-2 input" type="search" placeholder="search">
       </form>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+          <i class="fas fa-ellipsis-v"></i>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -99,10 +99,14 @@
           <li class="nav-item">
             <a class="nav-link cart_icon" href="./product_cart.html" title="cart">
             <i class="fa fa-cart-plus position-relative">
-                <span class="position-absolute top-0 start-100 translate-middle p-1 rounded-circle my-cart-badge">
-                  <!-- <span class="visually-hidden">New alerts</span> -->
+                <!-- <span class="position-absolute top-0 start-100 translate-middle p-1 rounded-circle my-cart-badge">
+                </span> -->
+                <span class="position-absolute translate-middle badge rounded-pill noti">
+                  99+
+                  <span class="visually-hidden">unread messages</span>
                 </span>
             </i><span>Cart</span>
+
             </a>
           </li>
 
@@ -203,7 +207,7 @@
   <!-- Product -->
   <div class="product pt-5 pb-5">
     <div class="container-sm">
-      <div class="row mb-4" id="my_product" style="background-color: rgb(242 236 236 / 47%);; padding: 30px 0 0">
+      <div class="row mb-3" id="my_product">
 
       </div>
     
@@ -237,7 +241,7 @@
           </div>
         </div>
         <div class="modal-footer d-flex">
-          <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal" title="Box close?">Close</button>
+          <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal" title="Close Box Modal">Close</button>
           <button type="button" class="btn btn-light btn_wishlist" title="Add to Wishlist"><i class="far fa-heart"></i></button>
           <button type="button" class="btn btn-primary btn_cart" title="Add to Cart"><i class="fas fa-cart-arrow-down"></i>&nbsp;Add to Cart</button>
         </div>
@@ -250,21 +254,6 @@
   <footer class="pt-5 pb-2">
     <div class="footer_int">
       <div class="item">
-        <div class="title">CONTACTING</div>
-        <p><a href="#">About Us</a></p>
-        <p><a href="#">Core Values</a></p>
-        <p><a href="#">Careers</a></p>
-        <p><a href="#">Blog</a></p>
-        <p><a href="#">Sitemap</a></p>
-      </div>
-      <div class="item">
-        <div class="title">POLICY INFO</div>
-        <p><a href="#">Privacy Policy</a></p>
-        <p><a href="#">Terms of Sale</a></p>
-        <p><a href="#">Terms of Use</a></p>
-        <p><a href="#">Report Issue</a></p>
-      </div>
-      <div class="item">
         <div class="title">COMPANY</div>
         <p><a href="#">About Us</a></p>
         <p><a href="#">Careers</a></p>
@@ -272,6 +261,24 @@
         <p><a href="#">Blog</a></p>
         <p><a href="#">Sitemap</a></p>
       </div>
+
+      <div class="item">
+        <div class="title">POLICY INFO</div>
+        <p><a href="#">Privacy Policy</a></p>
+        <p><a href="#">Terms of Sale</a></p>
+        <p><a href="#">Terms of Use</a></p>
+        <p><a href="#">Report Issue</a></p>
+      </div>
+
+      <div class="item">
+        <div class="title">CONTACT US</div>
+        <p><a href="#">No(123), 86-B, Yangon.</a></p>
+        <p><a href="#">exampleinfo@gmail.com</a></p>
+        <p><a href="#">exampleinfo.hr@gmail.com</a></p>
+        <p><a href="#">+(95) 123-123-123</a></p>
+        <p><a href="#">+(95) 123-456-789</a></p>
+      </div>
+
       <div class="item">
         <div class="title">NEED HELP ?</div>
         <p><a href="#">FAQ</a></p>
@@ -289,10 +296,10 @@
       </div>
     </div>
     <div class="social_media">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-youtube"></i></a>
-      <a href="#"><i class="fab fa-whatsapp"></i></a>
-      <a href="#"><i class="fab fa-viber"></i></a>
+      <a href="#" title="facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" title="youtube"><i class="fab fa-youtube"></i></a>
+      <a href="#" title="whatsapp"><i class="fab fa-whatsapp"></i></a>
+      <a href="#" title="viber"><i class="fab fa-viber"></i></a>
     </div>
     <hr>
 
