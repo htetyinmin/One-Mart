@@ -1,0 +1,40 @@
+
+/*-----------------Frontend --------------------*/
+-template
+    header.php
+    footer.php
+
+-view
+    cart.php
+
+
+-user
+
+
+-system
+db.php
+function.php
+
+
+
+
+
+/*-----------------Backend --------------------*/
+-template
+    header.php
+    footer.php
+
+-view
+    cart.php
+
+
+-user
+
+
+-system
+db.php
+function.php
+
+
+login
+
