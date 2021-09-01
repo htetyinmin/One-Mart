@@ -1,244 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>POS</title>
+<?php 
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  include_once "../template/header.php";
 
-  <!-- Fontawsome CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-
-  <!-- Style CSS -->
-  <link rel="stylesheet" href="./assets/frontend/css/customize.css">
-
-</head>
-<body>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light nav-color">
-    <div class="container">
-      <a class="navbar-brand" href="index.html" title="home">
-          <i class="fa fa-home"></i>
-      </a>
-      <form class="d-flex">
-          <input class="form-control me-2 input" type="search" placeholder="search">
-      </form>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fas fa-ellipsis-v"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" title="category">
-            <i class="fa fa-list-ul"></i>
-            <span>Category</span>
-            </a>
-            <ul class="dropdown-menu">
-            <li>
-                <a class="dropdown-item" href="./product_details.html">
-                <i class="fa fa-box-open i_color"></i>
-                <span>Product</span>
-                </a>
-            </li>
-            <li>
-                <a class="dropdown-item" href="#">
-                <i class="fa fa-pizza-slice i_color"></i>
-                <span>Food</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="dropdown-item">
-                <i class="fa fa-tshirt i_color"></i>
-                <span>Fashion</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="dropdown-item">
-                <i class="fa fa-capsules i_color"></i>
-                <span>Health & Beauty</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="dropdown-item">
-                <i class="fa fa-laptop i_color"></i>
-                <span>Electronic Devices</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="dropdown-item">
-                <i class="fa fa-fan i_color"></i>
-                <span>Home Accessories</span>
-                </a>
-            </li>
-            </ul>
-          </li>
-     
-          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" title="sale">
-              <i class="fa fa-tags"></i>
-              <span>Payment</span>
-              </a>
-              <ul class="dropdown-menu">
-              <li>
-                  <a class="dropdown-item" href="#">
-                  <i class="fa fa-money-check-alt i_color"></i>
-                  <span>Payment</span>
-              </a>
-              </li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link cart_icon" href="./product_cart.html" title="cart">
-            <i class="fa fa-cart-plus position-relative">
-                <!-- <span class="position-absolute top-0 start-100 translate-middle p-1 rounded-circle my-cart-badge">
-                </span> -->
-                <span class="position-absolute translate-middle badge rounded-pill noti">
-                  99+
-                  <span class="visually-hidden">unread messages</span>
-                </span>
-            </i><span>Cart</span>
-
-            </a>
-          </li>
-
-          </ul>
-
-          <ul class="navbar-nav my-nav">
-          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" title="manage account">
-                <i class="fa fa-users-cog"></i>
-                <span class="f_color">Kyaw Min Tun</span>
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                    <a class="dropdown-item" href="./profile.html">
-                    <i class="fa fa-user i_color"></i>
-                    <span>Profile</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="./register.html">
-                      <i class="fa fa-sign-in-alt i_color"></i>
-                      <span>SignUp</span>
-                    </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="./login.html">
-                  <i class="fa fa-sign-in-alt i_color"></i>
-                  <span>Login</span>
-                  </a>
-                </li>
-                <li><hr class="dropdown-divider"></li>
-                <li>
-                    <a class="dropdown-item" href="#">
-                    <i class="fa fa-sign-out-alt i_color"></i>
-                    <span>Logout</span>
-                    </a>
-                </li>
-              </ul>
-          </li>
-          </ul>
-      </div>
-    </div>
-  </nav>
+?>
 
 
-    <!-- login -->
-    <div class="container form-ui my-5">
-        <div class="col-md-5 col-xs-12 mx-auto py-5 px-4 form">
-            <h1>Sign In</h1>
-            <form action="./login.html" method="post">
-                <div class="form-group mb-3">
-                    <label for="myemail">Email Address*</label>
-                    <input type="email" class="form-control" name="email" id="myemail" placeholder="phone number, username or email" autocomplete="off">
-                </div>
-                <div class="form-group mb-3">
-                    <label for="mypassword">Password*</label>
-                    <input type="password" class="form-control" name="password" id="mypassword" placeholder="password" autocomplete="off">
-                    </div>
-                <div class="col-12 mt-4 mb-5">
-                    <button type="submit" name="signin" class="btn btn-primary float-end">Login</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-
-
-  <!-- footer -->
-  <footer class="pt-5 pb-2">
-    <div class="footer_int">
-      <div class="item">
-        <div class="title">COMPANY</div>
-        <p><a href="#">About Us</a></p>
-        <p><a href="#">Careers</a></p>
-        <p><a href="#">Contact</a></p>
-        <p><a href="#">Blog</a></p>
-        <p><a href="#">Sitemap</a></p>
-      </div>
-
-      <div class="item">
-        <div class="title">POLICY INFO</div>
-        <p><a href="#">Privacy Policy</a></p>
-        <p><a href="#">Terms of Sale</a></p>
-        <p><a href="#">Terms of Use</a></p>
-        <p><a href="#">Report Issue</a></p>
-      </div>
-
-      <div class="item">
-        <div class="title">CONTACT US</div>
-        <p><a href="#">No(123), 86-B, Yangon.</a></p>
-        <p><a href="#">exampleinfo@gmail.com</a></p>
-        <p><a href="#">exampleinfo.hr@gmail.com</a></p>
-        <p><a href="#">+(95) 123-123-123</a></p>
-        <p><a href="#">+(95) 123-456-789</a></p>
-      </div>
-
-      <div class="item">
-        <div class="title">NEED HELP ?</div>
-        <p><a href="#">FAQ</a></p>
-        <p><a href="#">Contact</a></p>
-        <p><a href="#">Online Shoping</a></p>
-        <p><a href="#">Report Issue</a></p>
-      </div>
-      <div class="item">
-        <div class="title">SUBSCRIBE</div>
-          <form>
-            <input type="email" name="email" id="" placeholder="your email address" required autocomplete="off">
-            <input type="submit" value="Subscribe">
+  <!-- login -->
+  <div class="container form-ui my-5">
+      <div class="col-md-5 col-xs-12 mx-auto py-5 px-4 form">
+          <h1>Sign In</h1>
+          <form action="./login.html" method="post">
+              <div class="form-group mb-3">
+                  <label for="myemail">Email Address*</label>
+                  <input type="email" class="form-control" name="email" id="myemail" placeholder="phone number, username or email" autocomplete="off">
+              </div>
+              <div class="form-group mb-3">
+                  <label for="mypassword">Password*</label>
+                  <input type="password" class="form-control" name="password" id="mypassword" placeholder="password" autocomplete="off">
+                  </div>
+              <div class="col-12 mt-4 mb-5">
+                  <button type="submit" name="signin" class="btn btn-primary float-end">Login</button>
+              </div>
           </form>
-          <span>Register now to get updates on promotions and coupons.</span>
       </div>
-    </div>
-    <div class="social_media">
-      <a href="#" title="facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" title="youtube"><i class="fab fa-youtube"></i></a>
-      <a href="#" title="whatsapp"><i class="fab fa-whatsapp"></i></a>
-      <a href="#" title="viber"><i class="fab fa-viber"></i></a>
-    </div>
-    <hr>
+  </div>
 
-    <!-- copyright -->
-    <div class="copyright">
-      &copy;&nbsp;2021-<script>var d = new Date();document.write(d.getFullYear());</script>. All right reserved.
-    </div>
 
-  </footer>
-  
-  
-    <!-- javascript code -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-  
-</body>
-</html>
+
+
+<?php 
+
+  include_once "../template/footer.php";
+
+?>

@@ -1,31 +1,3 @@
-// load content
-$(document).ready(function () {
-
-    function loadDoc() {
-        $("#contents").load("./user_profile.html");
-    }
-    loadDoc();
-
-    $("#UserPro").click(function() {
-        loadDoc();
-    });
-    $("#UserAcc").click(function() {
-        $("#contents").load("./user_account.html");
-    });
-    $("#UserOrd").click(function() {
-        $("#contents").load("./order_history.html");
-    });
-    $("#UserWlist").click(function () {
-        $("#contents").load("./user_wishlist.html");
-    });
-    $("#UserTicket").click(function () {
-        $("#contents").load("./user_ticket.html");
-    });
-
-});
-
-
-
 function displayProduct() {
     $.ajax({
 

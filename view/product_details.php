@@ -1,35 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>One Mart</title>
+<?php 
 
-  <!-- Bootstrap CSS (V-5.1.0) -->
-  <link rel="stylesheet" href="./assets/frontend/css/bootstrap.min.css">
+    include_once "../template/header.php";
 
-  <!-- Fontawsome CSS (V-5.15.4) -->
-  <link rel="stylesheet" href="./assets/frontend/css/all.min.css">
-
-  <!-- Style CSS -->
-  <link rel="stylesheet" href="./assets/frontend/css/customize.css">
-
-</head>
-<body>
+?>
 
 
-  <!-- Breadcrumb -->
-  <div class="bd_crumb">
-      <div class="container">
-        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-          <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Profile</li>
-          </ol>
+<!-- background image -->
+<div class="bg_image">
+    <!-- Breadcrumb -->
+    <div class="bd_crumb">
+        <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Library</li>
+            </ol>
         </nav>
-      </div>
-  </div>
+        <!-- <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Profile</li>
+            </ol>
+        </nav>-->
+        </div>
+    </div> 
+</div>
 
 
   <!-- product details -->
@@ -40,18 +35,18 @@
                   <div class="preview col-lg-6">
                       
                       <div class="preview-pic tab-content">
-                        <div class="tab-pane active" id="pic-1"><img src="./assets/frontend/img/product/device.jpg" /></div>
-                        <div class="tab-pane" id="pic-2"><img src="./assets/frontend/img/product/laptop-11.jpg" /></div>
-                        <div class="tab-pane" id="pic-3"><img src="./assets/frontend/img/product/device.jpg" /></div>
-                        <div class="tab-pane" id="pic-4"><img src="./assets/frontend/img/product/laptopfordesign.jpg" /></div>
-                        <div class="tab-pane" id="pic-5"><img src="./assets/frontend/img/product/device.jpg" /></div>
+                        <div class="tab-pane active" id="pic-1"><img src="../assets/frontend/img/product/device.jpg" /></div>
+                        <div class="tab-pane" id="pic-2"><img src="../assets/frontend/img/product/laptop-11.jpg" /></div>
+                        <div class="tab-pane" id="pic-3"><img src="../assets/frontend/img/product/device.jpg" /></div>
+                        <div class="tab-pane" id="pic-4"><img src="../assets/frontend/img/product/laptopfordesign.jpg" /></div>
+                        <div class="tab-pane" id="pic-5"><img src="../assets/frontend/img/product/device.jpg" /></div>
                       </div>
                       <ul class="preview-thumbnail nav nav-tabs">
-                        <li class="active"><a data-bs-target="#pic-1" data-bs-toggle="tab"><img src="./assets/frontend/img/product/device.jpg" /></a></li>
-                        <li><a data-bs-target="#pic-2" data-bs-toggle="tab"><img src="./assets/frontend/img/product/laptop-11.jpg" /></a></li>
-                        <li><a data-bs-target="#pic-3" data-bs-toggle="tab"><img src="./assets/frontend/img/product/device.jpg" /></a></li>
-                        <li><a data-bs-target="#pic-4" data-bs-toggle="tab"><img src="./assets/frontend/img/product/laptopfordesign.jpg" /></a></li>
-                        <li><a data-bs-target="#pic-5" data-bs-toggle="tab"><img src="./assets/frontend/img/product/device.jpg" /></a></li>
+                        <li class="active"><a data-bs-target="#pic-1" data-bs-toggle="tab"><img src="../assets/frontend/img/product/device.jpg" /></a></li>
+                        <li><a data-bs-target="#pic-2" data-bs-toggle="tab"><img src="../assets/frontend/img/product/laptop-11.jpg" /></a></li>
+                        <li><a data-bs-target="#pic-3" data-bs-toggle="tab"><img src="../assets/frontend/img/product/device.jpg" /></a></li>
+                        <li><a data-bs-target="#pic-4" data-bs-toggle="tab"><img src="../assets/frontend/img/product/laptopfordesign.jpg" /></a></li>
+                        <li><a data-bs-target="#pic-5" data-bs-toggle="tab"><img src="../assets/frontend/img/product/device.jpg" /></a></li>
                       </ul>
                       
                   </div>
@@ -93,9 +88,8 @@
 
 
 
-  <!-- javascript code -->
-  <script src="../assets/frontend/js/jquery-3.6.0.js"></script>
-  <script src="../assets/frontend/js/bootstrap-5.1.0.min.js"></script>
-  <script src="../assets/frontend/js/app.js"></script>
-</body>
-</html>
+<?php 
+    
+    include_once "../template/footer.php";
+
+?>
