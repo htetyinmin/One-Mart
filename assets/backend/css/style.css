@@ -22,9 +22,7 @@ a:hover{
     top: 0;
     background: var(--light);
 }
-.nav-menu{
 
-}
 .nav-menu ul{
     list-style-type: none;
     margin:0;
