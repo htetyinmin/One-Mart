@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,9 +7,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="../assets/backend/vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/backend/vendor/feather-icons-web/feather.css">
-    <link rel="stylesheet" href="../assets/backend/css/style.css">
+    <link rel="stylesheet" href="../../assets/backend/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/backend/vendor/feather-icons-web/feather.css">
+    <link rel="stylesheet" href="../../assets/backend/css/style.css">
 </head>
 <body>
 
@@ -30,21 +31,20 @@
                 <div class="nav-menu">
                     <ul>
                         <li class="menu-item">
-                            <a href="dashboard.html" class="menu-item-link">
+                            <a href="dashboard.php" class="menu-item-link">
                                 <span>
                                     <i class="feather-home"></i>
                                     Dashboard
                                 </span>
                             </a>
                         </li>
-    
                         <li class="menu-spacer"><hr></li>
 
                         <li class="menu-title">
                             <span>Manage Products</span>
                         </li>
                         <li class="menu-item">
-                            <a href="item_add.html" class="menu-item-link">
+                            <a href="item_add.php" class="menu-item-link">
                                 <span>
                                     <i class="feather-plus-circle"></i>
                                     Add Items
@@ -52,7 +52,7 @@
                             </a>
                         </li>
                         <li class="menu-item">
-                            <a href="item_list.html" class="menu-item-link">
+                            <a href="item_list.php" class="menu-item-link">
                                 <span>
                                     <i class="feather-list"></i>
                                     Items List
@@ -62,7 +62,7 @@
                         </li>
                         <hr>
                         <li class="menu-item">
-                            <a href="subcategory_add.html" class="menu-item-link active">
+                            <a href="subcategory_add.php" class="menu-item-link">
                                 <span>
                                     <i class="feather-plus-circle"></i>
                                     Add Subcategory
@@ -70,7 +70,7 @@
                             </a>
                         </li>
                         <li class="menu-item">
-                            <a href="subcategory_list.html" class="menu-item-link">
+                            <a href="subcategory_list.php" class="menu-item-link">
                                 <span>
                                     <i class="feather-list"></i>
                                     Subcategory List
@@ -80,7 +80,7 @@
                         </li>
                         <hr>
                         <li class="menu-item">
-                            <a href="category_add.html" class="menu-item-link">
+                            <a href="category_add.php" class="menu-item-link">
                                 <span>
                                     <i class="feather-plus-circle"></i>
                                     Add Category
@@ -88,7 +88,7 @@
                             </a>
                         </li>
                         <li class="menu-item">
-                            <a href="category_list.html" class="menu-item-link">
+                            <a href="category_list.php" class="menu-item-link">
                                 <span>
                                     <i class="feather-list"></i>
                                     Category List
@@ -98,7 +98,7 @@
                         </li>
                         <hr>
                         <li class="menu-item">
-                            <a href="brand_add.html" class="menu-item-link">
+                            <a href="brand_add.php" class="menu-item-link">
                                 <span>
                                     <i class="feather-plus-circle"></i>
                                     Add Brand
@@ -106,7 +106,7 @@
                             </a>
                         </li>
                         <li class="menu-item">
-                            <a href="brand_list.html" class="menu-item-link">
+                            <a href="brand_list.php" class="menu-item-link">
                                 <span>
                                     <i class="feather-list"></i>
                                     Brand List
@@ -120,7 +120,7 @@
                             <span>Manage Users</span>
                         </li>
                         <li class="menu-item">
-                            <a href="user_list.html" class="menu-item-link">
+                            <a href="user_list.php" class="menu-item-link">
                                 <span>
                                     <i class="feather-list"></i>
                                     User List
@@ -151,7 +151,7 @@
                             </form>
                             <div class="dropdown">
                                 <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img src="../assets/backend/img/user/profile.jpg" class="user-img shadow-sm" alt=""> Kyaw Win Tun
+                                    <img src="../../assets/backend/img/user/profile.jpg" class="user-img shadow-sm" alt=""> Kyaw Win Tun
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item" href="#">Profile</a>
@@ -163,91 +163,3 @@
                         </div>
                     </div>
                 </div>
-                <!--content Area Start-->
-            <div class="row">
-                  <div class="col-12">
-                      <nav aria-label="breadcrumb">
-                          <ol class="breadcrumb bg-white mb-4">
-                              <li class="breadcrumb-item"><a href="dashboard.html" class="text-success">Home</a></li>
-                              <li class="breadcrumb-item"><a href="brand_list.html" class="text-success">Item</a></li>
-                              <li class="breadcrumb-item text-success active" aria-current="page">Add Item</li>
-                          </ol>
-                      </nav>
-                  </div>
-              </div>
-              <div class="row">
-                  <div class="col-12">
-                      <div class="card mb-4">
-                          <div class="card-body">
-                              <div class="d-flex justify-content-between align-items-center">
-                                  <h4 class="mb-0">
-                                    Add Item
-                                  </h4>
-                                  <a href="subcategory_list.html" class="btn btn-outline-success">
-                                      <i class="feather-list"></i>
-                                  </a>
-                              </div>
-                              <hr>
-                              <form action="#" method="post">
-                                  <div class="row">
-                                      <div class="col-12 col-md-6">
-                                          <div class="form-group">
-                                              <label for="photo">
-                                                  Photo Upload
-                                              </label>
-                                              <i class="feather-info" data-container="body" data-toggle="popover" data-placement="top" data-content="Only Support Jpg, Png"></i>
-  
-                                              <input type="file" name="photo" id="photo" class="form-control p-1" required>
-                                          </div>
-                                          <div class="form-group">
-                                              <label for="name">Item Name</label>
-                                              <input type="text" id="name" name="name" class="form-control">
-                                          </div>
-                                          <div class="form-group">
-                                              <label for="t">Brand</label>
-                                              <select name="type" class="form-control custom-select" id="t">
-                                                  <option value="0">Addidas</option>
-                                                  <option value="1">Polo</option>
-                                              </select>
-                                          </div>
-                                    </div>
-                                    <div class="col-12 col-md-6">
-                                          <div class="form-group">
-                                                <label for="c">Category</label>
-                                                <select name="type" class="form-control custom-select" id="c">
-                                                <option value="" selected>Select Category</option>
-                                                </select>
-                                          </div>
-                                          <div class="form-group">
-                                                <label for="sc">Sub Category</label>
-                                                <select name="type" class="form-control custom-select" id="sc">
-                                                <option value="" selected>Select SubCategory</option>
-                                                </select>
-                                          </div>
-                                          <div class="my-5">
-                                                <button class="btn btn-success"><i class="feather-save"></i>&nbsp; Save</button>
-                                          </div>
-                                    </div>
-                              </div>
-                              <hr>
-                        </form>
-                  </div>
-            </div>
-                  </div>
-              </div>
-              <!--content Area Start-->
-
-            </div>
-        </div>
-    </section>
-
-    <script src="../assets/backend/vendor/jquery.min.js"></script>
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="../assets/backend/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/backend/vendor/data_table/jquery.dataTables.min.js"></script>
-    <script src="../assets/backend/vendor/data_table/dataTables.bootstrap4.min.js"></script>
-    <script src="../assets/backend/js/app.js"></script>
-
-<script src="js/dashboard.js"></script>
-</body>
-</html>
