@@ -1,6 +1,45 @@
 <?php
-      include_once "../template/header.php";
+
+    include_once "../template/header.php";
+    include_once "../system/function.php";
+
+
+
+    if(isset($_POST['submit'])) {
+
+        $name = $_POST['name'];
+        $photo = $_FILES['file'];
+
+
+        if(empty($name)) {
+            echo "Please fil brand name!";
+        }
+
+        if(empty($photo['tmp_name'])) {
+            echo "Please choose photo!";
+        }
+
+
+        $imageLink = mt_rand(time(), time()) + mt_rand(time(), time()) . "_" . $photo['name'];
+        move_uploaded_file($photo['tmp_name'], "../uploads/". $imageLink);
+
+    
+        $sql = "INSERT INTO brand(name, photo) VALUES (?, ?)";
+        $res = myQuery($sql, [$name, $imageLink]);
+
+
+
+    }
+
+
+
 ?>
+
+
+
+
+
+
 
             <!--content Area Start-->
             <div class="row">
@@ -14,6 +53,7 @@
                       </nav>
                   </div>
               </div>
+
               <div class="row">
                   <div class="col-12">
                       <div class="card mb-4">
@@ -27,7 +67,8 @@
                                   </a>
                               </div>
                               <hr>
-                              <form action="#" method="post">
+
+                              <form action="<?php $_PHP_SELF ?>" method="post" enctype="multipart/form-data">
                                   <div class="row">
                                       <div class="col-12 col-md-6">
                                           <div class="form-group">
@@ -36,26 +77,30 @@
                                               </label>
                                               <i class="feather-info" data-container="body" data-toggle="popover" data-placement="top" data-content="Only Support Jpg, Png"></i>
   
-                                              <input type="file" name="photo" id="photo" class="form-control p-1" required>
+                                              <input type="file" name="file" id="photo" class="form-control p-1">
                                           </div>
+
                                           <div class="form-group">
                                               <label for="name">Brand Name</label>
                                               <input type="text" id="name" name="name" class="form-control">
                                           </div>
-                                          <button class="btn btn-success"><i class="feather-save"></i>&nbsp; Save</button>
-                                    </div>
+
+                                          <button type="submit" name="submit" class="btn btn-success">
+                                              <i class="feather-save"></i>&nbsp; Save
+                                          </button>
+                                      </div>
                                     
-                              </div>
-                              <hr>
-                        </form>
+                                  </div>
+                                <hr>
+                              </form>
                   </div>
-            </div>
+                </div>
                   </div>
               </div>
               <!--content Area Start-->
 
-            </div>
-        </div>
+            <!-- </div>
+        </div> -->
 <?php
     include_once "../template/footer.php";
 ?>
