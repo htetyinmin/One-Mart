@@ -1,6 +1,6 @@
  <?php 
 
-    include_once "./template/header.php";
+    include_once "template/header.php";
 
  ?>
  
@@ -13,25 +13,25 @@
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="./assets/frontend/img/slider/slider1.png" class="d-block w-100" alt="slider image">
+          <img src="assets/frontend/img/slider/slider1.png" class="d-block w-100" alt="slider image">
         </div>
         <div class="carousel-item">
-          <img src="./assets/frontend/img/slider/slider2.png" class="d-block w-100" alt="slider image">
+          <img src="assets/frontend/img/slider/slider2.png" class="d-block w-100" alt="slider image">
         </div>
         <div class="carousel-item">
-          <img src="./assets/frontend/img/slider/slider3.jpg" class="d-block w-100" alt="slider image">
+          <img src="assets/frontend/img/slider/slider3.jpg" class="d-block w-100" alt="slider image">
         </div>
         <div class="carousel-item">
-          <img src="./assets/frontend/img/slider/slider4.jpg" class="d-block w-100" alt="slider image">
+          <img src="assets/frontend/img/slider/slider4.jpg" class="d-block w-100" alt="slider image">
         </div>
         <div class="carousel-item">
-          <img src="./assets/frontend/img/slider/slider5.png" class="d-block w-100" alt="slider image">
+          <img src="assets/frontend/img/slider/slider5.png" class="d-block w-100" alt="slider image">
         </div>
         <div class="carousel-item">
-          <img src="./assets/frontend/img/slider/slider6.jpg" class="d-block w-100" alt="slider image">
+          <img src="assets/frontend/img/slider/slider6.jpg" class="d-block w-100" alt="slider image">
         </div>
         <div class="carousel-item">
-          <img src="./assets/frontend/img/slider/slider7.png" class="d-block w-100" alt="slider image">
+          <img src="assets/frontend/img/slider/slider7.png" class="d-block w-100" alt="slider image">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -49,13 +49,13 @@
   <!-- product ad -->
   <div class="product_ad">
     <div class="ad ad_one">
-      <img src="./assets/frontend/img/promotion/promo.jpg" alt="promotion" width="100%" height="100%" >
+      <img src="assets/frontend/img/promotion/promo.jpg" alt="promotion" width="100%" height="100%" >
     </div>
     <div class="ad ad_two">
-      <img src="./assets/frontend/img/promotion/big_sale.jpg" alt="promotion" width="100%" height="100%">
+      <img src="assets/frontend/img/promotion/big_sale.jpg" alt="promotion" width="100%" height="100%">
     </div>
     <div class="ad ad_three">
-      <img src="./assets/frontend/img/promotion/weekly_promo.jpg" alt="promotion" width="100%" height="100%">
+      <img src="assets/frontend/img/promotion/weekly_promo.jpg" alt="promotion" width="100%" height="100%">
     </div>
   </div>
 
@@ -112,6 +112,6 @@
 
 <?php 
 
-  include_once "./template/footer.php";
+  include_once "template/footer.php";
 
 ?>
