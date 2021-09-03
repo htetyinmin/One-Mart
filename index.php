@@ -4,7 +4,7 @@
     include_once "admin/system/db.php";
 
 
-    dbConnect();
+    // dbConnect();
 
  ?>
  

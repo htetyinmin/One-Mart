@@ -1,5 +1,25 @@
 <?php
       include_once "../template/header.php";
+
+      include_once "../system/function.php";
+
+      if(isset($_POST["submit"])){
+
+        $name = $_POST['name'];
+
+        if(empty($_POST["name"])){
+            echo "Please Enter Category Name ....";
+        }
+
+        $sql = "INSERT INTO categories (name) values (?)";
+        $res = myQuery($sql, [$name]);
+
+        if($res){
+            echo "Category Add Successfully!";
+        }else{
+            echo "Category Add Unsuccessfully, Please Try Again!";
+        }
+      }
 ?>
 
                 <!--content Area Start-->
@@ -27,22 +47,22 @@
                                   </a>
                               </div>
                               <hr>
-                              <form action="#" method="post">
+                              <form action="<?php $_PHP_SELF ?>" method="post">
                                   <div class="row">
                                       <div class="col-12 col-md-6">
-                                          <div class="form-group">
+                                          <!-- <div class="form-group">
                                               <label for="photo">
                                                   Photo Upload
                                               </label>
                                               <i class="feather-info" data-container="body" data-toggle="popover" data-placement="top" data-content="Only Support Jpg, Png"></i>
   
                                               <input type="file" name="photo" id="photo" class="form-control p-1" required>
-                                          </div>
+                                          </div> -->
                                           <div class="form-group">
                                               <label for="name">Category Name</label>
                                               <input type="text" id="name" name="name" class="form-control">
                                           </div>
-                                          <button class="btn btn-success"><i class="feather-save"></i>&nbsp; Save</button>
+                                          <button class="btn btn-success" type="submit" name="submit"><i class="feather-save"></i>&nbsp; Save</button>
                                     </div>
                               </div>
                               <hr>

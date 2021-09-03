@@ -1,5 +1,37 @@
 <?php
       include_once "../template/header.php";
+      include_once "../system/function.php";
+      
+      if(isset($_POST['submit'])) {
+          
+          $name = $_POST['name'];
+          $photo = $_FILES['file'];
+          $category = $_POST['category'];
+        //   var_dump($category);
+
+        if(empty($name)) {
+            echo "Please fil subcategoy name!";
+        }
+
+        if(empty($photo['tmp_name'])) {
+            echo "Please choose photo!";
+        }
+
+
+        $imageLink = mt_rand(time(), time()) + mt_rand(time(), time()) . "_" . $photo['name'];
+        move_uploaded_file($photo['tmp_name'], "../uploads/". $imageLink);
+
+    
+        $sql = "INSERT INTO subcategories(name, photo, category_id) VALUES (?, ?, ?)";
+        $res = myQuery($sql, [$name, $imageLink, $category]);
+        
+        echo $res;
+        
+        
+        
+    }
+    $cate = "SELECT * FROM categories";
+    $category = getItems($cate);
 ?>
 
                 <!--content Area Start-->
@@ -27,7 +59,7 @@
                                   </a>
                               </div>
                               <hr>
-                              <form action="#" method="post">
+                              <form action="<?php $_PHP_SELF ?>" method="post" enctype="multipart/form-data">
                                   <div class="row">
                                       <div class="col-12 col-md-6">
                                           <div class="form-group">
@@ -36,35 +68,27 @@
                                               </label>
                                               <i class="feather-info" data-container="body" data-toggle="popover" data-placement="top" data-content="Only Support Jpg, Png"></i>
   
-                                              <input type="file" name="photo" id="photo" class="form-control p-1" required>
+                                              <input type="file" name="file" id="photo" class="form-control p-1" required>
                                           </div>
                                           <div class="form-group">
                                               <label for="name">Item Name</label>
                                               <input type="text" id="name" name="name" class="form-control">
                                           </div>
-                                          <div class="form-group">
-                                              <label for="t">Brand</label>
-                                              <select name="type" class="form-control custom-select" id="t">
-                                                  <option value="0">Addidas</option>
-                                                  <option value="1">Polo</option>
-                                              </select>
-                                          </div>
                                     </div>
                                     <div class="col-12 col-md-6">
                                           <div class="form-group">
                                                 <label for="c">Category</label>
-                                                <select name="type" class="form-control custom-select" id="c">
+                                                <select name="category" class="form-control custom-select" id="c">
                                                 <option value="" selected>Select Category</option>
-                                                </select>
-                                          </div>
-                                          <div class="form-group">
-                                                <label for="sc">Sub Category</label>
-                                                <select name="type" class="form-control custom-select" id="sc">
-                                                <option value="" selected>Select SubCategory</option>
+                                                <?php 
+                                                    foreach($category as $cate){
+                                                        echo "<option value='$cate->id'>$cate->name</option>";
+                                                    }
+                                                ?>
                                                 </select>
                                           </div>
                                           <div class="my-5">
-                                                <button class="btn btn-success"><i class="feather-save"></i>&nbsp; Save</button>
+                                                <button class="btn btn-success" name="submit" type="submit"><i class="feather-save"></i>&nbsp; Save</button>
                                           </div>
                                     </div>
                               </div>

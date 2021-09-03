@@ -1,5 +1,9 @@
 <?php
       include_once "../template/header.php";
+      include_once "../system/function.php";
+
+      $sql = "SELECT * FROM categories";
+      $categoryAll = getItems($sql);
 ?>
 
             <!--content Area Start-->
@@ -35,26 +39,30 @@
                                 <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th>Photo</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>Books</td>
-                                    <td>
-                                        <img src="../../assets/backend/img/item/item3.png" width="70" height="100" alt="Cover">
-                                    </td>
-                                    <td>
-                                        <a href="#" class="bg"><i class="feather-edit text-success"></i></a>
-                                        <a href="#" class="bg"><i class="feather-trash-2 text-danger"></i></a>
-                                    </td>
-                                </tr>
+
+                                <?php
+                                
+                                foreach($categoryAll as $key=>$value){
+                                
+                                ?>
+                                    <tr>
+                                        <td><?= $value->name; ?></td>
+                                        <td>
+                                            <a href="#" class="bg"><i class="feather-edit text-success"></i></a>
+                                            <a href="#" class="bg"><i class="feather-trash-2 text-danger"></i></a>
+                                        </td>
+                                    </tr>
+
+                                <?php } ?>
+                                
                                 </tbody>
                                 <tfoot>
                                 <tr>
                                     <th>Name</th>
-                                    <th>Photo</th>
                                     <th>Action</th>
                                 </tr>
                                 </tfoot>
