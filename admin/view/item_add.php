@@ -1,5 +1,32 @@
 <?php
-      include_once "../template/header.php";
+    include_once "../template/header.php";
+    include_once "../system/function.php";
+    
+    if(isset($_POST['submit'])) {
+        $codeno = $_POST['codeno'];
+        $name = $_POST['name'];
+        $photo = $_FILES['photo'];
+        $brand = $_POST['brand'];
+        $subcategory = $_POST['subcategory'];
+        $price = $_POST['price'];
+        $discount = $_POST['discount'];
+        $description = $_POST['description'];
+        // var_dump($photo);die();
+
+        $imageLink = mt_rand(time(), time()) + mt_rand(time(), time()) . "_" . $photo['name'];
+        move_uploaded_file($photo['tmp_name'], "../uploads/". $imageLink);
+
+        $sql = "INSERT INTO items(codeno, name, photo, brand_id, subcategory_id, price, discount,description) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        $querry = myQuery($sql, [$codeno, $name, $imageLink, $brand, $subcategory, $price, $discount, $description]);
+        
+        // echo $querry;  
+    }
+
+    $select_brand = "SELECT * FROM brand";
+    $brands = getItems($select_brand);
+
+    $select_subcategory = "SELECT * FROM subcategories";
+    $subcategories = getItems($select_subcategory);
 ?>
 
                 <!--content Area Start-->
@@ -27,9 +54,17 @@
                                   </a>
                             </div>
                             <hr>
-                            <form action="#" method="post">
+                            <form action="<?php $_PHP_SELF ?>" method="post" enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="col-12 col-md-6">
+                                        <div class="form-group">
+                                              <label for="name">Code No.</label>
+                                              <input type="text" id="codeno" name="codeno" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                              <label for="name">Item Name</label>
+                                              <input type="text" id="name" name="name" class="form-control">
+                                        </div>
                                         <div class="form-group">
                                               <label for="photo">
                                                   Photo Upload
@@ -39,26 +74,31 @@
                                               <input type="file" name="photo" id="photo" class="form-control p-1" required>
                                         </div>
                                         <div class="form-group">
-                                              <label for="name">Item Name</label>
-                                              <input type="text" id="name" name="name" class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                              <label for="t">Brand</label>
-                                              <select name="type" class="form-control custom-select" id="t">
-                                                  <option value="0">Addidas</option>
-                                                  <option value="1">Polo</option>
+                                              <label for="brand">Brand</label>
+                                              <select name="brand" class="form-control custom-select" id="brand">
+                                                  <option value="0" selected>Choose Brand</option>
+                                                  <?php 
+                                                        foreach($brands as $brand){
+                                                            echo "<option value='$brand->id'>$brand->name</option>";
+                                                        }
+                                                   ?>
                                               </select>
                                         </div>
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                               <label for="c">Category</label>
                                               <select name="type" class="form-control custom-select" id="c">
                                                   <option value="" selected>Select Category</option>
                                               </select>
-                                        </div>
+                                        </div> -->
                                         <div class="form-group">
-                                              <label for="sc">Sub Category</label>
-                                              <select name="type" class="form-control custom-select" id="sc">
-                                                  <option value="" selected>Select SubCategory</option>
+                                              <label for="subcategory">Subcategory</label>
+                                              <select name="subcategory" class="form-control custom-select" id="subcategory">
+                                                  <option value="0" selected>Choose Subcategory</option>
+                                                  <?php 
+                                                        foreach($subcategories as $sub){
+                                                            echo "<option value='$sub->id'>$sub->name</option>";
+                                                        }
+                                                   ?>
                                               </select>
                                         </div>
                                     </div>
@@ -68,14 +108,14 @@
                                               <input type="number" id="price" name="price" class="form-control">
                                           </div>
                                           <div class="form-group">
-                                              <label for="price">Discount</label>
-                                              <input type="number" id="price" name="price" class="form-control">
+                                              <label for="discount">Discount</label>
+                                              <input type="number" id="discount" name="discount" class="form-control">
                                           </div>
                                           <div class="form-group">
-                                              <label for="des">Description</label>
-                                              <textarea type="text" id="des" name="des" rows="6" class="form-control"></textarea>
+                                              <label for="description">Description</label>
+                                              <textarea type="text" id="description" name="description" rows="6" class="form-control"></textarea>
                                           </div>
-                                          <button class="btn btn-success"><i class="feather-save"></i>&nbsp; Save</button>
+                                          <button class="btn btn-success" name="submit" type="submit"><i class="feather-save"></i>&nbsp; Save</button>
                                     </div>
                                 </div>
                               <hr>
