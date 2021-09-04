@@ -11,7 +11,7 @@
         $price = $_POST['price'];
         $discount = $_POST['discount'];
         $description = $_POST['description'];
-        // var_dump($photo);die();
+        // var_dump($brand);die();
 
         $imageLink = mt_rand(time(), time()) + mt_rand(time(), time()) . "_" . $photo['name'];
         move_uploaded_file($photo['tmp_name'], "../uploads/". $imageLink);

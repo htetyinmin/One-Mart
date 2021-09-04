@@ -3,7 +3,11 @@
     include_once "../system/function.php";
 
     $sql = "SELECT * FROM items";
+    // $sql="SELECT it.id, it.codeno, it.name, it.photo, it.price, it.discount, it.description, b.name AS brand_name
+	// 			from items it JOIN brand b ON it.brand_id=b.id ";
     $items = getItems($sql);
+    // var_dump($items); die();
+    
 ?>
 
             <!--content Area Start-->
@@ -46,26 +50,28 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-
                                     <?php foreach($items as $item){ ?>
-
+                                    <tr>
                                         <td><?= $item->codeno ?></td>
                                         <td><?= $item->name ?></td>
                                         <td>
                                             <img src="../uploads/<?= $item->photo ?>" width="100" height="100" alt="Cover">
                                         </td>
                                         <td>
-                                            <span><?= $item->price ?> KS</span><br>
-                                            <span><del><?= $item->discount ?></del></span>
+                                            <?php if ($item->discount == null) { ?>
+                                                <span><?= $item->price ?> KS</span>
+                                            <?php } else { ?>
+                                            <span><?= $item->discount ?> KS</span><br>
+                                            <span><del><?= $item->price ?></del></span>
+                                            <?php } ?>
                                         </td>
                                         <td>
                                             <a href="#" class="bg"><i class="feather-edit text-success"></i></a>
                                             <a href="#" class="bg"><i class="feather-trash-2 text-danger"></i></a>
                                         </td>
 
-                                    <?php } ?>
-                                </tr>
+                                    </tr>
+                                <?php } ?>
                                 </tbody>
                                 <tfoot>
                                 <tr>
