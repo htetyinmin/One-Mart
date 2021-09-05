@@ -1,5 +1,12 @@
 <?php
-      include_once "../template/header.php";
+
+    $currentPage = 'brand_list';
+    include_once "../template/header.php";
+    include_once "../system/function.php";
+
+    $sql = "SELECT * FROM brand";
+    $brandAll = getItems($sql);
+      
 ?>
 
             <!--content Area Start-->
@@ -40,16 +47,22 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>Lenovo</td>
-                                    <td>
-                                        <img src="../../assets/backend/img/item/item2.png" width="70" height="100" alt="Cover">
-                                    </td>
-                                    <td>
-                                        <a href="#" class="bg"><i class="feather-edit text-success"></i></a>
-                                        <a href="#" class="bg"><i class="feather-trash-2 text-danger"></i></a>
-                                    </td>
-                                </tr>
+                                    <?php
+
+                                    foreach($brandAll as $key=>$value){
+                                    ?>
+                                        <tr>
+                                            <td><?= $value->name ?></td>
+                                            <td>
+                                                <img src="../uploads/<?=$value->photo ?>" width="70" height="100" alt="Cover">
+                                            </td>
+                                            <td>
+                                                <a href="#" class="bg"><i class="feather-edit text-success"></i></a>
+                                                <a href="#" class="bg"><i class="feather-trash-2 text-danger"></i></a>
+                                            </td>
+                                        </tr>
+                                        
+                                    <?php }?>
                                 </tbody>
                                 <tfoot>
                                 <tr>

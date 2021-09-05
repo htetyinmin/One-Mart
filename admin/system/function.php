@@ -11,6 +11,17 @@
 
     }
 
+    function getItems($sql){
+
+        global $connect;
+        $statement = $connect->prepare($sql);
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    
+
+
 
 
 

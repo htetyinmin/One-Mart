@@ -1,5 +1,16 @@
 <?php
-      include_once "../template/header.php";
+    $currentPage = 'subcategory_list';
+    include_once "../template/header.php";
+    include_once "../system/function.php";
+
+      $sql="SELECT sc.id, sc.photo, sc.name , c.name AS category_name
+				from subcategories sc JOIN categories c ON sc.category_id=c.id ";
+      
+        // $statement = $connect->prepare($sql);
+        // $statement->execute();
+
+        // $subcategories = $statement->fetchAll();
+        $sub = getItems($sql);
 ?>
 
             <!--content Area Start-->
@@ -41,19 +52,32 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>Programming Language</td>
-                                    <td>
-                                        <img src="../../assets/backend/img/item/item3.png" width="70" height="100" alt="Cover">
-                                    </td>
-                                    <td>
-                                          Books
-                                    </td>
-                                    <td>
-                                        <a href="#" class="bg"><i class="feather-edit text-success"></i></a>
-                                        <a href="#" class="bg"><i class="feather-trash-2 text-danger"></i></a>
-                                    </td>
-                                </tr>
+                                <?php
+                                
+                                foreach ($sub as $subcategory) {
+                                   
+                                    $subcategory_name = $subcategory->name;
+                                    $subcategory_photo = $subcategory->photo;
+                                    $category_name = $subcategory->category_name;
+                                ?>
+
+                                    <tr>
+                                        <td><?= $subcategory_name ?></td>
+                                        <td>
+                                            <img src="../uploads/<?= $subcategory_photo ?>" width="70" height="100" alt="Cover">
+                                        </td>
+                                        <td>
+                                              <?= $category_name ?>
+                                        </td>
+                                        <td>
+                                            <a href="#" class="bg"><i class="feather-edit text-success"></i></a>
+                                            <a href="#" class="bg"><i class="feather-trash-2 text-danger"></i></a>
+                                        </td>
+                                    </tr>
+
+                                <?php }
+                                
+                                ?>
                                 </tbody>
                                 <tfoot>
                                 <tr>

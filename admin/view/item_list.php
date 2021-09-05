@@ -1,5 +1,14 @@
 <?php
-      include_once "../template/header.php";
+    $currentPage = 'item_list';
+    include_once "../template/header.php";
+    include_once "../system/function.php";
+
+    $sql = "SELECT * FROM items";
+    // $sql="SELECT it.id, it.codeno, it.name, it.photo, it.price, it.discount, it.description, b.name AS brand_name
+	// 			from items it JOIN brand b ON it.brand_id=b.id ";
+    $items = getItems($sql);
+    // var_dump($items); die();
+    
 ?>
 
             <!--content Area Start-->
@@ -34,55 +43,43 @@
                             <table id="list" class="table table-striped" style="width:100%">
                                 <thead>
                                 <tr>
+                                    <th>Code No.</th>
                                     <th>Name</th>
                                     <th>Photo</th>
-                                    <th>Description</th>
-                                    <th colspans="2">Amount</th>
-                                    <th>Start Date</th>
+                                    <th>Price</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>Coffee</td>
-                                    <td>
-                                        <img src="../../assets/backend/img/item/item1.png" width="70" height="100" alt="Cover">
-                                    </td>
-                                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-                                    <td>
-                                        <span>$200</span>
-                                        <span><del>$250</del></span>
-                                    </td>
-                                    <td>2011/04/25</td>
-                                    <td>
-                                        <a href="#" class="bg"><i class="feather-edit text-success"></i></a>
-                                        <a href="#" class="bg"><i class="feather-trash-2 text-danger"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Coffee</td>
-                                    <td>
-                                        <img src="../../assets/backend/img/item/item1.png" width="70" height="100" alt="Cover">
-                                    </td>
-                                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-                                    <td>
-                                        <span>$200</span>
-                                        <span><del>$250</del></span>
-                                    </td>
-                                    <td>2011/04/25</td>
-                                    <td>
-                                        <a href="#" class="bg"><i class="feather-edit text-success"></i></a>
-                                        <a href="#" class="bg"><i class="feather-trash-2 text-danger"></i></a>
-                                    </td>
-                                </tr>
+                                    <?php foreach($items as $item){ ?>
+                                    <tr>
+                                        <td><?= $item->codeno ?></td>
+                                        <td><?= $item->name ?></td>
+                                        <td>
+                                            <img src="../uploads/<?= $item->photo ?>" width="100" height="100" alt="Cover">
+                                        </td>
+                                        <td>
+                                            <?php if ($item->discount == null) { ?>
+                                                <span><?= $item->price ?> KS</span>
+                                            <?php } else { ?>
+                                            <span><?= $item->discount ?> KS</span><br>
+                                            <span><del><?= $item->price ?></del></span>
+                                            <?php } ?>
+                                        </td>
+                                        <td>
+                                            <a href="#" class="bg"><i class="feather-edit text-success"></i></a>
+                                            <a href="#" class="bg"><i class="feather-trash-2 text-danger"></i></a>
+                                        </td>
+
+                                    </tr>
+                                <?php } ?>
                                 </tbody>
                                 <tfoot>
                                 <tr>
+                                    <th>Code No.</th>
                                     <th>Name</th>
                                     <th>Photo</th>
-                                    <th>Description</th>
-                                    <th colspans="2">Amount</th>
-                                    <th>Start Date</th>
+                                    <th>Price</th>
                                     <th>Action</th>
                                 </tr>
                                 </tfoot>

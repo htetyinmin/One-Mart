@@ -31,7 +31,7 @@
                 <div class="nav-menu">
                     <ul>
                         <li class="menu-item">
-                            <a href="dashboard.php" class="menu-item-link">
+                            <a href="dashboard.php" class="menu-item-link <?php if($currentPage == 'dashboard'){echo 'active';}?>">
                                 <span>
                                     <i class="feather-home"></i>
                                     Dashboard
@@ -44,7 +44,7 @@
                             <span>Manage Products</span>
                         </li>
                         <li class="menu-item">
-                            <a href="item_add.php" class="menu-item-link">
+                            <a href="item_add.php" class="menu-item-link <?php if($currentPage == 'item_add'){echo 'active';}?>">
                                 <span>
                                     <i class="feather-plus-circle"></i>
                                     Add Items
@@ -52,7 +52,7 @@
                             </a>
                         </li>
                         <li class="menu-item">
-                            <a href="item_list.php" class="menu-item-link">
+                            <a href="item_list.php" class="menu-item-link <?php if($currentPage == 'item_list'){echo 'active';}?>">
                                 <span>
                                     <i class="feather-list"></i>
                                     Items List
@@ -62,7 +62,7 @@
                         </li>
                         <hr>
                         <li class="menu-item">
-                            <a href="subcategory_add.php" class="menu-item-link">
+                            <a href="subcategory_add.php" class="menu-item-link <?php if($currentPage == 'subcategory_add'){echo 'active';}?>">
                                 <span>
                                     <i class="feather-plus-circle"></i>
                                     Add Subcategory
@@ -70,7 +70,7 @@
                             </a>
                         </li>
                         <li class="menu-item">
-                            <a href="subcategory_list.php" class="menu-item-link">
+                            <a href="subcategory_list.php" class="menu-item-link <?php if($currentPage == 'subcategory_list'){echo 'active';}?>">
                                 <span>
                                     <i class="feather-list"></i>
                                     Subcategory List
@@ -80,7 +80,7 @@
                         </li>
                         <hr>
                         <li class="menu-item">
-                            <a href="category_add.php" class="menu-item-link">
+                            <a href="category_add.php" class="menu-item-link <?php if($currentPage == 'category_add'){echo 'active';}?>">
                                 <span>
                                     <i class="feather-plus-circle"></i>
                                     Add Category
@@ -88,7 +88,7 @@
                             </a>
                         </li>
                         <li class="menu-item">
-                            <a href="category_list.php" class="menu-item-link">
+                            <a href="category_list.php" class="menu-item-link <?php if($currentPage == 'category_list'){echo 'active';}?>">
                                 <span>
                                     <i class="feather-list"></i>
                                     Category List
@@ -98,7 +98,7 @@
                         </li>
                         <hr>
                         <li class="menu-item">
-                            <a href="brand_add.php" class="menu-item-link">
+                            <a href="brand_add.php" class="menu-item-link <?php if($currentPage == 'brand_add'){echo 'active';}?>">
                                 <span>
                                     <i class="feather-plus-circle"></i>
                                     Add Brand
@@ -106,7 +106,7 @@
                             </a>
                         </li>
                         <li class="menu-item">
-                            <a href="brand_list.php" class="menu-item-link">
+                            <a href="brand_list.php" class="menu-item-link <?php if($currentPage == 'brand_list'){echo 'active';}?>">
                                 <span>
                                     <i class="feather-list"></i>
                                     Brand List
@@ -120,7 +120,7 @@
                             <span>Manage Users</span>
                         </li>
                         <li class="menu-item">
-                            <a href="user_list.php" class="menu-item-link">
+                            <a href="user_list.php" class="menu-item-link <?php if($currentPage == 'user_list'){echo 'active';}?>">
                                 <span>
                                     <i class="feather-list"></i>
                                     User List
