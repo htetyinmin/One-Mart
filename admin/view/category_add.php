@@ -1,7 +1,7 @@
 <?php
-      include_once "../template/header.php";
-
-      include_once "../system/function.php";
+    $currentPage = 'category_add';
+    include_once "../template/header.php";
+    include_once "../system/function.php";
 
       if(isset($_POST["submit"])){
 

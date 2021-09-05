@@ -1,9 +1,10 @@
 <?php
-      include_once "../template/header.php";
-      include_once "../system/function.php";
+    $currentPage = 'category_list';
+    include_once "../template/header.php";
+    include_once "../system/function.php";
 
-      $sql = "SELECT * FROM categories";
-      $categoryAll = getItems($sql);
+    $sql = "SELECT * FROM categories";
+    $categoryAll = getItems($sql);
 ?>
 
             <!--content Area Start-->

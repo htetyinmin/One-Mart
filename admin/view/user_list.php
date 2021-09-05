@@ -1,5 +1,6 @@
 <?php
-      include_once "../template/header.php";
+    $currentPage = 'user_list';
+    include_once "../template/header.php";
 ?>
 
             <!--content Area Start-->

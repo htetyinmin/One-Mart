@@ -1,11 +1,11 @@
 <?php
-      include_once "../template/header.php";
 
-      include_once "../system/function.php";
+    $currentPage = 'brand_list';
+    include_once "../template/header.php";
+    include_once "../system/function.php";
 
-      $sql = "SELECT * FROM brand";
-      
-     $brandAll = getItems($sql);
+    $sql = "SELECT * FROM brand";
+    $brandAll = getItems($sql);
       
 ?>
 

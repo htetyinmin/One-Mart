@@ -1,6 +1,7 @@
 <?php
-      include_once "../template/header.php";
-      include_once "../system/function.php";
+    $currentPage = 'subcategory_list';
+    include_once "../template/header.php";
+    include_once "../system/function.php";
 
       $sql="SELECT sc.id, sc.photo, sc.name , c.name AS category_name
 				from subcategories sc JOIN categories c ON sc.category_id=c.id ";

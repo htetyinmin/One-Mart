@@ -1,4 +1,5 @@
 <?php
+    $currentPage = 'item_list';
     include_once "../template/header.php";
     include_once "../system/function.php";
 
