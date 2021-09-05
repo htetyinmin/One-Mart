@@ -1,10 +1,10 @@
  <?php 
 
     include_once "template/header.php";
-    include_once "admin/system/db.php";
+    // include_once "admin/system/db.php";
 
 
-    dbConnect();
+    // dbConnect();
 
  ?>
  
