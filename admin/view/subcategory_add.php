@@ -26,11 +26,10 @@
         $sql = "INSERT INTO subcategories(name, photo, category_id) VALUES (?, ?, ?)";
         $res = myQuery($sql, [$name, $imageLink, $category]);
         
-        echo $res;
-        
-        
-        
-    }
+
+         
+     }
+
     $cate = "SELECT * FROM categories";
     $category = getItems($cate);
 ?>
@@ -47,6 +46,27 @@
                       </nav>
                   </div>
               </div>
+
+              <?php 
+
+                if(isset($res)) {
+              
+              ?>
+              <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Message:</strong> Subcategory add successfully...
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+            <?php 
+                                    
+                 }
+            
+            ?>
+
+            
+
               <div class="row">
                   <div class="col-12">
                       <div class="card mb-4">

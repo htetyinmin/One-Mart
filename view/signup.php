@@ -1,6 +1,7 @@
 <?php 
 
   include_once "../template/header.php";
+  include_once "../admin/system/function.php";
 
 ?>
 
