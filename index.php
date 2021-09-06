@@ -1,11 +1,14 @@
  <?php 
 
-    include_once "template/header.php";
-    // include_once "admin/system/db.php";
+  include_once "template/header.php";
+  // include_once "admin/system/function.php";
 
 
-    // dbConnect();
+    $sql = "SELECT * FROM items";
+    $items = getItems($sql);
 
+    
+    
  ?>
  
  
@@ -67,8 +70,41 @@
   <!-- Product -->
   <div class="product pt-5 pb-5">
     <div class="container-sm">
-      <div class="row mb-3" id="my_product">
-
+      <div class="row mb-3" id="">
+        <?php foreach($items as $item){ ?>
+          
+          <div class="col-md-4 col-lg-2 my-3">
+            <div class="card">
+                <div class="buy">
+                  <button type="button" title="Add to wishlist">
+                  <i class="far fa-heart"></i>
+                  </button>
+                </div>
+                <img src="admin/uploads/<?= $item->photo ?>" class="card-img-top p-3" alt="..." height="120">
+                <div class="card-body">
+                  <h5 class="card-title"><?= $item->name ?></h5>
+                  <p class="card-text"><?= $item->description ?><a href="#">more...</a></p>
+                  <div class="price">
+                  <?php if($item->discount) {?>
+                    <span class="current_price"><?= $item->discount ?> &nbsp;MMK</span><br>
+                    <span class="old_price"><del><?= $item->price ?> &nbsp;MMK</del></span>
+                  <?php }else{?>
+                    <span class="current_price"><?= $item->price ?> &nbsp;MMK</span><br>
+                  <?php } ?>
+                  </div>
+                </div>
+                <div class="card-footer order_btn">
+                  <a href="product_details.php" type="button" class="btn btn-danger btn-sm cart_btn"><i class="fa fa-cart-arrow-down"></i></a>
+                  <!-- <button type="button" data-id=" + data[i].id " data-title=" + data[i].productName " data-content=" + data[i].productDec " data-price=" + data[i].currentPrice " data-img="./assets/frontend/img/product/ + data[i].productImg "  class="btn btn-primary btn-sm btn-danger cart_btn click-cart" title="Add to cart" data-bs-toggle="modal" data-bs-target="#cartModal">
+                  <i class="fa fa-cart-arrow-down"></i>
+                  </button> -->
+                  <button type="button" data-id=" + data[i].id " data-title=" + data[i].productName " data-content=" + data[i].productDec " data-price=" + data[i].currentPrice " data-img="./assets/frontend/img/product/ + data[i].productImg "  class="btn btn-primary btn-sm cart_btn" title="Order product">
+                  <i class="fab fa-shopify">&nbsp;Order</i>
+                  </button>
+                </div>
+            </div>
+          </div>
+        <?php } ?>
       </div>
     
       <!-- Pagination -->
@@ -108,10 +144,6 @@
       </div>
     </div>
   </div>
-
-
-
-
 
 
 <?php 

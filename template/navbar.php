@@ -1,3 +1,13 @@
+<?php 
+
+    include_once "admin/system/function.php";
+
+    $sql = "SELECT * FROM subcategories";
+
+    $subcategories = getItems($sql);
+    // var_dump($categories);
+?>
+
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light nav-color">
     <div class="container">
@@ -16,45 +26,18 @@
             <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" title="category">
             <i class="fa fa-list-ul"></i>
-            <span>Category</span>
+            <span>Subcategory</span>
             </a>
             <ul class="dropdown-menu">
-            <li>
-                <a class="dropdown-item" href="../view/product_details.php">
-                <i class="fa fa-box-open i_color"></i>
-                <span>Product</span>
-                </a>
-            </li>
-            <li>
-                <a class="dropdown-item" href="#">
-                <i class="fa fa-pizza-slice i_color"></i>
-                <span>Food</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="dropdown-item">
-                <i class="fa fa-tshirt i_color"></i>
-                <span>Fashion</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="dropdown-item">
-                <i class="fa fa-capsules i_color"></i>
-                <span>Health & Beauty</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="dropdown-item">
-                <i class="fa fa-laptop i_color"></i>
-                <span>Electronic Devices</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="dropdown-item">
-                <i class="fa fa-fan i_color"></i>
-                <span>Home Accessories</span>
-                </a>
-            </li>
+            <?php foreach($subcategories as $subcategory) {?>
+                <li>
+                    <a class="dropdown-item" href="#">
+                    <img src="admin/uploads/<?= $subcategory->photo ?>" alt="" width="50" height="50" style="border-radius: 50%;">
+                    <span><?= $subcategory->name ?></span>
+                    </a>
+                </li>
+            <?php } ?>
+            
             </ul>
             </li>
         
