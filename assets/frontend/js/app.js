@@ -80,17 +80,6 @@ displayProduct();
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 var shoppingCart = (function() {
     carts = [];
 
@@ -309,6 +298,17 @@ function showCarts() {
 
     $("#carts_table").html(cartsItem);
 }*/
+
+
+
+
+
+
+
+
+
+
+
 
 
 

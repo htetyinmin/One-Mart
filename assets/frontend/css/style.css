@@ -1,0 +1,18 @@
+.subcategory .sub-body{
+      background: #f8f1f1cf;
+      border-radius: 10px;
+      color: red;
+}
+
+.title{
+      color:red;
+      font-weight: 600;
+}
+
+.line{
+      width: 100px;
+      background: red;
+      height: 5px;
+      margin-left: 6px;
+      margin-bottom: 15px;
+}
