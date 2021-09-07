@@ -1,6 +1,6 @@
 <?php 
 
-    include_once "../admin/system/function.php";
+    include_once "./admin/system/function.php";
 
     function testInput($data) {
 
@@ -19,6 +19,28 @@
 
         return $data->rowCount();
     }
+
+    //index
+    function itemsAll($data) {
+
+        global $connect;
+        $data = $connect->prepare($data);
+        $data->execute();
+
+        return $data->fetchAll();
+
+    }
+    
+    function itemDetail($data, $id){
+        global $connect;
+        $data=$connect->prepare($data);
+        $data->bindParam(':id',$id);
+        $data->execute();
+        return $data->fetchAll(PDO::FETCH_ASSOC);
+
+    }
+
+
 
     function signUP($userName, $userEmail, $userPass, $userPhone) {
 

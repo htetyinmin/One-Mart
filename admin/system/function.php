@@ -2,7 +2,6 @@
 
     include_once "db.php";
 
-
     function myQuery($sql, $params = []) {
 
         global $connect;

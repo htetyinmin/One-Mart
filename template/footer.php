@@ -63,5 +63,6 @@
   <script src="../assets/frontend/js/jquery-3.6.0.js"></script>
   <script src="../assets/frontend/js/bootstrap-5.1.0.min.js"></script>
   <script src="../assets/frontend/js/app.js"></script>
+  
 </body>
 </html>

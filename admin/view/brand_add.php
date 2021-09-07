@@ -1,6 +1,6 @@
 <?php
 
-    $currentPage = 'brand_add';
+    $currentPage = 'brand';
     include_once "../template/header.php";
     include_once "../system/function.php";
 

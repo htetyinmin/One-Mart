@@ -1,58 +1,6 @@
 <?php 
 
   include_once "template/header.php";
-  include_once "system/function.php";
-
-
-
-  if(isset($_REQUEST['signin'])) {
-
-    $user = testInput($_REQUEST['user']);
-    $pass = encodePassword(testInput($_REQUEST['password']));
-
-
-    if(!empty($user) && !empty($pass)) {
-
-      try {
-
-        $query = "SELECT * FROM users WHERE name =:username AND password =:password";
-        $acc = userLogin($query, $user, $pass);
-
-        if($acc['count'] == 1 && !empty($acc['row'])) {
-
-          setSession(['user_id', 'user_name', 'user_email', 'user_phone'], [$acc['row']['id'], $acc['row']['name'], $acc['row']['email'], $acc['row']['phone']]);
-
-
-          echo "<script>alert('Login successfully...');</script>";
-
-          header("Location:index.php");
-
-        }else {
-
-          echo "<script>alert('Invalid username and password!');</script>";
-
-        }
-
-
-
-      }catch(PDOException $e) {
-        echo "Error:" . $e->getMessage();
-      }
-
-    }else {
-      echo "<script>alert('Username and password is required!');</script>";
-    }
-    
-
-
-  }
-
-
-
-
-
-
-
 
 ?>
 
@@ -61,10 +9,10 @@
   <div class="container form-ui my-5">
       <div class="col-md-5 col-xs-12 mx-auto py-5 px-4 form">
           <h1>Sign In</h1>
-          <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+          <form action="./login.html" method="post">
               <div class="form-group mb-3">
-                  <label for="myemail">User name*</label>
-                  <input type="text" class="form-control" name="user" id="myemail" placeholder="phone number, username or email" autocomplete="off">
+                  <label for="myemail">Email Address*</label>
+                  <input type="email" class="form-control" name="email" id="myemail" placeholder="phone number, username or email" autocomplete="off">
               </div>
               <div class="form-group mb-3">
                   <label for="mypassword">Password*</label>
@@ -82,6 +30,6 @@
 
 <?php 
 
-  include_once "../template/footer.php";
+  include_once "template/footer.php";
 
 ?>

@@ -1,6 +1,24 @@
 <?php 
 
-    include_once "./template/header.php";
+    include_once "template/header.php";
+    include_once "system/function.php";
+
+    $id=$_GET['id'];
+
+    $sql="SELECT * FROM items where id=:id";
+    $item_details = itemDetail($sql, $id);
+    
+
+    foreach($item_details as $item){
+        $detail_id=$item['id'];
+        $detail_name=$item['name'];
+        $detail_price=$item['price'];
+        $detail_discount=$item['discount'];
+        $detail_description=$item['description'];
+        $detail_photo=$item['photo'];
+        $brand_id=$item['brand_id'];
+        $subcategory_id=$item['subcategory_id'];
+    }
 
 ?>
 
@@ -34,24 +52,24 @@
               <div class="wrapper row">
                   <div class="preview col-lg-6">
                       
-                      <div class="preview-pic tab-content">
-                        <div class="tab-pane active" id="pic-1"><img src="../assets/frontend/img/product/device.jpg" /></div>
-                        <div class="tab-pane" id="pic-2"><img src="../assets/frontend/img/product/laptop-11.jpg" /></div>
+                      <div class="preview-pic">
+                        <div class="tab-pane active" id="pic-1"><img src="admin/uploads/<?= $detail_photo ?>" class="img-fluid" style="width: 450px;"/></div>
+                        <!-- <div class="tab-pane" id="pic-2"><img src="../assets/frontend/img/product/laptop-11.jpg" /></div>
                         <div class="tab-pane" id="pic-3"><img src="../assets/frontend/img/product/device.jpg" /></div>
                         <div class="tab-pane" id="pic-4"><img src="../assets/frontend/img/product/laptopfordesign.jpg" /></div>
-                        <div class="tab-pane" id="pic-5"><img src="../assets/frontend/img/product/device.jpg" /></div>
+                        <div class="tab-pane" id="pic-5"><img src="../assets/frontend/img/product/device.jpg" /></div> -->
                       </div>
-                      <ul class="preview-thumbnail nav nav-tabs">
+                      <!-- <ul class="preview-thumbnail nav nav-tabs">
                         <li class="active"><a data-bs-target="#pic-1" data-bs-toggle="tab"><img src="../assets/frontend/img/product/device.jpg" /></a></li>
                         <li><a data-bs-target="#pic-2" data-bs-toggle="tab"><img src="../assets/frontend/img/product/laptop-11.jpg" /></a></li>
                         <li><a data-bs-target="#pic-3" data-bs-toggle="tab"><img src="../assets/frontend/img/product/device.jpg" /></a></li>
                         <li><a data-bs-target="#pic-4" data-bs-toggle="tab"><img src="../assets/frontend/img/product/laptopfordesign.jpg" /></a></li>
                         <li><a data-bs-target="#pic-5" data-bs-toggle="tab"><img src="../assets/frontend/img/product/device.jpg" /></a></li>
-                      </ul>
+                      </ul> -->
                       
                   </div>
                   <div class="details col-lg-6">
-                      <h3 class="product-title">Dell XPS Laptop</h3>
+                      <h3 class="product-title"><?= $detail_name ?></h3>
                       <div class="rating">
                           <div class="stars">
                               <span class="fa fa-star checked"></span>
@@ -62,8 +80,8 @@
                           </div>
                           <span class="review-no">41 reviews</span>
                       </div>
-                      <p class="product-description">Suspendisse quos? Tempus cras iure temporibus? Eu laudantium cubilia sem sem! Repudiandae et! Massa senectus enim minim sociosqu delectus posuere.</p>
-                      <h4 class="price">current price: <span>1,600,000Ks</span></h4>
+                      <p class="product-description"><?= $detail_description ?></p>
+                      <h4 class="price">current price: <span><?= $detail_price ?> &nbsp;MMKs</span></h4>
                       <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
                       <h5 class="sizes">sizes:
                           <span class="size" data-toggle="tooltip" title="small">s</span>
@@ -90,6 +108,6 @@
 
 <?php 
     
-    include_once "./template/footer.php";
+    include_once "template/footer.php";
 
 ?>

@@ -1,5 +1,5 @@
 <?php
-    $currentPage = 'category_add';
+    $currentPage = 'category';
     include_once "../template/header.php";
     include_once "../system/function.php";
 
@@ -7,18 +7,14 @@
 
         $name = $_POST['name'];
 
-        if(empty($_POST["name"])){
-            echo "Please Enter Category Name ....";
-        }
-
         $sql = "INSERT INTO categories (name) values (?)";
         $res = myQuery($sql, [$name]);
 
-        if($res){
-            echo "Category Add Successfully!";
-        }else{
-            echo "Category Add Unsuccessfully, Please Try Again!";
-        }
+        // if($res){
+        //     echo "Category Add Successfully!";
+        // }else{
+        //     echo "Oop.. Something Wrong! Please Try Again!";
+        // }
       }
 ?>
 
@@ -43,7 +39,7 @@
                                     Add Category
                                   </h4>
                                   <a href="category_list.php" class="btn btn-outline-success">
-                                      <i class="feather-list"></i>
+                                      <i class="feather-arrow-left-circle"></i>
                                   </a>
                               </div>
                               <hr>
