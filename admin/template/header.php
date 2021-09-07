@@ -43,97 +43,66 @@
                         <li class="menu-title">
                             <span>Manage Products</span>
                         </li>
+                        
                         <li class="menu-item">
-                            <a href="item_add.php" class="menu-item-link <?php if($currentPage == 'item_add'){echo 'active';}?>">
+                            <a href="category_list.php" class="menu-item-link <?php if($currentPage == 'category'){echo 'active';} else { echo 'somethings'; } ?>">
                                 <span>
-                                    <i class="feather-plus-circle"></i>
-                                    Add Items
-                                </span>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="item_list.php" class="menu-item-link <?php if($currentPage == 'item_list'){echo 'active';}?>">
-                                <span>
-                                    <i class="feather-list"></i>
-                                    Items List
-                                </span>
-                                <span class="badge badge-pill bg-white shadow-sm text-success p-1">12</span>
-                            </a>
-                        </li>
-                        <hr>
-                        <li class="menu-item">
-                            <a href="subcategory_add.php" class="menu-item-link <?php if($currentPage == 'subcategory_add'){echo 'active';}?>">
-                                <span>
-                                    <i class="feather-plus-circle"></i>
-                                    Add Subcategory
-                                </span>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="subcategory_list.php" class="menu-item-link <?php if($currentPage == 'subcategory_list'){echo 'active';}?>">
-                                <span>
-                                    <i class="feather-list"></i>
-                                    Subcategory List
-                                </span>
-                                <span class="badge badge-pill bg-white shadow-sm text-success p-1">12</span>
-                            </a>
-                        </li>
-                        <hr>
-                        <li class="menu-item">
-                            <a href="category_add.php" class="menu-item-link <?php if($currentPage == 'category_add'){echo 'active';}?>">
-                                <span>
-                                    <i class="feather-plus-circle"></i>
-                                    Add Category
-                                </span>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="category_list.php" class="menu-item-link <?php if($currentPage == 'category_list'){echo 'active';}?>">
-                                <span>
-                                    <i class="feather-list"></i>
-                                    Category List
+                                    <i class="feather-layers"></i>
+                                    Category
                                 </span>
                                 <span class="badge badge-pill bg-white shadow-sm text-success p-1">8</span>
                             </a>
                         </li>
-                        <hr>
+                        
                         <li class="menu-item">
-                            <a href="brand_add.php" class="menu-item-link <?php if($currentPage == 'brand_add'){echo 'active';}?>">
-                                <span>
-                                    <i class="feather-plus-circle"></i>
-                                    Add Brand
-                                </span>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="brand_list.php" class="menu-item-link <?php if($currentPage == 'brand_list'){echo 'active';}?>">
+                            <a href="subcategory_list.php" class="menu-item-link <?php if($currentPage == 'subcategory'){echo 'active';} else { echo 'somethings'; } ?>">
                                 <span>
                                     <i class="feather-list"></i>
-                                    Brand List
+                                    Subcategory
+                                </span>
+                                <span class="badge badge-pill bg-white shadow-sm text-success p-1">12</span>
+                            </a>
+                        </li>
+
+                        <li class="menu-item">
+                            <a href="brand_list.php" class="menu-item-link <?php if($currentPage == 'brand'){echo 'active';} else { echo 'somethings'; } ?>">
+                                <span>
+                                    <i class="feather-image"></i>
+                                    Brand
                                 </span>
                                 <span class="badge badge-pill bg-white shadow-sm text-success p-1">8</span>
                             </a>
                         </li>
+                        
+                        <li class="menu-item">
+                            <a href="item_list.php" class="menu-item-link <?php if($currentPage == 'item'){echo 'active';} else { echo 'somethings'; } ?>">
+                                <span>
+                                    <i class="feather-box"></i>
+                                    Items
+                                </span>
+                                <span class="badge badge-pill bg-white shadow-sm text-success p-1">12</span>
+                            </a>
+                        </li>
+
                         <li class="menu-spacer"><hr></li>
 
                         <li class="menu-title">
                             <span>Manage Users</span>
                         </li>
                         <li class="menu-item">
-                            <a href="user_list.php" class="menu-item-link <?php if($currentPage == 'user_list'){echo 'active';}?>">
+                            <a href="user_list.php" class="menu-item-link <?php if($currentPage == 'user'){echo 'active';} else { echo 'somethings'; } ?>">
                                 <span>
-                                    <i class="feather-list"></i>
-                                    User List
+                                    <i class="feather-user"></i>
+                                    User
                                 </span>
                                 <span class="badge badge-pill bg-white shadow-sm text-success p-1">8</span>
                             </a>
                         </li>
                     </ul>
-    
                 </div>
-    
             </div>
             <!--sidebar end-->
+
             <div class="col-12 col-lg-9 col-xl-10 vh-100 py-3 content">
                 <div class="row header mb-4">
                     <div class="col-12">

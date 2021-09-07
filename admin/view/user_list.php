@@ -1,5 +1,5 @@
 <?php
-    $currentPage = 'user_list';
+    $currentPage = 'user';
     include_once "../template/header.php";
 ?>
 

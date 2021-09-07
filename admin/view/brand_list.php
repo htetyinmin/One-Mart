@@ -1,11 +1,18 @@
 <?php
 
-    $currentPage = 'brand_list';
+    $currentPage = 'brand';
     include_once "../template/header.php";
     include_once "../system/function.php";
 
     $sql = "SELECT * FROM brand";
     $brandAll = getItems($sql);
+
+    if(isset($_POST["delete"])){
+        $id=$_POST['id'];
+        
+        $tmp="DELETE FROM brand where id=$id";
+        getItems($tmp);
+    }
       
 ?>
 
@@ -49,16 +56,24 @@
                                 <tbody>
                                     <?php
 
-                                    foreach($brandAll as $key=>$value){
+                                    foreach($brandAll as $brand){
                                     ?>
                                         <tr>
-                                            <td><?= $value->name ?></td>
+                                            <td><?= $brand->name ?></td>
                                             <td>
-                                                <img src="../uploads/<?=$value->photo ?>" width="70" height="100" alt="Cover">
+                                                <img src="../uploads/<?=$brand->photo ?>" width="70" height="100" alt="Cover">
                                             </td>
                                             <td>
                                                 <a href="#" class="bg"><i class="feather-edit text-success"></i></a>
-                                                <a href="#" class="bg"><i class="feather-trash-2 text-danger"></i></a>
+
+                                                <!-- <a href="#" class="bg"><i class="feather-trash-2 text-danger"></i></a> -->
+
+                                                <form action="<?php $_PHP_SELF ?>" method="POST" class="d-inline-block" onsubmit="return confirm('Are you sure want to delete?')">
+                                                    <input type="hidden" name="id" value="<?= $brand->id ?>">
+                                                    <button class="btn btn-outline-danger" name="delete">
+                                                        <i class="feather-trash-2"></i>
+                                                    </button>
+                                                </form>
                                             </td>
                                         </tr>
                                         
