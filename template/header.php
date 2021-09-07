@@ -1,9 +1,13 @@
 <?php 
 
-    include_once "./admin/system/function.php";
+    session_start();
+    include_once "system/session.php";
+    include_once "system/function.php";
+    include_once "admin/system/function.php";
+
+
 
     $sql = "SELECT * FROM categories";
-
     $categories = getItems($sql);
     // var_dump($categories);
 ?>
@@ -18,22 +22,23 @@
   <title>One Mart</title>
 
   <!-- Bootstrap CSS (V-5.1.0) -->
-  <link rel="stylesheet" href="../assets/frontend/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/frontend/css/bootstrap.min.css">
 
   <!-- Fontawsome CSS (V-5.15.4) -->
-  <link rel="stylesheet" href="../assets/frontend/css/all.min.css">
+  <link rel="stylesheet" href="assets/frontend/css/all.min.css">
 
   <!-- Style CSS -->
-  <link rel="stylesheet" href="../assets/frontend/css/customize.css">
-  <link rel="stylesheet" href="../assets/frontend/css/style.css">
+  <link rel="stylesheet" href="assets/frontend/css/customize.css">
+  <link rel="stylesheet" href="assets/frontend/css/style.css">
 
 </head>
 <body>
 
+
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light nav-color sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="../index.php" title="home">
+        <a class="navbar-brand" href="index.php" title="home">
             <!-- <i class="fa fa-home"></i> -->
             <img src="assets/frontend/img/onemart.png" width="100" height="40" alt="">
         </a>
@@ -51,18 +56,21 @@
             <i class="fas fa-clipboard-list"></i>
             <span>Category</span>
             </a>
-            <ul class="dropdown-menu">
+                <ul class="dropdown-menu">
             <?php 
-            foreach($categories as $category){?>
-                <li>
-                    <a class="dropdown-item" href="#">
-                    <!-- <img src="admin/uploads/" alt="" width="50" height="50" style="border-radius: 50%;"> -->
-                    <span><?= $category->name ?></span>
-                    </a>
-                </li>
+                foreach($categories as $category)
+                {
+            ?>
+                    <li>
+                        <a class="dropdown-item" href="#">
+                        <!-- <img src="admin/uploads/" alt="" width="50" height="50" style="border-radius: 50%;"> -->
+                        <span><?= $category->name ?></span>
+                        </a>
+                    </li>
             <?php
-          } ?>
-            </ul>
+                } 
+            ?>
+                </ul>
             </li>
         
             <li class="nav-item dropdown">
@@ -96,41 +104,67 @@
 
             </a>
             </li>
-
             </ul>
 
             <ul class="navbar-nav my-nav">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" title="manage account">
                 <i class="fa fa-users-cog"></i>
-                <span class="f_color">Kyaw Min Tun</span>
+                <span class="f_color">
+                <?php 
+
+                    if(checkSession('user_name')) {
+
+                        echo getSession('user_name');
+
+                    }else{
+
+                        echo "Member";
+
+                    }
+                ?>
+                </span>
                 </a>
                 <ul class="dropdown-menu">
-                <li>
-                    <a class="dropdown-item" href="profile.php">
-                    <i class="fa fa-user i_color"></i>
-                    <span>Profile</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="signup.php">
-                        <i class="fa fa-sign-in-alt i_color"></i>
-                        <span>SignUp</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="login.php">
-                    <i class="fa fa-sign-in-alt i_color"></i>
-                    <span>Login</span>
-                    </a>
-                </li>
-                <li><hr class="dropdown-divider"></li>
-                <li>
-                    <a class="dropdown-item" href="#">
-                    <i class="fa fa-sign-out-alt i_color"></i>
-                    <span>Logout</span>
-                    </a>
-                </li>
+                <?php 
+                    
+                    
+                    if(checkSession('user_name')) {
+
+                        echo "
+                        <li>
+                            <a class='dropdown-item' href='profile.php'>
+                            <i class='fa fa-user i_color'></i>
+                            <span>Profile</span>
+                            </a>
+                        </li>
+                        <li><hr class='dropdown-divider'></li>
+                        <li>
+                        <a class='dropdown-item' href='logout.php'>
+                            <i class='fa fa-sign-out-alt i_color'></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>";
+
+                    }else{
+
+                        echo "
+                        <li>
+                            <a class='dropdown-item' href='signup.php'>
+                                <i class='fa fa-sign-in-alt i_color'></i>
+                                <span>SignUp</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class='dropdown-item' href='login.php'>
+                            <i class='fa fa-sign-in-alt i_color'></i>
+                            <span>Login</span>
+                            </a>
+                        </li>";
+
+                    }
+                    
+                    ?>
                 </ul>
             </li>
             </ul>

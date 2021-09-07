@@ -1,7 +1,5 @@
 <?php 
 
-    include_once "./admin/system/function.php";
-
     function testInput($data) {
 
         $data = trim($data);
@@ -20,7 +18,7 @@
         return $data->rowCount();
     }
 
-    //index
+    /*-------index---------*/
     function itemsAll($data) {
 
         global $connect;
@@ -39,8 +37,6 @@
         return $data->fetchAll(PDO::FETCH_ASSOC);
 
     }
-
-
 
     function signUP($userName, $userEmail, $userPass, $userPhone) {
 

@@ -216,8 +216,9 @@
                         data = data.trim();
                         alert(data);
                         window.location.reload();
+                        window.location.replace('login.php');
                         return true;
-
+                        
                         // const message = document.getElementById('message');
                         // const alert = document.getElementById('alertReg');
                         // alert.style.display = 'block';
