@@ -5,11 +5,12 @@
 ?>
 
     <!-- alert -->
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <span id="message"></span>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <div class="container mt-3">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert" id="alertReg" style="display: none;">
+            <span id="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, sequi dolore? Dolorum quam adipisci pariatur?</span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
     </div>
-
 
 
 
@@ -79,9 +80,9 @@
             userPass = checkPass(pass);
             userPhone = checkPhone(phone);
 
-        }
+            register(userName, userEmail, userPass, userPhone);
 
-        resister(userName, userEmail, userPass, userPhone);
+        }
 
         return true;
     });
@@ -206,7 +207,7 @@
 
 
 
-    function resister(userName, userEmail, userPass, userPhone) {
+    function register(userName, userEmail, userPass, userPhone) {
 
             const action = 'signup';
 
@@ -215,16 +216,19 @@
                 url: '../system/signup.php',
                 method: 'POST',
                 data: {action:action, name:userName, email:userEmail, pass:userPass, phone:userPhone},
-                contentType: false,
-                cache: false,
-                processData: false,
                 success: function(data) {
 
-                        // data = data.trim;
-                        alert(data);
-                        // const message = document.getElementById('message');
-                        // message.textContent = data;
-                        window.location.reload();
+                        data = data.trim();
+                        const message = document.getElementById('message');
+                        const alert = document.getElementById('alertReg');
+
+                        alert.style.display = 'block';
+                        alert.style.backgroundColor = 'green';
+                        alert.style.color = '#fff';
+
+                        message.textContent = data;
+                        
+                        //window.location.reload();
                         return true;
                 }
             });
