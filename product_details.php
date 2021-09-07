@@ -52,8 +52,8 @@
               <div class="wrapper row">
                   <div class="preview col-lg-6">
                       
-                      <div class="preview-pic tab-content">
-                        <div class="tab-pane active" id="pic-1"><img src="admin/uploads/<?= $detail_photo ?>" /></div>
+                      <div class="preview-pic">
+                        <div class="tab-pane active" id="pic-1"><img src="admin/uploads/<?= $detail_photo ?>" class="img-fluid" style="width: 450px;"/></div>
                         <!-- <div class="tab-pane" id="pic-2"><img src="../assets/frontend/img/product/laptop-11.jpg" /></div>
                         <div class="tab-pane" id="pic-3"><img src="../assets/frontend/img/product/device.jpg" /></div>
                         <div class="tab-pane" id="pic-4"><img src="../assets/frontend/img/product/laptopfordesign.jpg" /></div>

@@ -1,13 +1,16 @@
  <?php 
 
   include_once "template/header.php";
+  include_once "admin/system/function.php";
   include_once "system/function.php";
 
 
     $sql = "SELECT * FROM items";
     $items = itemsAll($sql);
 
-
+    $sql = "SELECT * FROM subcategories";
+    $subcategories = getItems($sql);
+    // var_dump($subcategories);
     
     
  ?>
@@ -17,7 +20,7 @@
 
 
   <!-- slider -->
-  <div class="slider">
+  <div class="slider mb-5">
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -53,24 +56,33 @@
     </div>
   </div>
 
+ <!-- Subcategory -->
+ <div class="subcategory">
+  <div class="container">
+    <div class="row">
+      <?php foreach($subcategories as $sub){?>
 
-  <!-- product ad -->
-  <div class="product_ad">
-    <div class="ad ad_one">
-      <img src="assets/frontend/img/promotion/promo.jpg" alt="promotion" width="100%" height="100%" >
-    </div>
-    <div class="ad ad_two">
-      <img src="assets/frontend/img/promotion/big_sale.jpg" alt="promotion" width="100%" height="100%">
-    </div>
-    <div class="ad ad_three">
-      <img src="assets/frontend/img/promotion/weekly_promo.jpg" alt="promotion" width="100%" height="100%">
+        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 ">
+          <div class="sub-body">
+            <img src="admin/uploads/<?= $sub->photo ?>" class="img-fluid p-3" style="border-radius: 20px;">
+            <h5 class="text-center pb-3"><?= $sub->name ?></h5>
+          </div>
+        </div>
+
+      <?php }?>
     </div>
   </div>
+ </div>
+  
 
 
   <!-- Product -->
   <div class="product pt-5 pb-5">
     <div class="container-sm">
+      <div class="row">
+        <h3 class="title">Flash Sales</h3>
+        <div class="line"></div>
+      </div>
       <div class="row mb-3" id="">
         <?php foreach($items as $item){
           
@@ -125,6 +137,19 @@
         <span class="spinner-grow spinner-grow-sm" role="status"></span>
       </div>
     
+    </div>
+  </div>
+
+  <!-- product ad -->
+  <div class="product_ad">
+    <div class="ad ad_one">
+      <img src="assets/frontend/img/promotion/promo.jpg" alt="promotion" width="100%" height="100%" >
+    </div>
+    <div class="ad ad_two">
+      <img src="assets/frontend/img/promotion/big_sale.jpg" alt="promotion" width="100%" height="100%">
+    </div>
+    <div class="ad ad_three">
+      <img src="assets/frontend/img/promotion/weekly_promo.jpg" alt="promotion" width="100%" height="100%">
     </div>
   </div>
 

@@ -2,9 +2,9 @@
 
     include_once "./admin/system/function.php";
 
-    $sql = "SELECT * FROM subcategories";
+    $sql = "SELECT * FROM categories";
 
-    $subcategories = getItems($sql);
+    $categories = getItems($sql);
     // var_dump($categories);
 ?>
 
@@ -25,15 +25,17 @@
 
   <!-- Style CSS -->
   <link rel="stylesheet" href="../assets/frontend/css/customize.css">
+  <link rel="stylesheet" href="../assets/frontend/css/style.css">
 
 </head>
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light nav-color">
+<nav class="navbar navbar-expand-lg navbar-light nav-color sticky-top">
     <div class="container">
         <a class="navbar-brand" href="../index.php" title="home">
-            <i class="fa fa-home"></i>
+            <!-- <i class="fa fa-home"></i> -->
+            <img src="assets/frontend/img/onemart.png" width="100" height="40" alt="">
         </a>
         <form class="d-flex">
             <input class="form-control me-2 input" type="search" placeholder="search">
@@ -46,16 +48,16 @@
 
             <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" title="category">
-            <i class="fa fa-list-ul"></i>
-            <span>Subcategory</span>
+            <i class="fas fa-clipboard-list"></i>
+            <span>Category</span>
             </a>
             <ul class="dropdown-menu">
             <?php 
-            foreach($subcategories as $subcategory){?>
+            foreach($categories as $category){?>
                 <li>
                     <a class="dropdown-item" href="#">
-                    <img src="admin/uploads/<?= $subcategory->photo ?>" alt="" width="50" height="50" style="border-radius: 50%;">
-                    <span><?= $subcategory->name ?></span>
+                    <!-- <img src="admin/uploads/" alt="" width="50" height="50" style="border-radius: 50%;"> -->
+                    <span><?= $category->name ?></span>
                     </a>
                 </li>
             <?php
