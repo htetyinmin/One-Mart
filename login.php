@@ -1,9 +1,8 @@
 <?php 
 
+  include_once "template/header.php";
+  include_once "system/function.php";
 
-  include_once "../template/header.php";
-  include_once "../system/function.php";
-  include_once "../system/session.php";
 
 
   if(isset($_REQUEST['signin'])) {
@@ -23,7 +22,10 @@
 
           setSession(['user_id', 'user_name', 'user_email', 'user_phone'], [$acc['row']['id'], $acc['row']['name'], $acc['row']['email'], $acc['row']['phone']]);
 
+
           echo "<script>alert('Login successfully...');</script>";
+
+          header("Location:index.php");
 
         }else {
 
