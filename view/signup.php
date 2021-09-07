@@ -5,12 +5,12 @@
 ?>
 
     <!-- alert -->
-    <div class="container mt-3">
+    <!-- <div class="container mt-3">
         <div class="alert alert-warning alert-dismissible fade show" role="alert" id="alertReg" style="display: none;">
             <span id="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, sequi dolore? Dolorum quam adipisci pariatur?</span>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-    </div>
+    </div> -->
 
 
 
@@ -51,8 +51,6 @@
   </div>
 
 
-
-
 <?php 
 
   include_once "../template/footer.php";
@@ -86,9 +84,6 @@
 
         return true;
     });
-
-
-
 
 
     function checkName(username) {
@@ -213,26 +208,27 @@
 
             $.ajax({
 
-                url: '../system/signup.php',
+                url: '../system/process.php',
                 method: 'POST',
                 data: {action:action, name:userName, email:userEmail, pass:userPass, phone:userPhone},
                 success: function(data) {
 
                         data = data.trim();
-                        const message = document.getElementById('message');
-                        const alert = document.getElementById('alertReg');
-
-                        alert.style.display = 'block';
-                        alert.style.backgroundColor = 'green';
-                        alert.style.color = '#fff';
-
-                        message.textContent = data;
-                        
-                        //window.location.reload();
+                        alert(data);
+                        window.location.reload();
                         return true;
+
+                        // const message = document.getElementById('message');
+                        // const alert = document.getElementById('alertReg');
+                        // alert.style.display = 'block';
+                        // alert.style.backgroundColor = 'green';
+                        // alert.style.color = '#fff';
+                        // message.textContent = data;
                 }
             });
     }
+
+
 
 
 </script>

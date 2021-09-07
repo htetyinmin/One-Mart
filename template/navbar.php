@@ -96,7 +96,12 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" title="manage account">
                 <i class="fa fa-users-cog"></i>
-                <span class="f_color">Kyaw Min Tun</span>
+                <span class="f_color">Kyaw Min Tun
+                   <?php 
+
+                   
+                   ?>
+                </span>
                 </a>
                 <ul class="dropdown-menu">
                 <li>
