@@ -17,7 +17,10 @@
 
         if($acc['count'] == 1 && !empty($acc['row'])) {
 
-          setSession(['user_id', 'user_name', 'user_email', 'user_phone'], [$acc['row']['id'], $acc['row']['name'], $acc['row']['email'], $acc['row']['phone']]);
+          $user = ['user_id'=>$acc['row']['id'],'user_name'=>$acc['row']['name'],'user_email'=>$acc['row']['email'],'user_phone'=>$acc['row']['phone'],'user_date'=>$acc['row']['created_at']];
+
+          setSession($user);
+
 
           header('Location: index.php');
 

@@ -1,13 +1,10 @@
 <?php 
 
 
-    function setSession($key = [], $value = []) {
+    function setSession($key) {
 
-        for($i = 0; $i < count($key); $i++) {
+        $_SESSION['user']=$key;
 
-            $_SESSION[$key[$i]] = $value[$i];
-
-        }
 
     }
 
@@ -24,6 +21,7 @@
         return $_SESSION[$key];
 
     }
+
 
 
 

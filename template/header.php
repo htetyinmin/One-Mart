@@ -113,15 +113,18 @@
                 <span class="f_color">
                 <?php 
 
-                    if(checkSession('user_name')) {
+                    if(checkSession('user')) {
 
-                        echo getSession('user_name');
+                        $Authuser = getSession('user');
+                        echo ($Authuser['user_name']);
 
                     }else{
 
                         echo "Member";
 
                     }
+                    
+                    
                 ?>
                 </span>
                 </a>
@@ -129,7 +132,7 @@
                 <?php 
                     
                     
-                    if(checkSession('user_name')) {
+                    if(checkSession('user')) {
 
                         echo "
                         <li>

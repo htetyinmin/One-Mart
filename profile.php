@@ -1,6 +1,10 @@
 <?php 
 
   include_once "template/header.php";
+  
+
+$users = getSession('user');
+
 
 ?>
 
@@ -22,8 +26,8 @@
                                 <img src="../assets/frontend/img/profile/profile2.jpg" alt="User profile">
                             </div>
                             <div class="user-data">
-                                <h4>Daniel Adams</h4>
-                                <span>Joined February 08, 2021</span>
+                                <h4><?= $users['user_name'] ?></h4>
+                                <span>Joined <?= $users['user_date'] ?></span>
                             </div>
                         </div>
 
