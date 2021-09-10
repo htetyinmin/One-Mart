@@ -30,6 +30,8 @@
   <!-- Style CSS -->
   <link rel="stylesheet" href="assets/frontend/css/customize.css">
   <link rel="stylesheet" href="assets/frontend/css/style.css">
+  <link rel="stylesheet" href="assets/frontend/slick/slick.css">
+  <link rel="stylesheet" href="assets/frontend/slick/slick-theme.css">
 
 </head>
 <body>

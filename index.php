@@ -11,6 +11,9 @@
     $sql = "SELECT * FROM subcategories";
     $subcategories = getItems($sql);
     // var_dump($subcategories);
+
+    $sql = "SELECT * FROM brand";
+    $brands = getItems($sql);
     
     
  ?>
@@ -57,7 +60,7 @@
   </div>
 
  <!-- Subcategory -->
- <div class="subcategory">
+ <div class="subcategory pt-5 pb-5">
   <div class="container">
     <div class="row">
       <?php foreach($subcategories as $sub){?>
@@ -73,6 +76,7 @@
     </div>
   </div>
  </div>
+ 
   
 
 
@@ -140,8 +144,28 @@
     </div>
   </div>
 
+  
+  <!-- brand slide -->
+  <div class="brand pt-5 pb-5">
+    <div class="container">
+      <div class="row mb-3">
+        <h3 class="title">Top Brands</h3>
+        <div class="line"></div>
+      </div>
+      <div class="row">
+        <div class="your-class mb-5">
+          <?php foreach($brands as $brand){ ?>
+          <div>
+            <img src="admin/uploads/<?= $brand->photo ?>" width="200" height="200" alt="">
+          </div>
+         <?php }?>
+        </div>
+      </div>
+    </div>
+  </div>
+  
   <!-- product ad -->
-  <div class="product_ad">
+  <div class="product_ad pt-5 pb-5">
     <div class="ad ad_one">
       <img src="assets/frontend/img/promotion/promo.jpg" alt="promotion" width="100%" height="100%" >
     </div>
@@ -152,8 +176,7 @@
       <img src="assets/frontend/img/promotion/weekly_promo.jpg" alt="promotion" width="100%" height="100%">
     </div>
   </div>
-
-
+  
   <!-- View Cart Modal -->
   <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">

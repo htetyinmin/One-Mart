@@ -288,6 +288,7 @@ li.breadcrumb-item a {
     font-size: 15px;
     color: rgb(255, 15, 0);
     font-weight: bold;
+    width: 200px;
 }
 
 .card-body .card-text {

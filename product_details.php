@@ -52,7 +52,7 @@
                   <div class="preview col-lg-6">
                       
                       <div class="preview-pic">
-                        <div class="tab-pane active" id="pic-1"><img src="admin/uploads/<?= $detail_photo ?>" class="img-fluid" style="width: 450px;"/></div>
+                        <div class="tab-pane active" id="pic-1"><img src="admin/uploads/<?= $detail_photo ?>"style="width: 500px; height:400px"/></div>
                         <!-- <div class="tab-pane" id="pic-2"><img src="../assets/frontend/img/product/laptop-11.jpg" /></div>
                         <div class="tab-pane" id="pic-3"><img src="../assets/frontend/img/product/device.jpg" /></div>
                         <div class="tab-pane" id="pic-4"><img src="../assets/frontend/img/product/laptopfordesign.jpg" /></div>
@@ -80,19 +80,13 @@
                           <span class="review-no">41 reviews</span>
                       </div>
                       <p class="product-description"><?= $detail_description ?></p>
-                      <h4 class="price">current price: <span><?= $detail_price ?> &nbsp;MMKs</span></h4>
-                      <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
-                      <h5 class="sizes">sizes:
-                          <span class="size" data-toggle="tooltip" title="small">s</span>
-                          <span class="size" data-toggle="tooltip" title="medium">m</span>
-                          <span class="size" data-toggle="tooltip" title="large">l</span>
-                          <span class="size" data-toggle="tooltip" title="xtra large">xl</span>
-                      </h5>
-                      <h5 class="colors">colors:
-                          <span class="color orange" data-toggle="tooltip" title="Not In store"></span>
-                          <span class="color green"></span>
-                          <span class="color blue"></span>
-                      </h5>
+                      <?php if($detail_discount) {?>
+                        <h4 class="price">Discount Price: <span><?= $detail_discount ?> &nbsp;MMKs</span></h4>
+                        <h4 class="price">Current Price: <span><del><?= $detail_price ?></del> &nbsp;MMKs</span></h4>
+                    <?php }else{?>
+                        <h4 class="price">Current Price: <span><?= $detail_price ?> &nbsp;MMKs</span></h4>
+                    <?php } ?>
+                    
                       <div class="action">
                           <button type="button" class="btn btn-primary add-to-cart"><i class="fas fa-cart-arrow-down"></i>&nbsp;&nbsp;add to cart</button>
                           <button type="button" class="btn btn-light like"><i class="far fa-heart"></i></button>
