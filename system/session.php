@@ -3,8 +3,7 @@
 
     function setSession($key) {
 
-        $_SESSION['user']=$key;
-
+        $_SESSION['user'] = $key;
 
     }
 
