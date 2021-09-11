@@ -17,12 +17,43 @@
 
         if($acc['count'] == 1 && !empty($acc['row'])) {
 
-          $user = ['user_id'=>$acc['row']['id'],'user_name'=>$acc['row']['name'],'user_email'=>$acc['row']['email'],'user_phone'=>$acc['row']['phone'],'user_date'=>$acc['row']['created_at']];
 
-          setSession($user);
+          $user_id = $acc['row']['id'];
 
 
-          header('Location: index.php');
+          $sql = "SELECT name FROM role WHERE id = $user_id";
+          $res = getItems($sql);
+          $type = '';
+          
+          foreach($res as $value) {
+
+            $type = $value->name;
+
+          }
+
+
+          if($type === 'Admin') {
+
+            $admin = ['admin_id'=>$acc['row']['id'],'admin_name'=>$acc['row']['name'],'admin_email'=>$acc['row']['email'],'admin_phone'=>$acc['row']['phone'],'admin_date'=>$acc['row']['created_at']];
+
+            setSession($admin, 'admin');
+
+            header('Location: admin/view/dashboard.php');
+            exit();
+          }
+
+
+          if($type == 'User') {
+
+            $user = ['user_id'=>$acc['row']['id'],'user_name'=>$acc['row']['name'],'user_email'=>$acc['row']['email'],'user_phone'=>$acc['row']['phone'],'user_date'=>$acc['row']['created_at']];
+
+            setSession($user, 'user');
+
+
+            header('Location: index.php');            
+            exit();
+          }
+
 
         }else {
 

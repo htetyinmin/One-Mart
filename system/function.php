@@ -50,11 +50,12 @@
             echo "Sorry: This account is already in exist!";
 
         }else {
-            
+
             $uid = 1;
             $sql = "SELECT max(id) as max_id FROM users";
             $stmt = $connect->prepare($sql);
             $stmt->execute();
+
 
             while($rows = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
 
@@ -69,9 +70,65 @@
             $sql = "INSERT INTO users(id, name, email, password, phone) VALUES(?, ?, ?, ?, ?)";
             $res = myQuery($sql, [$uid, $userName, $userEmail, $userPass, $userPhone]);
 
+
             if($res) {
 
-                echo "Register successfully...";
+                $sql = "SELECT id FROM users WHERE email= '$userEmail'";
+                $res = getItems($sql);
+                $user_id = '';
+
+                foreach($res as $value) {
+                    $user_id = $value->id;
+                }
+
+
+                $rid = 1;
+                $sql = "SELECT max(id) as max_id FROM role";
+                $stmt = $connect->prepare($sql);
+                $stmt->execute();
+    
+                while($rows = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
+    
+                    foreach($rows as $key) {
+    
+                        $rid = $key['max_id'] + 1;
+    
+                    }
+    
+                }
+
+                $sql = "INSERT INTO role (id, user_id) VALUES (?, ?)";
+                $res = myQuery($sql, [$rid, $user_id]);
+
+                if($res) {
+
+
+                    $mhr_id = 1;
+                    $sql = "SELECT max(id) as max_id FROM model_has_role";
+                    $stmt = $connect->prepare($sql);
+                    $stmt->execute();
+        
+                    while($rows = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
+        
+                        foreach($rows as $key) {
+        
+                            $mhr_id = $key['max_id'] + 1;
+        
+                        }
+        
+                    }
+
+                    $sql = "INSERT INTO model_has_role (id, user_id, role_id) VALUES(?, ?, ?)";
+                    $res = myQuery($sql, [$mhr_id, $user_id, $user_id]);
+
+                    
+                    if($res) {
+
+                        echo "Register successfully...";
+
+                    }
+
+                }
 
             }else {
 
