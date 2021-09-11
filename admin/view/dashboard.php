@@ -1,6 +1,8 @@
 <?php
+
     $currentPage = 'dashboard';
-    include_once "../template/header.php";
+    include_once "../template/header.php";    
+        
 ?>
 
             <!--content Area Start-->

@@ -1,9 +1,8 @@
 <?php 
 
-  include_once "template/header.php";
-  
-
-$users = getSession('user');
+    include_once "template/header.php";
+    
+    $users = getSession('user');
 
 
 ?>
