@@ -27,7 +27,7 @@
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="assets/frontend/img/slider/slider1.png" class="d-block w-100" alt="slider image">
+          <img src="assets/frontend/img/slider/banner1.png" class="d-block w-100" alt="slider image">
         </div>
         <div class="carousel-item">
           <img src="assets/frontend/img/slider/slider2.png" class="d-block w-100" alt="slider image">
@@ -60,14 +60,14 @@
   </div>
 
  <!-- Subcategory -->
- <div class="subcategory pt-5 pb-5">
+ <div class="subcategory pb-3">
   <div class="container">
     <div class="row">
       <?php foreach($subcategories as $sub){?>
 
         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 ">
           <div class="sub-body">
-            <img src="admin/uploads/<?= $sub->photo ?>" class="img-fluid p-3" style="border-radius: 20px;">
+              <img src="admin/uploads/<?= $sub->photo ?>" class="img-fluid p-3" style="border-radius: 20px;">
             <h5 class="text-center pb-3"><?= $sub->name ?></h5>
           </div>
         </div>
@@ -77,17 +77,14 @@
   </div>
  </div>
  
-  
-
-
   <!-- Product -->
-  <div class="product pt-5 pb-5">
+  <div class="product pt-5 pb-3">
     <div class="container-sm">
       <div class="row">
-        <h3 class="title">Flash Sales</h3>
+        <h3 class="title">Deals Of The Day</h3>
         <div class="line"></div>
       </div>
-      <div class="row mb-3" id="">
+      <div class="row mb-3 card-slide" id="">
         <?php foreach($items as $item){
           
           $ai_id=$item['id'];
@@ -106,10 +103,10 @@
                   <i class="far fa-heart"></i>
                   </button>
                 </div>
-                <img src="admin/uploads/<?= $ai_photo ?>" class="card-img-top p-3" height=160 alt="...">
+                <img src="admin/uploads/<?= $ai_photo ?>" class="card-img p-3" height=160 alt="...">
                 <div class="card-body" style="height: 170px;">
                   <h5 class="card-title"><?= $ai_name ?></h5>
-                  <p class="card-text"><?= substr($ai_description,0,50) ?><a href="#">more...</a></p>
+                  <p class="card-text"><?= substr($ai_description,0,50) ?>&nbsp;<a href="#">more...</a></p>
                   <div class="price">
                   <?php if($ai_discount) {?>
                     <span class="current_price"><?= $ai_discount ?> &nbsp;MMK</span><br>
@@ -144,7 +141,40 @@
     </div>
   </div>
 
-  
+  <!-- product ad -->
+  <div class="product_ad pt-5 mb-3">
+    <div class="container">
+      <div class="row">
+      <div class="ad ad_one">
+        <img src="assets/frontend/img/promotion/fashion.jpg" alt="promotion" width="100%" height="100%" >
+      </div>
+      <div class="ad ad_two">
+        <img src="assets/frontend/img/promotion/electronic.jpg" alt="promotion" width="100%" height="100%">
+      </div>
+      </div>
+    </div>
+    <!-- <div class="ad ad_three">
+      <img src="assets/frontend/img/promotion/weekly_promo.jpg" alt="promotion" width="100%" height="100%">
+    </div> -->
+  </div>
+
+  <!-- discount products -->
+  <div class="discount">
+    <div class="container">
+      <div class="row">
+          <h3 class="title text-center text-black mb-3">Discount Products</h3>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center">
+          <ul id="filters">
+            <li data-filter=".filter-card">Electronic</li>
+            <li data-filter=".filter-web">Fashion</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- brand slide -->
   <div class="brand pt-5 pb-5">
     <div class="container">
@@ -161,19 +191,6 @@
          <?php }?>
         </div>
       </div>
-    </div>
-  </div>
-  
-  <!-- product ad -->
-  <div class="product_ad pt-5 pb-5">
-    <div class="ad ad_one">
-      <img src="assets/frontend/img/promotion/promo.jpg" alt="promotion" width="100%" height="100%" >
-    </div>
-    <div class="ad ad_two">
-      <img src="assets/frontend/img/promotion/big_sale.jpg" alt="promotion" width="100%" height="100%">
-    </div>
-    <div class="ad ad_three">
-      <img src="assets/frontend/img/promotion/weekly_promo.jpg" alt="promotion" width="100%" height="100%">
     </div>
   </div>
   

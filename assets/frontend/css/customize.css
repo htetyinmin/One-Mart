@@ -101,7 +101,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .carousel-inner {
-    max-height: 400px;
+    max-height: 700px;
 }
 
 .carousel-inner .carousel-item::after {
@@ -187,21 +187,21 @@ li.breadcrumb-item a {
 }
 
 .product_ad .ad {
-    height: 150px;
+    height: 250px;
     flex: 1;
 }
-
+/* 
 .product_ad .ad_one {
     background-color: rgb(7, 235, 56);
-}
-
+} */
+/* 
 .product_ad .ad_two {
     background-color: orange;
 }
 
 .product_ad .ad_three {
     background-color:  red;
-}
+} */
 
 
 
@@ -214,8 +214,10 @@ li.breadcrumb-item a {
 .card {
     position: relative;
     overflow: hidden;
+    background: #ebdddd;
     box-shadow: 0px 0px 8px 1px rgba(0,0, 0, 0.2);
     border: 0;
+    margin-right: 30px;
 }
 
 
@@ -526,7 +528,7 @@ footer > .social_media a:hover > i {
 /* Bootstrap CSS */
 .d-flex {
     display: flex!important;
-    flex: 0.8;
+    /* flex: 0.8; */
 }
 
 .dropdown-toggle::after {
