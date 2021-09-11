@@ -1,4 +1,11 @@
+<?php 
 
+    session_start();
+    include_once "../../system/session.php";
+
+
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -120,13 +127,26 @@
                             </form>
                             <div class="dropdown">
                                 <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img src="../../assets/backend/img/user/profile.jpg" class="user-img shadow-sm" alt=""> Kyaw Win Tun
+                                    <img src="../../assets/backend/img/user/profile.jpg" class="user-img shadow-sm" alt=""> 
+                                    <?php 
+                                    
+                                        if(checkSession('admin')) {
+
+                                            $admin = getSession('admin');
+
+                                            echo $admin['admin_name'];
+
+
+                                        }
+                                    
+                                    
+                                    ?>
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item" href="#">Profile</a>
                                     <a class="dropdown-item" href="#">Acount Setting</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Logout</a>
+                                    <a class="dropdown-item" href="logout.php">Logout</a>
                                 </div>
                             </div>
                         </div>

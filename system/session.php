@@ -1,9 +1,15 @@
 <?php 
 
 
-    function setSession($key) {
+    function setSession($key, $type) {
 
-        $_SESSION['user'] = $key;
+        $data = trim($type);
+
+        if($data === 'admin') {
+            $_SESSION['admin'] = $key;
+        }else {
+            $_SESSION['user'] = $key;
+        }
 
     }
 
