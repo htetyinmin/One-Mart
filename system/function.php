@@ -132,7 +132,7 @@
 
         global $connect;
         $stmt = $connect->prepare($sql);
-        $stmt->bindParam(':username', $user, PDO::PARAM_STR);
+        $stmt->bindParam(':useremail', $user, PDO::PARAM_STR);
         $stmt->bindValue(':password', $pass, PDO::PARAM_STR);
         $stmt->execute();
         $count = $stmt->rowCount();
