@@ -1,9 +1,10 @@
 <?php
     $currentPage = 'user';
     include_once "../template/header.php";
+    include_once "../system/function.php";
 
-    $sql = "SELECT * FROM brand";
-    $brandAll = getItems($sql);
+    $sql = "SELECT * FROM users";
+    $users = getItems($sql);
     
 ?>
 
@@ -43,31 +44,44 @@
                                     <th>Photo</th>
                                     <th>Email</th>
                                     <th>Start Date</th>
-                                    <th>Cupon Date</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>Mg Mg</td>
-                                    <td>
-                                        <img src="../../assets/backend/img/user/avatar5.jpg" width="70" height="100" alt="Cover">
-                                    </td>
-                                    <td>mgmg@gmail.com</td>
-                                    <td>30/08/2021</td>
-                                    <td>05/09/2021</td>
-                                    <td>
-                                        <a href="#" class="bg"><i class="feather-alert-circle text-success"></i></a>
-                                        <a href="#" class="bg"><i class="feather-trash-2 text-danger"></i></a>
-                                    </td>
-                                </tr>
+
+                                <?php
+                                    foreach ($users as $user) {
+                                        
+                                        $date = substr($user->created_at, 0, 10);
+
+                                ?>
+                                    <tr>
+                                        <td><?= $user->name ?></td>
+                                        <td>
+                                            <img src="../../assets/backend/img/user/avatar5.jpg" width="70" height="100" alt="Cover">
+                                        </td>
+                                        <td><?= $user->email ?></td>
+                                        <td><?= $date ?></td>
+                                        <td>
+                                            <!-- <a href="#" class="bg"><i class="feather-alert-circle text-success"></i></a> -->
+                                            
+                                            <form action="user_delete.php" method="POST" class="d-inline-block" onsubmit="return confirm('Are you sure want to delete?')">
+                                                <input type="hidden" name="id" value="<?= $id ?>">
+                                                <button class="btn btn-outline-danger" name="delete">
+                                                    <i class="feather-trash-2"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+
+                                <?php } ?>
+
                                 </tbody>
                                 <tfoot>
                                 <tr>
                                     <th>Name</th>
                                     <th>Photo</th>
-                                    <th>Description</th>
-                                    <th colspans="2">Amount</th>
+                                    <th>Email</th>
                                     <th>Start Date</th>
                                     <th>Action</th>
                                 </tr>
