@@ -3,8 +3,6 @@
     session_start();
     include_once "../../system/session.php";
 
-
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -127,7 +125,11 @@
                             </form>
                             <div class="dropdown">
                                 <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img src="../../assets/backend/img/user/profile.jpg" class="user-img shadow-sm" alt=""> 
+                                    <!-- <img src="../../assets/backend/img/user/profile.jpg" class="user-img shadow-sm" alt=""> -->
+                                    
+                                    <spam class="">
+                                        <i class="feather-user h5"></i>
+                                    </spam>
                                     <?php 
                                     
                                         if(checkSession('admin')) {

@@ -6,7 +6,7 @@
       if(isset($_POST['submit'])) {
           
           $name = $_POST['name'];
-          $photo = $_FILES['file'];
+          $photo = $_FILES['photo'];
           $category = $_POST['category'];
         //   var_dump($category);
 
@@ -25,13 +25,11 @@
     
         $sql = "INSERT INTO subcategories(name, photo, category_id) VALUES (?, ?, ?)";
         $res = myQuery($sql, [$name, $imageLink, $category]);
-        
-
          
      }
 
-    $cate = "SELECT * FROM categories";
-    $category = getItems($cate);
+    $cat = "SELECT * FROM categories";
+    $category = getItems($cat);
 ?>
 
                 <!--content Area Start-->
@@ -40,8 +38,8 @@
                       <nav aria-label="breadcrumb">
                           <ol class="breadcrumb bg-white mb-4">
                               <li class="breadcrumb-item"><a href="dashboard.html" class="text-success">Home</a></li>
-                              <li class="breadcrumb-item"><a href="brand_list.html" class="text-success">Item</a></li>
-                              <li class="breadcrumb-item text-success active" aria-current="page">Add Item</li>
+                              <li class="breadcrumb-item"><a href="brand_list.html" class="text-success">Subcategory</a></li>
+                              <li class="breadcrumb-item text-success active" aria-current="page">Add Subcategory</li>
                           </ol>
                       </nav>
                   </div>
@@ -65,15 +63,13 @@
             
             ?>
 
-            
-
               <div class="row">
                   <div class="col-12">
                       <div class="card mb-4">
                           <div class="card-body">
                               <div class="d-flex justify-content-between align-items-center">
                                   <h4 class="mb-0">
-                                    Add Item
+                                    Add Subcategory
                                   </h4>
                                   <a href="subcategory_list.php" class="btn btn-outline-success">
                                       <i class="feather-list"></i>
@@ -89,17 +85,17 @@
                                               </label>
                                               <i class="feather-info" data-container="body" data-toggle="popover" data-placement="top" data-content="Only Support Jpg, Png"></i>
   
-                                              <input type="file" name="file" id="photo" class="form-control p-1" required>
+                                              <input type="file" name="photo" id="photo" class="form-control p-1" required>
                                           </div>
                                           <div class="form-group">
-                                              <label for="name">Item Name</label>
+                                              <label for="name">Subcategory Name</label>
                                               <input type="text" id="name" name="name" class="form-control">
                                           </div>
                                     </div>
                                     <div class="col-12 col-md-6">
                                           <div class="form-group">
-                                                <label for="c">Category</label>
-                                                <select name="category" class="form-control custom-select" id="c">
+                                                <label for="category">Category</label>
+                                                <select name="category" class="form-control custom-select" id="category">
                                                 <option value="" selected>Select Category</option>
                                                 <?php 
                                                     foreach($category as $cate){

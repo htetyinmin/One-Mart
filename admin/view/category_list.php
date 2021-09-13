@@ -5,13 +5,6 @@
 
     $sql = "SELECT * FROM categories";
     $categoryAll = getItems($sql);
-
-    if(isset($_POST["delete"])){
-        $id=$_POST['id'];
-
-        $tmp="DELETE FROM categories where id=$id";
-        getItems($tmp);
-    }
 ?>
 
             <!--content Area Start-->
@@ -60,11 +53,11 @@
                                     <tr>
                                         <td><?= $category->name; ?></td>
                                         <td>
-                                            <a href="#" class="bg"><i class="feather-edit text-success"></i></a>
+                                            <a href="category_edit.php?id=<?php echo $category->id ?>" class="btn btn-outline-success"><i class="feather-edit"></i></a>
 
                                             <!-- <a href="#" class="bg"><i class="feather-trash-2 text-danger"></i></a> -->
 
-                                            <form action="<?php $_PHP_SELF ?>" method="POST" class="d-inline-block" onsubmit="return confirm('Are you sure want to delete?')">
+                                            <form action="category_delete.php" method="POST" class="d-inline-block" onsubmit="return confirm('Are you sure want to delete?')">
                                                 <input type="hidden" name="id" value="<?= $category->id ?>">
                                                 <button class="btn btn-outline-danger" name="delete">
                                                     <i class="feather-trash-2"></i>

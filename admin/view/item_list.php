@@ -56,7 +56,7 @@
                                         <td><?= $item->codeno ?></td>
                                         <td><?= $item->name ?></td>
                                         <td>
-                                            <img src="../uploads/<?= $item->photo ?>" width="100" height="100" alt="Cover">
+                                            <img src="../uploads/<?= $item->photo ?>" width="80" height="auto" alt="Cover">
                                         </td>
                                         <td>
                                             <?php if ($item->discount == null) { ?>
@@ -67,8 +67,14 @@
                                             <?php } ?>
                                         </td>
                                         <td>
-                                            <a href="#" class="bg"><i class="feather-edit text-success"></i></a>
-                                            <a href="#" class="bg"><i class="feather-trash-2 text-danger"></i></a>
+                                            <a href="item_edit.php?id=<?php echo $item->id ?>" class="btn btn-outline-success"><i class="feather-edit"></i></a>
+                                            
+                                            <form action="item_delete.php" method="POST" class="d-inline-block" onsubmit="return confirm('Are you sure want to delete?')">
+                                                <input type="hidden" name="id" value="<?= $item->id ?>">
+                                                <button class="btn btn-outline-danger" name="delete">
+                                                    <i class="feather-trash-2"></i>
+                                                </button>
+                                            </form>
                                         </td>
 
                                     </tr>
