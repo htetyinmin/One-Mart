@@ -55,7 +55,7 @@
                                 <?php
                                 
                                 foreach ($sub as $subcategory) {
-                                   
+                                    $id = $subcategory->id;
                                     $subcategory_name = $subcategory->name;
                                     $subcategory_photo = $subcategory->photo;
                                     $category_name = $subcategory->category_name;
@@ -64,14 +64,20 @@
                                     <tr>
                                         <td><?= $subcategory_name ?></td>
                                         <td>
-                                            <img src="../uploads/<?= $subcategory_photo ?>" width="70" height="100" alt="Cover">
+                                            <img src="../uploads/<?= $subcategory_photo ?>" width="80" height="auto" alt="Cover">
                                         </td>
                                         <td>
                                               <?= $category_name ?>
                                         </td>
                                         <td>
-                                            <a href="#" class="bg"><i class="feather-edit text-success"></i></a>
-                                            <a href="#" class="bg"><i class="feather-trash-2 text-danger"></i></a>
+                                            <a href="subcategory_edit.php?id=<?php echo $id ?>" class="btn btn-outline-success"><i class="feather-edit"></i></a>
+                                            
+                                            <form action="subcategory_delete.php" method="POST" class="d-inline-block" onsubmit="return confirm('Are you sure want to delete?')">
+                                                <input type="hidden" name="id" value="<?= $id ?>">
+                                                <button class="btn btn-outline-danger" name="delete">
+                                                    <i class="feather-trash-2"></i>
+                                                </button>
+                                            </form>
                                         </td>
                                     </tr>
 

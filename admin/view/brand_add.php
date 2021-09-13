@@ -18,27 +18,14 @@
             echo "Please choose photo!";
         }
 
-
         $imageLink = mt_rand(time(), time()) + mt_rand(time(), time()) . "_" . $photo['name'];
         move_uploaded_file($photo['tmp_name'], "../uploads/". $imageLink);
-
     
         $sql = "INSERT INTO brand(name, photo) VALUES (?, ?)";
         $res = myQuery($sql, [$name, $imageLink]);
-
-
-
+        
     }
-
-
-
 ?>
-
-
-
-
-
-
 
             <!--content Area Start-->
             <div class="row">

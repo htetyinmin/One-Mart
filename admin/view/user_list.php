@@ -1,6 +1,10 @@
 <?php
     $currentPage = 'user';
     include_once "../template/header.php";
+
+    $sql = "SELECT * FROM brand";
+    $brandAll = getItems($sql);
+    
 ?>
 
             <!--content Area Start-->
