@@ -24,7 +24,7 @@
           <form name="formData" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
               <div class="form-group mb-3">
                   <label for="name">Full Name*</label>
-                  <input type="text" class="form-control" name="fullname" id="name" placeholder="username">
+                  <input type="text" class="form-control" name="fullname" id="name" placeholder="fullname">
                   <small><span class="name-error" style="color:red; font-size:12px"></span></small>
               </div>
               <div class="form-group mb-3">
