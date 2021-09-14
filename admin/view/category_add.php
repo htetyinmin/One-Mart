@@ -9,12 +9,7 @@
 
         $sql = "INSERT INTO categories (name) values (?)";
         $res = myQuery($sql, [$name]);
-
-        // if($res){
-        //     echo "Category Add Successfully!";
-        // }else{
-        //     echo "Oop.. Something Wrong! Please Try Again!";
-        // }
+        
       }
 ?>
 

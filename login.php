@@ -6,14 +6,14 @@
 
   if(isset($_REQUEST['signin'])) {
 
-    $user = testInput($_REQUEST['user']);
+    $email = testInput($_REQUEST['user']);
     $pass = encodePassword(testInput($_REQUEST['password']));
 
 
-    if(!empty($user) && !empty($pass)) {
+    if(!empty($email) && !empty($pass)) {
 
-        $query = "SELECT * FROM users WHERE name =:username AND password =:password";
-        $acc = userLogin($query, $user, $pass);
+        $query = "SELECT * FROM users WHERE email =:useremail AND password =:password";
+        $acc = userLogin($query, $email, $pass);
 
         if($acc['count'] == 1 && !empty($acc['row'])) {
 
@@ -30,6 +30,7 @@
             $type = $value->name;
 
           }
+
 
 
           if($type === 'Admin') {
@@ -82,8 +83,8 @@
         <h1>Sign In</h1>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group mb-3">
-                <label for="myemail">User name*</label>
-                <input type="text" class="form-control" name="user" id="myemail" placeholder="phone number, username or email" autocomplete="off">
+                <label for="myemail">Email address*</label>
+                <input type="email" class="form-control" name="user" id="myemail" placeholder="email" autocomplete="off">
             </div>
             <div class="form-group mb-3">
                 <label for="mypassword">Password*</label>
