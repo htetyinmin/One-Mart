@@ -101,7 +101,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .carousel-inner {
-    max-height: 700px;
+    max-height: 500px;
 }
 
 .carousel-inner .carousel-item::after {
@@ -153,28 +153,29 @@ input[type="search"]::-webkit-search-cancel-button {
 
 /*----------breadcrumb---------*/
 .bd_crumb {
-    padding: 15px 0;
+    padding: 84px 0;
     background-color: rgba(2, 2, 2, 0.308);
 }
 
 .breadcrumb {
     align-items: center;
     margin-bottom: 0;
+    justify-content: center;
 }
 
 li.breadcrumb-item{
     font-size: 20px;
-    color: #000;
+    color: #fff;
 }
 
 li.breadcrumb-item a {
-    color: #000;
+    color: #fff;
 }
 
 .breadcrumb-item.active {
     font-size: 13px;
     cursor: pointer;
-    color: rgb(88, 86, 86);
+    color: rgb(255, 15, 0);
 }
 
 

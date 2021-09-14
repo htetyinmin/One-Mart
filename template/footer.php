@@ -61,6 +61,7 @@
 
   <!-- javascript code -->
   <script src="assets/frontend/js/jquery-3.6.0.js"></script>
+  <script src="assets/frontend/js/owl.carousel.js"></script>
   <script src="assets/frontend/js/custom.js"></script>
   <script src="assets/frontend/js/bootstrap-5.1.0.min.js"></script>
   <script src="assets/frontend/js/app.js"></script>
@@ -132,6 +133,32 @@
           }
         ]
     });
+
+
+    $('.product-slider').owlCarousel({
+    loop:true,
+    margin:30,
+    // nav:true,
+    items:5,
+    autoplay:true,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        600:{
+            items:3,
+            nav:false
+        },
+        1000:{
+            items:5,
+            nav:true,
+            loop:false
+        }
+    }
+})
+
     });
   </script>
 

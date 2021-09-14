@@ -27,7 +27,7 @@
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="assets/frontend/img/slider/banner1.png" class="d-block w-100" alt="slider image">
+          <img src="assets/frontend/img/slider/slider1.png" class="d-block w-100" alt="slider image">
         </div>
         <div class="carousel-item">
           <img src="assets/frontend/img/slider/slider2.png" class="d-block w-100" alt="slider image">
@@ -67,7 +67,7 @@
 
         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 ">
           <div class="sub-body">
-              <img src="admin/uploads/<?= $sub->photo ?>" class="img-fluid p-3" style="border-radius: 20px;">
+              <a href="products.php"><img src="admin/uploads/<?= $sub->photo ?>" class="img-fluid p-3" style="border-radius: 20px;"></a>
             <h5 class="text-center pb-3"><?= $sub->name ?></h5>
           </div>
         </div>

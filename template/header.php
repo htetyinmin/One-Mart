@@ -28,6 +28,8 @@
   <link rel="stylesheet" href="assets/frontend/css/all.min.css">
 
   <!-- Style CSS -->
+  <link rel="stylesheet" href="assets/frontend/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="assets/frontend/css/owl.theme.green.min.css">
   <link rel="stylesheet" href="assets/frontend/css/customize.css">
   <link rel="stylesheet" href="assets/frontend/css/style.css">
   <link rel="stylesheet" href="assets/frontend/slick/slick.css">

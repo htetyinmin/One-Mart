@@ -69,3 +69,142 @@
       padding: 5px;
       border-radius: 3px;
 }
+
+/* Proudcts Page */
+
+#product{
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-flow: column;
+      /* width: 100vw; */
+}
+
+#product .product-container{
+      width: 90%;
+}
+
+.product-slider .owl-nav .owl-next,
+.product-slider .owl-nav .owl-prev{
+
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: red;
+      font-size: 10px;
+      background: none;
+      border: none;
+      outline: none;
+
+}
+
+.product-slider .owl-nav .owl-next{
+      right: -3rem;
+}
+
+.product-slider .owl-nav .owl-prev{
+      left: -3rem;
+}
+
+.product-card{
+      /* height: 40rem;
+      width: 30rem; */
+      margin: 2rem auto;
+      box-shadow: 0 0 .3rem #000;
+      border-radius: .5rem;
+      position: relative;
+}
+
+
+
+.image{
+      height: 60%;
+      width: 100%;
+}
+
+.image img{
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+}
+
+.content{
+      height: 25%;
+      width: 100%;
+      text-align: center;
+      padding: 20px;
+}
+
+.content h3{
+      font-size: 25px;
+}
+
+.content .stars i{
+      color: gold;
+      font-size: 10px;
+}
+
+.price{
+      font-size: 20px;
+      color: red;
+}
+
+.info{
+      position: absolute;
+      top: 0;
+      left: 0%;
+      height: 100%;
+      width: 100%;
+      background: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-flow: column;
+      transition: 0.3s;
+      transform: scale(0);
+
+}
+
+.product-card:hover .info{
+      transform: scale(1);
+}
+
+.info h4{
+      font-size: 15px;
+      color: #fff;
+}
+
+.info p{
+      color: #fff;
+      font-size: 12px;
+      padding: 1rem 2rem;
+      text-align: center;
+}
+
+.info a:hover{
+      background: red ;
+      /* color: red; */
+}
+
+.share a{
+      font-size: 18px;
+      height: 30px;
+      width: 30px;
+      line-height: 30px;
+      text-align: center;
+      background: #fff;
+      color: red;
+      margin: 5px;
+      border-radius: 50%;
+}
+
+.share a:hover{
+      text-decoration: none;
+      background-color: red;
+      color: #fff;
+}
+
+
+
+
