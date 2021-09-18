@@ -6,13 +6,6 @@
 
     $sql = "SELECT * FROM brand";
     $brandAll = getItems($sql);
-
-    // if(isset($_POST["delete"])){
-    //     $id=$_POST['id'];
-        
-    //     $tmp="DELETE FROM brand where id=$id";
-    //     getItems($tmp);
-    // }
       
 ?>
 
@@ -21,7 +14,7 @@
                 <div class="col-12">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb bg-white mb-4">
-                            <li class="breadcrumb-item"><a href="dashboard.html" class="text-success">Home</a></li>
+                            <li class="breadcrumb-item"><a href="dashboard.php" class="text-success">Home</a></li>
                             <li class="breadcrumb-item active" aria-current="page" class="text-success">Brand List</li>
                         </ol>
                     </nav>
@@ -33,7 +26,7 @@
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
                                 <h4 class="mb-0">
-                                    <i class="feather-list text-success"></i> Brand List
+                                    <i class="feather-image text-success"></i> Brand List
                                 </h4>
                                 <div class="">
                                     <a href="#" class="btn btn-outline-secondary full-screen-btn">
