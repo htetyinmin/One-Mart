@@ -14,7 +14,12 @@
 
 
 
-
+    <style>
+        .go-login {
+            font-size: 13px;
+            font-family: sans-serif;
+        }
+    </style>
 
 
   <!-- register -->
@@ -41,6 +46,10 @@
                   <label for="phone">Mobile Number*</label>
                   <input type="text" class="form-control" name="phone" id="phone" placeholder="mobile number">
                   <small><span class="phone-error" style="color:red;"></span></small>
+              </div>
+
+              <div class="go-login">
+                Already account? <a href="login.php">Login</a>
               </div>
 
               <div class="col-12 mt-4 mb-5">

@@ -46,6 +46,22 @@ a {
     margin-right: 3px;
 }
 
+.my-nav > .nav-item {
+    background-color: none;
+}
+
+.my-nav > .nav-item > .dropdown-item {
+    color: #fff;
+}
+
+.my-nav > .nav-item:hover > a {
+    background-color: transparent;
+}
+
+.my-nav > .nav-item:hover .nav-link {
+    
+}
+
 .navbar-nav .nav-item {
     margin-left: 15px;
 }
@@ -598,6 +614,10 @@ footer > .social_media a:hover > i {
 
 
 
+
+
+
+
 /*--------------------profile page-----------------------*/
 .profile {
     padding: 60px 0;
@@ -767,6 +787,9 @@ footer > .social_media a:hover > i {
 .profile .card-body > .form input:focus{
     color: rgb(51, 49, 49);
 }
+
+
+
 
 
 
