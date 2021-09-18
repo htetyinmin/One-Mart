@@ -16,7 +16,7 @@
                 <div class="col-12">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb bg-white mb-4">
-                            <li class="breadcrumb-item"><a href="dashboard.html" class="text-success">Home</a></li>
+                            <li class="breadcrumb-item"><a href="dashboard.php" class="text-success">Home</a></li>
                             <li class="breadcrumb-item active" aria-current="page" class="text-success">Item List</li>
                         </ol>
                     </nav>

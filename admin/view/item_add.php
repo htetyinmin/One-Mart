@@ -35,8 +35,8 @@
         <div class="col-12">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-white mb-4">
-                    <li class="breadcrumb-item"><a href="dashboard.html" class="text-success">Home</a></li>
-                    <li class="breadcrumb-item"><a href="brand_list.html" class="text-success">Item</a></li>
+                    <li class="breadcrumb-item"><a href="dashboard.php" class="text-success">Home</a></li>
+                    <li class="breadcrumb-item"><a href="item_list.php" class="text-success">Item</a></li>
                     <li class="breadcrumb-item text-success active" aria-current="page">Add Item</li>
                 </ol>
             </nav>
