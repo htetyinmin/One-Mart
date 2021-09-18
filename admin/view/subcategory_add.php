@@ -45,23 +45,16 @@
                   </div>
               </div>
 
-              <?php 
+              <?php if(isset($res)) { ?>
 
-                if(isset($res)) {
-              
-              ?>
               <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>Message:</strong> Subcategory add successfully...
+                <strong>Message: </strong>Subcategory Added Successfully! <a href="subcategory_list.php"><u>Back to List</u></a>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
               </div>
 
-            <?php 
-                                    
-                 }
-            
-            ?>
+            <?php } ?>
 
               <div class="row">
                   <div class="col-12">

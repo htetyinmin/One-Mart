@@ -6,13 +6,6 @@
 
     $sql = "SELECT * FROM brand";
     $brandAll = getItems($sql);
-
-    // if(isset($_POST["delete"])){
-    //     $id=$_POST['id'];
-        
-    //     $tmp="DELETE FROM brand where id=$id";
-    //     getItems($tmp);
-    // }
       
 ?>
 
