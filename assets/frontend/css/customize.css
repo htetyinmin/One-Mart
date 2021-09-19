@@ -5,7 +5,7 @@
 
 body{
     font-family: sans-serif;
-    background-color: rgb(255, 255, 255);
+    background-color: #f5f5f5;
 }
 
 i{
@@ -28,6 +28,20 @@ a {
 .tooltip-inner {
     padding: 1.3em; 
 }
+
+
+
+
+
+/*----------------Common CSS------------------*/
+.textSize {
+    font-size: 13px;
+}
+
+.anchorColor {
+    color: #0d6dfd;
+}
+
 
 
 
@@ -564,50 +578,51 @@ footer > .social_media a:hover > i {
 
 
 /*--------------------signup/login page-----------------------*/
-.form-ui h1{
+.login {
+    height: 90vh;
+}
+
+.login .login-form {
+    width: 400px;
+    background-color: #fff;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+.login-form h2 {
     text-align: center;
+    font-family: monospace;
     font-size: 25px;
-    font-family: sans-serif;
     color: rgb(255, 15, 0);
-    margin-bottom: 30px;
-}   
-
-.form-ui .form {
-    background-color: #e6e8ec;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    /* box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); */
-    /* box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22); */
-
 }
 
-.form-ui .form label {
+.login-form label {
     font-size: 14px;
+    margin-bottom: 3px;
 }
 
-.form input {
-    font-size: 13px;
-    padding: 10px;
-    border: 1.5px solid transparent;
-    outline: none;
-    /* background-color: gray; */
+.login-form input {
+    font-size: 14px;
+    padding: 8px;
 }
 
-.form input:focus {
+.login-form input:focus {
     box-shadow: none;
     border-color:rgb(255, 15, 0);
 }
 
-.form input::placeholder {
-    font-size: 12px;
+.login-form input::placeholder {
+    font-size: 13px;
 }
 
-.form-ui> .form button {
+.login-form .btn-login {
+    padding: 6px 15px;
     font-size: 14px;
-    box-shadow: 0 3px 3px rgba(0, 0, 0, .5);
-}
-
-.form-ui > .form button:hover {
-    box-shadow: 0 3px 5px rgba(0, 0, 0, .6);
+    color: #fff;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.4);
 }
 
 
@@ -1629,4 +1644,14 @@ footer > .social_media a:hover > i {
         padding: 2em 1em;
     }
 
+}
+
+
+@media screen and (max-width: 376px) {
+    .login {
+        padding-top: 3rem;
+    }
+    .login .login-form {
+        padding: 1.5rem !important;
+    }
 }

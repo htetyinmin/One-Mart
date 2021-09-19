@@ -19,19 +19,18 @@
 
 
           $user_id = $acc['row']['id'];
+          $user_id = intval($user_id);
 
-
-          $sql = "SELECT name FROM role WHERE id = $user_id";
+          $sql = "SELECT r.name as rname FROM users u 
+          INNER JOIN model_has_role mhr ON u.id=mhr.id 
+          INNER JOIN role r ON r.id=mhr.role_id WHERE u.id = $user_id";
           $res = getItems($sql);
-          $type = '';
           
           foreach($res as $value) {
 
-            $type = $value->name;
+            $type = $value->rname;
 
           }
-
-
 
           if($type === 'Admin') {
 
@@ -55,7 +54,6 @@
             exit();
           }
 
-
         }else {
 
           echo "<script>alert('Invalid username and password!');</script>";
@@ -75,47 +73,44 @@
 ?>
 
 
-
-
-
-<style>
-  .go-signup {
-      font-size: 13px;
-      font-family: sans-serif;
-  }
-</style>
-
-
 <!-- login -->
-<div class="container form-ui my-5">
-    <div class="col-md-5 col-xs-12 mx-auto py-5 px-4 form">
-        <h1>Login In</h1>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group mb-3">
-                <label for="myemail">Email address*</label>
-                <input type="email" class="form-control" name="user" id="myemail" placeholder="email" autocomplete="off">
-            </div>
-            <div class="form-group mb-3">
-                <label for="mypassword">Password*</label>
-                <input type="password" class="form-control" name="password" id="mypassword" placeholder="password" autocomplete="off">
-            </div>
+<div class="login">
+    <div class="container">
+        <div class="row">
+            <div class="pt-4 pb-1 px-5 position-absolute top-50 start-50 translate-middle shadow login-form">
 
-            <div class="go-signup">
-              Not account? <a href="signup.php">Sign up</a>
-            </div>
+                <h2 class="mb-4">Login </h2>
 
-            <div class="col-12 mt-4 mb-5">
-                <button type="submit" name="signin" class="btn btn-primary float-end">Login</button>
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                    <div class="form-group mb-3">
+                        <label for="myemail" class="textSize">Email Address</label>
+                        <input type="email" class="form-control" name="user" id="myemail" placeholder="email" autocomplete="off">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="mypassword">Passwrod</label>
+                        <input type="password" class="form-control" name="password" id="mypassword" placeholder="password" autocomplete="off">
+                    </div>
+                    <div class="fotm-group d-flex align-items-center">
+                        <span class="textSize">Remember me &nbsp;</span>
+                        <input type="checkbox" name="remember">
+                        <a href="#" class="textSize anchorColor ms-auto">Forget Password?</a>
+                    </div>
+                    <div class="d-flex flex-row justify-content-end">
+                        <button type="submit" name="signin" class="btn btn-primary btn-sm mt-4 mb-4 textSize btn-login">Login</button>
+                    </div>
+                </form>
+
+                <div class="text-center">
+                    <p class="textSize">Don't have an account?&nbsp;<a href="signup.php" class="anchorColor">Create One</a></p>
+                </div>
             </div>
-        </form>
+        </div>
     </div>
 </div>
 
 
-
-
-<?php 
-
-  include_once "template/footer.php";
-
-?>
+<style>
+    .navbar {display: none;}
+    footer {display: none;}
+</style>
+<?php include_once "template/footer.php";?>
