@@ -37,31 +37,24 @@
                   <div class="col-12">
                       <nav aria-label="breadcrumb">
                           <ol class="breadcrumb bg-white mb-4">
-                              <li class="breadcrumb-item"><a href="dashboard.html" class="text-success">Home</a></li>
-                              <li class="breadcrumb-item"><a href="brand_list.html" class="text-success">Subcategory</a></li>
+                              <li class="breadcrumb-item"><a href="dashboard.php" class="text-success">Home</a></li>
+                              <li class="breadcrumb-item"><a href="subcategory_list.php" class="text-success">Subcategory</a></li>
                               <li class="breadcrumb-item text-success active" aria-current="page">Add Subcategory</li>
                           </ol>
                       </nav>
                   </div>
               </div>
 
-              <?php 
+              <?php if(isset($res)) { ?>
 
-                if(isset($res)) {
-              
-              ?>
               <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>Message:</strong> Subcategory add successfully...
+                <strong>Message: </strong>Subcategory Added Successfully! <a href="subcategory_list.php"><u>Back to List</u></a>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
               </div>
 
-            <?php 
-                                    
-                 }
-            
-            ?>
+            <?php } ?>
 
               <div class="row">
                   <div class="col-12">

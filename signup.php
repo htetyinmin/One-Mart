@@ -1,63 +1,54 @@
-<?php 
+<?php include_once "template/header.php";?>
 
-    include_once "template/header.php";
+<!-- register -->
+<div class="login">
+    <div class="container">
+        <div class="row">
+            <div class="pt-4 pb-1 px-5 position-absolute top-50 start-50 translate-middle shadow login-form">
 
-?>
+                <h2 class="mb-4">Sign Up</h2>
 
-    <!-- alert -->
-    <!-- <div class="container mt-3">
-        <div class="alert alert-warning alert-dismissible fade show" role="alert" id="alertReg" style="display: none;">
-            <span id="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, sequi dolore? Dolorum quam adipisci pariatur?</span>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <form name="formData" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+                    <div class="form-group mb-2">
+                        <label for="name">Full Name*</label>
+                        <input type="text" class="form-control" name="fullname" id="name" autocomplete="off" placeholder="fullname">
+                        <small><span class="name-error" style="color:red; font-size:12px"></span></small>
+                    </div>
+                    <div class="form-group mb-2">
+                        <label for="myemail">Email Address*</label>
+                        <input type="text" class="form-control" name="email" id="myemail" autocomplete="off" placeholder="email">
+                        <small><span class="email-error" style="color:red;"></span></small>
+                    </div>
+                    <div class="form-group mb-2">
+                        <label for="mypassword">Password*</label>
+                        <input type="password" class="form-control" name="password" id="mypassword" autocomplete="off" placeholder="password">
+                        <small><span class="password-error" style="color:red;"></span></small>
+                    </div>
+                    <div class="form-group mb-2">
+                        <label for="phone">Mobile Number*</label>
+                        <input type="text" class="form-control" name="phone" id="phone" autocomplete="off" placeholder="mobile number">
+                        <small><span class="phone-error" style="color:red;"></span></small>
+                    </div>
+
+                    <div class="d-flex flex-row justify-content-end">
+                        <button type="submit" id="signup" name="submit" class="btn btn-primary btn-sm mt-4 mb-4 textSize btn-login">Signup</button>
+                    </div>
+                </form>
+                <div class="text-center">
+                    <p class="textSize">Aleready account?&nbsp;<a href="login.php" class="anchorColor">Login</a></p>
+                </div>
+            </div>
         </div>
-    </div> -->
+    </div>
+</div>
 
 
+<?php include_once "template/footer.php";?>
 
-
-
-
-  <!-- register -->
-  <div class="container form-ui my-5">
-      <div class="col-md-5 col-xs-12 mx-auto py-5 px-4 form">
-          <h1>Sign Up</h1>
-          <form name="formData" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-              <div class="form-group mb-3">
-                  <label for="name">Full Name*</label>
-                  <input type="text" class="form-control" name="fullname" id="name" placeholder="fullname">
-                  <small><span class="name-error" style="color:red; font-size:12px"></span></small>
-              </div>
-              <div class="form-group mb-3">
-                  <label for="myemail">Email Address*</label>
-                  <input type="text" class="form-control" name="email" id="myemail" placeholder="email">
-                  <small><span class="email-error" style="color:red;"></span></small>
-              </div>
-              <div class="form-group mb-3">
-                  <label for="mypassword">Password*</label>
-                  <input type="password" class="form-control" name="password" id="mypassword" placeholder="password">
-                  <small><span class="password-error" style="color:red;"></span></small>
-              </div>
-              <div class="form-group mb-3">
-                  <label for="phone">Mobile Number*</label>
-                  <input type="text" class="form-control" name="phone" id="phone" placeholder="mobile number">
-                  <small><span class="phone-error" style="color:red;"></span></small>
-              </div>
-
-              <div class="col-12 mt-4 mb-5">
-                  <button type="submit" id="signup" name="submit" class="btn btn-primary float-end">Sign Up</button>
-              </div>
-          </form>
-      </div>
-  </div>
-
-
-<?php 
-
-  include_once "template/footer.php";
-
-?>
-
-
+<style>
+    .navbar {display: none;}
+    footer {display: none;}
+</style>
 
 <script>
 

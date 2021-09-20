@@ -30,10 +30,11 @@
   <!-- Style CSS -->
   <link rel="stylesheet" href="assets/frontend/css/owl.carousel.min.css">
   <link rel="stylesheet" href="assets/frontend/css/owl.theme.green.min.css">
-  <link rel="stylesheet" href="assets/frontend/css/customize.css">
-  <link rel="stylesheet" href="assets/frontend/css/style.css">
   <link rel="stylesheet" href="assets/frontend/slick/slick.css">
   <link rel="stylesheet" href="assets/frontend/slick/slick-theme.css">
+  <link rel="stylesheet" href="assets/frontend/css/style.css">
+  <link rel="stylesheet" href="assets/frontend/css/customize.css">
+
 
 </head>
 <body>
@@ -54,126 +55,106 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-            <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" title="category">
-            <i class="fas fa-clipboard-list"></i>
-            <span>Category</span>
-            </a>
-                <ul class="dropdown-menu">
-            <?php 
-                foreach($categories as $category)
-                {
-            ?>
-                    <li>
-                        <a class="dropdown-item" href="#">
-                        <!-- <img src="admin/uploads/" alt="" width="50" height="50" style="border-radius: 50%;"> -->
-                        <span><?= $category->name ?></span>
-                        </a>
-                    </li>
-            <?php
-                } 
-            ?>
-                </ul>
-            </li>
-        
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" title="sale">
-                <i class="fa fa-tags"></i>
-                <span>Payment</span>
-                </a>
-                <ul class="dropdown-menu">
-                <li>
-                    <a class="dropdown-item" href="#">
-                    <i class="fa fa-money-check-alt i_color"></i>
-                    <span>Payment</span>
-                </a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" data-bs-toggle='dropdown' title="category">
+                        <i class="fas fa-clipboard-list"></i>
+                        <span>Category</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <?php 
+                            foreach($categories as $category)
+                            {
+                        ?>
+                        <li>
+                            <a class="dropdown-item" data-bs-toggle='dropdown' href="#">
+                            <!-- <img src="admin/uploads/" alt="" width="50" height="50" style="border-radius: 50%;"> -->
+                            <span><?= $category->name ?></span>
+                            </a>
+                        </li>
+                        <?php
+                            } 
+                        ?>
+                    </ul>
                 </li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-            </li>
+            
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" title="brands">
+                        <i class="fa fa-tags"></i>
+                        <span>Brands</span>
+                    </a>
+                    <!-- <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="fa fa-money-check-alt i_color"></i>
+                                <span>Payment</span>
+                            </a>
+                        </li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul> -->
+                </li>
 
-            <li class="nav-item">
-            <a class="nav-link cart_icon" href="product_cart.php" title="cart">
-            <i class="fa fa-cart-plus position-relative">
-                <!-- <span class="position-absolute top-0 start-100 translate-middle p-1 rounded-circle my-cart-badge">
-                </span> -->
-                <span class="position-absolute translate-middle badge rounded-pill noti">
-                    99+
-                    <span class="visually-hidden">unread messages</span>
-                </span>
-            </i><span>Cart</span>
+                <li class="nav-item">
+                    <a class="nav-link cart_icon" href="product_cart.php" title="cart">
+                    <i class="fa fa-cart-plus position-relative">
+                        <span class="position-absolute translate-middle badge rounded-pill noti">
+                            99+
+                        </span>
+                    </i><span>Cart</span>
 
-            </a>
-            </li>
+                    </a>
+                </li>
             </ul>
 
             <ul class="navbar-nav my-nav">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" title="manage account">
-                <i class="fa fa-users-cog"></i>
-                <span class="f_color">
-                <?php 
+                <li class="nav-item dropdown">
+                    <?php 
 
-                    if(checkSession('user')) {
+                        if(checkSession('user')) {
+                            $Authuser = getSession('user');
+                            echo "<a class='nav-link' href='#' data-bs-toggle='dropdown' title=".  $Authuser['user_name'] .">
+                                    <i class='far fa-user'></i>
+                                    <span class='f_color'>" . $Authuser['user_name'] . "</span>
+                                </a>";
 
-                        $Authuser = getSession('user');
-                        echo ($Authuser['user_name']);
+                        }else{
 
-                    }else{
+                            echo "<a class='dropdown-item' href='login.php'>
+                                    <i class='fa fa-sign-in-alt'></i>
+                                    <span>Login</span>
+                                </a>";
 
-                        echo "Member";
+                        }
+                        
+                        
+                    ?>
 
-                    }
-                    
-                    
-                ?>
-                </span>
-                </a>
-                <ul class="dropdown-menu">
-                <?php 
-                    
-                    
-                    if(checkSession('user')) {
 
-                        echo "
-                        <li>
-                            <a class='dropdown-item' href='profile.php'>
-                            <i class='fa fa-user i_color'></i>
-                            <span>Profile</span>
-                            </a>
-                        </li>
-                        <li><hr class='dropdown-divider'></li>
-                        <li>
-                        <a class='dropdown-item' href='logout.php'>
-                            <i class='fa fa-sign-out-alt i_color'></i>
-                            <span>Logout</span>
-                        </a>
-                    </li>";
+                    <ul class="dropdown-menu">
+                    <?php 
+                        
+                        if(checkSession('user')) {
 
-                    }else{
-
-                        echo "
-                        <li>
-                            <a class='dropdown-item' href='signup.php'>
-                                <i class='fa fa-sign-in-alt i_color'></i>
-                                <span>SignUp</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class='dropdown-item' href='login.php'>
-                            <i class='fa fa-sign-in-alt i_color'></i>
-                            <span>Login</span>
+                            echo "
+                            <li>
+                                <a class='dropdown-item' href='profile.php'>
+                                <i class='fa fa-user i_color'></i>
+                                <span>Profile</span>
+                                </a>
+                            </li>
+                            <li><hr class='dropdown-divider'></li>
+                            <li>
+                            <a class='dropdown-item' href='logout.php'>
+                                <i class='fa fa-sign-out-alt i_color'></i>
+                                <span>Logout</span>
                             </a>
                         </li>";
 
-                    }
-                    
-                    ?>
-                </ul>
-            </li>
+                        }
+                        ?>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>

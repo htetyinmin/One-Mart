@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../../assets/backend/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../assets/backend/vendor/feather-icons-web/feather.css">
     <link rel="stylesheet" href="../../assets/backend/css/style.css">
+    
 </head>
 <body>
 
@@ -34,7 +35,7 @@
                     </button>
                 </div>
                 <div class="nav-menu">
-                    <ul>
+                    <ul class="mb-3">
                         <li class="menu-item">
                             <a href="dashboard.php" class="menu-item-link <?php if($currentPage == 'dashboard'){echo 'active';}?>">
                                 <span>
@@ -86,6 +87,21 @@
                                     Items
                                 </span>
                                 <span class="badge badge-pill bg-white shadow-sm text-success p-1">12</span>
+                            </a>
+                        </li>
+
+                        <li class="menu-spacer"><hr></li>
+
+                        <li class="menu-title">
+                            <span>Manage Orders</span>
+                        </li>
+                        <li class="menu-item">
+                            <a href="order_list.php" class="menu-item-link <?php if($currentPage == 'order'){echo 'active';} else { echo 'somethings'; } ?>">
+                                <span>
+                                    <i class="feather-package"></i>
+                                    Order
+                                </span>
+                                <span class="badge badge-pill bg-white shadow-sm text-success p-1">8</span>
                             </a>
                         </li>
 

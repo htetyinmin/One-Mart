@@ -3,8 +3,11 @@
     include_once "../template/header.php";
     include_once "../system/function.php";
 
-    $sql = "SELECT * FROM users";
+    $sql = "SELECT users.*,role.id as rid, role.name as rname FROM users 
+    INNER JOIN model_has_role ON users.id=model_has_role.user_id 
+    INNER JOIN role ON model_has_role.role_id=role.id";
     $users = getItems($sql);
+    // var_dump($users);
     
 ?>
 
@@ -13,7 +16,7 @@
                 <div class="col-12">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb bg-white mb-4">
-                            <li class="breadcrumb-item"><a href="dashboard.html" class="text-success">Home</a></li>
+                            <li class="breadcrumb-item"><a href="dashboard.php" class="text-success">Home</a></li>
                             <li class="breadcrumb-item active" aria-current="page" class="text-success">User List</li>
                         </ol>
                     </nav>
@@ -25,7 +28,7 @@
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
                                 <h4 class="mb-0">
-                                    <i class="feather-list text-success"></i> User List
+                                    <i class="feather-user text-success"></i> User List
                                 </h4>
                                 <div class="">
                                     <a href="#" class="btn btn-outline-secondary full-screen-btn">
@@ -41,30 +44,34 @@
                                 <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th>Photo</th>
                                     <th>Email</th>
-                                    <th>Start Date</th>
+                                    <th>Role</th>
                                     <th>Action</th>
+                                    <th>Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
 
                                 <?php
+
                                     foreach ($users as $user) {
-                                        
-                                        $date = substr($user->created_at, 0, 10);
 
                                 ?>
                                     <tr>
                                         <td><?= $user->name ?></td>
-                                        <td>
-                                            <img src="../../assets/backend/img/user/avatar5.jpg" width="70" height="100" alt="Cover">
-                                        </td>
                                         <td><?= $user->email ?></td>
-                                        <td><?= $date ?></td>
+                                        <td><?= $user->rname ?></td>
                                         <td>
-                                            <!-- <a href="#" class="bg"><i class="feather-alert-circle text-success"></i></a> -->
-                                            
+                                            <form action="user_update.php" method="POST" onsubmit="return confirm('Are you sure want to perform this action?')">
+                                                <input type="hidden" name="id" value="<?= $user->id ?>">
+                                                <?php if ($user->rname == "User") { ?>
+                                                    <button class="btn btn-outline-success" type="submit" name="submit">Promote</button>
+                                                <?php } else { ?>
+                                                    <button class="btn btn-outline-danger" type="submit" name="submit">Deomote</button>
+                                                <?php } ?>
+                                            </form>
+                                        </td>
+                                        <td>
                                             <form action="user_delete.php" method="POST" class="d-inline-block" onsubmit="return confirm('Are you sure want to delete?')">
                                                 <input type="hidden" name="id" value="<?= $id ?>">
                                                 <button class="btn btn-outline-danger" name="delete">
@@ -80,10 +87,10 @@
                                 <tfoot>
                                 <tr>
                                     <th>Name</th>
-                                    <th>Photo</th>
                                     <th>Email</th>
-                                    <th>Start Date</th>
+                                    <th>Role</th>
                                     <th>Action</th>
+                                    <th>Delete</th>
                                 </tr>
                                 </tfoot>
                             </table>
