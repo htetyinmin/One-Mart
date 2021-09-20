@@ -45,7 +45,7 @@
     <div class="container">
         <a class="navbar-brand" href="index.php" title="home">
             <!-- <i class="fa fa-home"></i> -->
-            <img src="assets/frontend/img/onemart.png" width="100" height="40" alt="">
+            <img src="assets/frontend/img/onemart.png" width="80" height="40" alt="">
         </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -101,12 +101,41 @@
                 </li>
             </ul>
 
-            <form class="d-flex">
-                <input class="form-control me-2 input" type="search" placeholder="search">
-            </form>
 
             <ul class="navbar-nav my-nav">
-                
+                <div class="search-group">
+
+                    <form action="#" method="get">
+                        <input type="text" name="search" value="" class="search" id="search-box" placeholder="Search..." autocomplete="off" required>
+                        <button type="submit" name="search-btn" id="btn-search"><i class="fas fa-search" id="s-icon" title="search"></i></button>
+                    </form>
+
+                    <div class="search-data" id="search-result">
+                        <ul>
+                            <li>
+                                <a href="#" class="d-flex flex-row my-card">
+                                    <div class="header">
+                                        <img src="../assets/frontend/img/product/cloth1.png" width="30" height="30" alt="">
+                                    </div>
+                                    <div class="body">
+                                        <p>Lorem ipsum dolor</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-flex flex-row my-card">
+                                    <div class="header">
+                                        <img src="../assets/frontend/img/product/cloth1.png" width="30" height="30" alt="">
+                                    </div>
+                                    <div class="body">
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
 
                 <li class="nav-item dropdown">
                     <?php 
@@ -154,7 +183,6 @@
                         ?>
                     </ul>
                 </li>
-
             </ul>
         </div>
 
@@ -163,3 +191,57 @@
         </button>
     </div>
 </nav>
+
+
+
+
+<script>
+
+    const searchBtn = document.getElementById('btn-search');
+    searchBtn.addEventListener('click', function(e) {
+
+        e.preventDefault();
+        let showBox = document.getElementById('search-box');//input
+        let icon = document.getElementById('s-icon');// for i tags
+
+
+        showBox.classList.toggle('view-box');
+
+        if(icon.classList.contains('fa-search')) {
+
+            icon.classList.remove('fa-search');
+            icon.classList.add('fa-times');
+
+        }else {
+
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-search');
+            showBox.value = '';
+        }
+
+    });
+
+
+    const searchBox = document.getElementById('search-box');//input
+    const result = document.getElementById('search-result');
+
+    searchBox.addEventListener('keyup', function() {
+
+        result.classList.toggle('search-view');
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

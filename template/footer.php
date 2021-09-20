@@ -64,9 +64,9 @@
   <script src="assets/frontend/js/owl.carousel.js"></script>
   <script src="assets/frontend/js/custom.js"></script>
   <script src="assets/frontend/js/bootstrap-5.1.0.min.js"></script>
-  <script src="assets/frontend/js/app.js"></script>
   <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script type="text/javascript" src="assets/frontend/slick/slick.min.js"></script>
+  <script src="assets/frontend/js/app.js"></script>
 
   <script type="text/javascript">
     $(document).ready(function(){
