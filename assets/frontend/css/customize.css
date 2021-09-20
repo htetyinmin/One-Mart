@@ -5,7 +5,7 @@
 
 body{
     font-family: sans-serif;
-    background-color: rgb(255, 255, 255);
+    background: #dde5ee;
 }
 
 i{
@@ -182,7 +182,7 @@ li.breadcrumb-item a {
 /*----------product_ad---------*/
 .product_ad {
     padding: 50px 0;
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
     display: flex;
     flex-direction: row;
 }
@@ -209,25 +209,34 @@ li.breadcrumb-item a {
 
 /*----------product---------*/
 .product {
-    background-color: #fff;
+    background-color: #dde5ee;
 }
 
 .card {
     position: relative;
     overflow: hidden;
-    background: #ebdddd;
-    box-shadow: 0px 0px 8px 1px rgba(0,0, 0, 0.2);
+    box-shadow: 0px 0px 8px 1px rgba(0,0, 0, 0.1);
     border: 0;
     margin-right: 30px;
 }
 
+.product_card{
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 0px 8px 1px rgba(0,0, 0, 0.1);
+    background: #fff;
+    border: 0;
+}
 
-.card:hover {
+
+.card:hover,
+.product_card:hover {
     cursor: pointer;
     box-shadow: 0 0.15rem 0.8rem rgba(0, 0, 0, 0.4);
 }
 
-.card .buy {
+.card .buy,
+.product_card .buy {
     background-color: rgb(255, 15, 0);
     position: absolute;
     content: '';
@@ -245,58 +254,67 @@ li.breadcrumb-item a {
 }
 
 .card .buy::before,
-.card .buy::after {
+.product_card .buy::before,
+.card .buy::after,
+.product_card .buy::after {
     position: absolute;
     content: '';
     border-style: solid;
 }
 
-.card .buy::before {
+.card .buy::before,
+.product_card .buy::before {
     bottom: -20px;
     left: 0;
     border-width: 0 0 20px 20px;
     border-color: transparent transparent transparent rgb(255, 15, 0);
 }
 
-.card .buy::after {
+.card .buy::after,
+.product_card .buy::after {
     right: 0;
     bottom: -20px;
     border-width: 0 20px 20px 0;
     border-color: transparent rgb(255, 15, 0) transparent transparent ;
 }
 
-.card .buy button {
+.card .buy button,
+.product_card .buy button {
     box-shadow: none;
     border: none;
     background-color: transparent;
 }
 
-.card .buy button:hover {
+.card .buy button:hover,
+.product_card .buy button:hover {
     opacity: 0.9;
 }
 
-.card .buy i {
+.card .buy i,
+.product_card .buy i {
     line-height: 30px;
     text-shadow: 1px 0px 1px rgba(0,0, 0, 0.7);
     color: #fff;
 }
 
-.card:hover .buy {
+.card:hover .buy,
+.product_card:hover .buy {
     top: 0px;
 }
 
 
 
 .card-body .card-title {
-    font-size: 15px;
-    color: rgb(255, 15, 0);
+    font-size: 12px;
+    color: #000;
     font-weight: bold;
-    width: 200px;
+    /* width: 200px; */
 }
 
 .card-body .card-text {
-    font-size: 13px;
-    letter-spacing: 0.8px;
+    font-size: 10px;
+    /* letter-spacing: 0.8px; */
+    text-align: justify;
     word-spacing: 1.3;
 }
 
@@ -306,18 +324,20 @@ li.breadcrumb-item a {
 
 .card-body .price .current_price {
     font-size: 13px;
-    color: rgb(255, 15, 0);
+    color: #000;
 }
 
 .card-body .price .old_price {
     font-size: 9px;
     display: block;
+    color: rgb(255, 15, 0);
 }
 
 .product .order_btn {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 3px 3px;
 }
 
 .loading {
@@ -328,25 +348,31 @@ li.breadcrumb-item a {
 }
 
 .loading span {
-    margin: 0 0 0 3px;
-    color: rgb(122, 122, 122);
+    padding: 8px;
+    background-color: rgb(255, 15, 0);
+    border-radius: 5px;
+    color: #fff;
+
 }
 
-.loading .spinner-grow-sm {
-    width: 0.2rem;
-    height: 0.2rem;
-}
 
 
 .product .cart_btn {
     padding: 0.3em 0.6em;
     border: none;
+    margin: 12px;
     box-shadow: 1px 2px 6px rgba(0, 0, 0, .5);
-    text-transform:capitalize;
     font-size: 13px;
     color: #fff;
     -webkit-transition: background .3s ease;
             transition: background .3s ease; 
+}
+
+.product_btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
 }
 
 
@@ -536,10 +562,10 @@ footer > .social_media a:hover > i {
     color: #fff;
 }
 
-.row>* {
+/* .row>* {
     padding-right: calc(var(--bs-gutter-x) * .2);
     padding-left: calc(var(--bs-gutter-x) * .2);
-}
+} */
 
 
 
@@ -1550,10 +1576,10 @@ footer > .social_media a:hover > i {
 
 
     /*-----------product--------------*/
-    .product .card img {
+    /* .product .card img {
         width: 100%;
         height: 100%;
-    }
+    } */
 
 
 

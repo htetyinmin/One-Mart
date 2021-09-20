@@ -1,246 +1,64 @@
 <?php 
 
   include_once "template/header.php";
+  include_once "system/function.php";
+
+
+    $sql = "SELECT * FROM items";
+    $items = itemsAll($sql);
 
 ?>
-
-<!-- background image -->
-  <div class="bg_image">
-    <!-- Breadcrumb -->
-    <div class="bd_crumb">
-        <div class="container">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Library</li>
-            </ol>
-          </nav>
-          <!-- <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Profile</li>
-            </ol>
-          </nav>-->
-        </div>
-    </div> 
-
-  </div>
 
   <!-- Products -->
 
   <section id="product">
         <div class="product-container">
-              <h2 class="title mt-5 mb-3">Shoes</h2>
-              <div class="product-slider owl-carousel owl-theme">
-                    <div class="product-card item">
-                          <div class="image">
-                                <img src="assets/frontend/img/product/shoe1.png" alt="">
-                          </div>
-                          <div class="content">
-                                <h3>Shoes</h3>
-                                <div class="stars">
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                </div>
-                                <div class="price">55000 Ks</div>
-                          </div>
+              <h2 class="title mt-5 mb-3" id="laptop">All Products</h2>
+              <div class="row mb-3">
+                  <?php foreach($items as $item){
+                  
+                  $ai_id=$item['id'];
+                  $ai_name=$item['name'];
+                  $ai_photo=$item['photo'];
+                  $ai_price=$item['price'];
+                  $ai_discount=$item['discount'];
+                  $ai_description=$item['description'];
 
-                          <div class="info">
-                                <h4>Product Info</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ad reiciendis laboriosam autem molestiae nesciunt animi <a href="#">More</a></p>
-                                <a href="#" class="button btn btn-primary mb-3">Add to Cart</a>
-                                <div class="share mt-5">
-                                    <a href="#" class="fab fa-facebook-f"></a>
-                                    <a href="#" class="fab fa-twitter"></a>
-                                    <a href="#" class="fab fa-instagram"></a>
-                                </div>
-                          </div>
-                    </div>
-                    <div class="product-card item">
-                          <div class="image">
-                                <img src="assets/frontend/img/product/shoe1.png" alt="">
-                          </div>
-                          <div class="content">
-                                <h3>Shoes</h3>
-                                <div class="stars">
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                </div>
-                                <div class="price">55000 Ks</div>
-                          </div>
-
-                          <div class="info">
-                                <h4>Product Info</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ad reiciendis laboriosam autem molestiae nesciunt animi <a href="#">More</a></p>
-                                <a href="#" class="button btn btn-primary mb-3">Add to Cart</a>
-                                <div class="share">
-                                    <a href="#" class="fab fa-facebook-f"></a>
-                                    <a href="#" class="fab fa-twitter"></a>
-                                    <a href="#" class="fab fa-instagram"></a>
-                                </div>
-                          </div>
-                    </div>
-                    <div class="product-card item">
-                          <div class="image">
-                                <img src="assets/frontend/img/product/shoe1.png" alt="">
-                          </div>
-                          <div class="content">
-                                <h3>Shoes</h3>
-                                <div class="stars">
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                </div>
-                                <div class="price">55000 Ks</div>
-                          </div>
-
-                          <div class="info">
-                                <h4>Product Info</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ad reiciendis laboriosam autem molestiae nesciunt animi <a href="#">More</a></p>
-                                <a href="#" class="button btn btn-primary mb-3">Add to Cart</a>
-                                <div class="share">
-                                    <a href="#" class="fab fa-facebook-f"></a>
-                                    <a href="#" class="fab fa-twitter"></a>
-                                    <a href="#" class="fab fa-instagram"></a>
-                                </div>
-                          </div>
-                    </div>
-                    <div class="product-card item">
-                          <div class="image">
-                                <img src="assets/frontend/img/product/shoe1.png" alt="">
-                          </div>
-                          <div class="content">
-                                <h3>Shoes</h3>
-                                <div class="stars">
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                </div>
-                                <div class="price">55000 Ks</div>
-                          </div>
-
-                          <div class="info">
-                                <h4>Product Info</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ad reiciendis laboriosam autem molestiae nesciunt animi <a href="#">More</a></p>
-                                <a href="#" class="button btn btn-primary mb-3">Add to Cart</a>
-                                <div class="share">
-                                    <a href="#" class="fab fa-facebook-f"></a>
-                                    <a href="#" class="fab fa-twitter"></a>
-                                    <a href="#" class="fab fa-instagram"></a>
-                                </div>
-                          </div>
-                    </div>
-                    <div class="product-card item">
-                          <div class="image">
-                                <img src="assets/frontend/img/product/shoe1.png" alt="">
-                          </div>
-                          <div class="content">
-                                <h3>Shoes</h3>
-                                <div class="stars">
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                </div>
-                                <div class="price">55000 Ks</div>
-                          </div>
-
-                          <div class="info">
-                                <h4>Product Info</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ad reiciendis laboriosam autem molestiae nesciunt animi <a href="#">More</a></p>
-                                <a href="#" class="button btn btn-primary mb-3">Add to Cart</a>
-                                <div class="share">
-                                    <a href="#" class="fab fa-facebook-f"></a>
-                                    <a href="#" class="fab fa-twitter"></a>
-                                    <a href="#" class="fab fa-instagram"></a>
-                                </div>
-                          </div>
-                    </div>
-                    <div class="product-card item">
-                          <div class="image">
-                                <img src="assets/frontend/img/product/shoe1.png" alt="">
-                          </div>
-                          <div class="content">
-                                <h3>Shoes</h3>
-                                <div class="stars">
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                </div>
-                                <div class="price">55000 Ks</div>
-                          </div>
-
-                          <div class="info">
-                                <h4>Product Info</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ad reiciendis laboriosam autem molestiae nesciunt animi <a href="#">More</a></p>
-                                <a href="#" class="button btn btn-primary mb-3">Add to Cart</a>
-                                <div class="share">
-                                    <a href="#" class="fab fa-facebook-f"></a>
-                                    <a href="#" class="fab fa-twitter"></a>
-                                    <a href="#" class="fab fa-instagram"></a>
-                                </div>
-                          </div>
-                    </div>
-                    <div class="product-card item">
-                          <div class="image">
-                                <img src="assets/frontend/img/product/shoe1.png" alt="">
-                          </div>
-                          <div class="content">
-                                <h3>Shoes</h3>
-                                <div class="stars">
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                </div>
-                                <div class="price">55000 Ks</div>
-                          </div>
-
-                          <div class="info">
-                                <h4>Product Info</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ad reiciendis laboriosam autem molestiae nesciunt animi <a href="#">More</a></p>
-                                <a href="#" class="button btn btn-primary mb-3">Add to Cart</a>
-                                <div class="share">
-                                    <a href="#" class="fab fa-facebook-f"></a>
-                                    <a href="#" class="fab fa-twitter"></a>
-                                    <a href="#" class="fab fa-instagram"></a>
-                                </div>
-                          </div>
-                    </div>
-                    <div class="product-card item">
-                          <div class="image">
-                                <img src="assets/frontend/img/product/shoe1.png" alt="">
-                          </div>
-                          <div class="content">
-                                <h3>Shoes</h3>
-                                <div class="stars">
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                </div>
-                                <div class="price">55000 Ks</div>
-                          </div>
-
-                          <div class="info">
-                                <h4>Product Info</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ad reiciendis laboriosam autem molestiae nesciunt animi <a href="#">More</a></p>
-                                <a href="#" class="button btn btn-primary mb-3">Add to Cart</a>
-                                <div class="share">
-                                    <a href="#" class="fab fa-facebook-f"></a>
-                                    <a href="#" class="fab fa-twitter"></a>
-                                    <a href="#" class="fab fa-instagram"></a>
-                                </div>
-                          </div>
-                    </div>
-              </div>
+                  ?>
+          
+          <div class="col-md-4 col-lg-2 my-3">
+            <div class="product_card">
+                <div class="buy">
+                  <button type="button" title="Add to wishlist">
+                  <i class="far fa-heart"></i>
+                  </button>
+                </div>
+                <img src="admin/uploads/<?= $ai_photo ?>" class="card-img p-3" height=160 alt="...">
+                <div class="card-body" style="height: 170px;">
+                  <h5 class="card-title"><?= $ai_name ?></h5>
+                  <p class="card-text"><?= substr($ai_description,0,50) ?>&nbsp;<a href="#">more...</a></p>
+                  <div class="price">
+                  <?php if($ai_discount) {?>
+                    <span class="current_price"><?= $ai_discount ?> &nbsp;MMK</span><br>
+                    <span class="old_price"><del><?= $ai_price ?> &nbsp;MMK</del></span>
+                  <?php }else{?>
+                    <span class="current_price"><?= $ai_price ?> &nbsp;MMK</span><br>
+                  <?php } ?>
+                  </div>
+                </div>
+                <div class="product_btn">
+                  <a href="product_details.php?id=<?= $ai_id?>" type="button" class="btn btn-danger btn-sm cart_btn"><i class="fa fa-cart-arrow-down"></i></a>
+                  <!-- <button type="button" data-id=" + data[i].id " data-title=" + data[i].productName " data-content=" + data[i].productDec " data-price=" + data[i].currentPrice " data-img="./assets/frontend/img/product/ + data[i].productImg "  class="btn btn-primary btn-sm btn-danger cart_btn click-cart" title="Add to cart" data-bs-toggle="modal" data-bs-target="#cartModal">
+                  <i class="fa fa-cart-arrow-down"></i>
+                  </button> -->
+                  <button type="button" data-id=" + data[i].id " data-title=" + data[i].productName " data-content=" + data[i].productDec " data-price=" + data[i].currentPrice " data-img="./assets/frontend/img/product/ + data[i].productImg "  class="btn btn-primary btn-sm cart_btn" title="Order product">
+                  <i class="fab fa-shopify">&nbsp;Order</i>
+                  </button>
+                </div>
+            </div>
+          </div>
+        <?php } ?>
+      </div>
         </div>
   </section>
 
