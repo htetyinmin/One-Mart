@@ -23,13 +23,13 @@
       font-weight: 600;
 }
 
-.line{
+/* .line{
       width: 100px;
       background: #272829;
       height: 5px;
       margin-left: 6px;
       margin-bottom: 15px;
-}
+} */
 
 .discount #filters {
       padding: 0;
@@ -65,7 +65,7 @@
 }
     
 .your-class{
-      border : 1px solid #272829;
+      /* border : 1px solid #272829; */
       padding: 5px;
       border-radius: 3px;
 }
@@ -179,7 +179,7 @@
       color: #fff;
       font-size: 12px;
       padding: 1rem 2rem;
-      text-align: center;
+      text-align: justify;
 }
 
 .info a:hover{

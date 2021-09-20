@@ -33,7 +33,7 @@
           <img src="assets/frontend/img/slider/slider2.png" class="d-block w-100" alt="slider image">
         </div>
         <div class="carousel-item">
-          <img src="assets/frontend/img/slider/slider3.jpg" class="d-block w-100" alt="slider image">
+          <img src="assets/frontend/img/slider/slider-img.png" class="d-block w-100" alt="slider image">
         </div>
         <div class="carousel-item">
           <img src="assets/frontend/img/slider/slider4.jpg" class="d-block w-100" alt="slider image">
@@ -59,30 +59,12 @@
     </div>
   </div>
 
- <!-- Subcategory -->
- <div class="subcategory pb-3">
-  <div class="container">
-    <div class="row">
-      <?php foreach($subcategories as $sub){?>
-
-        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 ">
-          <div class="sub-body">
-              <a href="products.php"><img src="admin/uploads/<?= $sub->photo ?>" class="img-fluid p-3" style="border-radius: 20px;"></a>
-            <h5 class="text-center pb-3"><?= $sub->name ?></h5>
-          </div>
-        </div>
-
-      <?php }?>
-    </div>
-  </div>
- </div>
- 
   <!-- Product -->
-  <div class="product pt-5 pb-3">
+  <div class="product pt-5 pb-3 mb-3">
     <div class="container-sm">
-      <div class="row">
-        <h3 class="title">Deals Of The Day</h3>
-        <div class="line"></div>
+      <div class="row mb-3">
+        <h3 class="title text-center">Deals Of The Day</h3>
+        <!-- <div class="line"></div> -->
       </div>
       <div class="row mb-3 card-slide" id="">
         <?php foreach($items as $item){
@@ -116,7 +98,7 @@
                   <?php } ?>
                   </div>
                 </div>
-                <div class="card-footer order_btn">
+                <div class="order_btn">
                   <a href="product_details.php?id=<?= $ai_id?>" type="button" class="btn btn-danger btn-sm cart_btn"><i class="fa fa-cart-arrow-down"></i></a>
                   <!-- <button type="button" data-id=" + data[i].id " data-title=" + data[i].productName " data-content=" + data[i].productDec " data-price=" + data[i].currentPrice " data-img="./assets/frontend/img/product/ + data[i].productImg "  class="btn btn-primary btn-sm btn-danger cart_btn click-cart" title="Add to cart" data-bs-toggle="modal" data-bs-target="#cartModal">
                   <i class="fa fa-cart-arrow-down"></i>
@@ -132,15 +114,13 @@
     
       <!-- Pagination -->
       <div class="loading">
-        <span>Loading</span>
-        <span class="spinner-grow spinner-grow-sm" role="status"></span>
-        <span class="spinner-grow spinner-grow-sm" role="status"></span>
-        <span class="spinner-grow spinner-grow-sm" role="status"></span>
+        <a href="products.php"><span>See More</span>
+        </a>
       </div>
     
     </div>
   </div>
-
+  
   <!-- product ad -->
   <div class="product_ad pt-5 mb-3">
     <div class="container">
@@ -158,30 +138,13 @@
     </div> -->
   </div>
 
-  <!-- discount products -->
-  <div class="discount">
-    <div class="container">
-      <div class="row">
-          <h3 class="title text-center text-black mb-3">Discount Products</h3>
-      </div>
-      <div class="row">
-        <div class="col-lg-12 d-flex justify-content-center">
-          <ul id="filters">
-            <li data-filter=".filter-card">Electronic</li>
-            <li data-filter=".filter-web">Fashion</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- brand slide -->
   <div class="brand pt-5 pb-5">
-    <div class="container">
-      <div class="row mb-3">
+    <div class="container-fluid">
+      <!-- <div class="row mb-3">
         <h3 class="title">Top Brands</h3>
         <div class="line"></div>
-      </div>
+      </div> -->
       <div class="row">
         <div class="your-class mb-5">
           <?php foreach($brands as $brand){ ?>
