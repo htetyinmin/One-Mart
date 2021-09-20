@@ -47,17 +47,11 @@
             <!-- <i class="fa fa-home"></i> -->
             <img src="assets/frontend/img/onemart.png" width="100" height="40" alt="">
         </a>
-        <form class="d-flex">
-            <input class="form-control me-2 input" type="search" placeholder="search">
-        </form>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-ellipsis-v"></i>
-        </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="#" data-bs-toggle='dropdown' title="category">
-                        <i class="fas fa-clipboard-list"></i>
+                        <i class="fas fa-th"></i>
                         <span>Category</span>
                     </a>
                     <ul class="dropdown-menu">
@@ -101,13 +95,19 @@
                         <span class="position-absolute translate-middle badge rounded-pill noti">
                             99+
                         </span>
-                    </i><span>Cart</span>
+                    </i>
 
                     </a>
                 </li>
             </ul>
 
+            <form class="d-flex">
+                <input class="form-control me-2 input" type="search" placeholder="search">
+            </form>
+
             <ul class="navbar-nav my-nav">
+                
+
                 <li class="nav-item dropdown">
                     <?php 
 
@@ -120,9 +120,8 @@
 
                         }else{
 
-                            echo "<a class='dropdown-item' href='login.php'>
-                                    <i class='fa fa-sign-in-alt'></i>
-                                    <span>Login</span>
+                            echo "<a class='nav-link dropdown-item' href='login.php' title='login'>
+                            <i class='fas fa-users'></i>
                                 </a>";
 
                         }
@@ -155,7 +154,12 @@
                         ?>
                     </ul>
                 </li>
+
             </ul>
         </div>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-ellipsis-v"></i>
+        </button>
     </div>
 </nav>
