@@ -49,7 +49,7 @@
                                             <label for="photo">
                                                 Photo Upload
                                             </label>
-                                            <i class="feather-info" data-container="body" data-toggle="popover" data-placement="top" data-content="Only Support Jpg, Png"></i>
+                                            <i class="feather-info" data-container="body" data-toggle="popover" data-placement="top" data-content="Only Support jpg & png Format"></i>
 
                                             <input type="file" name="photo" id="photo" class="form-control p-1"><br>
 
@@ -58,7 +58,7 @@
 
                                         <div class="form-group">
                                             <label for="name">Subcategory Name</label>
-                                            <input type="text" id="name" name="name" class="form-control" value="<?= $s[0]->name ?>">
+                                            <input type="text" id="name" name="name" class="form-control" value="<?= $s[0]->name ?>" required>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6">

@@ -72,11 +72,11 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                         <label for="name">Code No.</label>
-                                        <input type="text" id="codeno" name="codeno" class="form-control">
+                                        <input type="text" id="codeno" name="codeno" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                         <label for="name">Item Name</label>
-                                        <input type="text" id="name" name="name" class="form-control">
+                                        <input type="text" id="name" name="name" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                         <label for="photo">
@@ -88,8 +88,8 @@
                                 </div>
                                 <div class="form-group">
                                         <label for="brand">Brand</label>
-                                        <select name="brand" class="form-control custom-select" id="brand">
-                                            <option value="0" selected>Choose Brand</option>
+                                        <select name="brand" class="form-control custom-select" id="brand" required>
+                                            <option value="" disabled selected>Choose Brand</option>
                                             <?php 
                                                 foreach($brands as $brand){
                                                     echo "<option value='$brand->id'>$brand->name</option>";
@@ -105,8 +105,8 @@
                                 </div> -->
                                 <div class="form-group">
                                         <label for="subcategory">Subcategory</label>
-                                        <select name="subcategory" class="form-control custom-select" id="subcategory">
-                                            <option value="0" selected>Choose Subcategory</option>
+                                        <select name="subcategory" class="form-control custom-select" id="subcategory" required>
+                                            <option value="" disabled selected>Choose Subcategory</option>
                                             <?php 
                                                 foreach($subcategories as $sub){
                                                     echo "<option value='$sub->id'>$sub->name</option>";
@@ -118,7 +118,7 @@
                             <div class="col-12 col-md-6">
                                     <div class="form-group">
                                         <label for="price">Price</label>
-                                        <input type="number" id="price" name="price" class="form-control">
+                                        <input type="number" id="price" name="price" class="form-control" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="discount">Discount</label>
@@ -126,7 +126,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="description">Description</label>
-                                        <textarea type="text" id="description" name="description" rows="6" class="form-control"></textarea>
+                                        <textarea type="text" id="description" name="description" rows="6" class="form-control" required></textarea>
                                     </div>
                                     <button class="btn btn-success" name="submit" type="submit"><i class="feather-save"></i>&nbsp; Save</button>
                             </div>

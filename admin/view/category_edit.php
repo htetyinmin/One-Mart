@@ -43,7 +43,7 @@
 
                                     <div class="form-group">
                                         <label for="name">Category Name</label>
-                                        <input type="text" id="name" name="name" class="form-control" value="<?= $c[0]->name ?>">
+                                        <input type="text" id="name" name="name" class="form-control" value="<?= $c[0]->name ?>" required>
                                     </div>
 
                                     <button class="btn btn-success" type="submit" name="submit"><i class="feather-save"></i>&nbsp; Update </button>
