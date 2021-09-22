@@ -74,12 +74,12 @@
                                     </label>
                                     <i class="feather-info" data-container="body" data-toggle="popover" data-placement="top" data-content="Only Support Jpg, Png"></i>
 
-                                    <input type="file" name="file" id="photo" class="form-control p-1">
+                                    <input type="file" name="file" id="photo" class="form-control p-1" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="name">Brand Name</label>
-                                    <input type="text" id="name" name="name" class="form-control">
+                                    <input type="text" id="name" name="name" class="form-control" required>
                                 </div>
 
                                 <button type="submit" name="submit" class="btn btn-success">

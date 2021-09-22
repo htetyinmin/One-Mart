@@ -76,20 +76,20 @@
                                               <label for="photo">
                                                   Photo Upload
                                               </label>
-                                              <i class="feather-info" data-container="body" data-toggle="popover" data-placement="top" data-content="Only Support Jpg, Png"></i>
+                                              <i class="feather-info" data-container="body" data-toggle="popover" data-placement="top" data-content="Only Support jpg & png Format"></i>
   
                                               <input type="file" name="photo" id="photo" class="form-control p-1" required>
                                           </div>
                                           <div class="form-group">
                                               <label for="name">Subcategory Name</label>
-                                              <input type="text" id="name" name="name" class="form-control">
+                                              <input type="text" id="name" name="name" class="form-control" required>
                                           </div>
                                     </div>
                                     <div class="col-12 col-md-6">
                                           <div class="form-group">
                                                 <label for="category">Category</label>
-                                                <select name="category" class="form-control custom-select" id="category">
-                                                <option value="" selected>Select Category</option>
+                                                <select name="category" class="form-control custom-select" id="category" required>
+                                                <option value="" disabled selected>Select Category</option>
                                                 <?php 
                                                     foreach($category as $cate){
                                                         echo "<option value='$cate->id'>$cate->name</option>";
