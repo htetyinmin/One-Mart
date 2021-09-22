@@ -28,6 +28,7 @@
         return $data->fetchAll();
 
     }
+
     
     function itemDetail($data, $id){
         global $connect;

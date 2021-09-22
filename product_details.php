@@ -50,14 +50,11 @@
           <div class="container-fliud">
               <div class="wrapper row">
                   <div class="preview col-lg-6">
-                      
-                      <div class="preview-pic">
-                        <div class="tab-pane active" id="pic-1"><img src="admin/uploads/<?= $detail_photo ?>"style="width: 500px; height:400px"/></div>
+                        <div class="image-box"><img src="admin/uploads/<?= $detail_photo ?>"style="width: 500px; height:400px"/></div>
                         <!-- <div class="tab-pane" id="pic-2"><img src="../assets/frontend/img/product/laptop-11.jpg" /></div>
                         <div class="tab-pane" id="pic-3"><img src="../assets/frontend/img/product/device.jpg" /></div>
                         <div class="tab-pane" id="pic-4"><img src="../assets/frontend/img/product/laptopfordesign.jpg" /></div>
                         <div class="tab-pane" id="pic-5"><img src="../assets/frontend/img/product/device.jpg" /></div> -->
-                      </div>
                       <!-- <ul class="preview-thumbnail nav nav-tabs">
                         <li class="active"><a data-bs-target="#pic-1" data-bs-toggle="tab"><img src="../assets/frontend/img/product/device.jpg" /></a></li>
                         <li><a data-bs-target="#pic-2" data-bs-toggle="tab"><img src="../assets/frontend/img/product/laptop-11.jpg" /></a></li>
