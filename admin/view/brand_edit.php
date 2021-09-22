@@ -58,7 +58,7 @@
 
                                 <div class="form-group">
                                     <label for="name">Brand Name</label>
-                                    <input type="text" id="name" name="name" class="form-control" value="<?= $b[0]->name ?>">
+                                    <input type="text" id="name" name="name" class="form-control" value="<?= $b[0]->name ?>" required>
                                 </div>
 
                                 <button type="submit" name="submit" class="btn btn-success">
