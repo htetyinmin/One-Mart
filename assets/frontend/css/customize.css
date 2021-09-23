@@ -70,17 +70,109 @@ ul, ol {
     background-color: rgba(255, 12, 0);
 }
 
-.my-nav > .nav-item > .dropdown-item {
-    color: #fff;
-}
-
-.my-nav > .nav-item:hover > a {
+#menu > li:last-of-type:hover > .nav-link{
     background-color: transparent;
+    color: #fff;
 }
 
 .nav-item .nav-link >span {
     color: #fff;
     margin-left:2px;
+}
+
+#menu {
+    position: relative;
+}
+
+#menu li {
+    display: block;
+    float: left;
+}
+
+#menu li a.active {
+    background: #fff;
+}
+
+#menu li a.active:not(.cart_icon) i {
+    color: rgba(255, 12, 0);
+}
+
+#menu li a.active:not(.cart_icon) span{
+    color: rgba(255, 12, 0);
+}
+
+#menu li a:hover > span,
+#menu li a:hover > i{
+    z-index: 99999;
+}
+
+#menu li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 200px;
+    padding-left: 0;
+    background: #fff;
+    -webkit-box-shadow: 0 2px 7px rgba(0,0,0,0.45);
+    -moz-box-shadow: 0 2px 7px rgba(0,0,0,0.45);
+    box-shadow: 0 2px 7px rgba(0,0,0,0.45);
+    z-index: -1;
+}
+
+#menu li ul li {
+    display: block;
+    width: 200px;
+}
+
+#menu li ul li a {
+    display: block;
+    float: none;
+    color: #000;
+    font-size: 15px;
+    line-height: 40px;
+    padding: 0 15px;
+}
+
+#menu li ul li a:hover {
+    background-color:  rgb(229, 233, 238);
+    color: rgba(255, 12, 0);
+    text-decoration: underline;
+}
+
+#menu li ul .expanded {
+    width: 200px;
+}
+
+#menu li ul .expanded li { 
+    margin-right: 200px; 
+}
+
+#menu li ul li ul {
+    display: none;
+    position: absolute;
+    left: 200px;
+    top: 0;
+    height: 100%;
+    background: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+#menu li ul li ul li a { 
+    color: #000; 
+}
+
+#menu li ul li ul li a:hover { 
+    text-decoration: underline; 
+}
+
+#menu li ul li.purple ul { 
+    background-color: #fff;
+}
+
+.my-nav > .nav-item:hover > a {
+    background-color: transparent;
 }
 
 .noti {
@@ -92,6 +184,8 @@ ul, ol {
     font-weight: normal;
     padding: .4em .7em;
 }
+
+
 
 
 
@@ -1800,3 +1894,15 @@ footer > .social_media a:hover > i {
         padding: 1.5rem !important;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+

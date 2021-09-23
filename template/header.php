@@ -41,62 +41,93 @@
 
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light nav-color sticky-top">
+<nav class="navbar navbar-expand-lg navbar-light nav-color sticky-top nav-top">
     <div class="container">
         <a class="navbar-brand" href="index.php" title="home">
             <!-- <i class="fa fa-home"></i> -->
-            <img src="assets/frontend/img/onemart.png" width="80" height="40" alt="">
+            <img src="assets/frontend/img/onemart.png" width="50" alt="">
         </a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item dropdown">
-                    <a class="nav-link" href="#" data-bs-toggle='dropdown' title="category">
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" id="wrapper">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="menu">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#" title="category">
                         <i class="fas fa-th"></i>
-                        <span>Category</span>
+                        <span>Category</span>    
                     </a>
-                    <ul class="dropdown-menu">
-                        <?php 
-                            foreach($categories as $category)
-                            {
-                        ?>
-                        <li>
-                            <a class="dropdown-item" data-bs-toggle='dropdown' href="#">
-                            <!-- <img src="admin/uploads/" alt="" width="50" height="50" style="border-radius: 50%;"> -->
-                            <span><?= $category->name ?></span>
-                            </a>
+
+
+                    <ul>
+                        <li class="purple">
+                            <a href="#">Home</a>
                         </li>
-                        <?php
-                            } 
-                        ?>
+                        <li class="purple">
+                            <a href="#">About</a>
+                        </li>
+                        <li class="purple">
+                            <a href="#">Categories</a>
+                            <ul class="expanded">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About</a></li>
+                                <li>
+                                    <a href="#">Categories</a>
+                                    <ul class="expanded">
+                                        <li><a href="#">Home</a></li>
+                                        <li><a href="#">About</a></li>
+                                        <li><a href="#">Categories</a></li>
+                                        <li><a href="#">Social</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Social</a></li>
+                            </ul>
+                        </li>
+                        <li class="purple">
+                            <a href="#">Social</a>
+                        </li>
+                        <li class="purple">
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="purple">
+                            <a href="#">About</a>
+                        </li>
+                        <li class="purple">
+                            <a href="#">Categories</a>
+                            <ul class="expanded">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About</a></li>
+                                <li>
+                                    <a href="#">Categories</a>
+                                    <ul class="expanded">
+                                        <li><a href="#">Home</a></li>
+                                        <li><a href="#">About</a></li>
+                                        <li><a href="#">Categories</a></li>
+                                        <li><a href="#">Social</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Social</a></li>
+                            </ul>
+                        </li>
+                        <li class="purple">
+                            <a href="#">Social</a>
+                        </li>
                     </ul>
                 </li>
-            
+                
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="#" title="brands">
                         <i class="fa fa-tags"></i>
                         <span>Brands</span>
                     </a>
-                    <!-- <ul class="dropdown-menu">
-                        <li>
-                            <a class="dropdown-item" href="#">
-                                <i class="fa fa-money-check-alt i_color"></i>
-                                <span>Payment</span>
-                            </a>
-                        </li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul> -->
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link cart_icon" href="product_cart.php" title="cart">
-                    <i class="fa fa-cart-plus position-relative">
-                        <span class="position-absolute translate-middle badge rounded-pill noti">
-                            99+
-                        </span>
-                    </i>
-
+                        <i class="fa fa-cart-plus position-relative">
+                            <span class="position-absolute translate-middle badge rounded-pill noti">
+                                99+
+                            </span>
+                        </i>
                     </a>
                 </li>
             </ul>
@@ -231,17 +262,6 @@
 
     });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 </script>
+
+
