@@ -13,6 +13,9 @@
     $sql = "SELECT * FROM brand";
     $brands = getItems($sql);
 
+    $sql = "SELECT * FROM subcategories";
+    $subcategories = getItems($sql);
+
     //var_dump($brands);
 ?>
 
@@ -74,9 +77,26 @@
 
                             <li class="purple">
                                 <a href="#"><?php echo $category->name; ?></a>
+                                <?php 
+
+                                    $sql = "SELECT * FROM subcategories WHERE category_id = $category->id";
+                                    $ans = getItems($sql);
+
+                                    if(count($ans) != 0) {
+
+                                ?>
+                                    <ul class="expanded">
+                                    <?php foreach($ans as $subcategory) { ?>
+                                        <li><a href="#"><?= $subcategory->name; ?></a></li>
+                                    </ul>
+                                    
+                                <?php 
+                                        }
+                                    }
+                                ?>
                             </li>
 
-                            <!--
+                        <!--                             
                             <li class="purple">
                                 <a href="#">Categories</a>
                                 <ul class="expanded">
@@ -93,7 +113,7 @@
                                     </li>
                                     <li><a href="#">Social</a></li>
                                 </ul>
-                            </li>-->
+                            </li> -->
 
                         <?php 
                             }
