@@ -9,7 +9,11 @@
 
     $sql = "SELECT * FROM categories";
     $categories = getItems($sql);
-    // var_dump($categories);
+
+    $sql = "SELECT * FROM brand";
+    $brands = getItems($sql);
+
+    //var_dump($brands);
 ?>
 
 
@@ -56,69 +60,64 @@
                         <i class="fas fa-th"></i>
                         <span>Category</span>    
                     </a>
-
-
                     <ul>
-                        <li class="purple">
-                            <a href="#">Home</a>
-                        </li>
-                        <li class="purple">
-                            <a href="#">About</a>
-                        </li>
-                        <li class="purple">
-                            <a href="#">Categories</a>
-                            <ul class="expanded">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">About</a></li>
-                                <li>
-                                    <a href="#">Categories</a>
-                                    <ul class="expanded">
-                                        <li><a href="#">Home</a></li>
-                                        <li><a href="#">About</a></li>
-                                        <li><a href="#">Categories</a></li>
-                                        <li><a href="#">Social</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Social</a></li>
-                            </ul>
-                        </li>
-                        <li class="purple">
-                            <a href="#">Social</a>
-                        </li>
-                        <li class="purple">
-                            <a href="#">Home</a>
-                        </li>
-                        <li class="purple">
-                            <a href="#">About</a>
-                        </li>
-                        <li class="purple">
-                            <a href="#">Categories</a>
-                            <ul class="expanded">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">About</a></li>
-                                <li>
-                                    <a href="#">Categories</a>
-                                    <ul class="expanded">
-                                        <li><a href="#">Home</a></li>
-                                        <li><a href="#">About</a></li>
-                                        <li><a href="#">Categories</a></li>
-                                        <li><a href="#">Social</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Social</a></li>
-                            </ul>
-                        </li>
-                        <li class="purple">
-                            <a href="#">Social</a>
-                        </li>
+                        <?php 
+
+                            foreach($categories as $category) {
+
+                        ?>
+
+                            <li class="purple">
+                                <a href="#"><?php echo $category->name; ?></a>
+                            </li>
+
+                            <!--
+                            <li class="purple">
+                                <a href="#">Categories</a>
+                                <ul class="expanded">
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">About</a></li>
+                                    <li>
+                                        <a href="#">Categories</a>
+                                        <ul class="expanded">
+                                            <li><a href="#">Home</a></li>
+                                            <li><a href="#">About</a></li>
+                                            <li><a href="#">Categories</a></li>
+                                            <li><a href="#">Social</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Social</a></li>
+                                </ul>
+                            </li>-->
+
+                        <?php 
+                            }
+                        ?>
                     </ul>
                 </li>
+
+
                 
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="#" title="brands">
                         <i class="fa fa-tags"></i>
                         <span>Brands</span>
                     </a>
+                    <ul>
+                    <?php 
+
+                        foreach($brands as $brand) {
+
+                    ?>
+
+                        <li class="purple">
+                            <a href="#"><?php echo $brand->name; ?></a>
+                        </li>
+
+                    <?php 
+                        }
+                    ?>
+                    </ul>
                 </li>
 
                 <li class="nav-item">
