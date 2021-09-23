@@ -1338,6 +1338,11 @@ footer > .social_media a:hover > i {
     color: #969696;
 }
 
+.details .image-box{
+    width: 500px;
+    height: 400px;
+}
+
 .details .price, 
 .details .sizes, 
 .details .colors {

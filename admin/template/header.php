@@ -2,6 +2,22 @@
 
     session_start();
     include_once "../../system/session.php";
+    include_once "../system/function.php";
+
+    $cat = "SELECT * FROM categories";
+    $category = getItems($cat);
+
+    $sub = "SELECT * FROM subcategories";
+    $subcategory = getItems($sub);
+
+    $bra = "SELECT * FROM brand";
+    $brand = getItems($bra);
+    
+    $ite = "SELECT * FROM items";
+    $item = getItems($ite);
+
+    $use = "SELECT * FROM users";
+    $user = getItems($use);
 
 ?>
 <!doctype html>
@@ -56,7 +72,7 @@
                                     <i class="feather-layers"></i>
                                     Category
                                 </span>
-                                <span class="badge badge-pill bg-white shadow-sm text-success p-1">8</span>
+                                <span class="badge badge-pill bg-white shadow-sm text-success p-1"><?= count($category) ?></span>
                             </a>
                         </li>
                         
@@ -66,7 +82,7 @@
                                     <i class="feather-list"></i>
                                     Subcategory
                                 </span>
-                                <span class="badge badge-pill bg-white shadow-sm text-success p-1">12</span>
+                                <span class="badge badge-pill bg-white shadow-sm text-success p-1"><?= count($subcategory) ?></span>
                             </a>
                         </li>
 
@@ -76,7 +92,7 @@
                                     <i class="feather-image"></i>
                                     Brand
                                 </span>
-                                <span class="badge badge-pill bg-white shadow-sm text-success p-1">8</span>
+                                <span class="badge badge-pill bg-white shadow-sm text-success p-1"><?= count($brand) ?></span>
                             </a>
                         </li>
                         
@@ -86,7 +102,7 @@
                                     <i class="feather-box"></i>
                                     Items
                                 </span>
-                                <span class="badge badge-pill bg-white shadow-sm text-success p-1">12</span>
+                                <span class="badge badge-pill bg-white shadow-sm text-success p-1"><?= count($item) ?></span>
                             </a>
                         </li>
 
@@ -116,7 +132,7 @@
                                     <i class="feather-user"></i>
                                     User
                                 </span>
-                                <span class="badge badge-pill bg-white shadow-sm text-success p-1">8</span>
+                                <span class="badge badge-pill bg-white shadow-sm text-success p-1"><?= count($user) ?></span>
                             </a>
                         </li>
                     </ul>

@@ -2,7 +2,6 @@
 
     $currentPage = 'brand';
     include_once "../template/header.php";
-    include_once "../system/function.php";
 
     $sql = "SELECT * FROM brand";
     $brandAll = getItems($sql);
@@ -41,6 +40,7 @@
                             <table id="list" class="table table-striped" style="width:100%">
                                 <thead>
                                 <tr>
+                                    <th>No.</th>
                                     <th>Name</th>
                                     <th>Photo</th>
                                     <th>Action</th>
@@ -48,10 +48,11 @@
                                 </thead>
                                 <tbody>
                                     <?php
-
-                                    foreach($brandAll as $brand){
+                                        $i = 1;
+                                        foreach($brandAll as $brand){
                                     ?>
                                         <tr>
+                                            <td><?= $i++."." ?></td>
                                             <td><?= $brand->name ?></td>
                                             <td>
                                                 <img src="../uploads/<?=$brand->photo ?>" width="80" height="auto" alt="Cover">
@@ -74,6 +75,7 @@
                                 </tbody>
                                 <tfoot>
                                 <tr>
+                                    <th>No.</th>
                                     <th>Name</th>
                                     <th>Photo</th>
                                     <th>Action</th>

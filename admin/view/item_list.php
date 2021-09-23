@@ -1,13 +1,9 @@
 <?php
     $currentPage = 'item';
     include_once "../template/header.php";
-    include_once "../system/function.php";
 
     $sql = "SELECT * FROM items";
-    // $sql="SELECT it.id, it.codeno, it.name, it.photo, it.price, it.discount, it.description, b.name AS brand_name
-	// 			from items it JOIN brand b ON it.brand_id=b.id ";
     $items = getItems($sql);
-    // var_dump($items); die();
     
 ?>
 
@@ -43,6 +39,7 @@
                             <table id="list" class="table table-striped" style="width:100%">
                                 <thead>
                                 <tr>
+                                    <th>No.</th>
                                     <th>Code No.</th>
                                     <th>Name</th>
                                     <th>Photo</th>
@@ -51,8 +48,12 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach($items as $item){ ?>
+                                    <?php 
+                                        $i = 1;
+                                        foreach($items as $item){ 
+                                    ?>
                                     <tr>
+                                        <td><?= $i++."." ?></td>
                                         <td><?= $item->codeno ?></td>
                                         <td><?= $item->name ?></td>
                                         <td>
@@ -82,6 +83,7 @@
                                 </tbody>
                                 <tfoot>
                                 <tr>
+                                    <th>No.</th>
                                     <th>Code No.</th>
                                     <th>Name</th>
                                     <th>Photo</th>
