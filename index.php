@@ -29,34 +29,49 @@
   <!-- slider -->
   <div class="slider mb-5">
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-      <div class="carousel-inner">
+      <div class="carousel-inner ban-parent">
         <div class="carousel-item active">
           <img src="assets/frontend/img/slider/slider1.png" class="d-block w-100" alt="slider image">
         </div>
         <div class="carousel-item">
-          <img src="assets/frontend/img/slider/slider2.png" class="d-block w-100" alt="slider image">
+          <img src="assets/frontend/img/slider/slider14.jpg" class="d-block w-100" alt="slider image">
         </div>
         <div class="carousel-item">
           <img src="assets/frontend/img/slider/slider-img.png" class="d-block w-100" alt="slider image">
         </div>
         <div class="carousel-item">
-          <img src="assets/frontend/img/slider/slider4.jpg" class="d-block w-100" alt="slider image">
+          <img src="assets/frontend/img/slider/slider13.jpg" class="d-block w-100" alt="slider image">
         </div>
         <div class="carousel-item">
           <img src="assets/frontend/img/slider/slider5.png" class="d-block w-100" alt="slider image">
         </div>
         <div class="carousel-item">
-          <img src="assets/frontend/img/slider/slider6.jpg" class="d-block w-100" alt="slider image">
+          <img src="assets/frontend/img/slider/slider11.jpg" class="d-block w-100" alt="slider image">
         </div>
         <div class="carousel-item">
-          <img src="assets/frontend/img/slider/slider7.png" class="d-block w-100" alt="slider image">
+          <img src="assets/frontend/img/slider/slider10.jpg" class="d-block w-100" alt="slider image">
         </div>
+
+        <div class="ban-child">
+            <div class="ban-title animate__animated animate__fadeInDown">
+              <h1>One Mart Online Shop</h1>
+            </div>
+            <div class="ban-content">
+              <p class="animate__animated animate__slideInLeft">Just For You.</p>
+              <p class="animate__animated animate__slideInRight">Make your image beautiful.</p>
+            </div>
+            <div class="ban-btn animate__animated animate__slideInUp">
+              <button type="button">Shop Now</button>
+            </div>
+          </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+
+
+      <button class="carousel-control-prev slider-btn" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+      <button class="carousel-control-next slider-btn" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>

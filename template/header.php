@@ -32,6 +32,7 @@
   <link rel="stylesheet" href="assets/frontend/css/all.min.css">
 
   <!-- Style CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="assets/frontend/css/owl.carousel.min.css">
   <link rel="stylesheet" href="assets/frontend/css/owl.theme.green.min.css">
   <link rel="stylesheet" href="assets/frontend/slick/slick.css">
@@ -51,6 +52,10 @@
             <!-- <i class="fa fa-home"></i> -->
             <img src="assets/frontend/img/onemart.png" width="50" alt="">
         </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
         
         <div class="collapse navbar-collapse" id="navbarSupportedContent" id="wrapper">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="menu">
@@ -95,10 +100,8 @@
                         ?>
                     </ul>
                 </li>
-
-
                 
-                <li class="nav-item dropdown">
+                <li class="nav-item">
                     <a class="nav-link" href="#" title="brands">
                         <i class="fa fa-tags"></i>
                         <span>Brands</span>
@@ -215,10 +218,6 @@
                 </li>
             </ul>
         </div>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-ellipsis-v"></i>
-        </button>
     </div>
 </nav>
 
