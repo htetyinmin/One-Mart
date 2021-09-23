@@ -1,7 +1,6 @@
 <?php
     $currentPage = 'category';
     include_once "../template/header.php";
-    include_once "../system/function.php";
 
     $sql = "SELECT * FROM categories";
     $categoryAll = getItems($sql);
@@ -39,6 +38,7 @@
                             <table id="list" class="table table-striped" style="width:100%">
                                 <thead>
                                 <tr>
+                                    <th>No.</th>
                                     <th>Name</th>
                                     <th>Action</th>
                                 </tr>
@@ -47,10 +47,12 @@
 
                                 <?php
                                 
-                                foreach($categoryAll as $category){
+                                    $i = 1;
+                                    foreach($categoryAll as $category){
                                 
                                 ?>
                                     <tr>
+                                        <td><?= $i++."." ?></td>
                                         <td><?= $category->name; ?></td>
                                         <td>
                                             <a href="category_edit.php?id=<?php echo $category->id ?>" class="btn btn-outline-success"><i class="feather-edit"></i></a>
@@ -71,6 +73,7 @@
                                 </tbody>
                                 <tfoot>
                                 <tr>
+                                    <th>No.</th>
                                     <th>Name</th>
                                     <th>Action</th>
                                 </tr>

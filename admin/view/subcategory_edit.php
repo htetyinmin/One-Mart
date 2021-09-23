@@ -2,7 +2,6 @@
 
     $currentPage = 'subcategory';
     include_once "../template/header.php";
-    include_once "../system/function.php";
 
     $id = $_GET['id'];
 

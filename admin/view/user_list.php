@@ -1,7 +1,6 @@
 <?php
     $currentPage = 'user';
     include_once "../template/header.php";
-    include_once "../system/function.php";
 
     $sql = "SELECT users.*,role.id as rid, role.name as rname FROM users 
     INNER JOIN model_has_role ON users.id=model_has_role.user_id 
@@ -43,6 +42,7 @@
                             <table id="list" class="table table-striped" style="width:100%">
                                 <thead>
                                 <tr>
+                                    <th>No.</th>
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Role</th>
@@ -54,10 +54,12 @@
 
                                 <?php
 
+                                    $i = 1;
                                     foreach ($users as $user) {
 
                                 ?>
                                     <tr>
+                                        <td><?= $i++."." ?></td>
                                         <td><?= $user->name ?></td>
                                         <td><?= $user->email ?></td>
                                         <td><?= $user->rname ?></td>
@@ -86,6 +88,7 @@
                                 </tbody>
                                 <tfoot>
                                 <tr>
+                                    <th>No.</th>
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Role</th>
