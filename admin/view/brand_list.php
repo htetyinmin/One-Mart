@@ -19,6 +19,7 @@
                     </nav>
                 </div>
             </div>
+            <button class="test">Haha</button>
             <div class="row">
                 <div class="col-12">
                     <div class="card mb-4">
@@ -93,3 +94,14 @@
 <?php
     include_once "../template/footer.php";
 ?>
+
+<script>
+    document.querySelector(".test").addEventListener('click', function(){
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+            footer: '<a href="">Why do I have this issue?</a>'
+        })
+    });
+</script>

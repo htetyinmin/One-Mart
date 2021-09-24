@@ -169,8 +169,7 @@
                                             $admin = getSession('admin');
 
                                             echo $admin['admin_name'];
-
-
+                                            
                                         }
                                     
                                     
