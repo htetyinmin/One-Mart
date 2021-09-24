@@ -87,6 +87,7 @@
                                 ?>
                                 <ul class="expanded">
                                     <?php foreach($ans as $subcategory) { ?>
+                                        
                                         <li><a href="#"><?= $subcategory->name; ?></a></li>
                                         
                                         <?php 
@@ -94,7 +95,8 @@
                                     ?>
                                 </ul>
                                 <?php 
-                                } ?>
+                                    } 
+                                ?>
                             </li>
 
                         <!--                             

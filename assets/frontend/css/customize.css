@@ -150,6 +150,7 @@ ul, ol {
     font-size: 15px;
     line-height: 40px;
     padding: 0 15px;
+    background-color: #fff;
 }
 
 #menu li ul li a:hover {
@@ -172,7 +173,7 @@ ul, ol {
     left: 200px;
     top: 0;
     height: 100%;
-    background: none;
+    /* background: none; */
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
