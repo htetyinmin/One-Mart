@@ -72,10 +72,6 @@ a {
     background-color: transparent;
 }
 
-.my-nav > .nav-item:hover .nav-link {
-    
-}
-
 .navbar-nav .nav-item {
     margin-left: 15px;
 }

@@ -7,6 +7,7 @@
     $sql="SELECT * FROM items where id=:id";
     $item_details = itemDetail($sql, $id);
     
+    
 
     foreach($item_details as $item){
         $detail_id=$item['id'];
@@ -90,8 +91,8 @@
                       </div>
                   </div>
               </div>
-          </div>
       </div>
+
   </div>
 
 
