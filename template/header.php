@@ -85,15 +85,18 @@
                                     if(count($ans) != 0) {
 
                                 ?>
-                                    <ul class="expanded">
+                                <ul class="expanded">
                                     <?php foreach($ans as $subcategory) { ?>
-                                        <li><a href="subcategory.php?sid=<?= $subcategory->id; ?>"><?= $subcategory->name; ?></a></li>
+                                        
+                                        <li><a href="#"><?= $subcategory->name; ?></a></li>
                                         
                                         <?php 
                                         }
-                                    }
                                     ?>
-                                    </ul>
+                                </ul>
+                                <?php 
+                                    } 
+                                ?>
                             </li>
 
                         <!--                             
@@ -158,35 +161,16 @@
             <ul class="navbar-nav my-nav">
                 <div class="search-group">
 
-                    <form action="#" method="get">
-                        <input type="text" name="search" value="" class="search" id="search-box" placeholder="Search..." autocomplete="off" required>
-                        <button type="submit" name="search-btn" id="btn-search"><i class="fas fa-search" id="s-icon" title="search"></i></button>
+                    <form action="index.php" method="get">
+                        <input type="text" name="search" value="" onkeyup="liveSearch(this.value);" class="search" id="search-box" placeholder="Search..." autocomplete="off" required>
+                        <button type="submit" name="search-btn" id="btn-search">
+                            <i class="fas fa-search" id="s-icon" title="search"></i>
+                            <i class="fas fa-times" style="display: none;" id="c-icon"></i>
+                        </button>
                     </form>
 
-                    <div class="search-data" id="search-result">
-                        <ul>
-                            <li>
-                                <a href="#" class="d-flex flex-row my-card">
-                                    <div class="header">
-                                        <img src="../assets/frontend/img/product/cloth1.png" width="30" height="30" alt="">
-                                    </div>
-                                    <div class="body">
-                                        <p>Lorem ipsum dolor</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="d-flex flex-row my-card">
-                                    <div class="header">
-                                        <img src="../assets/frontend/img/product/cloth1.png" width="30" height="30" alt="">
-                                    </div>
-                                    <div class="body">
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    <div class="search-data" id="search-result"></div>
+
                 </div>
 
 
@@ -241,45 +225,64 @@
     </div>
 </nav>
 
-
+<!-- <span id="result" style="background-color: green; color:#fff; width:500px; height:500px; display:block;">hello</span> -->
 
 
 <script>
 
-    const searchBtn = document.getElementById('btn-search');
+    const searchBtn = document.getElementById('s-icon');
+    const closeBtn = document.getElementById('c-icon');
+    var showBox = document.getElementById('search-box');
+
     searchBtn.addEventListener('click', function(e) {
 
         e.preventDefault();
-        let showBox = document.getElementById('search-box');//input
-        let icon = document.getElementById('s-icon');// for i tags
 
 
-        showBox.classList.toggle('view-box');
+        showBox.classList.add('view-box');
+        searchBtn.style.display = "none";
+        closeBtn.style.display = "block";
 
-        if(icon.classList.contains('fa-search')) {
+    });
 
-            icon.classList.remove('fa-search');
-            icon.classList.add('fa-times');
+
+    closeBtn.addEventListener('click', function(e) {
+
+        e.preventDefault();
+
+        showBox.classList.remove('view-box');
+        searchBtn.style.display = "block";
+        closeBtn.style.display = "none";
+        document.getElementById('search-result').style.display = "none";
+        showBox.value = '';
+    });
+
+
+
+    function liveSearch(str) {
+
+        document.getElementById('search-result').style.display = "block";
+        var input = str.trim();
+
+        if(input.length == 0) {
+
+            document.getElementById('search-result').style.display = "none";
 
         }else {
+            
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if(this.readyState == 4 && this.status == 200) {
 
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-search');
-            showBox.value = '';
+                        document.getElementById('search-result').innerHTML = this.responseText;
+                }
+            }  
+            xhr.open("GET","../system/process.php?search="+input, true);
+            xhr.send();
+
         }
 
-    });
-
-
-    const searchBox = document.getElementById('search-box');//input
-    const result = document.getElementById('search-result');
-
-    searchBox.addEventListener('keyup', function() {
-
-        result.classList.toggle('search-view');
-
-    });
+    }
 
 </script>
-
 
