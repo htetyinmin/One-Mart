@@ -1,7 +1,6 @@
 <?php
     $currentPage = 'order';
     include_once "../template/header.php";
-    include_once "../system/function.php";
 
     $sql = "SELECT * FROM users";
     $users = getItems($sql);
@@ -40,6 +39,7 @@
                             <table id="list" class="table table-striped" style="width:100%">
                                 <thead>
                                 <tr>
+                                    <th>No.</th>
                                     <th>Customer</th>
                                     <th>Products</th>
                                     <th>Order Date</th>
@@ -50,7 +50,10 @@
                                 </thead>
                                 <tbody>
 
+                                    <?php $i = 1; ?>
+
                                     <tr>
+                                        <td><?= $i++."." ?></td>
                                         <td>Kyaw Kyaw</td>
                                         <td>Electronic Devices</td>
                                         <td>1 Aug 2021</td>
@@ -59,6 +62,7 @@
                                         <td class="center-align"><a href="#"><i class="feather-trash-2 text-danger"></i></a></td>
                                     </tr>
                                     <tr>
+                                        <td>2.</td>
                                         <td>Mya Mya</td>
                                         <td>Cosmetic</td>
                                         <td>10 Jun 2021</td>
@@ -70,6 +74,7 @@
                                 </tbody>
                                 <tfoot>
                                 <tr>
+                                    <th>No.</th>
                                     <th>Customer</th>
                                     <th>Products</th>
                                     <th>Order Date</th>

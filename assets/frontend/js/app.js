@@ -258,49 +258,94 @@ function displayCart(id, name, content, price, image, count) {
 
 }
 
-/*
-function showCarts() {
-    var cartsList = shoppingCart.productList();
-    var cartsItem = "";
 
-    for (var item in cartsList) {
-        // cartsItem += '<tr>'
-        //             + '<td class="col-md-6">'
-        //             + '<div class="row">'
-        //             + '<div class="product_img">'
-        //             + '<img src="./assets/frontend/img/product/device.jpg" class="rounded" width="80" alt="product image">'
-        //             + '<div class="product_name">'
-        //             + '<p>${cartsList[item].name}</p>'
-        //             + '<span>Brand: <small>America</small></span>'
-        //             + '</div>'
-        //             + '</div>'
-        //             + '</div>'
-        //             + '</td>'
-        //             + '<td class="col-md-2">'
-        //             + '<div class="quantity">'
-        //             + '<input type="number" value="1" min="1" step="1" name="number" style="width: 50px;">'
-        //             + '</div>'
-        //             + '</td>'
-        //             + '<td class="col-md-2">'
-        //             + '<div class="price_wrap">'
-        //             + '<div>100,000Ks</div>'
-        //             + '<small class="text_muted"><span>100,000Ks</span> each</small>'
-        //             + '</div>'
-        //             + '</td>'
-        //             + '<td class="col-md-2">'
-        //             + '<button type="button" class="btn btn-sm" title="product details"><i class="fas fa-info"></i></i></button>'
-        //             + '<button type="button" class="btn btn-sm" title="remove product"><i class="far fa-trash-alt"></i></button>'
-        //             + '</td>'
-        //             + '</tr>';
 
-        cartsItem = cartsList[item];
+/*----------------nav hover----------------*/
+$('a[href="#"]').on('click', function(e){ e.preventDefault(); });
+
+$('#menu > li').on('mouseover', function(e){
+
+    $(this).find("ul:first").show();
+    $(this).find('> a').addClass('active');
+
+}).on('mouseout', function(e){
+
+    $(this).find("ul:first").hide();
+    $(this).find('> a').removeClass('active');
+
+});
+
+$('#menu li li').on('mouseover',function(e){
+
+    if($(this).has('ul').length) {
+        $(this).parent().addClass('expanded');
     }
+    $('ul:first',this).parent().find('> a').addClass('active');
+    $('ul:first',this).show();
 
-    $("#carts_table").html(cartsItem);
-}*/
+}).on('mouseout',function(e){
+
+    $(this).parent().removeClass('expanded');
+    $('ul:first',this).parent().find('> a').removeClass('active');
+    $('ul:first', this).hide();
+
+});
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+    function showCarts() {
+        var cartsList = shoppingCart.productList();
+        var cartsItem = "";
+
+        for (var item in cartsList) {
+            // cartsItem += '<tr>'
+            //             + '<td class="col-md-6">'
+            //             + '<div class="row">'
+            //             + '<div class="product_img">'
+            //             + '<img src="./assets/frontend/img/product/device.jpg" class="rounded" width="80" alt="product image">'
+            //             + '<div class="product_name">'
+            //             + '<p>${cartsList[item].name}</p>'
+            //             + '<span>Brand: <small>America</small></span>'
+            //             + '</div>'
+            //             + '</div>'
+            //             + '</div>'
+            //             + '</td>'
+            //             + '<td class="col-md-2">'
+            //             + '<div class="quantity">'
+            //             + '<input type="number" value="1" min="1" step="1" name="number" style="width: 50px;">'
+            //             + '</div>'
+            //             + '</td>'
+            //             + '<td class="col-md-2">'
+            //             + '<div class="price_wrap">'
+            //             + '<div>100,000Ks</div>'
+            //             + '<small class="text_muted"><span>100,000Ks</span> each</small>'
+            //             + '</div>'
+            //             + '</td>'
+            //             + '<td class="col-md-2">'
+            //             + '<button type="button" class="btn btn-sm" title="product details"><i class="fas fa-info"></i></i></button>'
+            //             + '<button type="button" class="btn btn-sm" title="remove product"><i class="far fa-trash-alt"></i></button>'
+            //             + '</td>'
+            //             + '</tr>';
+
+            cartsItem = cartsList[item];
+        }
+
+        $("#carts_table").html(cartsItem);
+    }
+*/
 
 
 

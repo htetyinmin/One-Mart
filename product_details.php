@@ -79,10 +79,12 @@
                       </div>
                       <p class="product-description"><?= $detail_description ?></p>
                       <?php if($detail_discount) {?>
-                        <h4 class="price">Discount Price: <span><?= $detail_discount ?> &nbsp;MMKs</span></h4>
-                        <h4 class="price">Current Price: <span><del><?= $detail_price ?></del> &nbsp;MMKs</span></h4>
+                        <h4 class="price">Discount: <span><?= $detail_discount ?> &nbsp;MMKs</span></h4>
+                        <h4 class="price">Price: <span><del><?= $detail_price ?></del> &nbsp;MMKs</span></h4>
+
+   
                     <?php }else{?>
-                        <h4 class="price">Current Price: <span><?= $detail_price ?> &nbsp;MMKs</span></h4>
+                        <h4 class="price">Price: <span><?= $detail_price ?> &nbsp;MMKs</span></h4>
                     <?php } ?>
                     
                       <div class="action">

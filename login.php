@@ -1,3 +1,5 @@
+
+
 <?php 
 
   ob_start();
@@ -72,6 +74,11 @@
 
 ?>
 
+<style>
+    .navbar {display: none;}
+    footer {display: none;}
+</style>
+
 
 <!-- login -->
 <div class="login">
@@ -109,8 +116,5 @@
 </div>
 
 
-<style>
-    .navbar {display: none;}
-    footer {display: none;}
-</style>
+
 <?php include_once "template/footer.php";?>

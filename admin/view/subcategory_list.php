@@ -1,16 +1,10 @@
 <?php
     $currentPage = 'subcategory';
     include_once "../template/header.php";
-    include_once "../system/function.php";
 
-      $sql="SELECT sc.id, sc.photo, sc.name , c.name AS category_name
+    $sql="SELECT sc.id, sc.photo, sc.name , c.name AS category_name
 				from subcategories sc JOIN categories c ON sc.category_id=c.id ";
-      
-        // $statement = $connect->prepare($sql);
-        // $statement->execute();
-
-        // $subcategories = $statement->fetchAll();
-        $sub = getItems($sql);
+    $sub = getItems($sql);
 ?>
 
             <!--content Area Start-->
@@ -45,6 +39,7 @@
                             <table id="list" class="table table-striped" style="width:100%">
                                 <thead>
                                 <tr>
+                                    <th>No.</th>
                                     <th>Name</th>
                                     <th>Photo</th>
                                     <th>Category</th>
@@ -53,7 +48,8 @@
                                 </thead>
                                 <tbody>
                                 <?php
-                                
+
+                                $i = 1;
                                 foreach ($sub as $subcategory) {
                                     $id = $subcategory->id;
                                     $subcategory_name = $subcategory->name;
@@ -62,6 +58,7 @@
                                 ?>
 
                                     <tr>
+                                        <td><?= $i++."." ?></td>
                                         <td><?= $subcategory_name ?></td>
                                         <td>
                                             <img src="../uploads/<?= $subcategory_photo ?>" width="80" height="auto" alt="Cover">
@@ -86,6 +83,7 @@
                                 </tbody>
                                 <tfoot>
                                 <tr>
+                                    <th>No.</th>
                                     <th>Name</th>
                                     <th>Photo</th>
                                     <th>Category</th>
