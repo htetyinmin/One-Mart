@@ -25,6 +25,13 @@
     $related_subs=$statement->fetchALL(PDO::FETCH_ASSOC);
     // var_dump($related_subs);
 
+    // for brand
+    $sql="SELECT * FROM brand where id=:brand_id";
+    $statement=$connect->prepare($sql);
+    $statement->bindParam(':brand_id',$brand_id);
+    $statement->execute();
+    $brand=$statement->fetch();
+
 ?>
 
 
@@ -32,19 +39,9 @@
 <div class="bg_image">
     <!-- Breadcrumb -->
     <div class="bd_crumb">
-        <div class="container">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Library</li>
-            </ol>
-        </nav>
-        <!-- <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Profile</li>
-            </ol>
-        </nav>-->
+        <h3 class="breadcrumb-item"><?= $detail_name ?></h3>
+        <div class="pill">
+            <p class="text-center" aria-current="page"><?= $brand['name'] ?></p>
         </div>
     </div> 
 </div>
