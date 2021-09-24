@@ -7,6 +7,9 @@
     INNER JOIN role ON model_has_role.role_id=role.id";
     $users = getItems($sql);
     // var_dump($users);
+
+    $admin = getSession('admin');
+    // echo $admin['admin_email'];
     
 ?>
 
@@ -69,16 +72,38 @@
                                                 <?php if ($user->rname == "User") { ?>
                                                     <button class="btn btn-outline-success" type="submit" name="submit">Promote</button>
                                                 <?php } else { ?>
-                                                    <button class="btn btn-outline-danger" type="submit" name="submit">Deomote</button>
+                                                    <button class="btn btn-outline-danger" type="submit" name="submit" <?php
+                                                    
+                                                        if ($admin['admin_email'] == $user->email) {
+                                                            echo "disabled";
+                                                        }
+
+                                                    ?>>Demote</button>
+                                                    <?php
+                                                        if ($admin['admin_email'] == $user->email) {
+                                                            echo '<i class="feather-info text-danger" data-container="body" data-toggle="popover" data-placement="top" data-content="You cannot demote yourself as a user!"></i>';
+                                                        }
+                                                    ?>
                                                 <?php } ?>
                                             </form>
                                         </td>
                                         <td>
                                             <form action="user_delete.php" method="POST" class="d-inline-block" onsubmit="return confirm('Are you sure want to delete?')">
-                                                <input type="hidden" name="id" value="<?= $id ?>">
-                                                <button class="btn btn-outline-danger" name="delete">
+                                                <input type="hidden" name="id" value="<?= $user->id ?>">
+                                                <button class="btn btn-outline-danger" name="delete" <?php
+                                                    
+                                                    if ($admin['admin_email'] == $user->email) {
+                                                        echo "disabled";
+                                                    }
+
+                                                ?>>
                                                     <i class="feather-trash-2"></i>
                                                 </button>
+                                                <?php
+                                                    if ($admin['admin_email'] == $user->email) {
+                                                        echo '<i class="feather-info text-danger" data-container="body" data-toggle="popover" data-placement="top" data-content="You cannot delete yourself!"></i>';
+                                                    }
+                                                ?>
                                             </form>
                                         </td>
                                     </tr>
