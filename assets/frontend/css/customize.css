@@ -339,7 +339,7 @@ ul, ol {
 }
 
 .carousel-inner {
-    max-height: 500px;
+    height: 100vh;
 }
 
 .carousel-inner .carousel-item::after {
@@ -378,9 +378,9 @@ ul, ol {
 }
 
 .ban-child {
-    margin: 0 10%;
+    padding: 230px 10%;
     position: absolute;
-    content: '';
+    background: #00000057;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -414,18 +414,18 @@ ul, ol {
 .ban-content p:first-of-type {
     color: rgba(255, 12, 0);
     font-size: 50px;
-    padding-left: 50px;
+    /* padding-left: 50px; */
 }
 
 .ban-content p:last-of-type{
-    padding-left: 200px;
+    padding-left: 10px;
     letter-spacing: 2.5px;
     font-weight: normal;
 }
 
-.ban-btn {
+/* .ban-btn {
     margin-left: 30%;
-}
+} */
 
 .ban-btn > button {
     padding: 10px 30px;
