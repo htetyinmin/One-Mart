@@ -53,7 +53,8 @@
     <div class="container">
         <a class="navbar-brand" href="index.php" title="home">
             <!-- <i class="fa fa-home"></i> -->
-            <img src="assets/frontend/img/onemart.png" width="50" alt="">
+            <!-- <img src="assets/frontend/img/onemart.png" width="50" alt=""> -->
+            <svg xmlns="http://www.w3.org/2000/svg" style="height:40px;" viewBox="0 0 481.01 221.81"><defs><style>.cls-1{fill:#231f20;}.cls-2{font-size:45.76px;fill:#ed1c24;}.cls-2,.cls-5{font-family:Algerian;}.cls-3{fill:#ef4136;font-size:31.79px;}.cls-3,.cls-4{font-family:Bauhaus93, "Bauhaus 93";}.cls-4{font-size:159px;}.cls-4,.cls-5{fill:#fff;}.cls-5{font-size:118.7px;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><rect class="cls-1" y="5.22" width="481.01" height="203.35" rx="33.8"/><text class="cls-2" transform="translate(244.43 98.53) scale(2.23 1)">O<tspan class="cls-3" x="28.56" y="0">NE</tspan></text><text class="cls-4" transform="translate(31.84 182.06) scale(1.28 1)">Mart</text><text class="cls-5" transform="translate(160.47 98.94) scale(1.51 1)">1</text></g></g></svg>
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

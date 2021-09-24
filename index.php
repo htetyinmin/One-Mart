@@ -49,7 +49,7 @@
             </div>
             <div class="ban-content">
               <p class="animate__animated animate__slideInLeft">Just For You.</p>
-              <p class="animate__animated animate__slideInRight">Make your image beautiful.</p>
+              <p class="animate__animated animate__slideInRight">Make your enjoy shopping</p>
             </div>
             <div class="ban-btn animate__animated animate__slideInUp">
               <button type="button">Shop Now</button>
