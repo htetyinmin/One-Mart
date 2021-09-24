@@ -85,16 +85,15 @@
                                     if(count($ans) != 0) {
 
                                 ?>
-                                <ul class="expanded">
+                                    <ul class="expanded">
                                     <?php foreach($ans as $subcategory) { ?>
-                                        <li><a href="#"><?= $subcategory->name; ?></a></li>
+                                        <li><a href="subcategory.php?sid=<?= $subcategory->id; ?>"><?= $subcategory->name; ?></a></li>
                                         
                                         <?php 
                                         }
+                                    }
                                     ?>
-                                </ul>
-                                <?php 
-                                } ?>
+                                    </ul>
                             </li>
 
                         <!--                             
