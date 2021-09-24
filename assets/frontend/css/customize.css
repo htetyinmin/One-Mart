@@ -130,7 +130,7 @@ ul, ol {
     position: absolute;
     top: 100%;
     width: 200px;
-    padding-left: 0;
+    padding: 10px 0 10px 0;
     background: #fff;
     -webkit-box-shadow: 0 2px 7px rgba(0,0,0,0.45);
     -moz-box-shadow: 0 2px 7px rgba(0,0,0,0.45);
@@ -154,7 +154,7 @@ ul, ol {
 }
 
 #menu li ul li a:hover {
-    background-color:  rgb(229, 233, 238);
+    background-color: rgb(201, 201, 201);
     color: rgba(255, 12, 0);
     text-decoration: underline;
 }
@@ -173,7 +173,7 @@ ul, ol {
     left: 200px;
     top: 0;
     height: 100%;
-    /* background: none; */
+    background: #fff;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
@@ -312,9 +312,13 @@ ul, ol {
     margin-bottom: 15px;
 }
 
+.search-data .header {
+    margin-right: 10px;
+}
+
 .search-data .my-card:hover {
     cursor: pointer;
-    background-color: rgb(229, 233, 238);
+    background-color: rgba(229, 233, 238);
 }
 
 .my-card .body p{
@@ -2010,6 +2014,17 @@ footer > .social_media a:hover > i {
     }
 }
 
+
+
+
+
+.slider,
+.product,
+.product_ad,
+.brand,
+footer {
+    display: none;
+}
 
 
 
