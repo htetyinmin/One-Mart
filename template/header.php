@@ -88,7 +88,7 @@
                                 <ul class="expanded">
                                     <?php foreach($ans as $subcategory) { ?>
                                         
-                                        <li><a href="#"><?= $subcategory->name; ?></a></li>
+                                        <li><a href="subcategory.php?sid=<?= $subcategory->id; ?>"><?= $subcategory->name; ?></a></li>
                                         
                                         <?php 
                                         }

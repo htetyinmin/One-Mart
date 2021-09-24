@@ -31,25 +31,16 @@
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
       <div class="carousel-inner ban-parent">
         <div class="carousel-item active">
-          <img src="assets/frontend/img/slider/banner1.png" class="d-block w-100" alt="slider image">
+          <img src="assets/frontend/img/slider/slide1.png" class="d-block w-100" alt="slider image">
         </div>
         <div class="carousel-item">
-          <img src="assets/frontend/img/slider/banner2.jpg" class="d-block w-100" alt="slider image">
+          <img src="assets/frontend/img/slider/slide2.png" class="d-block w-100" alt="slider image">
         </div>
         <div class="carousel-item">
-          <img src="assets/frontend/img/slider/banner3.jpg" class="d-block w-100" alt="slider image">
+          <img src="assets/frontend/img/slider/slide3.png" class="d-block w-100" alt="slider image">
         </div>
         <div class="carousel-item">
-          <img src="assets/frontend/img/slider/slider13.jpg" class="d-block w-100" alt="slider image">
-        </div>
-        <div class="carousel-item">
-          <img src="assets/frontend/img/slider/slider5.png" class="d-block w-100" alt="slider image">
-        </div>
-        <div class="carousel-item">
-          <img src="assets/frontend/img/slider/slider11.jpg" class="d-block w-100" alt="slider image">
-        </div>
-        <div class="carousel-item">
-          <img src="assets/frontend/img/slider/slider10.jpg" class="d-block w-100" alt="slider image">
+          <img src="assets/frontend/img/slider/slide4.png" class="d-block w-100" alt="slider image">
         </div>
 
         <div class="ban-child">

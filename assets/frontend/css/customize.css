@@ -382,9 +382,9 @@ ul, ol {
 }
 
 .ban-child {
-    padding: 230px 10%;
+    padding: 240px 10%;
     position: absolute;
-    background: #00000057;
+    background: #1101012e;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -400,7 +400,7 @@ ul, ol {
 .ban-title h1{
     font-weight: 600;
     font-family: sans-serif;
-    font-size: 60px;
+    font-size: 50px;
     color: #fff;
     margin-bottom: 20px;
 }
@@ -417,7 +417,7 @@ ul, ol {
 
 .ban-content p:first-of-type {
     color: rgba(255, 12, 0);
-    font-size: 50px;
+    font-size: 40px;
     /* padding-left: 50px; */
 }
 

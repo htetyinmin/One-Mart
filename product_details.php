@@ -48,22 +48,10 @@
   <!-- product details -->
   <div class="container my-5">
       <div class="panel">
-          <div class="container-fliud">
+        <div class="container-fliud">
               <div class="wrapper row">
                   <div class="preview col-lg-6">
                         <div class="image-box"><img src="admin/uploads/<?= $detail_photo ?>"style="width: 500px; height:400px"/></div>
-                        <!-- <div class="tab-pane" id="pic-2"><img src="../assets/frontend/img/product/laptop-11.jpg" /></div>
-                        <div class="tab-pane" id="pic-3"><img src="../assets/frontend/img/product/device.jpg" /></div>
-                        <div class="tab-pane" id="pic-4"><img src="../assets/frontend/img/product/laptopfordesign.jpg" /></div>
-                        <div class="tab-pane" id="pic-5"><img src="../assets/frontend/img/product/device.jpg" /></div> -->
-                      <!-- <ul class="preview-thumbnail nav nav-tabs">
-                        <li class="active"><a data-bs-target="#pic-1" data-bs-toggle="tab"><img src="../assets/frontend/img/product/device.jpg" /></a></li>
-                        <li><a data-bs-target="#pic-2" data-bs-toggle="tab"><img src="../assets/frontend/img/product/laptop-11.jpg" /></a></li>
-                        <li><a data-bs-target="#pic-3" data-bs-toggle="tab"><img src="../assets/frontend/img/product/device.jpg" /></a></li>
-                        <li><a data-bs-target="#pic-4" data-bs-toggle="tab"><img src="../assets/frontend/img/product/laptopfordesign.jpg" /></a></li>
-                        <li><a data-bs-target="#pic-5" data-bs-toggle="tab"><img src="../assets/frontend/img/product/device.jpg" /></a></li>
-                      </ul> -->
-                      
                   </div>
                   <div class="details col-lg-6">
                       <h3 class="product-title"><?= $detail_name ?></h3>
@@ -83,16 +71,17 @@
                         <h4 class="price">Price: <span><del><?= $detail_price ?></del> &nbsp;MMKs</span></h4>
 
    
-                    <?php }else{?>
+                        <?php }else{?>
                         <h4 class="price">Price: <span><?= $detail_price ?> &nbsp;MMKs</span></h4>
-                    <?php } ?>
+                        <?php } ?>
                     
-                      <div class="action">
+                        <div class="action">
                           <button type="button" class="btn btn-primary add-to-cart"><i class="fas fa-cart-arrow-down"></i>&nbsp;&nbsp;add to cart</button>
                           <button type="button" class="btn btn-light like"><i class="far fa-heart"></i></button>
-                      </div>
+                        </div>
                   </div>
               </div>
+        </div>
       </div>
 
   </div>
