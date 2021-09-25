@@ -212,13 +212,13 @@
 
   <!-- brand slide -->
   <div class="brand pt-5 pb-5">
-    <div class="container-fluid">
-      <!-- <div class="row mb-3">
-        <h3 class="title">Top Brands</h3>
+    <div class="container">
+      <div class="row mb-3">
+        <h3 class="title text-center">Top Brands</h3>
         <div class="line"></div>
-      </div> -->
+      </div>
       <div class="row">
-        <div class="your-class mb-5">
+        <div class="brand-slide mb-5">
           <?php foreach($brands as $brand){ ?>
           <div>
             <img src="admin/uploads/<?= $brand->photo ?>" width="200" height="200" alt="">

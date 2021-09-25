@@ -23,11 +23,18 @@
 
 ?>
 
-  <!-- Products -->
+<!-- background image -->
+<div class="bg_image">
+    <!-- Breadcrumb -->
+    <div class="bd_crumb text-center">
+        <h3 class="breadcrumb-item"><?= $subcategories['name']?></h3>
+    </div> 
+</div>
 
-  <section id="product">
+  <!-- Products -->
+<section id="product" class="product">
       <div class="product-container">
-            <h2 class="title mt-5 mb-3" id="laptop"><?= $subcategories['name'] ?></h2>
+            <!-- <h2 class="title mt-5 mb-3" id="laptop"></h2> -->
             <div class="row mb-3">
                   
             <?php foreach ($item_sub as $item) {?>
@@ -62,7 +69,7 @@
             <?php }?>
             </div>
       </div>
-  </section>
+</section>
 
 
   

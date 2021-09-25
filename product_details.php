@@ -85,8 +85,7 @@
 
       <div class="row mt-5">
         <div class="col-12">
-            <h3> Related Item </h3>
-            <hr>
+            <h3 class="title"> Related Item </h3>
         </div>
         <?php
             foreach($related_subs as $related_sub){

@@ -70,7 +70,7 @@
 
   <script type="text/javascript">
     $(document).ready(function(){
-      $('.your-class').slick({
+      $('.brand-slide').slick({
         centerMode: true,
         arrows:false,
         centerPadding: '60px',
