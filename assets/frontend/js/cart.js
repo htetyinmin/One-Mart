@@ -109,7 +109,7 @@ $(document).ready(function(){
                         </div>
                         </td>
                         <td class="col-md-2">
-                        <button type="button" class="btn btn-sm" title="remove product"><i class="far fa-trash-alt"></i></button>
+                        <button type="button" class="btn btn-sm removebtn" title="remove product" data-key="${i}"><i class="far fa-trash-alt"></i></button>
                         </td>
                     </tr>`;
                     
@@ -125,6 +125,28 @@ $(document).ready(function(){
             $('.shoppingcart').hide();
             $('.emptycart').show();
         }
-        
     }
+
+    // REMOVE ITEM
+    $('tbody').on('click','.removebtn',function(){
+        var key= $(this).data('key');
+        var cart_str=localStorage.getItem('onemart');
+        
+        if(cart_str){
+            var cart_arr = JSON.parse(cart_str);
+            $.each(cart_arr,function(i,v){
+                if(key==i){
+                    cart_arr.splice(key,1);
+                }
+                var myData = JSON.stringify(cart_arr);
+                localStorage.setItem('onemart',myData);
+                getData();
+                count();
+            })
+
+            // if(cart_arr.length == 1){
+            //     location.reload();
+            // }
+        }
+    });
 });

@@ -80,6 +80,7 @@
         <?php foreach($items as $item){
           
           $ai_id=$item['id'];
+          $ai_codeno=$item['codeno'];
           $ai_name=$item['name'];
           $ai_photo=$item['photo'];
           $ai_price=$item['price'];
