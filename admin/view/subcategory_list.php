@@ -68,6 +68,19 @@
                                         </td>
                                         <td>
                                             <a href="subcategory_edit.php?id=<?php echo $id ?>" class="btn btn-outline-success"><i class="feather-edit"></i></a>
+
+                                            <?php
+
+                                                $tmp = "SELECT * FROM items where subcategory_id=$id";
+                                                $item = getItems($tmp);
+
+                                                if ($item) {
+                                                    
+                                            ?>
+
+                                            <button id="no_delete" class="btn btn-outline-danger"><i class="feather-trash-2"></i></button>
+
+                                            <?php } else { ?>
                                             
                                             <form action="subcategory_delete.php" method="POST" class="d-inline-block" onsubmit="return confirm('Are you sure want to delete?')">
                                                 <input type="hidden" name="id" value="<?= $id ?>">
@@ -75,6 +88,9 @@
                                                     <i class="feather-trash-2"></i>
                                                 </button>
                                             </form>
+
+                                            <?php } ?>
+
                                         </td>
                                     </tr>
 
@@ -102,3 +118,17 @@
 <?php
     include_once "../template/footer.php";
 ?>
+
+<script>
+    
+    document.querySelector("#no_delete").addEventListener('click', function(){
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'You can\'t delete this subcategory. Go delete item related to this subcategory first to perform this action!',
+            confirmButtonText: 'OK. Got it!',
+            confirmButtonColor: '#28a745'
+        })
+    });
+
+</script>

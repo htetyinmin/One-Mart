@@ -4,6 +4,7 @@
 
     $sql = "SELECT * FROM categories";
     $categoryAll = getItems($sql);
+    
 ?>
 
             <!--content Area Start-->
@@ -49,6 +50,8 @@
                                 
                                     $i = 1;
                                     foreach($categoryAll as $category){
+
+                                        
                                 
                                 ?>
                                     <tr>
@@ -56,15 +59,30 @@
                                         <td><?= $category->name; ?></td>
                                         <td>
                                             <a href="category_edit.php?id=<?php echo $category->id ?>" class="btn btn-outline-success"><i class="feather-edit"></i></a>
+                                            
+                                            <?php
 
-                                            <!-- <a href="#" class="bg"><i class="feather-trash-2 text-danger"></i></a> -->
+                                                $tmp = "SELECT * FROM subcategories where category_id=$category->id";
+                                                $sub = getItems($tmp);
+
+                                                if ($sub) {
+
+                                            ?>
+
+                                            <button id="no_delete" class="btn btn-outline-danger"><i class="feather-trash-2"></i></button>
+
+                                            <?php } else { ?>
 
                                             <form action="category_delete.php" method="POST" class="d-inline-block" onsubmit="return confirm('Are you sure want to delete?')">
                                                 <input type="hidden" name="id" value="<?= $category->id ?>">
-                                                <button class="btn btn-outline-danger" name="delete">
+
+                                                <button id="" class="btn btn-outline-danger">
                                                     <i class="feather-trash-2"></i>
                                                 </button>
                                             </form>
+
+                                            <?php } ?>
+
                                         </td>
                                     </tr>
 
@@ -90,3 +108,17 @@
 <?php
     include_once "../template/footer.php";
 ?>
+
+<script>
+    
+    document.querySelector("#no_delete").addEventListener('click', function(){
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'You can\'t delete this category. Go delete subcategory related to this category first to perform this action!',
+            confirmButtonText: 'OK. Got it!',
+            confirmButtonColor: '#28a745'
+        })
+    });
+
+</script>
