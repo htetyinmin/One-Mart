@@ -37,8 +37,3 @@ if(currentMenuHeight > screenHeight*0.8 ){
 }
 
 
-// CART SESSION
-
-
-
-// CART SESSION END

@@ -109,13 +109,19 @@
                   </div>
                 </div>
                 <div class="order_btn">
-                  <a href="product_details.php?id=<?= $ai_id?>" type="button" class="btn btn-danger btn-sm cart_btn"><i class="fa fa-cart-arrow-down"></i></a>
+
+                  <button class="btn btn-danger btn-sm cart_btn addtocart" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" 
+								data-price="<?= $ai_price ?>" data-discount="<?= $ai_discount ?>" data-photo="<?= $ai_photo ?>" data-codeno="<?= $ai_codeno ?>"><i class="fa fa-cart-arrow-down"></i></button>
+
+                  <!-- <a href="product_details.php?id=<?= $ai_id?>" type="button" class="btn btn-danger btn-sm cart_btn"><i class="fa fa-cart-arrow-down"></i></a> -->
+
                   <!-- <button type="button" data-id=" + data[i].id " data-title=" + data[i].productName " data-content=" + data[i].productDec " data-price=" + data[i].currentPrice " data-img="./assets/frontend/img/product/ + data[i].productImg "  class="btn btn-primary btn-sm btn-danger cart_btn click-cart" title="Add to cart" data-bs-toggle="modal" data-bs-target="#cartModal">
                   <i class="fa fa-cart-arrow-down"></i>
                   </button> -->
                   <button type="button" data-id=" + data[i].id " data-title=" + data[i].productName " data-content=" + data[i].productDec " data-price=" + data[i].currentPrice " data-img="./assets/frontend/img/product/ + data[i].productImg "  class="btn btn-primary btn-sm cart_btn" title="Order product">
                   <i class="fab fa-shopify">&nbsp;Order</i>
                   </button>
+                  
                 </div>
             </div>
           </div>
