@@ -150,8 +150,8 @@
                 <li class="nav-item">
                     <a class="nav-link cart_icon" href="product_cart.php" title="cart">
                         <i class="fa fa-cart-plus position-relative">
-                            <span class="position-absolute translate-middle badge rounded-pill noti">
-                                99+
+                            <span class="position-absolute translate-middle badge rounded-pill noti cartNoti">
+                                
                             </span>
                         </i>
                     </a>

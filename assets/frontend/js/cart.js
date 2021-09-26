@@ -1,6 +1,9 @@
+
+
 $(document).ready(function(){
 
-    // count();
+    count();
+    getData();
         
     $('.addtocart').click(function(){
 
@@ -46,38 +49,82 @@ $(document).ready(function(){
         var myData = JSON.stringify(cart_arr);
         localStorage.setItem("onemart", myData);
         
-        // count();
+        count();
 
     });
-});
 
-function count(){
-
-    var cart_str = localStorage.getItem('onemart');
-    if(cart_str){
-        var cart_arr = JSON.parse(cart_str);
-        var count=0;
-        // var total=0;
-
-        $.each(cart_arr, function(i,v){
-            if (v.discount) {
-                var price = v.discount;
-            }
-            else{
-                var price = v.price;
-            }
-            var subtotal = price * v.qty;
-            count += v.qty;
-            total += subtotal;
-                
-        });
-        $('.cartNoti').text(count);
-        $('.cartTotal').text(total+'Ks');
-        
-    }else{
-        $('.cartNoti').text(0);
-        $('.cartTotal').text(0+'Ks');
-
+    function count() {
+        var cart_str = localStorage.getItem("onemart");
+        if (cart_str) {
+    
+            var cart_arr = JSON.parse(cart_str);
+            var count = 0;
+            $.each(cart_arr, function (i,v) {
+                count += v.qty;
+            })
+    
+            $('.cartNoti').text(count);
+        }
     }
-    // return count;
-}
+
+    function getData(){
+        var cart_str=localStorage.getItem('onemart');
+        if(cart_str){
+    
+            $('.shoppingcart').show();
+            $('.emptycart').hide();
+    
+            var cart_arr=JSON.parse(cart_str);
+            var html = "";
+            var cost = "";
+            if(cart_arr.length>0){
+                var no = 1;
+                var total = 0;
+                $.each(cart_arr,function(i,v){
+                    var amount = (v.discount == 0) ? v.price*v.qty : v.discount*v.qty;
+                    var price = (v.discount == 0) ? v.price : v.discount;
+                    
+                    html +=`<tr>
+                        <td class="col-md-1">${no++}.</td>
+                        <td class="col-md-5">
+                        <div class="row">
+                            <div class="product_img">
+                            <img src="admin/uploads/${v.photo}" class="rounded" height="80" width="auto" alt="Item">
+                            <div class="product_name">
+                                <p>${v.name}</p>
+                                <span>Brand: <small>Apple</small></span>
+                            </div>
+                            </div>
+                        </div>
+                        </td>
+                        <td class="col-md-2">
+                        <div class="quantity">
+                            <input type="number" value="1" min="1" step="1" name="number" style="width: 50px;">
+                        </div>
+                        </td>
+                        <td class="col-md-2">
+                        <div class="price_wrap">
+                            <div>${price} Ks</div>
+                            <small class="text_muted"><span>${price} Ks</span> each</small>
+                        </div>
+                        </td>
+                        <td class="col-md-2">
+                        <button type="button" class="btn btn-sm" title="remove product"><i class="far fa-trash-alt"></i></button>
+                        </td>
+                    </tr>`;
+                    
+                    total+=amount;
+                });
+    
+                cost = `${total}`
+                
+                $('#carts_table').html(html);
+                $('.total').html(cost);
+            }
+        }else{
+            $('.shoppingcart').hide();
+            $('.emptycart').show();
+        }
+        
+    }
+});

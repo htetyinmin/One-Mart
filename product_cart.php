@@ -13,7 +13,7 @@
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Library</li>
+              <li class="breadcrumb-item active" aria-current="page">Cart</li>
             </ol>
           </nav>
           <!-- <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
@@ -38,16 +38,20 @@
               <table class="table table-hover rounded-3">
                 <thead class="text-muted">
                   <tr class="small">
+                    <th>No.</th>
                     <th>Products</th>
                     <th>Quantity</th>
                     <th>Price</th>
-                    <th>Action</th>
+                    <th>Remove</th>
                   </tr>
                 </thead>
         
                 <tbody id="carts_table">
-                  <tr>
-                    <td class="col-md-6">
+                  <!-- <tr>
+                    <td class="col-md-1">
+                      1.
+                    </td>
+                    <td class="col-md-5">
                       <div class="row">
                         <div class="product_img">
                           <img src="../assets/frontend/img/product/laptop-11.jpg" class="rounded" width="80" alt="product image">
@@ -70,66 +74,9 @@
                       </div>
                     </td>
                     <td class="col-md-2">
-                      <button type="button" class="btn btn-sm" title="product details"><i class="fas fa-info"></i></i></button>
                       <button type="button" class="btn btn-sm" title="remove product"><i class="far fa-trash-alt"></i></button>
                     </td>
-                  </tr>
-                  <tr>
-                    <td class="col-md-6">
-                      <div class="row">
-                        <div class="product_img">
-                          <img src="../assets/frontend/img/product/laptop-11.jpg" class="rounded" width="80" alt="product image">
-                          <div class="product_name">
-                            <p>Product Name</p>
-                            <span>Brand: <small>America</small></span>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="col-md-2">
-                      <div class="quantity">
-                        <input type="number" value="1" min="1" step="1" name="number" style="width: 50px;">
-                      </div>
-                    </td>
-                    <td class="col-md-2">
-                      <div class="price_wrap">
-                        <div>100,000Ks</div>
-                        <small class="text_muted"><span>100,000Ks</span> each</small>
-                      </div>
-                    </td>
-                    <td class="col-md-2">
-                      <button type="button" class="btn btn-sm" title="product details"><i class="fas fa-info"></i></i></button>
-                      <button type="button" class="btn btn-sm" title="remove product"><i class="far fa-trash-alt"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="col-md-6">
-                      <div class="row">
-                        <div class="product_img">
-                          <img src="../assets/frontend/img/product/device.jpg" class="rounded" width="80" alt="product image">
-                          <div class="product_name">
-                            <p>Product Name</p>
-                            <span>Brand: <small>America</small></span>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="col-md-2">
-                      <div class="quantity">
-                        <input type="number" value="1" min="1" step="1" name="number" style="width: 50px;">
-                      </div>
-                    </td>
-                    <td class="col-md-2">
-                      <div class="price_wrap">
-                        <div>100,000Ks</div>
-                        <small class="text_muted"><span>100,000Ks</span> each</small>
-                      </div>
-                    </td>
-                    <td class="col-md-2">
-                      <button type="button" class="btn btn-sm" title="product details"><i class="fas fa-info"></i></i></button>
-                      <button type="button" class="btn btn-sm" title="remove product"><i class="far fa-trash-alt"></i></button>
-                    </td>
-                  </tr>
+                  </tr> -->
                 </tbody>
               </table>
             </div>
@@ -155,7 +102,7 @@
               <div class="card-body">
                   <dl class="dlist-align">
                       <dt>Total price:</dt>
-                      <dd>400,000Ks</dd>
+                      <dd><span class="total"></span> Ks</dd>
                   </dl>
                   <dl class="dlist-align">
                       <dt>Discount:</dt>
@@ -163,11 +110,11 @@
                   </dl>
                   <dl class="dlist-align">
                     <dt>Shipping:</dt>
-                    <dd>4,000Ks</dd>
+                    <dd>0Ks</dd>
                   </dl>
                   <dl class="dlist-align">
                       <dt>Total:</dt>
-                      <dd><strong>404,000Ks</strong></dd>
+                      <dd><strong><span class="total"></span> Ks</strong></dd>
                   </dl>
                   <hr> 
                   <div class="payment">
