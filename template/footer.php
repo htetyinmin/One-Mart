@@ -71,7 +71,8 @@
 
   <script type="text/javascript">
     $(document).ready(function(){
-      $('.brand-slide').slick({
+
+    $('.brand-slide').slick({
         centerMode: true,
         arrows:false,
         centerPadding: '60px',
@@ -80,25 +81,26 @@
         autoplaySpeed: 2000,
         responsive: [
           {
-            breakpoint: 768,
+            breakpoint: 1025,
             settings: {
-              arrows: false,
               centerMode: true,
               centerPadding: '40px',
-              slidesToShow: 2,
-              autoplay: true,
-              autoplaySpeed: 2000,
+              slidesToShow: 4,
             }
           },
           {
-            breakpoint: 480,
+            breakpoint: 769,
             settings: {
-              arrows: false,
               centerMode: true,
               centerPadding: '40px',
+              slidesToShow: 3,
+            }
+          },
+          {
+            breakpoint: 577,
+            settings: {
+              centerMode: true,
               slidesToShow: 1,
-              autoplay: true,
-              autoplaySpeed: 2000,
             }
           }
         ]
@@ -111,57 +113,83 @@
       autoplaySpeed: 2000,
       responsive: [
             {
-              breakpoint: 1024,
+              breakpoint: 1025,
               settings: {
                 slidesToShow: 4,
                 slidesToScroll: 1,
                 infinite: true,
-                // dots: true
               }
             },
             {
-              breakpoint: 600,
+              breakpoint: 769,
               settings: {
-                slidesToShow: 2,
+                slidesToShow: 3,
                 slidesToScroll: 1
               }
             },
             {
-              breakpoint: 480,
+              breakpoint: 577,
               settings: {
-                slidesToShow: 2,
+                slidesToShow: 1,
                 slidesToScroll: 1
               }
             }
         ]
     });
 
+    $('.ad-slide').slick({
+      arrows:false,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      responsive: [
+        {
+          breakpoint: 1025,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            infinite: true,
+          }
+        },
+        {
+            breakpoint: 577,
+            settings: {
+              centerMode: true,
+              slidesToShow: 1,
+            }
+          }
 
-    $('.product-slider').owlCarousel({
-    loop:true,
-    margin:30,
-    // nav:true,
-    items:5,
-    autoplay:true,
-    responsiveClass:true,
-    responsive:{
-        0:{
-            items:1,
-            nav:true
-        },
-        600:{
-            items:3,
-            nav:false
-        },
-        1000:{
-            items:5,
-            nav:true,
-            loop:false
-        }
-    }
-})
+      ]
 
     });
+
+
+    $('.product-slider').owlCarousel({
+        loop:true,
+        margin:30,
+        // nav:true,
+        items:5,
+        autoplay:true,
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items:1,
+                nav:true
+            },
+            600:{
+                items:3,
+                nav:false
+            },
+            1000:{
+                items:5,
+                nav:true,
+                loop:false
+            }
+        }
+    });
+
+});
   </script>
 
 
