@@ -22,10 +22,6 @@
     
  ?>
  
- 
-
-
-
   <!-- slider -->
   <div class="slider mb-5">
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -44,17 +40,19 @@
         </div>
 
         <div class="ban-child">
-            <div class="ban-title animate__animated animate__fadeInDown">
-              <h1>One Mart Online Shop</h1>
+            <div class="ban-inner">
+              <div class="ban-title animate__animated animate__fadeInDown">
+                <h1>One Mart Online Shop</h1>
+              </div>
+              <div class="ban-content">
+                <p class="animate__animated animate__slideInLeft">Just For You.</p>
+                <p class="animate__animated animate__slideInRight">Make your enjoy shopping</p>
+              </div>
+              <div class="ban-btn animate__animated animate__slideInUp">
+                <button type="button">Shop Now</button>
+              </div>
             </div>
-            <div class="ban-content">
-              <p class="animate__animated animate__slideInLeft">Just For You.</p>
-              <p class="animate__animated animate__slideInRight">Make your enjoy shopping</p>
-            </div>
-            <div class="ban-btn animate__animated animate__slideInUp">
-              <button type="button">Shop Now</button>
-            </div>
-          </div>
+        </div>
       </div>
 
 
@@ -70,13 +68,13 @@
   </div>
 
   <!-- Product -->
-  <div class="product pt-5 pb-3 mb-3">
+  <div class="product pt-5 pb-5">
     <div class="container-sm">
-      <div class="row mb-3">
+      <div class="row">
         <h3 class="title text-center">Deals Of The Day</h3>
         <!-- <div class="line"></div> -->
       </div>
-      <div class="row mb-3 card-slide" id="">
+      <div class="row mb-3 card-slide">
         <?php foreach($items as $item){
           
           $ai_id=$item['id'];
@@ -135,9 +133,9 @@
   </div>
 
   <!-- Discount Product -->
-  <div class="product pt-5 pb-3 mb-3">
+  <div class="product pt-5 pb-3">
     <div class="container-sm">
-      <div class="row mb-3">
+      <div class="row">
         <h3 class="title text-center">Discount Product</h3>
         <!-- <div class="line"></div> -->
       </div>
@@ -236,15 +234,23 @@
   </div>
   
   <!-- product ad -->
-  <div class="product_ad pt-5 mb-3">
+  <div class="product_ad pt-5">
     <div class="container">
       <div class="row">
-      <div class="ad ad_one">
-        <img src="assets/frontend/img/promotion/fashion.jpg" alt="promotion" width="100%" height="100%" >
-      </div>
-      <div class="ad ad_two">
-        <img src="assets/frontend/img/promotion/electronic.jpg" alt="promotion" width="100%" height="100%">
-      </div>
+          <div class="ad-slide">
+            <div>
+              <img src="assets/frontend/img/promotion/fashion.jpg" alt="promotion" width="100%" height="100%" >
+            </div>
+            <div>
+              <img src="assets/frontend/img/promotion/electronic.jpg" alt="promotion" width="100%" height="100%">
+            </div>
+            <div>
+              <img src="assets/frontend/img/promotion/fashion.jpg" alt="promotion" width="100%" height="100%" >
+            </div>
+            <div>
+              <img src="assets/frontend/img/promotion/electronic.jpg" alt="promotion" width="100%" height="100%">
+            </div>
+          </div>
       </div>
     </div>
     <!-- <div class="ad ad_three">
@@ -255,14 +261,14 @@
   <!-- brand slide -->
   <div class="brand pt-5 pb-5">
     <div class="container">
-      <div class="row mb-3">
+      <div class="row mb-5">
         <h3 class="title text-center">Top Brands</h3>
         <div class="line"></div>
       </div>
       <div class="row">
         <div class="brand-slide mb-5">
           <?php foreach($brands as $brand){ ?>
-          <div>
+          <div class="brand-img">
             <img src="admin/uploads/<?= $brand->photo ?>" width="200" height="200" alt="">
           </div>
          <?php }?>
