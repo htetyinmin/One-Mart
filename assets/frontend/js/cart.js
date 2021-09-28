@@ -1,5 +1,3 @@
-
-
 $(document).ready(function(){
 
     count();
@@ -64,17 +62,19 @@ $(document).ready(function(){
             })
     
             $('.cartNoti').text(count);
+        } else {
+            $('.cartNoti').text(0);
         }
     }
 
     function getData(){
         var cart_str=localStorage.getItem('onemart');
-        if(cart_str){
+        var cart_arr=JSON.parse(cart_str);
+
+        if(cart_arr.length > 0){
     
-            $('.shoppingcart').show();
-            $('.emptycart').hide();
+            $('#noitem').hide();
     
-            var cart_arr=JSON.parse(cart_str);
             var html = "";
             var cost = "";
             if(cart_arr.length>0){
@@ -97,11 +97,16 @@ $(document).ready(function(){
                             </div>
                         </div>
                         </td>
-                        <td class="col-md-2">
-                        <div class="quantity">
-                            <input type="number" value="1" min="1" step="1" name="number" style="width: 50px;">
-                        </div>
+                        
+
+                        <td>
+                            <span class="btn btn-secondary plus" data-key="${i}"> <i class="fas fa-plus"></i> </span>
+
+                            <span> ${v.qty} </span>
+
+                            <span class="btn btn-secondary minus" data-key="${i}"> <i class="fas fa-minus-circle"></i> </span>
                         </td>
+
                         <td class="col-md-2">
                         <div class="price_wrap">
                             <div>${price} Ks</div>
@@ -121,9 +126,8 @@ $(document).ready(function(){
                 $('#carts_table').html(html);
                 $('.total').html(cost);
             }
-        }else{
-            $('.shoppingcart').hide();
-            $('.emptycart').show();
+        } else {
+            $('#hasitem').hide();
         }
     }
 
@@ -140,13 +144,60 @@ $(document).ready(function(){
                 }
                 var myData = JSON.stringify(cart_arr);
                 localStorage.setItem('onemart',myData);
-                getData();
                 count();
+                getData();
             })
 
-            // if(cart_arr.length == 1){
-            //     location.reload();
-            // }
+            if(cart_arr.length == 0){
+                location.reload();
+            }
         }
     });
+
+    // QTY INCREASE BTN
+    $('tbody').on('click','.plus',function(){
+        var key = $(this).data('key');
+
+        var cart_str = localStorage.getItem('onemart');
+        if(cart_str){
+            var cart_arr=JSON.parse(cart_str);
+            $.each(cart_arr,function(i,v){
+                if(key==i){
+                    v.qty++;
+                }
+
+                var myData = JSON.stringify(cart_arr);
+                localStorage.setItem('onemart',myData);
+                count();
+                getData();
+            })
+        }
+    });
+
+    // QTY DECREASE BTN
+    $('tbody').on('click','.minus',function(){
+        var key= $(this).data('key');
+        var cart_str=localStorage.getItem('onemart');
+        
+        if(cart_str){
+            var cart_arr = JSON.parse(cart_str);
+            $.each(cart_arr,function(i,v){
+                if(key==i){
+                    v.qty--;
+                    if(v.qty==0){
+                        cart_arr.splice(key,1);
+                    }
+                }
+                var myData = JSON.stringify(cart_arr);
+                localStorage.setItem('onemart', myData);
+                count();
+                getData();
+            })
+
+            if(cart_arr.length == 0){
+                location.reload();
+            }
+        }
+    });
+
 });
