@@ -138,7 +138,7 @@
                     ?>
 
                         <li class="purple">
-                            <a href="#"><?php echo $brand->name; ?></a>
+                            <a href="brand.php?bid=<?= $brand->id ?>"><?php echo $brand->name; ?></a>
                         </li>
 
                     <?php 
