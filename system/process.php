@@ -29,7 +29,7 @@
 
             if($q != '') {
 
-                $sql = "SELECT name, photo FROM items WHERE  name LIKE '%$q%' LIMIT 5";
+                $sql = "SELECT id,name, photo FROM items WHERE  name LIKE '%$q%' LIMIT 5";
                 $res = getItems($sql);
 
                 if($res) {
@@ -38,7 +38,7 @@
                         
                         echo    "<ul>
                                     <li>
-                                        <a href='#' class='d-flex flex-row my-card'>
+                                        <a href='product_details.php?id=$value->id ' class='d-flex flex-row my-card'>
                                             <div class='header'>
                                                 <img src='../admin/uploads/". $value->photo . "' width='30' height='30' alt=''>
                                             </div>

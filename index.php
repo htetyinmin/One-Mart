@@ -115,7 +115,8 @@
                   <button class="btn btn-danger btn-sm cart_btn addtocart" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" 
 								data-price="<?= $ai_price ?>" data-discount="<?= $ai_discount ?>" data-photo="<?= $ai_photo ?>" data-codeno="<?= $ai_codeno ?>"><i class="fa fa-cart-arrow-down"></i></button>
 
-                <button class="btn btn-primary btn-sm cart_btn view_btn" data-id="<?= $ai_id ?>" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="fas fa-eye"></i></button>
+                <button class="btn btn-primary btn-sm cart_btn view_btn" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" data-photo="<?= $ai_photo ?>" data-description="<?= $ai_description ?>"
+								data-price="<?= $ai_price ?>" data-discount="<?= $ai_discount ?>" data-photo="<?= $ai_photo ?>" data-codeno="<?= $ai_codeno ?>" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="fas fa-eye"></i></button>
                   
                 </div>
             </div>
@@ -207,7 +208,7 @@
           </div>
         </nav>
         <div class="custom-content tab-content custom-tab" id="nav-tabContent">
-          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+          <div class="tab-pane active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                 <div class="late-card">
                   <div class="circle"></div>
                   <div class="late-content">
@@ -219,15 +220,16 @@
                 </div>
           </div>
           <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-          <div class="late-card">
-                  <div class="circle"></div>
-                  <div class="late-content">
-                    <h2>T-shirt</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil minus beatae iusto saepe dolores harum odit similique, vero at natus perferendis alias</p>
-                    <a href="#">Buy Now</a>
+            <div class="late-card">
+                    <div class="circle"></div>
+                    <div class="late-content">
+                      <h2>T-shirt</h2>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil minus beatae iusto saepe dolores harum odit similique, vero at natus perferendis alias</p>
+                      <a href="#">Buy Now</a>
+                    </div>
+                    <img src="admin/uploads/3265135270_334311-removebg-preview.png" alt="">
                   </div>
-                  <img src="admin/uploads/3265135270_334311-removebg-preview.png" alt="">
-                </div>
+            </div>
           </div>
       </div>      
     </div>
@@ -290,10 +292,10 @@
         <div class="modal-body" id="modal-div">
               <div class="wrapper row">
                   <div class="preview col-lg-6">
-                        <div class="image-box"><img src="admin/uploads/<?= $ai_photo?>"style="width: 371px; height:375px"/></div>
+                        <div class="image-box modal-photo"></div>
                   </div>
                   <div class="details col-lg-6">
-                      <h3 class="product-title"><?= $ai_name ?></h3>
+                      <h3 class="product-title modal-name"></h3>
                       <div class="rating">
                           <div class="stars">
                               <span class="fa fa-star checked"></span>
@@ -304,16 +306,10 @@
                           </div>
                           <span class="review-no">41 reviews</span>
                       </div>
-                      <p class="product-description"><?= $ai_description ?></p>
-                      <?php if($ai_discount) {?>
-                        <h4 class="price">Discount: <span><?= $ai_discount ?> &nbsp;MMKs</span></h4>
-                        <h4 class="price">Price: <span><del><?= $ai_price ?></del> &nbsp;MMKs</span></h4>
-
-   
-                        <?php }else{?>
-                        <h4 class="price">Price: <span><?= $ai_price ?> &nbsp;MMKs</span></h4>
-                        <?php } ?>
-                    
+                      <p class="product-description modal-description"></p>
+                        <div class="price-tab"></div>
+                        <!-- <h4 class="price">Discount: <span class="modal-discount"></span>&nbsp;MMKs</h4> -->
+                        <!-- <h4 class="price">Price: <span class="modal-price"></span>&nbsp;MMKs</h4> -->
                         <div class="action">
                           <button type="button" class="btn btn-primary add-to-cart"><i class="fas fa-cart-arrow-down"></i>&nbsp;&nbsp;add to cart</button>
                           <button type="button" class="btn btn-light like"><i class="far fa-heart"></i></button>
@@ -331,8 +327,47 @@
   </div>
 
 
+
 <?php 
 
-  include_once "template/footer.php";
+include_once "template/footer.php";
 
 ?>
+<script>
+  $(document).ready(function(){
+    $('.view_btn').on('click', function(){
+      var id = $(this).data("id");
+      var name = $(this).data('name');
+      var photo = $(this).data('photo');
+      var price = $(this).data('price');
+      var description = $(this).data('description');
+      var discount = $(this).data('discount');
+      var codeno = $(this).data('codeno');
+
+      $('.modal-name').text(name);
+      $('.modal-description').text(description);
+      $('.modal-codeno').text(codeno);
+
+      if(discount){
+
+        $('.price-tab').html(`
+        <h4 class="price">Discount: ${discount} &nbsp;MMKs</h4>
+        <h4 class="price">Price: <del>${price}</del> &nbsp;MMKs</h4>
+
+        `);
+        
+      }else{
+        $('.price-tab').html(`
+        
+        <h4 class="price">Price: ${price}&nbsp;MMKs</h4>
+
+        `);
+      }
+
+      $('.modal-photo').html(`<img src="admin/uploads/${photo} "style="width: 371px; height:375px"/>`
+      )
+
+
+    })
+  });
+</script>
