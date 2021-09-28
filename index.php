@@ -200,7 +200,7 @@
           <h3 class="title text-center">New Arrivals</h3>
           <!-- <div class="line"></div> -->
         </div>
-        <nav class="d-flex align-items-center justify-content-center">
+        <nav class="d-flex align-items-center justify-content-center mt-5">
           <div class="nav nav-tabs" id="nav-tab" role="tablist">
             <button class="latestBtn" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Electrionic Devices</button>
             <button class="latestBtn" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Fashion</button>
