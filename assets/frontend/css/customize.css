@@ -337,6 +337,10 @@ ul, ol {
     border-bottom: 0px solid #ddd;
 }
 
+.profile-show {
+    left: -40% !important;
+}
+
 
 /*---------------slider---------------*/
 .carousel-inner .carousel-item::after {
