@@ -206,5 +206,160 @@
 }
 
 
+.custom-content{
+      display: flex;     
+      align-items: center;
+      justify-content: center;
+      min-height: 500px;
+      min-width: 900px;
+}
+
+.latestBtn{
+      background-color: rgb(255, 15, 0) !important;
+      color: #fff;
+      width: 345px;
+      height: 100px;
+      border: none;
+      margin: 2px;
+      height: 41px;
+}
+
+.late-card{
+      position: relative;
+      width: 700px;
+      height: 450px;
+      background: #000;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      transition: .5s;
+}
+
+.late-card .circle{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+}
+
+.late-card .circle::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* background: #d83133; */
+      clip-path: circle(120px at center);
+      transition: .5s;
+}
+
+.late-card:hover .circle:hover::before{
+      /* background: darkblue; */
+      clip-path: circle(400px at center);
+}
 
 
+.late-card img{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 400px;
+      width: 200px;
+      pointer-events: none;
+      transition: .5s;
+}
+
+.late-card:hover img{
+      left: 80%;
+      height: 400px;
+      width: 500px;
+}
+
+.late-card .late-content{
+      position: relative;
+      width: 50%;
+      left: 20%;
+      padding: 20px 20px 20px 40px;
+      transition: .5s;
+      opacity: 0;
+      visibility: hidden;
+      /* text-align: left; */
+}
+
+.late-card:hover .late-content{
+      left: 0;
+      opacity: 1;
+      visibility: visible;
+}
+
+.late-card .late-content h2{
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 2em;
+      line-height: 1em;
+      margin-bottom: 5px;
+}
+
+.late-card .late-content p{
+      color: #fff;
+}
+
+.late-card .late-content a{
+      position: relative;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 10px;
+      background: rgb(255, 15, 0);
+      margin-top: 10px;
+      display: inline-block;
+      font-weight: bold;
+
+}
+
+@media(max-width: 991px){
+      .late-card{
+            width: auto;
+            min-width: 350px;
+            align-items: flex-start;
+            margin: 10px;
+      }
+
+      .late-card:hover{
+            height: 600px;
+      }
+
+      .late-card .late-content{
+            width: 100%;
+            left: 0;
+            padding: 30px;
+      }
+
+      .late-card:hover img{
+            top: 70%;
+            left: 50%;
+            height: 300px;
+      }
+}
+
+@media(max-width: 420px){
+      .late-card .late-content{
+            padding: 20px;
+      }
+}
+
+/* CONTACT AREA */
+
+.contact-header{
+      padding: 40px 0;
+}
+
+.contact-form{
+      padding: 0 80px 100px;
+}
+
+/* CONTACT END */

@@ -94,11 +94,9 @@
                   <i class="far fa-heart"></i>
                   </button>
                 </div>
-                
-                <div class="card-image">
-                  <img src="admin/uploads/<?= $ai_photo ?>" class="card-img p-3" alt="...">
-                </div>
-
+                <a href="product_details.php?id=<?= $ai_id?>" type="button">
+                  <img src="admin/uploads/<?= $ai_photo ?>" class="card-img p-3" height=160 alt="...">
+                </a>
                 <div class="card-body" style="height: 170px;">
                   <h5 class="card-title"><?= $ai_name ?></h5>
                   <p class="card-text"><?= substr($ai_description,0,50) ?>&nbsp;<a href="#">more...</a></p>
@@ -111,19 +109,14 @@
                   <?php } ?>
                   </div>
                 </div>
-                <div class="order_btn">
 
+                <div class="order_btn">
+                  
                   <button class="btn btn-danger btn-sm cart_btn addtocart" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" 
 								data-price="<?= $ai_price ?>" data-discount="<?= $ai_discount ?>" data-photo="<?= $ai_photo ?>" data-codeno="<?= $ai_codeno ?>"><i class="fa fa-cart-arrow-down"></i></button>
 
-                  <!-- <a href="product_details.php?id=<?= $ai_id?>" type="button" class="btn btn-danger btn-sm cart_btn"><i class="fa fa-cart-arrow-down"></i></a> -->
-
-                  <!-- <button type="button" data-id=" + data[i].id " data-title=" + data[i].productName " data-content=" + data[i].productDec " data-price=" + data[i].currentPrice " data-img="./assets/frontend/img/product/ + data[i].productImg "  class="btn btn-primary btn-sm btn-danger cart_btn click-cart" title="Add to cart" data-bs-toggle="modal" data-bs-target="#cartModal">
-                  <i class="fa fa-cart-arrow-down"></i>
-                  </button> -->
-                  <button type="button" data-id=" + data[i].id " data-title=" + data[i].productName " data-content=" + data[i].productDec " data-price=" + data[i].currentPrice " data-img="./assets/frontend/img/product/ + data[i].productImg "  class="btn btn-primary btn-sm cart_btn" title="Order product">
-                  <i class="fab fa-shopify">&nbsp;Order</i>
-                  </button>
+                <button class="btn btn-primary btn-sm cart_btn view_btn" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" data-photo="<?= $ai_photo ?>" data-description="<?= $ai_description ?>"
+								data-price="<?= $ai_price ?>" data-discount="<?= $ai_discount ?>" data-photo="<?= $ai_photo ?>" data-codeno="<?= $ai_codeno ?>" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="fas fa-eye"></i></button>
                   
                 </div>
             </div>
@@ -166,10 +159,9 @@
                   <i class="far fa-heart"></i>
                   </button>
                 </div>
-
-                <div class="card-image">
+                <a href="product_details.php?id=<?= $ai_id?>" type="button">
                   <img src="admin/uploads/<?= $ai_photo ?>" class="card-img p-3" height=160 alt="...">
-                </div>
+                </a>
                 <div class="card-body" style="height: 170px;">
                   <h5 class="card-title"><?= $ai_name ?></h5>
                   <p class="card-text"><?= substr($ai_description,0,50) ?>&nbsp;<a href="#">more...</a></p>
@@ -183,13 +175,11 @@
                   </div>
                 </div>
                 <div class="order_btn">
+
                   <a href="product_details.php?id=<?= $ai_id?>" type="button" class="btn btn-danger btn-sm cart_btn"><i class="fa fa-cart-arrow-down"></i></a>
-                  <!-- <button type="button" data-id=" + data[i].id " data-title=" + data[i].productName " data-content=" + data[i].productDec " data-price=" + data[i].currentPrice " data-img="./assets/frontend/img/product/ + data[i].productImg "  class="btn btn-primary btn-sm btn-danger cart_btn click-cart" title="Add to cart" data-bs-toggle="modal" data-bs-target="#cartModal">
-                  <i class="fa fa-cart-arrow-down"></i>
-                  </button> -->
-                  <button type="button" data-id=" + data[i].id " data-title=" + data[i].productName " data-content=" + data[i].productDec " data-price=" + data[i].currentPrice " data-img="./assets/frontend/img/product/ + data[i].productImg "  class="btn btn-primary btn-sm cart_btn" title="Order product">
-                  <i class="fab fa-shopify">&nbsp;Order</i>
-                  </button>
+                  
+                  <button class="btn btn-primary btn-sm cart_btn view_btn" data-id="<?= $ai_id ?>" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="fas fa-eye"></i></button>
+
                 </div>
             </div>
           </div>
@@ -202,6 +192,46 @@
         </a>
       </div>
     
+    </div>
+  </div>
+
+  <div class="latest pt-5 pb-3 mb-3">
+    <div class="container-sm">
+        <div class="row mb-3">
+          <h3 class="title text-center">New Arrivals</h3>
+          <!-- <div class="line"></div> -->
+        </div>
+        <nav class="d-flex align-items-center justify-content-center mt-5">
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="latestBtn" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Electrionic Devices</button>
+            <button class="latestBtn" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Fashion</button>
+          </div>
+        </nav>
+        <div class="custom-content tab-content custom-tab" id="nav-tabContent">
+          <div class="tab-pane active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="late-card">
+                  <div class="circle"></div>
+                  <div class="late-content">
+                    <h2>Apple Watch</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil minus beatae iusto saepe dolores harum odit similique, vero at natus perferendis alias</p>
+                    <a href="#">Buy Now</a>
+                  </div>
+                  <img src="admin/uploads/3265134628_p2-removebg-preview.png" alt="">
+                </div>
+          </div>
+          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <div class="late-card">
+                    <div class="circle"></div>
+                    <div class="late-content">
+                      <h2>T-shirt</h2>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil minus beatae iusto saepe dolores harum odit similique, vero at natus perferendis alias</p>
+                      <a href="#">Buy Now</a>
+                    </div>
+                    <img src="admin/uploads/3265135270_334311-removebg-preview.png" alt="">
+                  </div>
+            </div>
+          </div>
+      </div>      
     </div>
   </div>
   
@@ -259,12 +289,33 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-          <div class="container-fliud">
+        <div class="modal-body" id="modal-div">
               <div class="wrapper row">
-                
+                  <div class="preview col-lg-6">
+                        <div class="image-box modal-photo"></div>
+                  </div>
+                  <div class="details col-lg-6">
+                      <h3 class="product-title modal-name"></h3>
+                      <div class="rating">
+                          <div class="stars">
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star"></span>
+                              <span class="fa fa-star"></span>
+                          </div>
+                          <span class="review-no">41 reviews</span>
+                      </div>
+                      <p class="product-description modal-description"></p>
+                        <div class="price-tab"></div>
+                        <!-- <h4 class="price">Discount: <span class="modal-discount"></span>&nbsp;MMKs</h4> -->
+                        <!-- <h4 class="price">Price: <span class="modal-price"></span>&nbsp;MMKs</h4> -->
+                        <div class="action">
+                          <button type="button" class="btn btn-primary add-to-cart"><i class="fas fa-cart-arrow-down"></i>&nbsp;&nbsp;add to cart</button>
+                          <button type="button" class="btn btn-light like"><i class="far fa-heart"></i></button>
+                        </div>
+                  </div>
               </div>
-          </div>
         </div>
         <div class="modal-footer d-flex">
           <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal" title="Close Box Modal">Close</button>
@@ -276,8 +327,47 @@
   </div>
 
 
+
 <?php 
 
-  include_once "template/footer.php";
+include_once "template/footer.php";
 
 ?>
+<script>
+  $(document).ready(function(){
+    $('.view_btn').on('click', function(){
+      var id = $(this).data("id");
+      var name = $(this).data('name');
+      var photo = $(this).data('photo');
+      var price = $(this).data('price');
+      var description = $(this).data('description');
+      var discount = $(this).data('discount');
+      var codeno = $(this).data('codeno');
+
+      $('.modal-name').text(name);
+      $('.modal-description').text(description);
+      $('.modal-codeno').text(codeno);
+
+      if(discount){
+
+        $('.price-tab').html(`
+        <h4 class="price">Discount: ${discount} &nbsp;MMKs</h4>
+        <h4 class="price">Price: <del>${price}</del> &nbsp;MMKs</h4>
+
+        `);
+        
+      }else{
+        $('.price-tab').html(`
+        
+        <h4 class="price">Price: ${price}&nbsp;MMKs</h4>
+
+        `);
+      }
+
+      $('.modal-photo').html(`<img src="admin/uploads/${photo} "style="width: 371px; height:375px"/>`
+      )
+
+
+    })
+  });
+</script>

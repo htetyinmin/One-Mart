@@ -3,16 +3,15 @@
       include_once "template/header.php";
       include_once "system/function.php";
 
-      $id = $_GET['sid'];
+      $id = $_GET['bid'];
 
-      $sql = 'SELECT * FROM subcategories WHERE id=:id';
+      $sql = 'SELECT * FROM brand WHERE id=:id';
       $statement = $connect->prepare($sql);
       $statement->bindParam(':id',$id);
       $statement->execute();
-      $subcategories = $statement->fetch();
-      $category_id = $subcategories['category_id'];
+      $brands = $statement->fetch();
 
-      $sql="SELECT * FROM items where subcategory_id=:id";
+      $sql="SELECT * FROM items where brand_id=:id";
       $statement=$connect->prepare($sql);
       $statement->bindParam(':id',$id);
       $statement->execute();
@@ -27,7 +26,7 @@
 <div class="bg_image">
     <!-- Breadcrumb -->
     <div class="bd_crumb text-center">
-        <h3 class="breadcrumb-item"><?= $subcategories['name']?></h3>
+        <h3 class="breadcrumb-item"><?= $brands['name']?></h3>
     </div> 
 </div>
 
