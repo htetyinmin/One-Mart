@@ -5,7 +5,7 @@
         <div class="title">COMPANY</div>
         <p><a href="#">About Us</a></p>
         <p><a href="#">Careers</a></p>
-        <p><a href="#">Contact</a></p>
+        <p><a href="contact.php">Contact Us</a></p>
         <p><a href="#">Blog</a></p>
         <p><a href="#">Sitemap</a></p>
       </div>
@@ -30,7 +30,7 @@
       <div class="item">
         <div class="title">NEED HELP ?</div>
         <p><a href="#">FAQ</a></p>
-        <p><a href="#">Contact</a></p>
+        <p><a href="contact.php">Contact Us</a></p>
         <p><a href="#">Online Shoping</a></p>
         <p><a href="#">Report Issue</a></p>
       </div>
