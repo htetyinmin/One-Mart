@@ -354,6 +354,12 @@
 
 /* CONTACT AREA */
 
-      
+.contact-header{
+      padding: 40px 0;
+}
+
+.contact-form{
+      padding: 0 80px 100px;
+}
 
 /* CONTACT END */
