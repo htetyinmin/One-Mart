@@ -86,25 +86,25 @@ $(document).ready(function(){
                     
                     html +=`<tr>
                         <td class="col-md-1">${no++}.</td>
-                        <td class="col-md-5">
-                        <div class="row">
+                        <td class="col-md-5 image-name">
                             <div class="product_img">
-                            <img src="admin/uploads/${v.photo}" class="rounded" height="80" width="auto" alt="Item">
-                            <div class="product_name">
-                                <p>${v.name}</p>
-                                <span>Brand: <small>Apple</small></span>
+                                <div class="cart-item">
+                                    <img src="admin/uploads/${v.photo}" class="rounded" alt="Item">
+                                </div>
+                                <div class="product_name">
+                                    <p>${v.name}</p>
+                                    <span>Brand: <small>Apple</small></span>
+                                </div>
                             </div>
-                            </div>
-                        </div>
                         </td>
                         
 
-                        <td>
-                            <span class="btn btn-secondary plus" data-key="${i}"> <i class="fas fa-plus"></i> </span>
+                        <td class="qty-group">
+                            <span class="minus" data-key="${i}"> <i class="fas fa-minus"></i> </span>
 
-                            <span> ${v.qty} </span>
+                                <span> ${v.qty} </span>
 
-                            <span class="btn btn-secondary minus" data-key="${i}"> <i class="fas fa-minus-circle"></i> </span>
+                            <span class="plus" data-key="${i}"> <i class="fas fa-plus"></i> </span>
                         </td>
 
                         <td class="col-md-2">

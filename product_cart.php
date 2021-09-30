@@ -34,7 +34,7 @@
       <h1>My Cart</h1>
       <div class="row">
         <div class="col-lg-9 col-sm-12 mb-3">
-              <div class="card">
+              <div class="card prod-cart">
                 <table class="table table-hover rounded-3">
                   <thead class="text-muted">
                     <tr class="small">
@@ -87,12 +87,18 @@
             <div class="card-body">
                 <form>
                     <div class="form-group"> 
-                      <label>Have coupon?</label>
+                      <label for="region">Region</label>
                       <div class="input-group"> 
-                        <input type="text" class="form-control cupon" name="" placeholder="coupon code" autocomplete="off" required> 
-                        <span class="input-group-append"> 
-                          <button class="btn btn-primary btn-apply">Apply</button> 
-                        </span> 
+                        <select name="region" id="">
+                          <option value="0" default >select your region</option>
+                          <option value="0" default >Ayeyarwady</option>
+                          <option value="0" default >Bago</option>
+                          <option value="0" default >Mandalay</option>
+                          <option value="0" default >Magway</option>
+                          <option value="0" default >Sagaing</option>
+                          <option value="0" default >Tanintharyi</option>
+                          <option value="0" default >Yangon</option>
+                        </select>
                       </div>
                     </div>
                 </form>
@@ -101,19 +107,15 @@
           <div class="card">
               <div class="card-body">
                   <dl class="dlist-align">
-                      <dt>Total price:</dt>
+                      <dt>price:</dt>
                       <dd><span class="total"></span> Ks</dd>
-                  </dl>
-                  <dl class="dlist-align">
-                      <dt>Discount:</dt>
-                      <dd class="text-danger">- <span>0Ks</span></dd>
                   </dl>
                   <dl class="dlist-align">
                     <dt>Shipping:</dt>
                     <dd>0Ks</dd>
                   </dl>
                   <dl class="dlist-align">
-                      <dt>Total:</dt>
+                      <dt>Total Price:</dt>
                       <dd><strong><span class="total"></span> Ks</strong></dd>
                   </dl>
                   <hr> 

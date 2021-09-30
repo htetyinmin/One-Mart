@@ -78,7 +78,7 @@
                     
                         <div class="action">
                           <button type="button" class="btn btn-primary add-to-cart"><i class="fas fa-cart-arrow-down"></i>&nbsp;&nbsp;add to cart</button>
-                          <button type="button" class="btn btn-light like"><i class="far fa-heart"></i></button>
+                          <button type="button" class="btn btn-light buy-now">Buy Now</button>
                         </div>
                   </div>
               </div>
