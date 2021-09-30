@@ -195,7 +195,7 @@
     </div>
   </div>
 
-  <!-- <div class="latest pt-5 pb-3 mb-3">
+  <div class="latest pt-5 pb-3 mb-3">
     <div class="container-sm">
         <div class="row mb-3">
           <h3 class="title text-center">New Arrivals</h3>
@@ -232,7 +232,7 @@
           </div>
       </div>      
     </div>
-  </div> -->
+  </div>
   
   <!-- product ad -->
   <div class="product_ad pt-5">
