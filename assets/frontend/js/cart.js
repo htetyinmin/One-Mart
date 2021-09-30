@@ -83,6 +83,7 @@ $(document).ready(function(){
                 $.each(cart_arr,function(i,v){
                     var amount = (v.discount == 0) ? v.price*v.qty : v.discount*v.qty;
                     var price = (v.discount == 0) ? v.price : v.discount;
+                    var tot = price*v.qty;
                     
                     html +=`<tr>
                         <td class="col-md-1">${no++}.</td>
@@ -97,7 +98,6 @@ $(document).ready(function(){
                             </div>
                         </div>
                         </td>
-                        
 
                         <td>
                             <span class="btn btn-secondary plus" data-key="${i}"> <i class="fas fa-plus"></i> </span>
@@ -109,7 +109,7 @@ $(document).ready(function(){
 
                         <td class="col-md-2">
                         <div class="price_wrap">
-                            <div>${price} Ks</div>
+                            <div>${tot} Ks</div>
                             <small class="text_muted"><span>${price} Ks</span> each</small>
                         </div>
                         </td>
@@ -182,11 +182,8 @@ $(document).ready(function(){
         if(cart_str){
             var cart_arr = JSON.parse(cart_str);
             $.each(cart_arr,function(i,v){
-                if(key==i){
+                if(key==i && v.qty>1){
                     v.qty--;
-                    if(v.qty==0){
-                        cart_arr.splice(key,1);
-                    }
                 }
                 var myData = JSON.stringify(cart_arr);
                 localStorage.setItem('onemart', myData);
