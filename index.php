@@ -97,9 +97,9 @@
                 <a href="product_details.php?id=<?= $ai_id?>" class="img-frame" type="button">
                   <img src="admin/uploads/<?= $ai_photo ?>" class="card-img p-3" height=160 alt="...">
                 </a>
-                <div class="card-body" style="height: 170px;">
+                <div class="card-body p-card-body">
                   <h5 class="card-title"><?= $ai_name ?></h5>
-                  <p class="card-text"><?= substr($ai_description, 0, 200) ?>&nbsp;<a href="#">more...</a></p>
+                  <p class="card-text"><?= substr($ai_description, 0, 50) ?>&nbsp;<a href="#">more...</a></p>
                   <div class="price">
                   <?php if($ai_discount) {?>
                     <span class="current_price"><?= $ai_discount ?> &nbsp;MMK</span><br>
@@ -162,9 +162,9 @@
                 <a href="product_details.php?id=<?= $ai_id?>" class="img-frame" type="button">
                   <img src="admin/uploads/<?= $ai_photo ?>" class="card-img p-3" height=160 alt="...">
                 </a>
-                <div class="card-body" style="height: 170px;">
+                <div class="card-body p-card-body">
                   <h5 class="card-title"><?= $ai_name ?></h5>
-                  <p class="card-text"><?= substr($ai_description,0, 100) ?>&nbsp;<a href="#">more...</a></p>
+                  <p class="card-text"><?= substr($ai_description,0, 50) ?>&nbsp;<a href="#">more...</a></p>
                   <div class="price">
                   <?php if($ai_discount) {?>
                     <span class="current_price"><?= $ai_discount ?> &nbsp;MMK</span><br>
@@ -281,7 +281,7 @@
   
   <!-- View Cart Modal -->
   <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-dialog modal-lg modal-dialog-centered my-model">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Your Shopping Cart</h5>
@@ -364,7 +364,7 @@ include_once "template/footer.php";
         `);
       }
 
-      $('.modal-photo').html(`<img src="admin/uploads/${photo} "style="width: 371px; height:375px"/>`
+      $('.modal-photo').html(`<img src="admin/uploads/${photo}" class="model-img"/>`
       )
 
 
