@@ -1522,6 +1522,41 @@ footer > .social_media a:hover > i {
 }
 
 
+
+/*-------------------prodect details------------------*/
+.preview .image-box {
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.preview .image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+.product_card .img-frame {
+    width: 100%;
+    height: 200px;
+}
+
+.product_card .img-frame .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+
+
+
+
+
+
+
 /*-------------view cart---------------*/
 .modal-header .modal-title {
     font-size: 17px;
@@ -2006,6 +2041,13 @@ footer > .social_media a:hover > i {
 
     .my-content {
         min-width: 100%;
+    }
+
+    /*-----------product-ad-----------*/
+    .preview .image-box {
+        width: 250px;
+        height: 300px;
+        overflow: hidden;
     }
 
 

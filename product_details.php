@@ -48,9 +48,11 @@
   <div class="container my-5">
       <div class="panel">
         <div class="container-fliud">
-              <div class="wrapper row">
+              <div class="row wrapper">
                   <div class="preview col-lg-6">
-                        <div class="image-box"><img src="admin/uploads/<?= $detail_photo ?>"style="width: 500px; height:400px"/></div>
+                        <div class="image-box">
+                          <img src="admin/uploads/<?= $detail_photo ?>"/>
+                        </div>
                   </div>
                   <div class="details col-lg-6">
                       <h3 class="product-title"><?= $detail_name ?></h3>
@@ -90,14 +92,18 @@
         <?php
             foreach($related_subs as $related_sub){
         ?>
-        <div class="col-md-4 col-lg-2 my-3">
+        <div class="col-md-3 my-3">
             <div class="product_card">
                 <div class="buy">
                   <button type="button" title="Add to wishlist">
                   <i class="far fa-heart"></i>
                   </button>
                 </div>
-                <img src="admin/uploads/<?= $related_sub['photo'] ?>" class="card-img p-3" height=160 alt="...">
+
+                <div class="img-frame">
+                  <img src="admin/uploads/<?= $related_sub['photo'] ?>" class="card-img p-3" height=160 alt="...">
+                </div>
+
                 <div class="card-body" style="height: 170px;">
                   <h5 class="card-title"><?= $related_sub['name'] ?></h5>
                   <p class="card-text"><?= substr($related_sub['description'],0,50) ?>&nbsp;<a href="#">more...</a></p>
