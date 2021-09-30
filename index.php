@@ -94,12 +94,12 @@
                   <i class="far fa-heart"></i>
                   </button>
                 </div>
-                <a href="product_details.php?id=<?= $ai_id?>" type="button">
+                <a href="product_details.php?id=<?= $ai_id?>" class="img-frame" type="button">
                   <img src="admin/uploads/<?= $ai_photo ?>" class="card-img p-3" height=160 alt="...">
                 </a>
                 <div class="card-body" style="height: 170px;">
                   <h5 class="card-title"><?= $ai_name ?></h5>
-                  <p class="card-text"><?= substr($ai_description,0,50) ?>&nbsp;<a href="#">more...</a></p>
+                  <p class="card-text"><?= substr($ai_description, 0, 200) ?>&nbsp;<a href="#">more...</a></p>
                   <div class="price">
                   <?php if($ai_discount) {?>
                     <span class="current_price"><?= $ai_discount ?> &nbsp;MMK</span><br>
@@ -159,12 +159,12 @@
                   <i class="far fa-heart"></i>
                   </button>
                 </div>
-                <a href="product_details.php?id=<?= $ai_id?>" type="button">
+                <a href="product_details.php?id=<?= $ai_id?>" class="img-frame" type="button">
                   <img src="admin/uploads/<?= $ai_photo ?>" class="card-img p-3" height=160 alt="...">
                 </a>
                 <div class="card-body" style="height: 170px;">
                   <h5 class="card-title"><?= $ai_name ?></h5>
-                  <p class="card-text"><?= substr($ai_description,0,50) ?>&nbsp;<a href="#">more...</a></p>
+                  <p class="card-text"><?= substr($ai_description,0, 100) ?>&nbsp;<a href="#">more...</a></p>
                   <div class="price">
                   <?php if($ai_discount) {?>
                     <span class="current_price"><?= $ai_discount ?> &nbsp;MMK</span><br>
@@ -196,18 +196,18 @@
   </div>
 
   <div class="latest pt-5 pb-3 mb-3">
-    <div class="container-sm">
+    <div class="container">
         <div class="row mb-3">
           <h3 class="title text-center">New Arrivals</h3>
           <!-- <div class="line"></div> -->
         </div>
         <nav class="d-flex align-items-center justify-content-center mt-5">
-          <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <button class="latestBtn" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Electrionic Devices</button>
-            <button class="latestBtn" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Fashion</button>
+          <div class="nav nav-tabs my-tabs" id="nav-tab" role="tablist">
+            <button class="latestBtn my-btn" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Electrionic Devices</button>
+            <button class="latestBtn my-btn" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Fashion</button>
           </div>
         </nav>
-        <div class="custom-content tab-content custom-tab" id="nav-tabContent">
+        <div class="custom-content tab-content custom-tab my-content" id="nav-tabContent">
           <div class="tab-pane active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                 <div class="late-card">
                   <div class="circle"></div>
@@ -216,7 +216,7 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil minus beatae iusto saepe dolores harum odit similique, vero at natus perferendis alias</p>
                     <a href="#">Buy Now</a>
                   </div>
-                  <img src="admin/uploads/3265134628_p2-removebg-preview.png" alt="">
+                  <img src="assets/frontend/img/product/shoe4.png" alt="">
                 </div>
           </div>
           <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
@@ -227,7 +227,7 @@
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil minus beatae iusto saepe dolores harum odit similique, vero at natus perferendis alias</p>
                       <a href="#">Buy Now</a>
                     </div>
-                    <img src="admin/uploads/3265135270_334311-removebg-preview.png" alt="">
+                    <img src="assets/frontend/img/product/shirt3.png" alt="">
                   </div>
             </div>
           </div>
