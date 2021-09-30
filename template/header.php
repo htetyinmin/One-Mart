@@ -197,7 +197,7 @@
                     ?>
 
 
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu profile-show">
                     <?php 
                         
                         if(checkSession('user')) {

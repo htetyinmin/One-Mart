@@ -205,28 +205,37 @@
       color: #fff;
 }
 
+.my-tabs {
+      flex-wrap: nowrap;
+  }
+
 
 .custom-content{
       display: flex;     
       align-items: center;
       justify-content: center;
       min-height: 500px;
-      min-width: 900px;
+      /* min-width: 900px; */
 }
 
 .latestBtn{
       background-color: rgb(255, 15, 0) !important;
       color: #fff;
-      width: 345px;
+      width: 250px;
       height: 100px;
       border: none;
-      margin: 2px;
+      margin: 5px;
       height: 41px;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
 }
 
 .late-card{
       position: relative;
-      width: 700px;
+      /* width: 700px; */
       height: 450px;
       background: #000;
       border-radius: 5px;
@@ -265,17 +274,23 @@
 
 .late-card img{
       position: absolute;
-      top: 50%;
+      /* top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); */
       height: 400px;
       width: 200px;
       pointer-events: none;
       transition: .5s;
+
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
 }
 
 .late-card:hover img{
-      left: 80%;
+      left: 50%;
       height: 400px;
       width: 500px;
 }
@@ -302,23 +317,42 @@
       text-transform: uppercase;
       font-size: 2em;
       line-height: 1em;
-      margin-bottom: 5px;
+      margin-bottom: 35px;
 }
 
 .late-card .late-content p{
       color: #fff;
+      font-size: 16px;
+      font-family: sans-serif;
+      margin-bottom: 30px;
 }
 
 .late-card .late-content a{
       position: relative;
       color: #fff;
-      padding: 10px 20px;
-      border-radius: 10px;
-      background: rgb(255, 15, 0);
+      padding: 8px 20px;
+      background-color: transparent;
       margin-top: 10px;
       display: inline-block;
-      font-weight: bold;
+      font-weight: lighter;
+      border: 1px solid rgb(255, 15, 0);
+      font-size: 14px;
+      font-family: monospace;
+      border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+      -o-border-radius: 3px;
+}
 
+.late-card .late-content a:hover {
+      border-color: #fff;
+      color: rgb(255, 15, 0);
+      transition: all .5s ease;
+      -webkit-transition: all .5s ease;
+      -moz-transition: all .5s ease;
+      -ms-transition: all .5s ease;
+      -o-transition: all .5s ease;
 }
 
 @media(max-width: 991px){
@@ -339,11 +373,11 @@
             padding: 30px;
       }
 
-      .late-card:hover img{
+      /* .late-card:hover img{
             top: 70%;
             left: 50%;
             height: 300px;
-      }
+      } */
 }
 
 @media(max-width: 420px){
@@ -351,3 +385,15 @@
             padding: 20px;
       }
 }
+
+/* CONTACT AREA */
+
+.contact-header{
+      padding: 40px 0;
+}
+
+.contact-form{
+      padding: 0 80px 100px;
+}
+
+/* CONTACT END */
