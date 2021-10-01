@@ -102,7 +102,7 @@ $(document).ready(function(){
                         <td class="qty-group">
                             <span class="minus" data-key="${i}"> <i class="fas fa-minus"></i> </span>
 
-                                <span> ${v.qty} </span>
+                                <span class="quantity"> ${v.qty} </span>
 
                             <span class="plus" data-key="${i}"> <i class="fas fa-plus"></i> </span>
                         </td>

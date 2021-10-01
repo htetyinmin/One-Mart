@@ -465,14 +465,14 @@ ul, ol {
 
 
 /*-------------breadcrumb-------------*/
-.bd_crumb {
+.my-crumb {
     background-color: rgb(0 0 0 / 45%);
     position: absolute;
     width: 100%;
     height: 100%;
 }
 
-.breadcrumb-item{
+.bc-item{
     text-align: center;
     font-size: 40px;
     color: #fff;
@@ -484,6 +484,22 @@ ul, ol {
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
+}
+
+.my-bc {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.link-item {
+    color: #fff;
+    font-weight: bold;
+}
+
+.link-item:hover {
+    color: #fff;
 }
 
 .pill{
@@ -545,8 +561,8 @@ ul, ol {
     box-shadow: 0px 0px 8px 1px rgba(0,0, 0, 0.1);
     border: 0;
     margin-right: 30px;
-    /* margin: 0 auto;
-    width: 90%; */
+    margin: 0 auto;
+    width: 90%;
 }
 
 .product_card{
@@ -775,7 +791,7 @@ ul, ol {
 
 .brand-slide .brand-img {
     width: 100px; 
-    height: 100px;
+    height: 80px;
 }
 
 .brand-slide .brand-img img {
@@ -1254,6 +1270,11 @@ footer > .social_media a:hover > i {
     color: #969696;
 }
 
+.carts .prod-cart {
+    width: 100%;
+    margin: 0;
+}
+
 #carts_table .minus,
 #carts_table .plus {
     width: 20px;
@@ -1368,7 +1389,7 @@ footer > .social_media a:hover > i {
     font-size: 13px;
     cursor: pointer;
     color: #fff;
-    box-shadow: 0 5px 8px rgba(0, 0, 0, .5);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .5);
     border-radius: 3px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -1578,7 +1599,7 @@ footer > .social_media a:hover > i {
 .details .buy-now {
     padding: 0.6em;
     border: none;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .5);
     text-transform:capitalize;
     font-size: 13px;
     color: #fff;
@@ -1856,6 +1877,10 @@ footer > .social_media a:hover > i {
 }
 
 
+/*--------------contact---------------*/
+
+
+
 
 /*------------media query---------------*/
 @media screen and (min-width: 997px) {
@@ -1995,10 +2020,6 @@ footer > .social_media a:hover > i {
 
     .prod-cart {
         width: 100% !important;
-    }
-
-    .qty-group {
-        display: flex;
     }
 
 
@@ -2144,6 +2165,17 @@ footer > .social_media a:hover > i {
         height: 300px;
     }
 
+    #carts_table .minus {
+        display: block;
+    }
+
+    .quantity {
+        padding-left: 2px;
+    }
+
+    #carts_table .plus {
+        display: block;
+    }
 
 
     .minus > span {
@@ -2192,7 +2224,7 @@ footer > .social_media a:hover > i {
 
 
     /*--------breadcrumb--------*/
-    .breadcrumb-item {
+    .bc-item {
         font-size: 25px;
     }
 

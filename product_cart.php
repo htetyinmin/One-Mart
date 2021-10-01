@@ -8,11 +8,13 @@
   <div class="bg_image">
 
     <!-- Breadcrumb -->
-    <div class="bd_crumb">
+    <div class="bd_crumb my-crumb">
         <div class="container">
           <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <ol class="breadcrumb my-bc">
+              <li class="breadcrumb-item">
+                <a href="index.php" class="link-item">Home</a>
+              </li>
               <li class="breadcrumb-item active" aria-current="page">Cart</li>
             </ol>
           </nav>
@@ -83,28 +85,26 @@
           </div>
     
         <div class="col-lg-3 col-sm-12">
-          <div class="card mb-3">
+          <div class="card mb-3 prod-cart">
             <div class="card-body">
                 <form>
-                    <div class="form-group"> 
-                      <label for="region">Region</label>
-                      <div class="input-group"> 
-                        <select name="region" id="">
-                          <option value="0" default >select your region</option>
-                          <option value="0" default >Ayeyarwady</option>
-                          <option value="0" default >Bago</option>
-                          <option value="0" default >Mandalay</option>
-                          <option value="0" default >Magway</option>
-                          <option value="0" default >Sagaing</option>
-                          <option value="0" default >Tanintharyi</option>
-                          <option value="0" default >Yangon</option>
-                        </select>
-                      </div>
-                    </div>
+                  <label for="region">Region</label>
+                  <div class="form-group"> 
+                    <select name="region" class="form-select form-select-md" aria-label=".form-select-sm example" id="region">
+                      <option value="0" selected>select your region</option>
+                      <option value="1000">Ayeyarwady</option>
+                      <option value="2000">Bago</option>
+                      <option value="3000">Mandalay</option>
+                      <option value="4000">Magway</option>
+                      <option value="5000">Sagaing</option>
+                      <option value="6000">Tanintharyi</option>
+                      <option value="7000">Yangon</option>
+                    </select>
+                  </div>
                 </form>
             </div>
           </div>
-          <div class="card">
+          <div class="card prod-cart">
               <div class="card-body">
                   <dl class="dlist-align">
                       <dt>price:</dt>
@@ -120,7 +120,7 @@
                   </dl>
                   <hr> 
                   <div class="payment">
-                    <a href="../index.html" class="btn btn-success btn-main"><i class="fa fa-shopping-cart"></i> Shopping</a>
+                    <a href="index.php" class="btn btn-success btn-main"><i class="fa fa-shopping-cart"></i> Shopping</a>
                     <a href="#" class="btn btn-primary btn-main"><i class="fab fa-shopify"></i>&nbsp;&nbsp;Order</a> 
                   </div>
               </div>

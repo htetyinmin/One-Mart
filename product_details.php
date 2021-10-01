@@ -38,8 +38,8 @@
 <!-- background image -->
 <div class="bg_image">
     <!-- Breadcrumb -->
-    <div class="bd_crumb text-center">
-        <h3 class="breadcrumb-item"><?= $detail_name ?> <span class="pill"><?= $brand['name'] ?></span></h3>
+    <div class="bd_crumb text-center my-crumb">
+        <h3 class="breadcrumb-item bc-item"><?= $detail_name ?> <span class="pill"><?= $brand['name'] ?></span></h3>
     </div> 
 </div>
 
