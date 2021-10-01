@@ -18,6 +18,19 @@
 
     $sql = "SELECT * FROM brand";
     $brands = getItems($sql);
+
+    $sql = "SELECT * from items LEFT JOIN brand ON items.brand_id = brand.id";
+    $statement=$connect->prepare($sql);
+    $statement->execute();
+    $itembrand=$statement->fetch();
+    
+
+    // foreach($itembrand as $brand){
+    //   $brand_name = $brand['name'];
+    //   var_dump($brand_name);
+    // }
+
+    
     
     
  ?>
@@ -84,8 +97,12 @@
           $ai_price=$item['price'];
           $ai_discount=$item['discount'];
           $ai_description=$item['description'];
+          $brand_id=$item['brand_id'];
+
 
           ?>
+
+          
           
           <div class="col-md-4 col-lg-2 my-3">
             <div class="card">
@@ -98,8 +115,10 @@
                   <img src="admin/uploads/<?= $ai_photo ?>" class="card-img p-3" height=160 alt="...">
                 </a>
                 <div class="card-body p-card-body">
-                  <h5 class="card-title"><?= $ai_name ?></h5>
-                  <p class="card-text"><?= substr($ai_description, 0, 50) ?>&nbsp;<a href="#">more...</a></p>
+                  <h5 class="card-title"><?= $ai_name ?> <span class="badge bg-info">Apple</span></h5>
+                  
+                  <p class="card-text"><?= substr($ai_description, 0, 50) ?>&nbsp;<a href="#" class="view_btn" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" data-photo="<?= $ai_photo ?>" data-description="<?= $ai_description ?>"
+								data-price="<?= $ai_price ?>" data-discount="<?= $ai_discount ?>" data-photo="<?= $ai_photo ?>" data-codeno="<?= $ai_codeno ?>" data-bs-toggle="modal" data-bs-target="#cartModal">more...</a></p>
                   <div class="price">
                   <?php if($ai_discount) {?>
                     <span class="current_price"><?= $ai_discount ?> &nbsp;MMK</span><br>
@@ -164,7 +183,8 @@
                 </a>
                 <div class="card-body p-card-body">
                   <h5 class="card-title"><?= $ai_name ?></h5>
-                  <p class="card-text"><?= substr($ai_description,0, 50) ?>&nbsp;<a href="#">more...</a></p>
+                  <p class="card-text"><?= substr($ai_description,0, 50) ?>&nbsp;<a href="#" class="view_btn" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" data-photo="<?= $ai_photo ?>" data-description="<?= $ai_description ?>"
+								data-price="<?= $ai_price ?>" data-discount="<?= $ai_discount ?>" data-photo="<?= $ai_photo ?>" data-codeno="<?= $ai_codeno ?>" data-bs-toggle="modal" data-bs-target="#cartModal">more...</a></p>
                   <div class="price">
                   <?php if($ai_discount) {?>
                     <span class="current_price"><?= $ai_discount ?> &nbsp;MMK</span><br>
@@ -181,7 +201,8 @@
 
                   <!-- <a href="product_details.php?id=<?= $ai_id?>" type="button" class="btn btn-danger btn-sm cart_btn"><i class="fa fa-cart-arrow-down"></i></a> -->
                   
-                  <button class="btn btn-primary btn-sm cart_btn view_btn" data-id="<?= $ai_id ?>" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="fas fa-eye"></i></button>
+                  <button class="btn btn-primary btn-sm cart_btn view_btn" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" data-photo="<?= $ai_photo ?>" data-description="<?= $ai_description ?>"
+								data-price="<?= $ai_price ?>" data-discount="<?= $ai_discount ?>" data-photo="<?= $ai_photo ?>" data-codeno="<?= $ai_codeno ?>" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="fas fa-eye"></i></button>
 
                 </div>
             </div>
@@ -286,7 +307,7 @@
     <div class="modal-dialog modal-lg modal-dialog-centered my-model">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Your Shopping Cart</h5>
+          <h3 class="modal-title modal-codeno" id="exampleModalLabel"></h3>
           <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -312,17 +333,12 @@
                         <div class="price-tab"></div>
                         <!-- <h4 class="price">Discount: <span class="modal-discount"></span>&nbsp;MMKs</h4> -->
                         <!-- <h4 class="price">Price: <span class="modal-price"></span>&nbsp;MMKs</h4> -->
-                        <div class="action">
+                        <div class="action mb-3">
                           <button type="button" class="btn btn-primary add-to-cart"><i class="fas fa-cart-arrow-down"></i>&nbsp;&nbsp;add to cart</button>
-                          <button type="button" class="btn btn-light like"><i class="far fa-heart"></i></button>
+                          <button type="button" class="btn btn-success"><i class="fas fa-credit-card"></i>&nbsp;&nbsp;Buy now</button>
                         </div>
                   </div>
               </div>
-        </div>
-        <div class="modal-footer d-flex">
-          <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal" title="Close Box Modal">Close</button>
-          <button type="button" class="btn btn-light btn_wishlist" title="Add to Wishlist"><i class="far fa-heart"></i></button>
-          <button type="button" class="btn btn-primary btn_cart" title="Add to Cart"><i class="fas fa-cart-arrow-down"></i>&nbsp;Add to Cart</button>
         </div>
       </div>
     </div>
@@ -348,7 +364,7 @@ include_once "template/footer.php";
 
       $('.modal-name').text(name);
       $('.modal-description').text(description);
-      $('.modal-codeno').text(codeno);
+      $('.modal-codeno').text("codeno - " + codeno);
 
       if(discount){
 

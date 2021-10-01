@@ -37,7 +37,7 @@
 <!-- Our Team -->
 <section class="ourteam">
       <div class="container">
-            <div class="row">
+            <div class="row mb-3">
             <h3 class="title text-center">Our Team</h3>
             <!-- <div class="line"></div> -->
             </div>
