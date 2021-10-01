@@ -38,8 +38,8 @@
 <!-- background image -->
 <div class="bg_image">
     <!-- Breadcrumb -->
-    <div class="bd_crumb text-center">
-        <h3 class="breadcrumb-item"><?= $detail_name ?> <span class="pill"><?= $brand['name'] ?></span></h3>
+    <div class="bd_crumb text-center my-crumb">
+        <h3 class="breadcrumb-item bc-item"><?= $detail_name ?> <span class="pill"><?= $brand['name'] ?></span></h3>
     </div> 
 </div>
 
@@ -78,7 +78,7 @@
                     
                         <div class="action">
                           <button type="button" class="btn btn-primary add-to-cart"><i class="fas fa-cart-arrow-down"></i>&nbsp;&nbsp;add to cart</button>
-                          <button type="button" class="btn btn-success"><i class="fas fa-credit-card"></i>&nbsp;&nbsp;uy now</button>
+                          <button type="button" class="btn btn-success"><i class="fas fa-credit-card"></i>&nbsp;&nbsp;Buy now</button>
                         </div>
                   </div>
               </div>

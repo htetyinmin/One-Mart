@@ -263,17 +263,17 @@
     <div class="container">
       <div class="row">
           <div class="ad-slide">
-            <div>
-              <img src="assets/frontend/img/promotion/fashion.jpg" alt="promotion" width="100%" height="100%" >
+            <div class="ad-img">
+              <img src="assets/frontend/img/promotion/fashion.jpg" alt="promotion">
             </div>
-            <div>
-              <img src="assets/frontend/img/promotion/electronic.jpg" alt="promotion" width="100%" height="100%">
+            <div class="ad-img">
+              <img src="assets/frontend/img/promotion/electronic.jpg" alt="promotion">
             </div>
-            <div>
-              <img src="assets/frontend/img/promotion/fashion.jpg" alt="promotion" width="100%" height="100%" >
+            <div class="ad-img">
+              <img src="assets/frontend/img/promotion/fashion.jpg" alt="promotion">
             </div>
-            <div>
-              <img src="assets/frontend/img/promotion/electronic.jpg" alt="promotion" width="100%" height="100%">
+            <div class="ad-img">
+              <img src="assets/frontend/img/promotion/electronic.jpg" alt="promotion">
             </div>
           </div>
       </div>
@@ -284,17 +284,17 @@
   </div>
 
   <!-- brand slide -->
-  <div class="brand pt-5 pb-5">
-    <div class="container">
-      <div class="row mb-5">
-        <h3 class="title text-center">Top Brands</h3>
+  <div class="brand pt-5">
+    <div class="container-fluid">
+      <div class="row">
+        <h3 class="title text-center mb-4">Top Brands</h3>
         <div class="line"></div>
       </div>
-      <div class="row">
-        <div class="brand-slide mb-5">
+      <div class="row mb-4">
+        <div class="brand-slide">
           <?php foreach($brands as $brand){ ?>
           <div class="brand-img">
-            <img src="admin/uploads/<?= $brand->photo ?>" width="200" height="200" alt="">
+            <img src="admin/uploads/<?= $brand->photo ?>" alt="">
           </div>
          <?php }?>
         </div>
