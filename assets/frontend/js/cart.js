@@ -1,8 +1,5 @@
 $(document).ready(function(){
-
-    count();
-    getData();
-        
+     
     $('.addtocart').click(function(){
 
         // alert('hi');
@@ -196,5 +193,8 @@ $(document).ready(function(){
             }
         }
     });
+
+    count();
+    getData();
 
 });

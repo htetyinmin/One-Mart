@@ -196,8 +196,8 @@
                 </div>
                 <div class="order_btn">
 
-                  <button class="btn btn-danger btn-sm cart_btn addtocart" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" 
-								data-price="<?= $ai_price ?>" data-discount="<?= $ai_discount ?>" data-photo="<?= $ai_photo ?>" data-codeno="<?= $ai_codeno ?>"><i class="fa fa-cart-arrow-down"></i></button>
+                  <!-- <button class="btn btn-danger btn-sm cart_btn addtocart" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" 
+								data-price="<?= $ai_price ?>" data-discount="<?= $ai_discount ?>" data-photo="<?= $ai_photo ?>" data-codeno="<?= $ai_codeno ?>"><i class="fa fa-cart-arrow-down"></i></button> -->
 
                   <!-- <a href="product_details.php?id=<?= $ai_id?>" type="button" class="btn btn-danger btn-sm cart_btn"><i class="fa fa-cart-arrow-down"></i></a> -->
                   
