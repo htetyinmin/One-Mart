@@ -3,7 +3,7 @@
     <div class="footer_int">
       <div class="item">
         <div class="title">COMPANY</div>
-        <p><a href="#">About Us</a></p>
+        <p><a href="about.php">About Us</a></p>
         <p><a href="#">Careers</a></p>
         <p><a href="contact.php">Contact Us</a></p>
         <p><a href="#">Blog</a></p>

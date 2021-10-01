@@ -397,3 +397,75 @@
 }
 
 /* CONTACT END */
+
+/* About */
+
+.about .about-content .about-title{
+      font-size: 45px;
+      font-weight: bold;
+}
+
+.about .about-content .about-def{
+      line-height: 30px;
+      letter-spacing: 2px;
+      font-size: 16px;
+}
+
+.ourteam .team-card{
+      border: 1px solid rgb(255, 15, 0);
+      background: #fff;
+      box-shadow:  12px 8px 8px rgb(0 0 0 / 15%);
+}
+
+.ourteam .team-body{
+      display: flex;
+      justify-content: space-between;
+      margin: 12px 10px;
+}
+
+.ourteam .team-body .team-name h3{
+      font-size: 20px;
+      color: rgb(255, 15, 0);
+      font-weight: bold;
+      margin: 0;
+}
+
+.ourteam .team-body .team-job p{
+      font-size: 15px;
+      color: rgb(255, 15, 0);
+      margin: 0;
+}
+
+.ourteam .team-card .team-body hr{
+      background: rgb(255, 15, 0);
+}
+
+.ourteam .team-card .social-icon ul{
+      display: flex;
+      justify-content: space-around;
+      margin: 7px 62px;
+}
+
+.ourteam .team-card .social-icon ul li:hover{
+      background: rgb(255, 15, 0);
+}
+
+.ourteam .team-card .social-icon ul li:hover a i{
+      color: #fff;
+}
+
+
+
+.ourteam .team-card .social-icon ul li{
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      border: 2px solid rgb(255 12 0);
+      background: #dde5ee;
+      padding: 4px 10px;
+      transition: .5s;
+}
+
+.ourteam .team-card .social-icon ul li a i{
+      color: rgb(255, 15, 0);
+}
