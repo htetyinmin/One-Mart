@@ -26,15 +26,19 @@
 
                   ?>
           
-          <div class="col-md-4 col-lg-2 my-3">
+          <div class="col-md-4 col-lg-3 col-xl-2 my-3 p-0 set-p">
             <div class="product_card">
                 <div class="buy">
                   <button type="button" title="Add to wishlist">
                   <i class="far fa-heart"></i>
                   </button>
                 </div>
-                <img src="admin/uploads/<?= $ai_photo ?>" class="card-img p-3" height=160 alt="...">
-                <div class="card-body" style="height: 170px;">
+
+                <div class="img-frame">
+                  <img src="admin/uploads/<?= $ai_photo ?>" class="card-img p-3" alt="...">
+                </div>
+
+                <div class="card-body">
                   <h5 class="card-title"><?= $ai_name ?></h5>
                   <p class="card-text"><?= substr($ai_description,0,50) ?>&nbsp;<a href="#">more...</a></p>
                   <div class="price">

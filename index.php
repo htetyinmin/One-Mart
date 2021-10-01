@@ -97,9 +97,9 @@
                 <a href="product_details.php?id=<?= $ai_id?>" class="img-frame" type="button">
                   <img src="admin/uploads/<?= $ai_photo ?>" class="card-img p-3" height=160 alt="...">
                 </a>
-                <div class="card-body" style="height: 170px;">
+                <div class="card-body p-card-body">
                   <h5 class="card-title"><?= $ai_name ?></h5>
-                  <p class="card-text"><?= substr($ai_description, 0, 200) ?>&nbsp;<a href="#">more...</a></p>
+                  <p class="card-text"><?= substr($ai_description, 0, 50) ?>&nbsp;<a href="#">more...</a></p>
                   <div class="price">
                   <?php if($ai_discount) {?>
                     <span class="current_price"><?= $ai_discount ?> &nbsp;MMK</span><br>
@@ -112,7 +112,7 @@
 
                 <div class="order_btn">
                   
-                  <button class="btn btn-danger btn-sm cart_btn addtocart" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" 
+                <button class="btn btn-danger btn-sm cart_btn addtocart" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" 
 								data-price="<?= $ai_price ?>" data-discount="<?= $ai_discount ?>" data-photo="<?= $ai_photo ?>" data-codeno="<?= $ai_codeno ?>"><i class="fa fa-cart-arrow-down"></i></button>
 
                 <button class="btn btn-primary btn-sm cart_btn view_btn" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" data-photo="<?= $ai_photo ?>" data-description="<?= $ai_description ?>"
@@ -162,9 +162,9 @@
                 <a href="product_details.php?id=<?= $ai_id?>" class="img-frame" type="button">
                   <img src="admin/uploads/<?= $ai_photo ?>" class="card-img p-3" height=160 alt="...">
                 </a>
-                <div class="card-body" style="height: 170px;">
+                <div class="card-body p-card-body">
                   <h5 class="card-title"><?= $ai_name ?></h5>
-                  <p class="card-text"><?= substr($ai_description,0, 100) ?>&nbsp;<a href="#">more...</a></p>
+                  <p class="card-text"><?= substr($ai_description,0, 50) ?>&nbsp;<a href="#">more...</a></p>
                   <div class="price">
                   <?php if($ai_discount) {?>
                     <span class="current_price"><?= $ai_discount ?> &nbsp;MMK</span><br>
@@ -176,7 +176,10 @@
                 </div>
                 <div class="order_btn">
 
-                  <a href="product_details.php?id=<?= $ai_id?>" type="button" class="btn btn-danger btn-sm cart_btn"><i class="fa fa-cart-arrow-down"></i></a>
+                  <button class="btn btn-danger btn-sm cart_btn addtocart" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" 
+								data-price="<?= $ai_price ?>" data-discount="<?= $ai_discount ?>" data-photo="<?= $ai_photo ?>" data-codeno="<?= $ai_codeno ?>"><i class="fa fa-cart-arrow-down"></i></button>
+
+                  <!-- <a href="product_details.php?id=<?= $ai_id?>" type="button" class="btn btn-danger btn-sm cart_btn"><i class="fa fa-cart-arrow-down"></i></a> -->
                   
                   <button class="btn btn-primary btn-sm cart_btn view_btn" data-id="<?= $ai_id ?>" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="fas fa-eye"></i></button>
 
@@ -195,7 +198,7 @@
     </div>
   </div>
 
-  <!-- <div class="latest pt-5 pb-3 mb-3">
+  <div class="latest pt-5 pb-3 mb-3">
     <div class="container-sm">
         <div class="row mb-3">
           <h3 class="title text-center">New Arrivals</h3>
@@ -232,7 +235,7 @@
           </div>
       </div>      
     </div>
-  </div> -->
+  </div>
   
   <!-- product ad -->
   <div class="product_ad pt-5">
@@ -280,7 +283,7 @@
   
   <!-- View Cart Modal -->
   <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-dialog modal-lg modal-dialog-centered my-model">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Your Shopping Cart</h5>
@@ -363,7 +366,7 @@ include_once "template/footer.php";
         `);
       }
 
-      $('.modal-photo').html(`<img src="admin/uploads/${photo} "style="width: 371px; height:375px"/>`
+      $('.modal-photo').html(`<img src="admin/uploads/${photo}" class="model-img"/>`
       )
 
 
