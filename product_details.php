@@ -78,7 +78,7 @@
                     
                         <div class="action">
                           <button type="button" class="btn btn-primary add-to-cart"><i class="fas fa-cart-arrow-down"></i>&nbsp;&nbsp;add to cart</button>
-                          <button type="button" class="btn btn-light buy-now">Buy Now</button>
+                          <button type="button" class="btn btn-success"><i class="fas fa-credit-card"></i>&nbsp;&nbsp;Buy now</button>
                         </div>
                   </div>
               </div>
@@ -101,7 +101,9 @@
                 </div>
 
                 <div class="img-frame">
-                  <img src="admin/uploads/<?= $related_sub['photo'] ?>" class="card-img p-3" alt="...">
+                  <a href="product_details.php?id=<?= $related_sub['id']?>" class="img-frame" type="button">
+                    <img src="admin/uploads/<?= $related_sub['photo'] ?>" class="card-img p-3" alt="...">
+                  </a>
                 </div>
 
                 <div class="card-body">
@@ -118,8 +120,8 @@
                 </div>
                 <div class="product_btn">
                   <a href="product_details.php?id=<?= $related_sub['id']?>" type="button" class="btn btn-danger btn-sm cart_btn"><i class="fa fa-cart-arrow-down"></i></a>
-                  <button type="button" data-id=" + data[i].id " data-title=" + data[i].productName " data-content=" + data[i].productDec " data-price=" + data[i].currentPrice " data-img="./assets/frontend/img/product/ + data[i].productImg "  class="btn btn-primary btn-sm cart_btn" title="Order product">
-                  <i class="fab fa-shopify">&nbsp;Order</i>
+                  <button class="btn btn-primary btn-sm cart_btn view_btn" data-id="<?= $related_sub['id'] ?>" data-name="<?= $related_sub['name'] ?>" data-photo="<?= $related_sub['photo'] ?>" data-description="<?= $related_sub['description'] ?>"
+								data-price="<?= $related_sub['price']?>" data-discount="<?= $related_sub['discount'] ?>" data-photo="<?= $related_sub['photo'] ?>" data-codeno="<?= $related_sub['codeno'] ?>" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="fas fa-eye"></i></button>
                   </button>
                 </div>
             </div>
@@ -129,10 +131,89 @@
 
   </div>
 
-
+<!-- View Cart Modal -->
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered my-model">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title modal-codeno" id="exampleModalLabel"></h3>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="modal-div">
+              <div class="wrapper row">
+                  <div class="preview col-lg-6">
+                        <div class="image-box modal-photo"></div>
+                  </div>
+                  <div class="details col-lg-6">
+                      <h3 class="product-title modal-name"></h3>
+                      <div class="rating">
+                          <div class="stars">
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star"></span>
+                              <span class="fa fa-star"></span>
+                          </div>
+                          <span class="review-no">41 reviews</span>
+                      </div>
+                      <p class="product-description modal-description"></p>
+                        <div class="price-tab"></div>
+                        <!-- <h4 class="price">Discount: <span class="modal-discount"></span>&nbsp;MMKs</h4> -->
+                        <!-- <h4 class="price">Price: <span class="modal-price"></span>&nbsp;MMKs</h4> -->
+                        <div class="action mb-3">
+                          <button type="button" class="btn btn-primary add-to-cart"><i class="fas fa-cart-arrow-down"></i>&nbsp;&nbsp;add to cart</button>
+                          <button type="button" class="btn btn-success"><i class="fas fa-credit-card"></i>&nbsp;&nbsp;Buy now</button>
+                        </div>
+                  </div>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <?php 
     
     include_once "template/footer.php";
 
 ?>
+
+<script>
+  $(document).ready(function(){
+    $('.view_btn').on('click', function(){
+      var id = $(this).data("id");
+      var name = $(this).data('name');
+      var photo = $(this).data('photo');
+      var price = $(this).data('price');
+      var description = $(this).data('description');
+      var discount = $(this).data('discount');
+      var codeno = $(this).data('codeno');
+
+      $('.modal-name').text(name);
+      $('.modal-description').text(description);
+      $('.modal-codeno').text("codeno - " + codeno);
+
+      if(discount){
+
+        $('.price-tab').html(`
+        <h4 class="price">Discount: ${discount} &nbsp;MMKs</h4>
+        <h4 class="price">Price: <del>${price}</del> &nbsp;MMKs</h4>
+
+        `);
+        
+      }else{
+        $('.price-tab').html(`
+        
+        <h4 class="price">Price: ${price}&nbsp;MMKs</h4>
+
+        `);
+      }
+
+      $('.modal-photo').html(`<img src="admin/uploads/${photo}" class="model-img"/>`
+      )
+
+
+    })
+  });
+</script>
