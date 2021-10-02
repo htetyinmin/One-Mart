@@ -5,8 +5,8 @@
 <!-- background image -->
 <div class="bg_image mb-5">
     <!-- Breadcrumb -->
-    <div class="bd_crumb text-center">
-        <h3 class="breadcrumb-item">About Us</h3>
+    <div class="bd_crumb text-center my-crumb">
+        <h3 class="breadcrumb-item bc-item">About Us</h3>
     </div> 
 </div>
 

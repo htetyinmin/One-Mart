@@ -99,12 +99,12 @@
                           <span class="review-no">41 reviews</span>
                       </div>
                       <p class="product-description modal-description"></p>
+
                         <div class="price-tab"></div>
-                        <!-- <h4 class="price">Discount: <span class="modal-discount"></span>&nbsp;MMKs</h4> -->
-                        <!-- <h4 class="price">Price: <span class="modal-price"></span>&nbsp;MMKs</h4> -->
+
                         <div class="action mb-3">
                           <button type="button" class="btn btn-primary add-to-cart"><i class="fas fa-cart-arrow-down"></i>&nbsp;&nbsp;add to cart</button>
-                          <button type="button" class="btn btn-success"><i class="fas fa-credit-card"></i>&nbsp;&nbsp;Buy now</button>
+                          <button type="button" class="btn btn-success add-to-cart"><i class="fas fa-credit-card"></i>&nbsp;&nbsp;Buy now</button>
                         </div>
                   </div>
               </div>
@@ -137,15 +137,18 @@
       if(discount){
 
         $('.price-tab').html(`
-        <h4 class="price">Discount: ${discount} &nbsp;MMKs</h4>
-        <h4 class="price">Price: <del>${price}</del> &nbsp;MMKs</h4>
+        <h4 class="price">Discount: <span style="font-size: 16px;
+        color: #000 !important;">${discount}&nbsp;MMKs</span></h4>
+        <h4 class="price">Price: <span style="font-size: 14px;
+        color: rgb(255, 15, 0) !important;"><del>${price}&nbsp;MMKs</del></span></h4>
 
         `);
         
       }else{
         $('.price-tab').html(`
         
-        <h4 class="price">Price: ${price}&nbsp;MMKs</h4>
+        <h4 class="price">Price: <span style="font-size: 16px;
+        color: #000 !important;">${price}&nbsp;MMKs</span></h4>
 
         `);
       }
