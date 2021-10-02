@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+    count();
+    getData();
+
     function count() {
         var cart_str = localStorage.getItem("onemart");
         if (cart_str) {
@@ -20,12 +23,12 @@ $(document).ready(function(){
         var cart_str=localStorage.getItem('onemart');
         var cart_arr=JSON.parse(cart_str);
 
-        if(cart_arr.length > 0){
+        if(cart_str){
     
-            $('#noitem').hide();
+            $('.noitem').hide();
     
             var html = "";
-            var cost = "";
+            var shipping = parseInt($(".shipping").text());
             if(cart_arr.length>0){
                 var no = 1;
                 var total = 0;
@@ -69,14 +72,13 @@ $(document).ready(function(){
                     
                     total+=amount;
                 });
-    
-                cost = `${total}`
                 
                 $('#carts_table').html(html);
-                $('.total').html(cost);
+                $('.subtotal').html(total);
+                $('.total').html(total+=shipping);
             }
         } else {
-            $('#hasitem').hide();
+            $('.hasitem').hide();
         }
     }
 
@@ -146,6 +148,7 @@ $(document).ready(function(){
             })
 
             if(cart_arr.length == 0){
+                localStorage.clear();
                 location.reload();
             }
         }
@@ -187,10 +190,6 @@ $(document).ready(function(){
                 count();
                 getData();
             })
-
-            if(cart_arr.length == 0){
-                location.reload();
-            }
         }
     });
 
@@ -217,6 +216,9 @@ $(document).ready(function(){
         } else {
             $('.shipping').text('0')
         }
+
+        getData()
+
     })
 
     $('.ordernow').click(function(){
@@ -243,8 +245,5 @@ $(document).ready(function(){
             }
           })
     })
-
-    count();
-    getData();
-
+    
 });

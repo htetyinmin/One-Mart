@@ -29,7 +29,7 @@
   </div>
 
 
-<div id="hasitem">
+<div class="hasitem">
   <!-- My Cart -->
   <div class="carts">
     <div class="container">
@@ -109,7 +109,7 @@
               <div class="card-body">
                   <dl class="dlist-align">
                       <dt>price:</dt>
-                      <dd><span class="total"></span> Ks</dd>
+                      <dd><span class="subtotal"></span> Ks</dd>
                   </dl>
                   <dl class="dlist-align">
                     <dt>Shipping:</dt>
@@ -132,7 +132,7 @@
   </div>
 </div>
 
-<div id="noitem">
+<div class="noitem">
   <h4 class="text-center mt-5 pt-5"> There is no item in this cart! </h4>
   <div class="text-center">
     <a href="products.php" class="btn btn-danger m-5">Go Shopping Now</a>
