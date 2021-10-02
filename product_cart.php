@@ -90,15 +90,16 @@
                 <form>
                   <label for="region">Region</label>
                   <div class="form-group"> 
-                    <select name="region" class="form-select form-select-md" aria-label=".form-select-sm example" id="region">
-                      <option value="0" selected>select your region</option>
-                      <option value="1000">Ayeyarwady</option>
-                      <option value="2000">Bago</option>
-                      <option value="3000">Mandalay</option>
-                      <option value="4000">Magway</option>
-                      <option value="5000">Sagaing</option>
-                      <option value="6000">Tanintharyi</option>
-                      <option value="7000">Yangon</option>
+                    <select name="region" class="form-select form-select-md" aria-label=".form-select-sm example" id="region" required>
+                      <option value="" selected disabled>select your region</option>
+                      <option value="aya">Ayeyarwady</option>
+                      <option value="bgo">Bago</option>
+                      <option value="mdy">Mandalay</option>
+                      <option value="mgw">Magway</option>
+                      <option value="mlm">Mawlamyine</option>
+                      <option value="sgg">Sagaing</option>
+                      <option value="tty">Tanintharyi</option>
+                      <option value="ygn">Yangon</option>
                     </select>
                   </div>
                 </form>
@@ -112,7 +113,7 @@
                   </dl>
                   <dl class="dlist-align">
                     <dt>Shipping:</dt>
-                    <dd>0Ks</dd>
+                    <dd><span class="shipping">0</span> Ks</dd>
                   </dl>
                   <dl class="dlist-align">
                       <dt>Total Price:</dt>
@@ -121,7 +122,7 @@
                   <hr> 
                   <div class="payment">
                     <a href="index.php" class="btn btn-success btn-main"><i class="fa fa-shopping-cart"></i> Shopping</a>
-                    <a href="#" class="btn btn-primary btn-main"><i class="fab fa-shopify"></i>&nbsp;&nbsp;Order</a> 
+                    <a href="#" class="btn btn-primary btn-main ordernow"><i class="fab fa-shopify"></i>&nbsp;&nbsp;Order Now</a> 
                   </div>
               </div>
           </div>
