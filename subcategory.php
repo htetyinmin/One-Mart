@@ -12,7 +12,7 @@
       $subcategories = $statement->fetch();
       $category_id = $subcategories['category_id'];
 
-      $sql="SELECT * FROM items where subcategory_id=:id";
+      $sql="SELECT items.*, brand.name as bn FROM items INNER JOIN brand ON brand.id=items.brand_id where subcategory_id=:id";
       $statement=$connect->prepare($sql);
       $statement->bindParam(':id',$id);
       $statement->execute();
@@ -37,7 +37,11 @@
             <!-- <h2 class="title mt-5 mb-3" id="laptop"></h2> -->
             <div class="row mb-3">
                   
-            <?php foreach ($item_sub as $item) {?>
+            <?php foreach ($item_sub as $item) {
+
+              $brand_name = $item['bn'];
+              
+            ?>
                   <div class="col-md-4 col-lg-3 col-xl-2 my-3 p-0 set-p">
                         <div class="product_card">
                               <div class="buy">
@@ -49,7 +53,7 @@
                                     <img src="admin/uploads/<?= $item['photo'] ?>" class="card-img p-3" height=160 alt="...">
                               </a>
                               <div class="card-body" style="height: 170px;">
-                                    <h5 class="card-title"><?= $item['name'] ?></h5>
+                                    <h5 class="card-title"><?= $item['name'] ?><a href="#" class="badge bg-info logo-brand"><?php echo $brand_name; ?></a></h5>
                                     <p class="card-text"><?= substr($item['description'],0,50) ?> &nbsp;<a href="#">more...</a></p>
                                     <div class="price">
                                     <?php if($item['discount']) {?>
@@ -99,12 +103,12 @@
                           <span class="review-no">41 reviews</span>
                       </div>
                       <p class="product-description modal-description"></p>
+
                         <div class="price-tab"></div>
-                        <!-- <h4 class="price">Discount: <span class="modal-discount"></span>&nbsp;MMKs</h4> -->
-                        <!-- <h4 class="price">Price: <span class="modal-price"></span>&nbsp;MMKs</h4> -->
+
                         <div class="action mb-3">
                           <button type="button" class="btn btn-primary add-to-cart"><i class="fas fa-cart-arrow-down"></i>&nbsp;&nbsp;add to cart</button>
-                          <button type="button" class="btn btn-success"><i class="fas fa-credit-card"></i>&nbsp;&nbsp;Buy now</button>
+                          <button type="button" class="btn btn-success add-to-cart"><i class="fas fa-credit-card"></i>&nbsp;&nbsp;Buy now</button>
                         </div>
                   </div>
               </div>
@@ -137,15 +141,18 @@
       if(discount){
 
         $('.price-tab').html(`
-        <h4 class="price">Discount: ${discount} &nbsp;MMKs</h4>
-        <h4 class="price">Price: <del>${price}</del> &nbsp;MMKs</h4>
+        <h4 class="price">Discount: <span style="font-size: 16px;
+        color: #000 !important;">${discount}&nbsp;MMKs</span></h4>
+        <h4 class="price">Price: <span style="font-size: 14px;
+        color: rgb(255, 15, 0) !important;"><del>${price}&nbsp;MMKs</del></span></h4>
 
         `);
         
       }else{
         $('.price-tab').html(`
         
-        <h4 class="price">Price: ${price}&nbsp;MMKs</h4>
+        <h4 class="price">Price: <span style="font-size: 16px;
+        color: #000 !important;">${price}&nbsp;MMKs</span></h4>
 
         `);
       }

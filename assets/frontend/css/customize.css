@@ -474,7 +474,7 @@ ul, ol {
 
 .bc-item{
     text-align: center;
-    font-size: 40px;
+    font-size: 20px;
     color: #fff;
     position: absolute;
     top: 50%;
@@ -504,8 +504,8 @@ ul, ol {
 
 .pill{
     background: #ff0c00;
-    padding: 10px 30px;
-    font-size: 20px;
+    padding: 8px 20px;
+    font-size: 16px;
     border: 1.5px solid #ff0c00;
     border-radius: 30px;
     font-family: monospace;
@@ -694,11 +694,18 @@ ul, ol {
 }
 
 .card-body .card-title {
-    font-size: 22px;
+    font-size: 18px;
     color: #000;
     height: 50px;
     font-weight: bold;
     margin-bottom: 10px;
+}
+
+.card-body .card-title .logo-brand {
+    color: #fff;
+    font-size: 9px;
+    margin-left: 3px;
+    vertical-align: middle;
 }
 
 .card-body .card-text,
@@ -745,7 +752,8 @@ ul, ol {
     color: #fff;
 }
 
-.product .cart_btn {
+.product .cart_btn,
+.product_card .cart_btn {
     padding: 0.3em 0.6em;
     border: none;
     margin: 12px;
@@ -1878,7 +1886,20 @@ footer > .social_media a:hover > i {
 
 
 /*--------------contact---------------*/
+.login-form textarea{
+    font-size: 14px;
+    padding: 8px;
+    resize: none;
+}
 
+.login-form textarea:focus {
+    box-shadow: none;
+    border-color:rgb(255, 15, 0);
+}
+
+.login-form textarea::placeholder {
+    font-size: 13px;
+}
 
 
 

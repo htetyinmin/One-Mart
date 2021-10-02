@@ -5,11 +5,11 @@
   include_once "system/function.php";
 
 
-    $sql = "SELECT * FROM items";
+    $sql = "SELECT items.*, brand.name as bn FROM items INNER JOIN brand ON brand.id=items.brand_id";
     $items = itemsAll($sql);
 
     //for discount item
-    $sql="SELECT * FROM items where discount != '' order by rand() LIMIT 8";
+    $sql="SELECT items.*, brand.name as bn FROM items INNER JOIN brand ON brand.id=items.brand_id WHERE discount != '' order by rand() LIMIT 8";
     $discountitems = itemsAll($sql);
 
     $sql = "SELECT * FROM subcategories";
@@ -88,6 +88,7 @@
         <!-- <div class="line"></div> -->
       </div>
       <div class="row mb-3 card-slide">
+
         <?php foreach($items as $item){
           
           $ai_id=$item['id'];
@@ -98,7 +99,7 @@
           $ai_discount=$item['discount'];
           $ai_description=$item['description'];
           $brand_id=$item['brand_id'];
-
+          $brand_name=$item['bn'];
 
           ?>
 
@@ -115,7 +116,7 @@
                   <img src="admin/uploads/<?= $ai_photo ?>" class="card-img p-3" height=160 alt="...">
                 </a>
                 <div class="card-body p-card-body">
-                  <h5 class="card-title"><?= $ai_name ?> <span class="badge bg-info">Apple</span></h5>
+                  <h5 class="card-title"><?= $ai_name ?><a href="#" class="badge bg-info logo-brand"><?php echo $brand_name; ?></a></h5>
                   
                   <p class="card-text"><?= substr($ai_description, 0, 50) ?>&nbsp;<a href="#" class="view_btn" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" data-photo="<?= $ai_photo ?>" data-description="<?= $ai_description ?>"
 								data-price="<?= $ai_price ?>" data-discount="<?= $ai_discount ?>" data-photo="<?= $ai_photo ?>" data-codeno="<?= $ai_codeno ?>" data-bs-toggle="modal" data-bs-target="#cartModal">more...</a></p>
@@ -152,6 +153,7 @@
     </div>
   </div>
 
+
   <!-- Discount Product -->
   <div class="product pt-5 pb-3">
     <div class="container-sm">
@@ -168,6 +170,7 @@
           $ai_price=$item['price'];
           $ai_discount=$item['discount'];
           $ai_description=$item['description'];
+          $brand_name=$item['bn'];
 
           ?>
           
@@ -182,7 +185,7 @@
                   <img src="admin/uploads/<?= $ai_photo ?>" class="card-img p-3" height=160 alt="...">
                 </a>
                 <div class="card-body p-card-body">
-                  <h5 class="card-title"><?= $ai_name ?></h5>
+                  <h5 class="card-title"><?= $ai_name ?><a href="#" class="badge bg-info logo-brand"><?php echo $brand_name; ?></a></h5>
                   <p class="card-text"><?= substr($ai_description,0, 50) ?>&nbsp;<a href="#" class="view_btn" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" data-photo="<?= $ai_photo ?>" data-description="<?= $ai_description ?>"
 								data-price="<?= $ai_price ?>" data-discount="<?= $ai_discount ?>" data-photo="<?= $ai_photo ?>" data-codeno="<?= $ai_codeno ?>" data-bs-toggle="modal" data-bs-target="#cartModal">more...</a></p>
                   <div class="price">
@@ -196,8 +199,8 @@
                 </div>
                 <div class="order_btn">
 
-                  <!-- <button class="btn btn-danger btn-sm cart_btn addtocart" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" 
-								data-price="<?= $ai_price ?>" data-discount="<?= $ai_discount ?>" data-photo="<?= $ai_photo ?>" data-codeno="<?= $ai_codeno ?>"><i class="fa fa-cart-arrow-down"></i></button> -->
+                  <button class="btn btn-danger btn-sm cart_btn addtocart" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" 
+								data-price="<?= $ai_price ?>" data-discount="<?= $ai_discount ?>" data-photo="<?= $ai_photo ?>" data-codeno="<?= $ai_codeno ?>"><i class="fa fa-cart-arrow-down"></i></button>
 
                   <!-- <a href="product_details.php?id=<?= $ai_id?>" type="button" class="btn btn-danger btn-sm cart_btn"><i class="fa fa-cart-arrow-down"></i></a> -->
                   
@@ -330,12 +333,12 @@
                           <span class="review-no">41 reviews</span>
                       </div>
                       <p class="product-description modal-description"></p>
+
                         <div class="price-tab"></div>
-                        <!-- <h4 class="price">Discount: <span class="modal-discount"></span>&nbsp;MMKs</h4> -->
-                        <!-- <h4 class="price">Price: <span class="modal-price"></span>&nbsp;MMKs</h4> -->
+
                         <div class="action mb-3">
                           <button type="button" class="btn btn-primary add-to-cart"><i class="fas fa-cart-arrow-down"></i>&nbsp;&nbsp;add to cart</button>
-                          <button type="button" class="btn btn-success"><i class="fas fa-credit-card"></i>&nbsp;&nbsp;Buy now</button>
+                          <button type="button" class="btn btn-success add-to-cart"><i class="fas fa-credit-card"></i>&nbsp;&nbsp;Buy now</button>
                         </div>
                   </div>
               </div>
@@ -367,17 +370,20 @@ include_once "template/footer.php";
       $('.modal-codeno').text("codeno - " + codeno);
 
       if(discount){
-
+ 
         $('.price-tab').html(`
-        <h4 class="price">Discount: ${discount} &nbsp;MMKs</h4>
-        <h4 class="price">Price: <del>${price}</del> &nbsp;MMKs</h4>
+        <h4 class="price">Discount: <span style="font-size: 16px;
+        color: #000 !important;">${discount}&nbsp;MMKs</span></h4>
+        <h4 class="price">Price: <span style="font-size: 14px;
+        color: rgb(255, 15, 0) !important;"><del>${price}&nbsp;MMKs</del></span></h4>
 
         `);
         
       }else{
         $('.price-tab').html(`
         
-        <h4 class="price">Price: ${price}&nbsp;MMKs</h4>
+        <h4 class="price">Price: <span style="font-size: 16px;
+        color: #000 !important;">${price}&nbsp;MMKs</span></h4>
 
         `);
       }

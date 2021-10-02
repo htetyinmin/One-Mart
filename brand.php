@@ -11,7 +11,7 @@
       $statement->execute();
       $brands = $statement->fetch();
 
-      $sql="SELECT * FROM items where brand_id=:id";
+      $sql="SELECT items.*, brand.name as bn FROM items INNER JOIN brand ON brand.id=items.brand_id WHERE brand_id=:id";
       $statement=$connect->prepare($sql);
       $statement->bindParam(':id',$id);
       $statement->execute();
@@ -36,7 +36,9 @@
             <!-- <h2 class="title mt-5 mb-3" id="laptop"></h2> -->
             <div class="row mb-3">
                   
-            <?php foreach ($item_sub as $item) {?>
+            <?php foreach ($item_sub as $item) {
+                  $brand_name=$item['bn'];
+            ?>
                   <div class="col-md-4 col-lg-3 col-xl-2 my-3 p-0 set-p">
                         <div class="product_card">
                               <div class="buy">
@@ -48,7 +50,7 @@
                                     <img src="admin/uploads/<?= $item['photo'] ?>" class="card-img p-3" alt="...">
                               </a>
                               <div class="card-body" style="height: 170px;">
-                                    <h5 class="card-title"><?= $item['name'] ?></h5>
+                                    <h5 class="card-title"><?= $item['name'] ?><a href="#" class="badge bg-info logo-brand"><?php echo $brand_name; ?></a></h5>
                                     <p class="card-text"><?= substr($item['description'],0,50) ?> &nbsp;<a href="#">more...</a></p>
                                     <div class="price">
                                     <?php if($item['discount']) {?>
