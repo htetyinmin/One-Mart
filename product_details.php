@@ -68,16 +68,19 @@
                       </div>
                       <p class="product-description"><?= $detail_description ?></p>
                       <?php if($detail_discount) {?>
-                        <h4 class="price">Discount: <span style="font-size: 16px;
-        color: #000 !important;"><?= $detail_discount ?> &nbsp;MMKs</span></h4>
-                        <h4 class="price">Price: <span style="font-size: 14px;
-        color: rgb(255, 15, 0) !important;"><del><?= $detail_price ?> &nbsp;MMKs</del></span></h4>
+                        <h4 class="price">Discount: <span style="font-size: 16px;color: #000 !important;">
+                          <?= $detail_discount ?> &nbsp;MMKs</span>
+                        </h4>
+                        <h4 class="price">Price: <span style="font-size: 14px; color: rgb(255, 15, 0) !important;"><del>
+                          <?= $detail_price ?> &nbsp;MMKs</del></span>
+                        </h4>
 
    
-                        <?php }else{?>
-                        <h4 class="price">Price: <span style="font-size: 16px;
-        color: #000 !important;"><?= $detail_price ?> &nbsp;MMKs</span></h4>
-                        <?php } ?>
+                      <?php }else{?>
+                        <h4 class="price">Price: <span style="font-size: 16px; color: #000 !important;">
+                          <?= $detail_price ?> &nbsp;MMKs</span>
+                        </h4>
+                      <?php } ?>
                     
                         <div class="action">
                           <button type="button" class="btn btn-primary add-to-cart"><i class="fas fa-cart-arrow-down"></i>&nbsp;&nbsp;add to cart</button>
