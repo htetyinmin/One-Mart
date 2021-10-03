@@ -33,7 +33,6 @@
   <!-- My Cart -->
   <div class="carts">
     <div class="container">
-      <h1>My Cart</h1>
       <div class="row">
         <div class="col-lg-9 col-sm-12 mb-3">
               <div class="card prod-cart">
@@ -122,7 +121,7 @@
                   <hr> 
                   <div class="payment">
                     <a href="index.php" class="btn btn-success btn-main"><i class="fa fa-shopping-cart"></i> Shopping</a>
-                    <a href="#" class="btn btn-primary btn-main ordernow"><i class="fab fa-shopify"></i>&nbsp;&nbsp;Order Now</a> 
+                    <a href="#" class="btn btn-primary btn-main ordernow"><i class="fab fa-shopify"></i>&nbsp;&nbsp;Order</a> 
                   </div>
               </div>
           </div>
@@ -144,6 +143,78 @@
   include_once "template/footer.php";
 
 ?>
+
+
+<?php 
+
+if(checkSession('user')) {
+
+  echo "<script>
+
+  $(document).ready(function() {
+    $('.ordernow').click(function(){
+  
+  
+        var total = $('.total').text();
+        var city = $('#region option:selected').text().trim();
+        var action = 'order';
+  
+        var cart_str = localStorage.getItem('onemart');
+        var cart_arr = JSON.parse(cart_str);
+  
+        Swal.fire({
+          icon: 'question',
+          title: 'Are you sure?',
+          confirmButtonText: 'Yes',
+          confirmButtonColor: '#0d6efd',
+          showCancelButton: true,
+        }).then((result) => {
+          if (result.isConfirmed) {
+  
+  
+            $.ajax({
+                url: 'system/order.php',
+                method: 'POST',
+                data: {'action':action, 'cart':cart_arr, 'total': total, 'city': city},
+                success: function(response) {
+  
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Order Success!<br>Thank you for shopping with us!',
+                        confirmButtonText: 'Got it',
+                        confirmButtonColor: '#0d6efd',
+                      }).then((result) => {
+                        if (result.isConfirmed) {
+                            localStorage.clear();
+                            window.location.href='index.php';
+                        }
+                      })
+                }
+            });
+          }
+        })
+  
+    });
+  });
+  </script>";
+}else {
+
+  echo "<script>
+
+  $(document).ready(function() {
+    $('.ordernow').click(function(){
+  
+       window.location.href='signup.php';
+  
+    });
+  });
+  </script>";
+}
+
+?>
+
+
+
 
 
 

@@ -80,7 +80,7 @@
     function checkName(username) {
 
         const error = document.getElementsByClassName('name-error')[0];
-        const letters = /^[a-zA-Z\s_\-]+$/;
+        const letters = /^[a-zA-Z\s_\- ]+$/;
         let name = username.trim();
         name = name.replace(/[^\w.-]+/g, "");
 
@@ -89,9 +89,9 @@
             error.textContent = "*Please enter Username!";
             return false;
 
-        }else if(!(name.length >= 5)) {
+        }else if(!(name.length >= 3)) {
 
-            error.textContent = "*Username must be at least 5 characters!";
+            error.textContent = "*Username must be at least 3 characters!";
             return false;
 
         }else if(!name.match(letters)) {

@@ -181,14 +181,13 @@
                         if(checkSession('user')) {
                             $Authuser = getSession('user');
                             echo "<a class='nav-link' href='#' data-bs-toggle='dropdown' title=".  $Authuser['user_name'] .">
-                                    <i class='far fa-user'></i>
                                     <span class='f_color'>" . $Authuser['user_name'] . "</span>
                                 </a>";
 
                         }else{
 
                             echo "<a class='nav-link dropdown-item' href='login.php' title='login'>
-                            <i class='fas fa-users'></i>
+                            <i class='fas fa-user'></i>
                                 </a>";
 
                         }

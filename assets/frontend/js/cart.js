@@ -221,24 +221,13 @@ $(document).ready(function(){
 
     })
 
-    $('.ordernow').click(function(){
+    // $('.ordernow').click(function(){
 
-        var total = $('.total').text();
+    //     var total = $('.total').text();
 
-        var cart_str=localStorage.getItem('onemart');
-        var cart_arr=JSON.parse(cart_str);
+    //     var cart_str=localStorage.getItem('onemart');
+    //     var cart_arr=JSON.parse(cart_str);
 
-        $.ajax({
-
-            url: '../../../order.php',
-            method: 'POST',
-            data: {action:action, name:userName, email:userEmail, pass:userPass, phone:userPhone},
-            success: function(data) {
-
-                    data = data.trim();
-                    alert(data);
-            }
-        });
 
         // console.log(cart_arr);
 
@@ -269,6 +258,6 @@ $(document).ready(function(){
             //     }
             //   })
         // });
-    })
+    // })
     
 });
