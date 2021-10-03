@@ -223,27 +223,52 @@ $(document).ready(function(){
 
     $('.ordernow').click(function(){
 
-        Swal.fire({
-            icon: 'question',
-            title: 'Are you sure?',
-            confirmButtonText: 'Yes',
-            confirmButtonColor: '#0d6efd',
-            showCancelButton: true,
-          }).then((result) => {
-            if (result.isConfirmed) {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Order Success!<br>Thank you for shopping with us!',
-                    confirmButtonText: 'Got it',
-                    confirmButtonColor: '#0d6efd',
-                  }).then((result) => {
-                    if (result.isConfirmed) {
-                        localStorage.clear();
-                        window.location.href="index.php";
-                    }
-                  })
+        var total = $('.total').text();
+
+        var cart_str=localStorage.getItem('onemart');
+        var cart_arr=JSON.parse(cart_str);
+
+        $.ajax({
+
+            url: '../../../order.php',
+            method: 'POST',
+            data: {action:action, name:userName, email:userEmail, pass:userPass, phone:userPhone},
+            success: function(data) {
+
+                    data = data.trim();
+                    alert(data);
             }
-          })
+        });
+
+        // console.log(cart_arr);
+
+        // $.post('order.php', {
+        //     cart:cart_arr,
+        //     total:total
+        // },function(response){
+        //     window.location.href="order.php";
+            // Swal.fire({
+            //     icon: 'question',
+            //     title: 'Are you sure?',
+            //     confirmButtonText: 'Yes',
+            //     confirmButtonColor: '#0d6efd',
+            //     showCancelButton: true,
+            //   }).then((result) => {
+            //     if (result.isConfirmed) {
+            //         Swal.fire({
+            //             icon: 'success',
+            //             title: 'Order Success!<br>Thank you for shopping with us!',
+            //             confirmButtonText: 'Got it',
+            //             confirmButtonColor: '#0d6efd',
+            //           }).then((result) => {
+            //             if (result.isConfirmed) {
+            //                 // localStorage.clear();
+            //                 window.location.href="order.php";
+            //             }
+            //           })
+            //     }
+            //   })
+        // });
     })
     
 });
