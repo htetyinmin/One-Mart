@@ -504,8 +504,8 @@ ul, ol {
 
 .pill{
     background: #ff0c00;
-    padding: 8px 20px;
-    font-size: 16px;
+    padding: 5px 15px;
+    font-size: 12px;
     border: 1.5px solid #ff0c00;
     border-radius: 30px;
     font-family: monospace;

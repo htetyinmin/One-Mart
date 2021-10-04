@@ -30,6 +30,7 @@
                   $ai_price=$item['price'];
                   $ai_discount=$item['discount'];
                   $ai_description=$item['description'];
+                  $brand_id = $item['brand_id'];
                   $brand_name=$item['bn'];
 
                   ?>
@@ -49,7 +50,7 @@
                 </div>
 
                 <div class="card-body">
-                  <h5 class="card-title"><?= $ai_name ?><a href="#" class="badge bg-info logo-brand"><?php echo $brand_name; ?></a></h5>
+                  <h5 class="card-title"><?= $ai_name ?><a href="brand.php?bid=<?= $brand_id ?>" class="badge bg-info logo-brand"><?php echo $brand_name; ?></a></h5>
                   <p class="card-text"><?= substr($ai_description, 0, 50) ?>&nbsp;<a href="#" class="view_btn" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" data-photo="<?= $ai_photo ?>" data-description="<?= $ai_description ?>"
 								data-price="<?= $ai_price ?>" data-discount="<?= $ai_discount ?>" data-photo="<?= $ai_photo ?>" data-codeno="<?= $ai_codeno ?>" data-bs-toggle="modal" data-bs-target="#cartModal">more...</a></p>
                   <div class="price">
@@ -62,11 +63,12 @@
                   </div>
                 </div>
                 <div class="product_btn">
-                  <a href="product_details.php?id=<?= $ai_id?>" type="button" class="btn btn-danger btn-sm cart_btn"><i class="fa fa-cart-arrow-down"></i></a>
+                  <button class="btn btn-danger btn-sm cart_btn addtocart" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" 
+                  data-price="<?= $ai_price ?>" data-discount="<?= $ai_discount ?>" data-photo="<?= $ai_photo ?>" data-codeno="<?= $ai_codeno ?>"><i class="fa fa-cart-arrow-down"></i></button>
 
-                  <button class="btn btn-primary btn-sm cart_btn view_btn" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" data-photo="<?= $ai_photo ?>" data-description="<?= $ai_description ?>"
-								data-price="<?= $ai_price ?>" data-discount="<?= $ai_discount ?>" data-photo="<?= $ai_photo ?>" data-codeno="<?= $ai_codeno ?>" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="fas fa-eye"></i></button>
-                  </button>
+                    <button class="btn btn-primary btn-sm cart_btn view_btn" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" data-photo="<?= $ai_photo ?>" data-description="<?= $ai_description ?>"
+                  data-price="<?= $ai_price ?>" data-discount="<?= $ai_discount ?>" data-photo="<?= $ai_photo ?>" data-codeno="<?= $ai_codeno ?>" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="fas fa-eye"></i></button>
+                    </button>
                 </div>
             </div>
           </div>

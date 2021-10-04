@@ -219,7 +219,7 @@ if(checkSession('user')) {
   $(document).ready(function() {
     $('.ordernow').click(function(){
   
-       window.location.href='signup.php';
+       window.location.href='login.php';
   
     });
   });

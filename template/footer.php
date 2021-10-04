@@ -53,7 +53,7 @@
 
     <!-- copyright -->
     <div class="copyright">
-      &copy;&nbsp;2021-<script>var d = new Date();document.write(d.getFullYear());</script>. All right reserved.
+      &copy;&nbsp;2020-<script>var d = new Date();document.write(d.getFullYear());</script>. All right reserved.
     </div>
 
   </footer>
