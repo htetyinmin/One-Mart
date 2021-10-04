@@ -153,6 +153,18 @@ if(checkSession('user')) {
 
   $(document).ready(function() {
     $('.ordernow').click(function(){
+
+      var city = $('#region option:selected').val();
+
+      if(city == '') {
+
+        Swal.fire({
+          icon: 'error',
+          text: 'Please Select Your Destination!',
+          confirmButtonColor: '#0d6efd'
+        })   
+        
+      }else {
   
   
         var total = $('.total').text();
@@ -193,6 +205,9 @@ if(checkSession('user')) {
             });
           }
         })
+      }
+
+
   
     });
   });

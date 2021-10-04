@@ -80,9 +80,9 @@
     function checkName(username) {
 
         const error = document.getElementsByClassName('name-error')[0];
-        const letters = /^[a-zA-Z\s_\- ]+$/;
+        const letters = /^[a-zA-Z0-9_\.\- ]+$/;
         let name = username.trim();
-        name = name.replace(/[^\w.-]+/g, "");
+        name = name.replace(/[^\w.-]+/g, " ");
 
         if(name == '') {
 
