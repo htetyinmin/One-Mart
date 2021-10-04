@@ -63,7 +63,7 @@
                               </div>
                               <div class="product_btn">
                                     <button class="btn btn-danger btn-sm cart_btn addtocart" data-id="<?= $item['id'] ?>" data-name="<?= $item['name'] ?>" data-photo="<?= $item['photo'] ?>" data-description="<?= $itemj['description'] ?>" data-price="<?= $item['price'] ?>" data-discount="<?= $item['discount'] ?>" data-codeno="<?= $item['codeno'] ?>"><i class="fa fa-cart-arrow-down"></i></button>
-                                    <button class="btn btn-primary btn-sm cart_btn view_btn" data-id="<?= $item['id'] ?>" data-name="<?= $item['name'] ?>" data-photo="<?= $item['photo'] ?>" data-description="<?= $itemj['description'] ?>" data-price="<?= $item['price'] ?>" data-discount="<?= $item['discount'] ?>" data-codeno="<?= $item['codeno'] ?>" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="fas fa-eye"></i></button>
+                                    <button class="btn btn-primary btn-sm cart_btn view_btn" data-id="<?= $item['id'] ?>" data-name="<?= $item['name'] ?>" data-photo="<?= $item['photo'] ?>" data-description="<?= $item['description'] ?>" data-price="<?= $item['price'] ?>" data-discount="<?= $item['discount'] ?>" data-codeno="<?= $item['codeno'] ?>" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="fas fa-eye"></i></button>
                               </div>
                         </div>
                   </div>
