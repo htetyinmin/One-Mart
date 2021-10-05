@@ -311,7 +311,10 @@
     <div class="modal-dialog modal-lg modal-dialog-centered my-model">
       <div class="modal-content">
         <div class="modal-header">
-          <h3 class="modal-title modal-codeno" id="exampleModalLabel"></h3>
+          <!-- <h3 class="modal-title modal-codeno" id="exampleModalLabel"></h3> -->
+          <div class="logo">
+            <img src="" alt="">
+          </div>
           <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
