@@ -9,6 +9,7 @@
 
     foreach($item_details as $item){
         $detail_id=$item['id'];
+        $detail_codeno=$item['codeno'];
         $detail_name=$item['name'];
         $detail_price=$item['price'];
         $detail_discount=$item['discount'];
@@ -23,7 +24,7 @@
     $statement->bindParam(':subcategory_id',$subcategory_id);
     $statement->execute();
     $related_subs=$statement->fetchALL(PDO::FETCH_ASSOC);
-    // var_dump($related_subs);
+    // var_dump($item_details);
 
     // for brand
     $sql="SELECT * FROM brand where id=:brand_id";
@@ -83,8 +84,9 @@
                       <?php } ?>
                     
                         <div class="action">
-                          <button type="button" class="btn btn-primary add-to-cart"><i class="fas fa-cart-arrow-down"></i>&nbsp;&nbsp;add to cart</button>
-                          <button type="button" class="btn btn-success add-to-cart"><i class="fas fa-credit-card"></i>&nbsp;&nbsp;Buy now</button>
+                          <button type="button" class="btn btn-primary add-to-cart addtocart" data-id="<?= $detail_id ?>" data-name="<?= $detail_name ?>" data-price="<?= $detail_price ?>" data-discount="<?= $detail_discount ?>" data-photo="<?= $detail_photo ?>" data-codeno="<?= $detail_codeno ?>" data-brand="<?= $brand['name'] ?>"><i class="fas fa-cart-arrow-down"></i>&nbsp;&nbsp;add to cart</button>
+                          
+                          <button type="button" class="btn btn-success add-to-cart buynow" data-id="<?= $detail_id ?>" data-name="<?= $detail_name ?>" data-price="<?= $detail_price ?>" data-discount="<?= $detail_discount ?>" data-photo="<?= $detail_photo ?>" data-codeno="<?= $detail_codeno ?>" data-brand="<?= $brand['name'] ?>"><i class="fas fa-credit-card"></i>&nbsp;&nbsp;Buy now</button>
                         </div>
                   </div>
               </div>

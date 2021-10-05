@@ -46,7 +46,7 @@ $(document).ready(function(){
                                 </div>
                                 <div class="product_name">
                                     <p>${v.name}</p>
-                                    <span>Brand: <small>Apple</small></span>
+                                    <span>Brand: <small>${v.brand}</small></span>
                                 </div>
                             </div>
                         </td>
@@ -82,6 +82,60 @@ $(document).ready(function(){
         }
     }
 
+    $('.view_btn').on('click', function(){
+        var id = $(this).data("id");
+        var name = $(this).data('name');
+        var photo = $(this).data('photo');
+        var price = $(this).data('price');
+        var description = $(this).data('description');
+        var discount = $(this).data('discount');
+        var codeno = $(this).data('codeno');
+        var brand = $(this).data('brand');
+  
+        $('.modal-name').text(name);
+        $('.modal-description').text(description);
+        $('.modal-codeno').text("codeno - " + codeno);
+  
+        if(discount){
+   
+          $('.price-tab').html(`
+          <h4 class="price">Discount: <span style="font-size: 16px;
+          color: #000 !important;">${discount}&nbsp;MMKs</span></h4>
+          <h4 class="price">Price: <span style="font-size: 14px;
+          color: rgb(255, 15, 0) !important;"><del>${price}&nbsp;MMKs</del></span></h4>
+  
+          `);
+          
+        }else{
+          $('.price-tab').html(`
+          
+          <h4 class="price">Price: <span style="font-size: 16px;
+          color: #000 !important;">${price}&nbsp;MMKs</span></h4>
+  
+          `);
+        }
+  
+        $('.modal-photo').html(`<img src="admin/uploads/${photo}" class="model-img"/>`
+        )
+  
+        $("#addtocart").attr("data-id",id);
+        $("#addtocart").attr("data-name",name);
+        $("#addtocart").attr("data-price",price);
+        $("#addtocart").attr("data-discount",discount);
+        $("#addtocart").attr("data-photo",photo);
+        $("#addtocart").attr("data-codeno",codeno);
+        $("#addtocart").attr("data-brand",brand);
+  
+        $("#buynow").attr("data-id",id);
+        $("#buynow").attr("data-name",name);
+        $("#buynow").attr("data-price",price);
+        $("#buynow").attr("data-discount",discount);
+        $("#buynow").attr("data-photo",photo);
+        $("#buynow").attr("data-codeno",codeno);
+        $("#buynow").attr("data-brand",brand);
+  
+    });
+
     $('.addtocart').click(function(){
 
         // alert('hi');
@@ -92,6 +146,7 @@ $(document).ready(function(){
         var discount=$(this).data('discount');
         var photo=$(this).data('photo');
         var codeno=$(this).data('codeno');
+        var brand=$(this).data('brand');
 
         var item ={
             id:id,
@@ -100,6 +155,7 @@ $(document).ready(function(){
             discount:discount,
             photo:photo,
             codeno:codeno,
+            brand:brand,
             qty:1,
         }
 
@@ -127,6 +183,57 @@ $(document).ready(function(){
         localStorage.setItem("onemart", myData);
         
         count();
+
+    });
+
+    $('.buynow').click(function(){
+
+        // alert('hi');
+
+        var id=$(this).data('id');
+        var name=$(this).data('name');
+        var price=$(this).data('price');
+        var discount=$(this).data('discount');
+        var photo=$(this).data('photo');
+        var codeno=$(this).data('codeno');
+        var brand=$(this).data('brand');
+
+        var item ={
+            id:id,
+            name:name,
+            price:price,
+            discount:discount,
+            photo:photo,
+            codeno:codeno,
+            brand:brand,
+            qty:1,
+        }
+
+        var cart_str = localStorage.getItem('onemart');
+        var cart_arr;
+        if(cart_str == null){
+            cart_arr = Array();
+        }else{
+            cart_arr = JSON.parse(cart_str);
+        }
+
+        var status = false;
+        $.each(cart_arr, function(i,v){
+            if(id==v.id){
+                v.qty++;
+                status=true;
+            }
+        });
+        
+        if(status == false){
+            cart_arr.push(item);
+        }
+
+        var myData = JSON.stringify(cart_arr);
+        localStorage.setItem("onemart", myData);
+        
+        count();
+        window.location.href="product_cart.php";
 
     });
 
