@@ -1,5 +1,7 @@
 <?php 
 
+    include_once 'session.php';
+
     function testInput($data) {
 
         $data = trim($data);

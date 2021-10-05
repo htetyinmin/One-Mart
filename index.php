@@ -116,7 +116,7 @@
                   <img src="admin/uploads/<?= $ai_photo ?>" class="card-img p-3" height=160 alt="...">
                 </a>
                 <div class="card-body p-card-body">
-                  <h5 class="card-title"><?= $ai_name ?><a href="#" class="badge bg-info logo-brand"><?php echo $brand_name; ?></a></h5>
+                  <h5 class="card-title"><?= $ai_name ?><a href="brand.php?bid=<?= $brand_id ?>" class="badge bg-info logo-brand"><?php echo $brand_name; ?></a></h5>
                   
                   <p class="card-text"><?= substr($ai_description, 0, 50) ?>&nbsp;<a href="#" class="view_btn" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" data-photo="<?= $ai_photo ?>" data-description="<?= $ai_description ?>"
 								data-price="<?= $ai_price ?>" data-discount="<?= $ai_discount ?>" data-photo="<?= $ai_photo ?>" data-codeno="<?= $ai_codeno ?>" data-bs-toggle="modal" data-bs-target="#cartModal">more...</a></p>
@@ -170,6 +170,7 @@
           $ai_price=$item['price'];
           $ai_discount=$item['discount'];
           $ai_description=$item['description'];
+          $brand_id=$item['brand_id'];
           $brand_name=$item['bn'];
 
           ?>
@@ -185,7 +186,7 @@
                   <img src="admin/uploads/<?= $ai_photo ?>" class="card-img p-3" height=160 alt="...">
                 </a>
                 <div class="card-body p-card-body">
-                  <h5 class="card-title"><?= $ai_name ?><a href="#" class="badge bg-info logo-brand"><?php echo $brand_name; ?></a></h5>
+                  <h5 class="card-title"><?= $ai_name ?><a href="brand.php?bid=<?= $brand_id ?>" class="badge bg-info logo-brand"><?php echo $brand_name; ?></a></h5>
                   <p class="card-text"><?= substr($ai_description,0, 50) ?>&nbsp;<a href="#" class="view_btn" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" data-photo="<?= $ai_photo ?>" data-description="<?= $ai_description ?>"
 								data-price="<?= $ai_price ?>" data-discount="<?= $ai_discount ?>" data-photo="<?= $ai_photo ?>" data-codeno="<?= $ai_codeno ?>" data-bs-toggle="modal" data-bs-target="#cartModal">more...</a></p>
                   <div class="price">
@@ -310,7 +311,10 @@
     <div class="modal-dialog modal-lg modal-dialog-centered my-model">
       <div class="modal-content">
         <div class="modal-header">
-          <h3 class="modal-title modal-codeno" id="exampleModalLabel"></h3>
+          <!-- <h3 class="modal-title modal-codeno" id="exampleModalLabel"></h3> -->
+          <div class="logo">
+            <img src="" alt="">
+          </div>
           <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>

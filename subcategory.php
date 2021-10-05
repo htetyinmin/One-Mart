@@ -53,7 +53,7 @@
                                     <img src="admin/uploads/<?= $item['photo'] ?>" class="card-img p-3" height=160 alt="...">
                               </a>
                               <div class="card-body" style="height: 170px;">
-                                    <h5 class="card-title"><?= $item['name'] ?><a href="#" class="badge bg-info logo-brand"><?php echo $brand_name; ?></a></h5>
+                                    <h5 class="card-title"><?= $item['name'] ?><a href="brand.php?bid=<?= $item['brand_id'] ?>" class="badge bg-info logo-brand"><?php echo $brand_name; ?></a></h5>
                                     <p class="card-text"><?= substr($item['description'],0,50) ?> &nbsp;<a href="#">more...</a></p>
                                     <div class="price">
                                     <?php if($item['discount']) {?>
@@ -65,7 +65,7 @@
                                     </div>
                               </div>
                               <div class="product_btn">
-                                    <a href="product_details.php?id=<?= $item['id']?>" type="button" class="btn btn-danger btn-sm cart_btn"><i class="fa fa-cart-arrow-down"></i></a>
+                              <button class="btn btn-danger btn-sm cart_btn addtocart" data-id="<?= $item['id'] ?>" data-name="<?= $item['name'] ?>" data-photo="<?= $item['photo'] ?>" data-description="<?= $item['description'] ?>" data-price="<?= $item['price'] ?>" data-discount="<?= $item['discount'] ?>" data-codeno="<?= $item['codeno'] ?>"><i class="fa fa-cart-arrow-down"></i></button>
                                     <button class="btn btn-primary btn-sm cart_btn view_btn" data-id="<?= $item['id'] ?>" data-name="<?= $item['name'] ?>" data-photo="<?= $item['photo'] ?>" data-description="<?= $item['description'] ?>" data-price="<?= $item['price'] ?>" data-discount="<?= $item['discount'] ?>" data-codeno="<?= $item['codeno'] ?>" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="fas fa-eye"></i></button>
                               </div>
                         </div>

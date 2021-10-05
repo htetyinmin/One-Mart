@@ -12,10 +12,23 @@
         <div class="container">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb my-bc">
-              <li class="breadcrumb-item">
+              <!-- <li class="breadcrumb-item">
                 <a href="index.php" class="link-item">Home</a>
+              </li> -->
+              <li class="breadcrumb-item" style="color: #fff;" aria-current="page">
+              <?php
+
+                $unixTime = time();
+                $timeZone = new \DateTimeZone('Asia/Rangoon');
+
+                $time = new \DateTime();
+                $time->setTimestamp($unixTime)->setTimezone($timeZone);
+
+                $formattedTime = $time->format('M d Y H:i a');
+                echo $formattedTime;
+
+              ?>
               </li>
-              <li class="breadcrumb-item active" aria-current="page" style="color: #919599;">Cart</li>
             </ol>
           </nav>
           <!-- <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
@@ -219,7 +232,7 @@ if(checkSession('user')) {
   $(document).ready(function() {
     $('.ordernow').click(function(){
   
-       window.location.href='signup.php';
+       window.location.href='login.php';
   
     });
   });
@@ -227,6 +240,8 @@ if(checkSession('user')) {
 }
 
 ?>
+
+
 
 
 

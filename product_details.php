@@ -126,12 +126,11 @@
                   </div>
                 </div>
                 <div class="product_btn">
-                  <a href="product_details.php?id=<?= $related_sub['id']?>" type="button" class="btn btn-danger btn-sm cart_btn"><i class="fa fa-cart-arrow-down"></i></a>
-                  
-                  <button class="btn btn-primary btn-smview_btn cart_btn " data-id="<?= $related_sub['id'] ?>" data-name="<?= $related_sub['name'] ?>" data-photo="<?= $related_sub['photo'] ?>" data-description="<?= $related_sub['description'] ?>"
-								data-price="<?= $related_sub['price']?>" data-discount="<?= $related_sub['discount'] ?>" data-photo="<?= $related_sub['photo'] ?>" data-codeno="<?= $related_sub['codeno'] ?>" data-bs-toggle="modal" data-bs-target="#cartModal">
-                  <i class="fas fa-eye"></i>
-                </button>
+                  <button class="btn btn-danger btn-sm cart_btn addtocart" data-id="<?= $related_sub['id'] ?>" data-name="<?= $related_sub['name'] ?>" 
+                  data-price="<?= $related_sub['price'] ?>" data-discount="<?= $related_sub['discount'] ?>" data-description="<?= $related_sub['description'] ?>" data-photo="<?= $related_sub['photo'] ?>" data-codeno="<?= $related_sub['codeno'] ?>"><i class="fa fa-cart-arrow-down"></i></button>
+                    
+                    <button class="btn btn-primary btn-sm cart_btn view_btn" data-id="<?= $related_sub['id'] ?>" data-name="<?= $related_sub['name'] ?>" 
+                  data-price="<?= $related_sub['price'] ?>" data-discount="<?= $related_sub['discount'] ?>" data-description="<?= $related_sub['description'] ?>" data-photo="<?= $related_sub['photo'] ?>" data-codeno="<?= $related_sub['codeno'] ?>" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="fas fa-eye"></i></button>
                 </div>
             </div>
           </div>
