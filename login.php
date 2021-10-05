@@ -75,8 +75,8 @@
 ?>
 
 <style>
-    .navbar {display: none;}
-    footer {display: none;}
+    /* .navbar {display: none;}
+    footer {display: none;} */
 </style>
 
 

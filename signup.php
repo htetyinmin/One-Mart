@@ -46,8 +46,8 @@
 <?php include_once "template/footer.php";?>
 
 <style>
-    .navbar {display: none;}
-    footer {display: none;}
+    /* .navbar {display: none;}
+    footer {display: none;} */
 </style>
 
 <script>
@@ -205,10 +205,10 @@
                 success: function(data) {
 
                         data = data.trim();
-                        alert(data);
+                        console.log(data);
                         window.location.reload();
-                        window.location.replace('login.php');
-                        return true;
+                        window.location.replace('index.php');
+                        // return true;
                         
                         // const message = document.getElementById('message');
                         // const alert = document.getElementById('alertReg');

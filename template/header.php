@@ -184,6 +184,12 @@
                                     <span class='f_color'>" . $Authuser['user_name'] . "</span>
                                 </a>";
 
+                        }if(checkSession('auto')) {
+                            $autoUser = getSession('auto');
+                            echo "<a class='nav-link' href='#' data-bs-toggle='dropdown' title=".  $autoUser['user_name'] .">
+                                    <span class='f_color'>" . $autoUser['user_name'] . "</span>
+                                </a>";
+
                         }else{
 
                             echo "<a class='nav-link dropdown-item' href='login.php' title='login'>

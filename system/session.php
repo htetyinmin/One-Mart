@@ -7,8 +7,15 @@
 
         if($data === 'admin') {
             $_SESSION['admin'] = $key;
-        }else {
+        }
+        
+        if($data === 'user') {
             $_SESSION['user'] = $key;
+        }
+
+
+        if($data === 'autologin') {
+            $_SESSION['auto'] = $key;
         }
 
     }

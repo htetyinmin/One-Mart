@@ -39,6 +39,7 @@
 
     }
 
+    /*
     function signUP($userName, $userEmail, $userPass, $userPhone) {
 
         global $connect;
@@ -118,7 +119,7 @@
         }
 
 
-    }
+    }*/
 
     function encodePassword($pass) {
 
