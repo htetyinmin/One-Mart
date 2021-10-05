@@ -43,7 +43,7 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
-                                <h2 class="mb-0" style="text-transform: capitalize;"><?= $order['uname'] ?><span class="text-muted order-cap"> 'orders</span></h2>
+                                <h2 class="mb-0 text-success" style="text-transform: capitalize;"><i class="feather-user text-success"></i> <?= $order['uname'] ?></h2>
                                 <div class="">
                                     <a href="#" class="btn btn-outline-secondary full-screen-btn">
                                           <i class="feather-maximize-2"></i>
@@ -52,21 +52,21 @@
                             </div>
                             <hr>
                             <div class="detail">
-                                  <div class="row">
-                                        <div class="col-5">
+                                  <div class="row mx-2 my-5">
+                                        <div class="col-lg-5 col-md-12">
                                               <div class="personal-title mb-3">
-                                                    <h3 class="text-muted">Order Info</h3>
+                                                    <h4 class="text-muted">Order Info</h4>
                                               </div>
 
                                               <div class="personal-info">
                                                     <p>Order No - <?= $order['voucherno'] ?></p>
-                                                    <p>Order Date - <?= $order['orderdate'] ?></p>
+                                                    <p>Order Date - <?= date("d M Y", strtotime($order['orderdate'])) ?></p>
                                                     <p>Amount - <?= number_format($order['total'])?> Ks</p>
                                               </div>
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-lg-4 col-md-12">
                                           <div class="shipping-title mb-3">
-                                                <h3 class="text-muted">Shipping Info</h3>
+                                                <h4 class="text-muted">Shipping Info</h4>
                                           </div>
                                           <div class="shipping-info">
                                                 <p>City - <?= $order['city'] ?></p>
@@ -74,9 +74,9 @@
                                                 <p>Email - <?= $order['uemail'] ?></p>
                                           </div>
                                         </div>
-                                        <div class="col-3">
-                                        <div class="package-title mb-3">
-                                                <h3 class="text-muted">Package Status</h3>
+                                        <div class="col-lg-3 col-md-12">
+                                          <div class="package-title mb-3">
+                                                <h4 class="text-muted">Package Status</h4>
                                           </div>
                                           <div class="package-info">
                                                 <div class="status mb-3">
@@ -88,23 +88,23 @@
                                           </div>
                                         </div>
                                   </div>
-                                  <hr>
+                                  
                                   <table id="list" class="table table-striped" style="width:100%">
                                     <thead>
                                           <tr>
-                                          <th>Qty</th>
-                                          <th>Product</th>
                                           <th>Item ID</th>
+                                          <th>Product Name</th>
+                                          <th>Qty</th>
+                                          <th>Price</th>
                                           <th>Subtotal</th>
                                           </tr>
                                     </thead>
                                     <tbody>
                         <?php
                                     foreach($orderdetails as $orderdetail){
-                                          $qty=$orderdetail['qty'];
-                                          $item_name=$orderdetail['name'];
                                           $item_codeno=$orderdetail['codeno'];
-                                          // $item_description=$orderdetail['description'];
+                                          $item_name=$orderdetail['name'];
+                                          $qty=$orderdetail['qty'];
                                           $item_price=$orderdetail['price'];
                                           $item_discount=$orderdetail['discount'];
                                           if($item_discount){
@@ -112,15 +112,14 @@
                                           }else{
                                                 $price = $item_price;
                                           }
-
                                           $subtotal=$qty*$price;
                                     ?>
 
                                     <tr>
-                                    <td><?= $qty; ?></td>
-                                    <td><?= $item_name; ?></td>
                                     <td><?= $item_codeno; ?></td>
-                                    <!-- <td><?= $item_description; ?></td> -->
+                                    <td><?= $item_name; ?></td>
+                                    <td><?= $qty; ?></td>
+                                    <td><?= number_format($price); ?> Ks <p><small class="text-muted">each item</small></p></td>
                                     <td><?= number_format($subtotal); ?> Ks</td>
                                     </tr>
 
@@ -128,13 +127,18 @@
                                     </tbody>
                                     <tfoot>
                                           <tr>
-                                          <th>Qty</th>
-                                          <th>Product</th>
                                           <th>Item ID</th>
+                                          <th>Product Name</th>
+                                          <th>Qty</th>
+                                          <th>Price</th>
                                           <th>Subtotal</th>
                                           </tr>
                                     </tfoot>
                             </table>
+                            </div>
+                            <hr>
+                            <div class="row d-print-none mt-2">
+                              <div class="col-12"><a class="btn btn-success" href="#"><i class="feather-printer"></i> Print</a></div>
                             </div>
                         </div>
                     </div>

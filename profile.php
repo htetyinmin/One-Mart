@@ -44,7 +44,7 @@
                             </a>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center" id="UserOrd">
-                            <a href="#">
+                            <a href="user_order.php?uid=<?= $users['user_id'] ?>">
                                 <i class="fas fa-th"></i>Orders
                             </a>                          
                             <span class="badge bg-primary rounded-pill">2</span>
@@ -95,9 +95,9 @@
     $("#UserAcc").click(function() {
         $("#contents").load("../user/user_account.php");
     });
-    $("#UserOrd").click(function() {
-        $("#contents").load("../user/user_order.php");
-    });
+    // $("#UserOrd").click(function() {
+    //     $("#contents").load("../user/user_order.php");
+    // });
     $("#UserWlist").click(function () {
         $("#contents").load("../user/user_wishlist.php");
     });

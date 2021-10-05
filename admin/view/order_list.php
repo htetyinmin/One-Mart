@@ -85,7 +85,7 @@
                                         <td><?= $i++."." ?></td>
                                         <td><?= $userName ?></td>
                                         <td><?= $voucherno ?></td>
-                                        <td><?= $orderdate ?></td>
+                                        <td><?= date("d M Y", strtotime($orderdate)) ?></td>
                                         <td><span class="badge badge-pill badge-warning">Pending</span></td>
                                         <td><?= $amount ?> Ks</td>
                                         <td class="center-align">
