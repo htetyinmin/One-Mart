@@ -9,17 +9,26 @@
     }else{
 
     $currentPage = 'dashboard';
-    include_once "../template/header.php";  
-
+    include_once "../template/header.php";
     
+    $today = date('Y-m-d');
 
+    $ord = "SELECT * FROM orders WHERE orderdate='$today'";
+    $orders = getItems($ord);
+
+    $us = "SELECT * FROM users";
+    $users = getItems($us);
+
+    $it = "SELECT * FROM items";
+    $items = getItems($it);
+    
         
 ?>
 
             <!--content Area Start-->
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-6 col-xl-3">
-                        <div class="card mb-4 status-card" onclick="go('https://google.com')">
+                        <div class="card mb-4 status-card" onclick="go('order_list.php')">
                             <div class="card-body">
                                 <div class="row align-items-center">
                                     <div class="col-3">
@@ -27,7 +36,7 @@
                                     </div>
                                     <div class="col-9">
                                         <p class="mb-1 h4 font-weight-bolder">
-                                            <span class="counter-up">123</span>
+                                            <span class="counter-up"><?= count($orders) ?></span>
                                         </p>
                                         <p class="mb-0 text-black-50">Today Order</p>
                                     </div>
@@ -36,7 +45,7 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-6 col-xl-3">
-                        <div class="card mb-4 status-card" onclick="go('https://google.com')">
+                        <div class="card mb-4 status-card" onclick="go('user_list.php')">
                             <div class="card-body">
                                 <div class="row align-items-center">
                                     <div class="col-3">
@@ -44,16 +53,16 @@
                                     </div>
                                     <div class="col-9">
                                         <p class="mb-1 h4 font-weight-bolder">
-                                            <span class="counter-up">456</span>
+                                            <span class="counter-up"><?= count($users) ?></span>
                                         </p>
-                                        <p class="mb-0 text-black-50">Total User</p>
+                                        <p class="mb-0 text-black-50">Total Users</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-6 col-xl-3">
-                        <div class="card mb-4 status-card" onclick="go('https://google.com')">
+                        <div class="card mb-4 status-card" onclick="go('item_list.php')">
                             <div class="card-body">
                                 <div class="row align-items-center">
                                     <div class="col-3">
@@ -61,7 +70,7 @@
                                     </div>
                                     <div class="col-9">
                                         <p class="mb-1 h4 font-weight-bolder">
-                                            <span class="counter-up">223</span>
+                                            <span class="counter-up"><?= count($items) ?></span>
                                         </p>
                                         <p class="mb-0 text-black-50">Total Items</p>
                                     </div>
@@ -70,7 +79,7 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-6 col-xl-3">
-                        <div class="card mb-4 status-card" onclick="go('https://google.com')">
+                        <div class="card mb-4 status-card">
                             <div class="card-body">
                                 <div class="row align-items-center">
                                     <div class="col-3">
@@ -78,7 +87,7 @@
                                     </div>
                                     <div class="col-9">
                                         <p class="mb-1 h4 font-weight-bolder">
-                                            <span class="counter-up">14</span>
+                                            <span class="counter-up">8</span>
                                         </p>
                                         <p class="mb-0 text-black-50">Support Location</p>
                                     </div>
@@ -93,7 +102,7 @@
                         <div class="card overflow-hidden shadow mb-4">
                             <div class="">
                                 <div class="d-flex justify-content-between align-items-center p-3">
-                                    <h4 class="mb-0">Order & Viewer</h4>
+                                    <h4 class="mb-0">Order & Customer</h4>
                                     <div class="">
                                         <img src="../../assets/backend/img/user/avatar1.jpg" class="ov-img rounded-circle" alt="">
                                         <img src="../../assets/backend/img/user/avatar2.jpg" class="ov-img rounded-circle" alt="">
@@ -184,7 +193,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12">
+                    <!-- <div class="col-12">
                         <div class="card overflow-hidden mb-4">
     
                             <div class="">
@@ -250,7 +259,7 @@
                                 </table>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <!--content Area Start-->
             </div>

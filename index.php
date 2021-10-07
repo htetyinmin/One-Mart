@@ -101,9 +101,7 @@
           $brand_id=$item['brand_id'];
           $brand_name=$item['bn'];
 
-          ?>
-
-          
+        ?>
           
           <div class="col-md-4 col-lg-2 my-3">
             <div class="card">
@@ -132,11 +130,9 @@
 
                 <div class="order_btn">
                   
-                <button class="btn btn-danger btn-sm cart_btn addtocart" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" 
-								data-price="<?= $ai_price ?>" data-discount="<?= $ai_discount ?>" data-photo="<?= $ai_photo ?>" data-codeno="<?= $ai_codeno ?>"><i class="fa fa-cart-arrow-down"></i></button>
+                <button class="btn btn-danger btn-sm cart_btn addtocart" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" data-price="<?= $ai_price ?>" data-discount="<?= $ai_discount ?>" data-photo="<?= $ai_photo ?>" data-codeno="<?= $ai_codeno ?>" data-brand="<?= $brand_name ?>"><i class="fa fa-cart-arrow-down"></i></button>
 
-                <button class="btn btn-primary btn-sm cart_btn view_btn" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" data-photo="<?= $ai_photo ?>" data-description="<?= $ai_description ?>"
-								data-price="<?= $ai_price ?>" data-discount="<?= $ai_discount ?>" data-photo="<?= $ai_photo ?>" data-codeno="<?= $ai_codeno ?>" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="fas fa-eye"></i></button>
+                <button class="btn btn-primary btn-sm cart_btn view_btn" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" data-photo="<?= $ai_photo ?>" data-description="<?= $ai_description ?>" data-price="<?= $ai_price ?>" data-discount="<?= $ai_discount ?>" data-photo="<?= $ai_photo ?>" data-codeno="<?= $ai_codeno ?>" data-brand="<?= $brand_name ?>" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="fas fa-eye"></i></button>
                   
                 </div>
             </div>
@@ -200,13 +196,11 @@
                 </div>
                 <div class="order_btn">
 
-                  <button class="btn btn-danger btn-sm cart_btn addtocart" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" 
-								data-price="<?= $ai_price ?>" data-discount="<?= $ai_discount ?>" data-photo="<?= $ai_photo ?>" data-codeno="<?= $ai_codeno ?>"><i class="fa fa-cart-arrow-down"></i></button>
+                  <button class="btn btn-danger btn-sm cart_btn addtocart" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" data-price="<?= $ai_price ?>" data-discount="<?= $ai_discount ?>" data-photo="<?= $ai_photo ?>" data-codeno="<?= $ai_codeno ?>" data-brand="<?= $brand_name ?>"><i class="fa fa-cart-arrow-down"></i></button>
 
                   <!-- <a href="product_details.php?id=<?= $ai_id?>" type="button" class="btn btn-danger btn-sm cart_btn"><i class="fa fa-cart-arrow-down"></i></a> -->
                   
-                  <button class="btn btn-primary btn-sm cart_btn view_btn" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" data-photo="<?= $ai_photo ?>" data-description="<?= $ai_description ?>"
-								data-price="<?= $ai_price ?>" data-discount="<?= $ai_discount ?>" data-photo="<?= $ai_photo ?>" data-codeno="<?= $ai_codeno ?>" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="fas fa-eye"></i></button>
+                  <button class="btn btn-primary btn-sm cart_btn view_btn" data-id="<?= $ai_id ?>" data-name="<?= $ai_name ?>" data-photo="<?= $ai_photo ?>" data-description="<?= $ai_description ?>" data-price="<?= $ai_price ?>" data-discount="<?= $ai_discount ?>" data-photo="<?= $ai_photo ?>" data-codeno="<?= $ai_codeno ?>" data-brand="<?= $brand_name ?>" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="fas fa-eye"></i></button>
 
                 </div>
             </div>
@@ -341,8 +335,8 @@
                         <div class="price-tab"></div>
 
                         <div class="action mb-3">
-                          <button type="button" class="btn btn-primary add-to-cart"><i class="fas fa-cart-arrow-down"></i>&nbsp;&nbsp;add to cart</button>
-                          <button type="button" class="btn btn-success add-to-cart"><i class="fas fa-credit-card"></i>&nbsp;&nbsp;Buy now</button>
+                          <button type="button" id="addtocart" class="btn btn-primary add-to-cart addtocart"><i class="fas fa-cart-arrow-down"></i>&nbsp;&nbsp;add to cart</button>
+                          <button type="button" id="buynow" class="btn btn-success add-to-cart buynow"><i class="fas fa-credit-card"></i>&nbsp;&nbsp;Buy now</button>
                         </div>
                   </div>
               </div>
@@ -358,44 +352,3 @@
 include_once "template/footer.php";
 
 ?>
-<script>
-  $(document).ready(function(){
-    $('.view_btn').on('click', function(){
-      var id = $(this).data("id");
-      var name = $(this).data('name');
-      var photo = $(this).data('photo');
-      var price = $(this).data('price');
-      var description = $(this).data('description');
-      var discount = $(this).data('discount');
-      var codeno = $(this).data('codeno');
-
-      $('.modal-name').text(name);
-      $('.modal-description').text(description);
-      $('.modal-codeno').text("codeno - " + codeno);
-
-      if(discount){
- 
-        $('.price-tab').html(`
-        <h4 class="price">Discount: <span style="font-size: 16px;
-        color: #000 !important;">${discount}&nbsp;MMKs</span></h4>
-        <h4 class="price">Price: <span style="font-size: 14px;
-        color: rgb(255, 15, 0) !important;"><del>${price}&nbsp;MMKs</del></span></h4>
-
-        `);
-        
-      }else{
-        $('.price-tab').html(`
-        
-        <h4 class="price">Price: <span style="font-size: 16px;
-        color: #000 !important;">${price}&nbsp;MMKs</span></h4>
-
-        `);
-      }
-
-      $('.modal-photo').html(`<img src="admin/uploads/${photo}" class="model-img"/>`
-      )
-
-
-    })
-  });
-</script>
