@@ -41,88 +41,6 @@
 
     }
 
-    /*
-    function signUP($userName, $userEmail, $userPass, $userPhone) {
-
-        global $connect;
-    
-        $sql = "SELECT * FROM users WHERE email = '$userEmail'";
-        $rows = checkAccount($sql);
-        
-        if($rows > 0) {
-
-            echo "Sorry: This account is already in exist!";
-
-        }else {
-
-            $uid = 1;
-            $sql = "SELECT max(id) as max_id FROM users";
-            $stmt = $connect->prepare($sql);
-            $stmt->execute();
-
-
-            while($rows = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
-
-                foreach($rows as $key) {
-
-                    $uid = $key['max_id'] + 1;
-
-                }
-
-            }
-
-            $sql = "INSERT INTO users(id, name, email, password, phone) VALUES(?, ?, ?, ?, ?)";
-            $res = myQuery($sql, [$uid, $userName, $userEmail, $userPass, $userPhone]);
-
-
-            if($res) {
-
-                $sql = "SELECT id FROM users WHERE email= '$userEmail'";
-                $res = getItems($sql);
-                $user_id = '';
-                $role_id = 2;
-
-                foreach($res as $value) {
-                    $user_id = $value->id;
-                }
-
-
-
-                $mhr_id = 1;
-                $sql = "SELECT max(id) as max_id FROM model_has_role";
-                $stmt = $connect->prepare($sql);
-                $stmt->execute();
-    
-                while($rows = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
-    
-                    foreach($rows as $key) {
-    
-                        $mhr_id = $key['max_id'] + 1;
-    
-                    }
-    
-                }
-
-
-                $sql = "INSERT INTO model_has_role(id, user_id, role_id) VALUES(?, ?, ?)";
-                $res = myQuery($sql, [$mhr_id, $user_id, $role_id]);
-
-                if($res) {
-
-                    echo "Register successfully...";
-
-                }
-
-            }else {
-
-                echo "Sorry: we are not register this account!";
-
-            }
-        }
-
-
-    }*/
-
     function encodePassword($pass) {
 
         $pass = md5($pass);
@@ -145,10 +63,6 @@
         
         return $acc;
     }
-
-
-
-
 
 
 ?>

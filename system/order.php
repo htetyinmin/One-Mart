@@ -1,8 +1,8 @@
 <?php
 
-    session_start();
+    include_once "session.php";    
     include_once "../admin/system/function.php";
-    include_once "session.php";
+
 
     if(isset($_REQUEST)) {
         if($_REQUEST['action'] == 'order') {
@@ -45,7 +45,7 @@
                     $item_id = $cartData[$i]['id'];
                     $qty = $cartData[$i]['qty'];
 
-                    echo "\n\nItem ID:" . $item_id . "\n Qty:" .$qty;
+                    // echo "\n\nItem ID:" . $item_id . "\n Qty:" .$qty;
 
                     $itemOrderID = 1;
                     $sql = "SELECT max(id) as max_id FROM item_order";
@@ -63,12 +63,31 @@
                     }
 
                     $sql = "INSERT INTO item_order (id, qty, item_id, order_id ) VALUES(?, ?, ?, ?)";
-                    myQuery($sql, [$itemOrderID, $qty, $item_id, $orderID]);
+                    $res = myQuery($sql, [$itemOrderID, $qty, $item_id, $orderID]);
+
+                    if($res) {
+
+                        // $to =  $id['user_email'];
+                        // $to = trim($to);
+
+                        // $subject = "One Mart Online Shop";
+                        // $message ='One Mart Online Shop';
+                        // $header ="From: kyawmintun.kmt414@gmail.com \r\nReply-To: kyawmintun.kmt414@gmail.com";
+                    
+                        // $bol = mail($to, $subject, $message, $header);
+                    
+                        // if($bol == true) {
+                    
+                        //     return true;
+                    
+                        // }
+
+                         return true;
+                    }
 
                 }
 
-                return true;
-
+               
             }
         
         }

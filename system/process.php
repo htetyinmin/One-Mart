@@ -1,9 +1,20 @@
 <?php 
 
+    include_once "session.php";
+
+
+    if(checkSession('admin')) {
+
+        header("Location: ../index.php");
+
+    }else {
+
+        header("Location: ../index.php");
+        
+    }
+
     include_once "../admin/system/function.php";
     include_once "function.php";
-    // include_once "session.php";
-    session_start();
 
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
 

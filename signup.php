@@ -45,11 +45,6 @@
 
 <?php include_once "template/footer.php";?>
 
-<style>
-    /* .navbar {display: none;}
-    footer {display: none;} */
-</style>
-
 
 <script>
     const formBtn = document.getElementById('signup');

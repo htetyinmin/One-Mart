@@ -173,18 +173,20 @@ if(checkSession('user')) {
                 method: 'POST',
                 data: {'action':action, 'cart':cart_arr, 'total': total, 'city': city},
                 success: function(response) {
-  
+
                     Swal.fire({
-                        icon: 'success',
-                        title: 'Order Success!<br>Thank you for shopping with us!',
-                        confirmButtonText: 'Got it',
-                        confirmButtonColor: '#0d6efd',
-                      }).then((result) => {
-                        if (result.isConfirmed) {
-                            localStorage.clear();
-                            window.location.href='index.php';
-                        }
-                      })
+                      icon: 'success',
+                      title: 'Order Success!<br>Thank you for shopping with us, Please check your email!',
+                      confirmButtonText: 'Got it',
+                      confirmButtonColor: '#0d6efd',
+                    }).then((result) => {
+                      if (result.isConfirmed) {
+
+                          localStorage.clear();
+                          window.location.href='index.php';
+
+                      }
+                    })
                 }
             });
           }
