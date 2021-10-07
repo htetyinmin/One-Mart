@@ -20,7 +20,7 @@
             <!--content Area Start-->
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-6 col-xl-3">
-                        <div class="card mb-4 status-card" onclick="go('https://google.com')">
+                        <div class="card mb-4 status-card" onclick="go('order_list.php')">
                             <div class="card-body">
                                 <div class="row align-items-center">
                                     <div class="col-3">
@@ -37,7 +37,7 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-6 col-xl-3">
-                        <div class="card mb-4 status-card" onclick="go('https://google.com')">
+                        <div class="card mb-4 status-card" onclick="go('user_list.php')">
                             <div class="card-body">
                                 <div class="row align-items-center">
                                     <div class="col-3">
@@ -54,7 +54,7 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-6 col-xl-3">
-                        <div class="card mb-4 status-card" onclick="go('https://google.com')">
+                        <div class="card mb-4 status-card" onclick="go('item_list.php')">
                             <div class="card-body">
                                 <div class="row align-items-center">
                                     <div class="col-3">
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-6 col-xl-3">
-                        <div class="card mb-4 status-card" onclick="go('https://google.com')">
+                        <div class="card mb-4 status-card">
                             <div class="card-body">
                                 <div class="row align-items-center">
                                     <div class="col-3">
@@ -94,7 +94,7 @@
                         <div class="card overflow-hidden shadow mb-4">
                             <div class="">
                                 <div class="d-flex justify-content-between align-items-center p-3">
-                                    <h4 class="mb-0">Order & Viewer</h4>
+                                    <h4 class="mb-0">Order & Customer</h4>
                                     <div class="">
                                         <img src="../../assets/backend/img/user/avatar1.jpg" class="ov-img rounded-circle" alt="">
                                         <img src="../../assets/backend/img/user/avatar2.jpg" class="ov-img rounded-circle" alt="">
