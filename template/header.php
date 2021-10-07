@@ -1,11 +1,9 @@
 <?php 
 
-    session_start();
+    // session_start();
     include_once "system/session.php";
     include_once "system/function.php";
     include_once "admin/system/function.php";
-
-
 
     $sql = "SELECT * FROM categories";
     $categories = getItems($sql);
@@ -182,12 +180,6 @@
                             $Authuser = getSession('user');
                             echo "<a class='nav-link' href='#' data-bs-toggle='dropdown' title=".  $Authuser['user_name'] .">
                                     <span class='f_color'>" . $Authuser['user_name'] . "</span>
-                                </a>";
-
-                        }if(checkSession('auto')) {
-                            $autoUser = getSession('auto');
-                            echo "<a class='nav-link' href='#' data-bs-toggle='dropdown' title=".  $autoUser['user_name'] .">
-                                    <span class='f_color'>" . $autoUser['user_name'] . "</span>
                                 </a>";
 
                         }else{

@@ -1,7 +1,18 @@
 <?php
 
+    include_once "../../system/session.php";
+
+    if(!checkSession('admin')) {
+
+        header("Location: ../../index.php");
+
+    }else{
+
     $currentPage = 'dashboard';
-    include_once "../template/header.php";    
+    include_once "../template/header.php";  
+
+    
+
         
 ?>
 
@@ -245,4 +256,4 @@
             </div>
         </div>
 
-<?php include_once "../template/footer.php" ?>
+<?php   include_once "../template/footer.php"; } ?>

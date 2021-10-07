@@ -1,23 +1,26 @@
 <?php 
 
+    session_start();
 
-    function setSession($key, $type) {
+    function setSession($value, $type) {
 
         $data = trim($type);
 
         if($data === 'admin') {
-            $_SESSION['admin'] = $key;
+            $_SESSION['admin'] = $value;
         }
         
         if($data === 'user') {
-            $_SESSION['user'] = $key;
+            $_SESSION['user'] = $value;
         }
 
+    }
 
-        if($data === 'autologin') {
-            $_SESSION['auto'] = $key;
-        }
 
+    function setUser($value) {
+
+        $_SESSION['user'] = $value;
+        
     }
 
     
@@ -33,10 +36,6 @@
         return $_SESSION[$key];
 
     }
-
-
-
-
 
 
 ?>

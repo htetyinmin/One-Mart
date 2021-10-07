@@ -2,7 +2,8 @@
 
     include_once "../admin/system/function.php";
     include_once "function.php";
-    include_once "session.php";
+    // include_once "session.php";
+    session_start();
 
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -16,9 +17,6 @@
                 $userPhone = $_REQUEST['phone'];
 
                 
-                //return signUp($userName, $userEmail, $userPass, $userPhone);
-
-
                 global $connect;
     
                 $sql = "SELECT * FROM users WHERE email = '$userEmail'";
@@ -83,11 +81,40 @@
                         $res = myQuery($sql, [$mhr_id, $user_id, $role_id]);
         
                         if($res) {
-        
-                            $user = ['user_name'=>$userName, 'user_email'=>$userEmail, 'user_pass'=>$userPass];
-                            setSession($user, 'autologin');
 
-                            echo "Register successfully...";
+                            $query = "SELECT * FROM users WHERE email =:useremail AND password =:password";
+                            $acc = userLogin($query, $userEmail, $userPass);
+                    
+                            if($acc['count'] == 1 && !empty($acc['row'])) {
+
+                                $user_id = $acc['row']['id'];
+                                $user_id = intval($user_id);
+
+                                $sql = "SELECT r.name as rname FROM users u 
+                                        INNER JOIN model_has_role mhr ON u.id=mhr.id 
+                                        INNER JOIN role r ON r.id=mhr.role_id WHERE u.id = $user_id";
+                                        $res = getItems($sql);
+                                        
+                                        foreach($res as $value) {
+
+                                            $type = $value->rname;
+
+                                        }
+
+                                        if($type == 'User') {
+
+                                            $user = ['user_id'=>$acc['row']['id'],'user_name'=>$acc['row']['name'],'user_email'=>$acc['row']['email'],'user_phone'=>$acc['row']['phone'],'user_date'=>$acc['row']['created_at']];
+                                            setSession($user, 'user');
+                                            
+                                            echo 'success..';
+
+                                        }
+                            }else {
+
+                                echo "<script>alert('Invalid username and password!');</script>";
+                        
+                            }
+
 
                         }
         

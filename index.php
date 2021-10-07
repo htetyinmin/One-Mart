@@ -62,7 +62,7 @@
                 <p class="animate__animated animate__slideInRight">Make your enjoy shopping</p>
               </div>
               <div class="ban-btn animate__animated animate__slideInUp">
-                <button type="button">Shop Now</button>
+                <a href="products.php">Shop Now</a>
               </div>
             </div>
         </div>
