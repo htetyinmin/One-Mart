@@ -1,7 +1,19 @@
 <?php
 
     $currentPage = 'dashboard';
-    include_once "../template/header.php";    
+    include_once "../template/header.php";
+    
+    $today = date('Y-m-d');
+
+    $ord = "SELECT * FROM orders WHERE orderdate='$today'";
+    $orders = getItems($ord);
+
+    $us = "SELECT * FROM users";
+    $users = getItems($us);
+
+    $it = "SELECT * FROM items";
+    $items = getItems($it);
+    
         
 ?>
 
@@ -16,7 +28,7 @@
                                     </div>
                                     <div class="col-9">
                                         <p class="mb-1 h4 font-weight-bolder">
-                                            <span class="counter-up">123</span>
+                                            <span class="counter-up"><?= count($orders) ?></span>
                                         </p>
                                         <p class="mb-0 text-black-50">Today Order</p>
                                     </div>
@@ -33,9 +45,9 @@
                                     </div>
                                     <div class="col-9">
                                         <p class="mb-1 h4 font-weight-bolder">
-                                            <span class="counter-up">456</span>
+                                            <span class="counter-up"><?= count($users) ?></span>
                                         </p>
-                                        <p class="mb-0 text-black-50">Total User</p>
+                                        <p class="mb-0 text-black-50">Total Users</p>
                                     </div>
                                 </div>
                             </div>
@@ -50,7 +62,7 @@
                                     </div>
                                     <div class="col-9">
                                         <p class="mb-1 h4 font-weight-bolder">
-                                            <span class="counter-up">223</span>
+                                            <span class="counter-up"><?= count($items) ?></span>
                                         </p>
                                         <p class="mb-0 text-black-50">Total Items</p>
                                     </div>
@@ -67,7 +79,7 @@
                                     </div>
                                     <div class="col-9">
                                         <p class="mb-1 h4 font-weight-bolder">
-                                            <span class="counter-up">14</span>
+                                            <span class="counter-up">8</span>
                                         </p>
                                         <p class="mb-0 text-black-50">Support Location</p>
                                     </div>
@@ -173,7 +185,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12">
+                    <!-- <div class="col-12">
                         <div class="card overflow-hidden mb-4">
     
                             <div class="">
@@ -239,7 +251,7 @@
                                 </table>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <!--content Area Start-->
             </div>

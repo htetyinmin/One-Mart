@@ -16,6 +16,9 @@
     $ite = "SELECT * FROM items";
     $item = getItems($ite);
 
+    $ord = "SELECT * FROM orders";
+    $order = getItems($ord);
+
     $use = "SELECT * FROM users";
     $user = getItems($use);
 
@@ -117,7 +120,7 @@
                                     <i class="feather-package"></i>
                                     Order
                                 </span>
-                                <span class="badge badge-pill bg-white shadow-sm text-success p-1">8</span>
+                                <span class="badge badge-pill bg-white shadow-sm text-success p-1"><?= count($order) ?></span>
                             </a>
                         </li>
 
