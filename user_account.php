@@ -1,14 +1,22 @@
 <?php 
 
     include_once "template/header.php";
-    
+    // include_once "../admin/system/function.php";
+
+    $id = $_GET['uid'];
+
+    $sql="SELECT orders.*, users.name as uname FROM orders INNER JOIN users ON orders.user_id=users.id WHERE users.id='$id'";
+    $statement= $connect->prepare($sql);
+    $statement->execute();
+    $orders=$statement->fetchAll();
+    // var_dump($orders);
+
+    //user 
     $users = getSession('user');
-
-
 ?>
 
-  <!-- user profile -->
-  <div class="profile">
+<!-- user profile -->
+<div class="profile">
     <div class="container-md">
         <div class="row">
             <div class="col-lg-4">
@@ -34,7 +42,7 @@
 
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item" id="UserPro">
-                            <a href="#">
+                            <a href="profile.php">
                                 <i class="fas fa-user"></i><span>Profile</span>
                             </a>
                         </li>
@@ -66,11 +74,32 @@
             </div>
 
             <div class="col-lg-8">
-                <div id="contents"></div>
+                <div id="contents">
+                    <!-- manage account -->
+                    <div class="card text-dark bg-light mb-3 form">
+                        <div class="card-header">
+                            Manage Account
+                        </div>
+                        <div class="card-body">
+                            <form action="#" class="form">
+                                <div class="form-group mb-5">
+                                    Username:  <input type="text" class="form-control" name="username" value="" placeholder="username" autocomplete="off">
+                                    Email:  <input type="email" class="form-control" name="email" value="" placeholder="email" autocomplete="off">
+                                    Password:  <input type="password" class="form-control" name="username" value="" placeholder="password" autocomplete="off">     
+                                    Mobile: <input type="number" class="form-control" name="username" placeholder="mobile number" autocomplete="off"> 
+                                </div>
+                                <div class="col float-end">
+                                    <button name="edit" class="btn btn-info text-white" type="submit">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
   </div>
+
 
 
 <?php 
@@ -78,32 +107,3 @@
   include_once "template/footer.php";
 
 ?>
-
-
-<script>
-  // load content
-  $(document).ready(function () {
-
-    function loadDoc() {
-        $("#contents").load("../user/user_profile.php");
-    }
-    loadDoc();
-
-    $("#UserPro").click(function() {
-        loadDoc();
-    });
-    // $("#UserAcc").click(function() {
-    //     $("#contents").load("../user/user_account.php");
-    // });
-    // $("#UserOrd").click(function() {
-    //     $("#contents").load("../user/user_order.php");
-    // });
-    $("#UserWlist").click(function () {
-        $("#contents").load("../user/user_wishlist.php");
-    });
-    $("#UserTicket").click(function () {
-        $("#contents").load("../user/user_ticket.php");
-    });
-
-  });
-</script>

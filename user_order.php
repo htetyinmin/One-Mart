@@ -47,7 +47,7 @@
                             </a>
                         </li>
                         <li class="list-group-item" id="UserAcc">
-                            <a href="#">
+                            <a href="user_account.php?uid=<?= $users['user_id'] ?>">
                                 <i class="fas fa-user-cog"></i>Manage Account
                             </a>
                         </li>
@@ -57,7 +57,7 @@
                             </a>                          
                             <span class="badge bg-primary rounded-pill">2</span>
                         </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center" id="UserWlist">
+                        <!-- <li class="list-group-item d-flex justify-content-between align-items-center" id="UserWlist">
                             <a href="#">
                                 <i class="fa fa-heart"></i>Wishlist
                             </a>
@@ -68,7 +68,7 @@
                                 <i class="fas fa-tag"></i>My Tickets
                             </a>
                             <span class="badge bg-primary rounded-pill">1</span>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>

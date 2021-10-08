@@ -1,7 +1,13 @@
 <?php
 
     $currentPage = 'dashboard';
-    include_once "../template/header.php";    
+    include_once "../template/header.php";
+    include_once "../system/function.php";
+    
+    //for discount item
+    // $sql="SELECT * FROM items order by rand() LIMIT 4";
+    // $slideitems = getItems($sql);
+    // var_dump($slideitems);
         
 ?>
 
