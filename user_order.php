@@ -5,7 +5,7 @@
 
     $id = $_GET['uid'];
 
-    $sql="SELECT orders.*, users.name as uname FROM orders INNER JOIN users ON orders.user_id=users.id WHERE users.id='$id'";
+    $sql="SELECT orders.*, users.name as uname FROM orders INNER JOIN users ON orders.user_id=users.id WHERE users.id='$id' ORDER BY orders.id DESC";
     $statement= $connect->prepare($sql);
     $statement->execute();
     $orders=$statement->fetchAll();
