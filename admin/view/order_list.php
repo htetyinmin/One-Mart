@@ -1,4 +1,10 @@
 <?php
+
+    include_once "../../system/session.php";
+
+    if(!checkSession('admin')) {
+        header("Location: ../../index.php");
+    }
     $currentPage = 'order';
     include_once "../template/header.php";
     include_once "../system/function.php";

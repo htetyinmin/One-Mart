@@ -1,11 +1,8 @@
 <?php 
 
-    session_start();
     include_once "system/session.php";
     include_once "system/function.php";
     include_once "admin/system/function.php";
-
-
 
     $sql = "SELECT * FROM categories";
     $categories = getItems($sql);

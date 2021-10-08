@@ -421,7 +421,7 @@ ul, ol {
     font-weight: normal;
 }
 
-.ban-btn > button {
+.ban-btn > a {
     padding: 10px 30px;
     font-size: 15px;
     font-family: sans-serif;
@@ -440,7 +440,7 @@ ul, ol {
     -o-transition: all .3s ease;
 }
 
-.ban-btn > button:hover {
+.ban-btn > a:hover {
     background-color: #fff;
     color:rgba(255, 12, 0);
     transition: all .3s ease;

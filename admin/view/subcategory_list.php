@@ -1,4 +1,12 @@
 <?php
+
+    include_once "../../system/session.php";
+
+    if(!checkSession('admin')) {
+        header("Location: ../../index.php");
+    }
+
+    
     $currentPage = 'subcategory';
     include_once "../template/header.php";
 

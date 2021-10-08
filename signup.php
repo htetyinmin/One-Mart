@@ -45,13 +45,8 @@
 
 <?php include_once "template/footer.php";?>
 
-<style>
-    .navbar {display: none;}
-    footer {display: none;}
-</style>
 
 <script>
-
     const formBtn = document.getElementById('signup');
     formBtn.addEventListener('click', function(e) {
 
@@ -75,6 +70,7 @@
 
         return true;
     });
+
 
 
     function checkName(username) {
@@ -191,39 +187,33 @@
 
     }
 
-
-
     function register(userName, userEmail, userPass, userPhone) {
 
-            const action = 'signup';
+        const action = 'signup';
 
-            $.ajax({
+        $.ajax({
 
-                url: '../system/process.php',
-                method: 'POST',
-                data: {action:action, name:userName, email:userEmail, pass:userPass, phone:userPhone},
-                success: function(data) {
+            url: '../system/process.php',
+            method: 'POST',
+            data: {action:action, name:userName, email:userEmail, pass:userPass, phone:userPhone},
+            success: function(data) {
 
-                        data = data.trim();
-                        alert(data);
-                        window.location.reload();
-                        window.location.replace('login.php');
-                        return true;
-                        
-                        // const message = document.getElementById('message');
-                        // const alert = document.getElementById('alertReg');
-                        // alert.style.display = 'block';
-                        // alert.style.backgroundColor = 'green';
-                        // alert.style.color = '#fff';
-                        // message.textContent = data;
-                }
-            });
+                data = data.trim();
+
+                Swal.fire({
+                icon: 'success',
+                title: 'Register successful!',
+                confirmButtonText: 'Ok',
+                confirmButtonColor: '#0d6efd',
+              }).then((result) => {
+                window.location.replace('index.php');
+            })
+
+            }
+        
+
+        });
     }
-
-
-
-
-
 
 </script>
 

@@ -1,5 +1,3 @@
-
-
 <?php 
 
   ob_start();
@@ -42,7 +40,7 @@
 
             setSession($admin, 'admin');
 
-            header('Location: admin/view/dashboard.php');
+            header('Location: admin/view/index.php');
             exit();
           }
 
@@ -77,8 +75,8 @@
 ?>
 
 <style>
-    .navbar {display: none;}
-    footer {display: none;}
+    /* .navbar {display: none;}
+    footer {display: none;} */
 </style>
 
 
